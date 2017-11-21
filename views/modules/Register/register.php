@@ -8,6 +8,7 @@
   <body>
     <div class="inicio-sesion">
       <div class="wrap-btn">
+        <i class="fa fa-user-circle fa-5x user-icon" aria-hidden="true"></i>
         <p class="titulo-sesion">si ya tienes cuenta inicia sesion aqui!</p>
         <input type="submit" class="btn-inicio" name="" value="Iniciar Sesion">
       </div>

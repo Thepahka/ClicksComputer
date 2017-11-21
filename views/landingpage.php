@@ -29,15 +29,17 @@
   </section>
   <section class="vertical">
     <div class="slideback">
-<h1>Incredibly Basic Slider</h1>
+      <div class="wrap-gal">
+      <h1 class="gal">galeria</h1>
+      </div>
 <div id="slider">
   <a href="#" class="control_next">>></a>
   <a href="#" class="control_prev"><</a>
   <ul>
     <li>SLIDE 1</li>
-    <li style="background: #aaa;">SLIDE 2</li>
+    <li>SLIDE 2</li>
     <li>SLIDE 3</li>
-    <li style="background: #aaa;">SLIDE 4</li>
+    <li>SLIDE 4</li>
   </ul>
 </div>
 <div class="green">

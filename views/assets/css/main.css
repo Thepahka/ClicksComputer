@@ -317,10 +317,25 @@ footer{
 
 /*carrusel*/
 
+.wrap-gal{
+  position: relative;
+  left: 618px;
+  top: -200px;
+  background: rgba(78, 149, 255, 0.86);
+  border-radius: 5%;
+}
+
+.gal{
+  padding: 5px;
+  font-size: 34px;
+  color: #ffffff;
+  font-family: 'Pacifico', cursive;
+}
+
 #slider {
   position: relative;
   overflow: hidden;
-  margin: 20px auto 0 auto;
+  margin: 0px;
   border-radius: 4px;
 }
 
@@ -338,7 +353,7 @@ footer{
   float: left;
   margin: 0;
   padding: 0;
-  width: 500px;
+  width: 700px;
   height: 300px;
   background: #ccc;
   text-align: center;
@@ -389,14 +404,13 @@ a.control_next {
 
 .body-registro{
   position: relative;
-  left: 6%;
-  top: 0%;
+  left: 8%;
+  top: 2%;
   bottom: 0%;
   background-color: rgba(119, 150, 215, 0.71);
   width: 50%;
   padding: 30px;
   margin: 0px;
-  border-radius: 3%;
 }
 
 body{
@@ -642,18 +656,18 @@ body{
 .boton-registro{
   font-family: 'Fjalla One', sans-serif;
   padding: 10px;
-  margin: 0px;
+  margin-left: 506px;
   top: 0px;
   cursor: pointer;
   border-radius: 10px 10px;
   background: #fff;
   color: #000000;
-  box-shadow: inset 0 0 0 3px #fff;
+  box-shadow: inset 0 0 0 0px #fff;
 }
 
 .boton-registro:hover{
  background: rgb(152, 202, 255);
- border-radius: 5px;
+ border-radius: 10px;
  transition: all 1s ease;
 }
 
@@ -665,4 +679,50 @@ height: 430px;
 width: 590px;
 margin: 0px;
 border-radius: 3%;
+}
+
+.inicio-sesion{
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  top: 30px;
+}
+
+.wrap-btn{
+  margin: 0px;
+  padding: 0px;
+  top: 0px;
+}
+
+.titulo-sesion{
+  position: relative;
+  top: 40px;
+  font-family: 'Anton', sans-serif;
+  font-size: 27px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.btn-inicio{
+  position: relative;
+  margin: 70px;
+  left: 150px;
+  padding: 10px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.btn-inicio:hover{
+  background: rgb(152, 202, 255);
+  border-radius: 10px;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.user-icon{
+  position: relative;
+  color: #ffffff;
+  margin: 20px;
+  left: 230px;
 }
