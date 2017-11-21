@@ -1,0 +1,11 @@
+RewriteEngine on
+
+#Landing page
+RewriteRule ^main$ index.php?c=views&a=Main
+
+#Registro
+RewriteRule ^Registro$ index.php?c=registeruser&a=viewsRegister
+RewriteRule ^Registrado$ index.php?c=registeruser&a=Register
+
+#Pc
+RewriteRule ^Registrar-Computador$ index.php?c=pc&a=ViewsSavePc
