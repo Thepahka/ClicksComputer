@@ -9,6 +9,7 @@
     <div class="inicio-sesion">
       <div class="wrap-btn">
         <p class="titulo-sesion">si ya tienes cuenta inicia sesion aqui!</p>
+        <input type="submit" class="btn-inicio" name="" value="">
       </div>
     </div>
     <div class="body-registro">
@@ -17,7 +18,7 @@
       <div class="for-quest">
       <div class="for-quest">
         <label for="UsuId">Documento de Identidad</label>
-        <input class="UsuId" id="UsuId" type="text" name="data[]">
+        <input class="UsuId" id="UsuId" type="text" name="data[]" onkeyup="validate();">
       </div>
       <div class="for-quest">
         <label for="UsuNombre">Primer Nombre</label>
@@ -51,7 +52,7 @@
         <input class="UsuContra" id="UsuContra" type="text" name="data[]">
       </div>
       <div class="for-quest">
-        <button class="boton-registro">Registrarse</button>
+        <input type="submit" id="validar" class="boton-registro" value="Registrarse"></input>
       </div>
     </form>
 </div>

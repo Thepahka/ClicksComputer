@@ -19,38 +19,47 @@
     {
       $data = $_POST["data"];
 
+      $consulta = "SELECT * FROM usuario WHERE usu_num_doc=".$data[0];
+
       if($data[0] =="")
       {
-        echo "<p>Se debe completar el campo 'Documento de identidad'</p>";
+        echo '<script language="javascript">alert("Se debe completar el campo Documento de identidad");</script>';
       }
       elseif($data[1] =="")
       {
-        echo "<p>Se debe completar el campo 'Primer Nombre'</p>";
+        echo '<script language="javascript">alert("Se debe completar el campo Primer nombre");</script>';
       }
-      elseif($data[3] =="")
+      elseif($data[3] == "")
       {
-        echo "<p>Se debe completar el campo 'Primer Apellido'</p>";
+        echo '<script language="javascript">alert("Se debe completar el campo Primer Apellido");</script>';
       }
       elseif($data[6] =="")
       {
-        echo "<p>Se debe completar el campo 'Correo Electronico'</p>";
+        echo '<script language="javascript">alert("Se debe completar el campo Correo electronico");</script>';
       }
       elseif($data[7] =="")
       {
-        echo "<p>Se debe completar el campo 'Fecha de nacimiento'</p>";
+        echo '<script language="javascript">alert("Se debe completar el campo Fecha de nacimiento");</script>';
       }
       elseif($data[8] =="")
       {
-        echo "<p>Se debe completar el campo 'Contraseña'</p>";
+        echo '<script language="javascript">alert("Se debe completar el campo Contraseña");</script>';
       }
-      else
-      {
-        $result = $this->register->RegisterUser($data);
-
-        header("Location: main");
+      elseif(mysqli_result($consulta) > 0)
+       {
+        $resultadofinal = $consulta->num_rows;
+        echo "Ya existe un registro con ese documento de identidad";
+        die(mysqli_result($consulta));
       }
+      // else
+      // {
+      //   $result = $this->register->RegisterUser($data);
+      //
+      //   header("Location: main");
+      // }
 
     }
+
   }
 
 
