@@ -9,7 +9,7 @@
     <div class="inicio-sesion">
       <div class="wrap-btn">
         <p class="titulo-sesion">si ya tienes cuenta inicia sesion aqui!</p>
-        <input type="submit" class="btn-inicio" name="" value="">
+        <input type="submit" class="btn-inicio" name="" value="Iniciar Sesion">
       </div>
     </div>
     <div class="body-registro">
