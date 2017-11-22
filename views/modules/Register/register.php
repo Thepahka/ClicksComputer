@@ -50,10 +50,12 @@
       </div>
       <div class="for-quest">
         <label for="UsuContra">Contraseña</label>
-        <input class="UsuContra" id="UsuContra" type="text" name="data[]">
+        <input class="UsuContra" id="UsuContra" type="password" name="data[]">
       </div>
       <div class="for-quest">
-        <input type="submit" id="validar" class="boton-registro" value="Registrarse"></input>
+        <input type="submit" id="validar" class="boton-registro" value="REGISTRARSE"></input>
+        <h5 class="btn-mid"> o si tiene una empresa ingrese en :</h5>
+        <input type="submit" id="validar" class="boton-empresa" value="EMPRESA"></input>
       </div>
     </form>
 </div>

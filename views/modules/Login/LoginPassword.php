@@ -9,13 +9,14 @@
     <div class="wrap-login">
     <form class="" action="" method="post">
       <h2 class="titulo-up">iniciar sesion</h2>
+      <i class="fa fa-unlock-alt pass-icon fa-5x" aria-hidden="true"></i>
       <div class="contain-login">
-        <label for="LoginPass"></label>
-        <input class="log-pass" id="LoginPass" type="text" name="" value="">
+        <input class="log-pass" id="LoginPass" type="text" placeholder="contraseña" name="" value="">
       </div>
       <div class="">
         <input class="log-btn" id="PassEmail" type="submit" name="" value="Ingresar">
       </div>
+        <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
     </form>
   </div>
   </body>

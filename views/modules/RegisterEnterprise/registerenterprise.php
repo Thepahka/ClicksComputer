@@ -42,7 +42,7 @@
       </div>
       <div class="for-quest">
         <label for="EmpContra">Contraseña</label>
-        <input class="EmpContra" id="EmpContra" type="text" name="data[]">
+        <input class="EmpContra" id="EmpContra" type="password" name="data[]">
       </div>
       <div class="for-quest">
         <input type="submit" id="validar" class="boton-registro" value="Registrarse"></input>

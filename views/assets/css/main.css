@@ -35,11 +35,12 @@ body{
 
 .wrap-login{
   position: relative;
-  padding: 110px;
+  padding: 100px;
   margin: 0px;
-  left: 30%;
+  left: 32%;
   background: rgba(48, 94, 184, 0.73);
   border-radius: 4%;
+  top: 32px;
 }
 
 .titulo-up{
@@ -48,6 +49,100 @@ body{
   top: -100px;
   color: #ffffff;
   font-family: 'Anton', sans-serif;
+}
+
+.email-icon{
+  position: relative;
+  color: #ffffff;
+  top: -130px;
+  left: 120px;
+}
+
+.pass-icon{
+  position: relative;
+  color: #ffffff;
+  top: -130px;
+  left: 138px;
+}
+
+.log-btn{
+  position: relative;
+  margin: -25px;
+  left: 150px;
+  padding: 10px;
+  top: -45px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.log-btn:hover{
+  background: rgb(152, 202, 255);
+  border-radius: 10px;
+  transition: all 1s ease;
+  cursor: pointer;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+
+/*diseño login email and pass*/
+
+.log-email{
+  border: 1px solid #DBE1EB;
+  font-size: 18px;
+  font-family: Arial, Verdana;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: #FFFFFF;
+  background: linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+  color: #2E3133;
+}
+
+.log-pass{
+  border: 1px solid #DBE1EB;
+  font-size: 18px;
+  font-family: Arial, Verdana;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: #FFFFFF;
+  background: linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+  color: #2E3133;
+}
+
+.log-pass{
+  position: relative;
+  left: 44px;
+  top: -100px;
+}
+
+.log-email{
+  position: relative;
+  left: 44px;
+  top: -100px;
+}
+
+.mini-foot{
+  color: #ffffff;
 }
 
 /*menu top*/
@@ -441,7 +536,7 @@ a.control_next {
   bottom: 0%;
   background-color: rgba(119, 150, 215, 0.71);
   width: 50%;
-  padding: 30px;
+  padding: 32px;
   margin: 0px;
 }
 
@@ -688,7 +783,7 @@ body{
 .boton-registro{
   font-family: 'Fjalla One', sans-serif;
   padding: 10px;
-  margin-left: 506px;
+  margin-left: 100px;
   top: 0px;
   cursor: pointer;
   border-radius: 10px 10px;
@@ -701,6 +796,30 @@ body{
  background: rgb(152, 202, 255);
  border-radius: 10px;
  transition: all 1s ease;
+}
+
+.boton-empresa{
+  position: relative;
+  font-family: 'Fjalla One', sans-serif;
+  padding: 10px 30px;
+  margin-left: 228px;
+  cursor: pointer;
+  border-radius: 10px 10px;
+  background: #fff;
+  color: #000000;
+  box-shadow: inset 0 0 0 0px #fff;
+}
+
+.boton-empresa:hover{
+ background: rgb(152, 202, 255);
+ border-radius: 10px;
+ transition: all 1s ease;
+}
+
+.btn-mid{
+  color: #ffffff;
+  font-style: none;
+  font-size: 15px;
 }
 
 .inicio-sesion{
