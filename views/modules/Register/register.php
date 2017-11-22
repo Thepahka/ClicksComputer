@@ -58,6 +58,6 @@
     </form>
 </div>
 <?php include 'views/include/scope.header.php';
-      include 'views/include/scope.menutop.php';?>
+      include 'views/include/scope.menutopregistro.php';?>
   </body>
 </html>
