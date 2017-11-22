@@ -19,7 +19,6 @@
     {
       $data = $_POST["data"];
 
-      $consulta = "SELECT * FROM usuario WHERE usu_num_doc=".$data[0];
 
       if($data[0] =="")
       {
@@ -45,18 +44,28 @@
       {
         echo '<script language="javascript">alert("Se debe completar el campo Contraseña");</script>';
       }
-      elseif($consulta = $mysqli->query("SELECT * FROM usuario WHERE usu_num_doc=".$data[0]))
-       {
-        $resultadofinal = $consulta->num_rows;
-        echo "Ya existe un registro con ese documento de identidad";
-        die(mysqli_result($consulta));
-        }
-      // else
-      // {
-      //   $result = $this->register->RegisterUser($data);
-      //
-      //   header("Location: main");
-      // }
+      elseif(strlen($data[8]) < 8)
+      {
+        echo '<script language="javascript">alert("La contraseña debe ser minimo 8 caracteres");</script>';
+      }
+      elseif(!preg_match('/(?=[a-z])/', $data[8]))
+      {
+        echo '<script language="javascript">alert("La contraseña debe contener al menos una letra");</script>';
+      }
+      elseif(!preg_match('/(?=\d)/', $data[8]))
+      {
+        echo '<script language="javascript">alert("La contraseña debe contener al menos una número");</script>';
+      }
+      elseif(!preg_match('/(?=[@#%&]|-|_)/', $data[8]))
+      {
+        echo '<script language="javascript">alert("La contraseña debe contener al menos uno de estos simbolos: @#%&-_");</script>';
+      }
+      else
+      {
+        $result = $this->register->RegisterUser($data);
+
+        header("Location: main");
+      }
 
     }
 

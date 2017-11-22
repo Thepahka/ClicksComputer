@@ -1,5 +1,5 @@
 <?php
-class RegisteruserModel
+class RegisterenterpriseModel
 {
   private $pdo;
 
@@ -16,16 +16,16 @@ class RegisteruserModel
     }
   }
 
-  public function RegisterUser($data)
+  public function RegisterEnterprise($data)
   {
     try
     {
 
-      $sql = "CALL GuardarUsuario(?,?,?,?,?,?,?,?,?,?)";
+      $sql = "CALL GuardarEmpresa(?,?,?,?,?,?,?,?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7], password_hash($data[8], PASSWORD_BCRYPT),2));
+      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5], password_hash($data[6], PASSWORD_BCRYPT),1));
 
       $msn = "Se registro con exito";
     }

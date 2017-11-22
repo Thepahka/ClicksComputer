@@ -7,5 +7,13 @@ RewriteRule ^main$ index.php?c=views&a=Main
 RewriteRule ^Registro$ index.php?c=registeruser&a=viewsRegister
 RewriteRule ^Registrado$ index.php?c=registeruser&a=Register
 
+#Registro_Empresa
+RewriteRule ^Registro-Empresa$ index.php?c=registerenterprise&a=viewsRegisterEnterprise
+RewriteRule ^Registrado-emp$ index.php?c=registerenterprise&a=RegisterEnterprise
+
+#Login
+RewriteRule ^Email$ index.php?c=login&a=viewsEmail
+RewriteRule ^Pass$ index.php?c=login&a=viewsPassword
+
 #Pc
 RewriteRule ^Registrar-Computador$ index.php?c=pc&a=ViewsSavePc
