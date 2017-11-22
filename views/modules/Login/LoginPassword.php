@@ -7,11 +7,11 @@
   </head>
   <body class="body-login">
     <div class="wrap-login">
-    <form class="" action="" method="post">
+    <form class="" action="ConsultaP" method="post">
       <h2 class="titulo-up">iniciar sesion</h2>
       <i class="fa fa-unlock-alt pass-icon fa-5x" aria-hidden="true"></i>
       <div class="contain-login">
-        <input class="log-pass" id="LoginPass" type="text" placeholder="contraseña" name="" value="">
+        <input class="log-pass" id="LoginPass" type="password" placeholder="contraseña" name="data[]" value="">
       </div>
       <div class="">
         <input class="log-btn" id="PassEmail" type="submit" name="" value="Ingresar">

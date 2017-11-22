@@ -16,16 +16,42 @@
       }
     }
 
-    public function ValidateEmail()
+    public function ValidateEmail($comprobar)
     {
+      try
+      {
+        $sql = "SELECT usu_correo, fk_rol_id FROM usuario WHERE usu_correo = ?";
 
+        $query = $this->pdo->prepare($sql);
+
+        $query->execute(array($comprobar));
+
+        $result = $query->fetch(PDO::FETCH_BOTH);
+      }
+      catch(PDOException $e)
+      {
+        $result = $e->getMessage();
+      }
+      return $result;
     }
-
-    public function ValidateEmailPassword()
+    public function ValidatePassword($password)
     {
+      try
+      {
+        $sql = "SELECT usu_contra FROM usuario WHERE usu_contra = ?";
 
+        $query = $this->pdo->prepare($sql);
+
+        $query->execute(array($password));
+
+        $result = $query->fetch(PDO::FETCH_BOTH);
+      }
+      catch(PDOException $e)
+      {
+        $result = $e->getMessage();
+      }
+      return $result;
     }
-
 
   }
 

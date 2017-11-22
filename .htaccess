@@ -14,6 +14,9 @@ RewriteRule ^Registrado-emp$ index.php?c=registerenterprise&a=RegisterEnterprise
 #Login
 RewriteRule ^Email$ index.php?c=login&a=viewsEmail
 RewriteRule ^Pass$ index.php?c=login&a=viewsPassword
+RewriteRule ^Consulta$ index.php?c=login&a=ConsultEmail
+RewriteRule ^ConsultaP$ index.php?c=login&a=ConsultPassword
+
 
 #Pc
 RewriteRule ^Registrar-Computador$ index.php?c=pc&a=ViewsSavePc

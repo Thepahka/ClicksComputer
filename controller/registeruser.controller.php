@@ -66,6 +66,7 @@
 
         header("Location: main");
       }
+      echo "<script>history.back(1)</script>";
 
     }
 
