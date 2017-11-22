@@ -12,6 +12,7 @@
         <p class="titulo-sesion">si ya tienes cuenta inicia sesion aqui!</p>
         <a href="Email"><input type="submit" class="btn-inicio" name="" value="Iniciar Sesion"></a>
       </div>
+      <p class="mini-fregis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </div>
     <div class="body-registro">
       <h1 class="registro-titulo">formulario de Registro</h1>
@@ -54,10 +55,10 @@
       </div>
       <div class="for-quest">
         <input type="submit" id="validar" class="boton-registro" value="REGISTRARSE"></input>
-        <h5 class="btn-mid"> o si tiene una empresa ingrese en :</h5>
-        <input type="submit" id="validar" class="boton-empresa" value="EMPRESA"></input>
+        <h5 class="btn-mid"> o si tiene una empresa ingrese en</h5>
       </div>
     </form>
+    <a  href="Registro-Empresa"><button class="boton-empresa">EMPRESA</button></a>
 </div>
 <?php include 'views/include/scope.header.php';
       include 'views/include/scope.menutopregistro.php';?>

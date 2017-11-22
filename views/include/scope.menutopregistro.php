@@ -14,7 +14,7 @@ require_once("scope.header.php");
         <a class="item" href="tienda">tiendas</a>
         <a class="item" href="pc">pc</a>
         <a class="item" href="piezas">piezas</a>
-        <a class="item" href="marca">marca</a>
+        <a class="item" href="marca">marcas</a>
         <a class="object" href="main"><i class="fa fa-sign-out" aria-hidden="true"></i>regresar</a>
       </ul>
     </div>
