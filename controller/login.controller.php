@@ -29,12 +29,10 @@
 
       if($result[0] == $comprobar)
       {
-
         header("Location: Pass");
       }
       else
       {
-
         echo '<script language="javascript">alert("No existe un usuario registrado con ese correo");</script>';
         echo "<script>history.back(1)</script>";
       }

@@ -133,12 +133,15 @@ body{
   position: relative;
   left: 44px;
   top: -100px;
+  text-align: center;
 }
 
 .log-email{
   position: relative;
-  left: 44px;
+  left: 14px;
   top: -100px;
+  width: 300px;
+  text-align: center;
 }
 
 .mini-foot{

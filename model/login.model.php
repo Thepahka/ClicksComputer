@@ -20,7 +20,7 @@
     {
       try
       {
-        $sql = "CALL ConsultarEmail('$comprobar')";
+        $sql = "SELECT usu_correo FROM usuario WHERE usu_correo = ?";
 
         $query = $this->pdo->prepare($sql);
 
