@@ -20,7 +20,7 @@
     {
       try
       {
-        $sql = "SELECT usu_correo, fk_rol_id FROM usuario WHERE usu_correo = ?";
+        $sql = "CALL ConsultarEmail('$comprobar')";
 
         $query = $this->pdo->prepare($sql);
 
@@ -34,24 +34,24 @@
       }
       return $result;
     }
-    public function ValidatePassword($password)
-    {
-      try
-      {
-        $sql = "SELECT usu_contra FROM usuario WHERE usu_contra = ?";
-
-        $query = $this->pdo->prepare($sql);
-
-        $query->execute(array($password));
-
-        $result = $query->fetch(PDO::FETCH_BOTH);
-      }
-      catch(PDOException $e)
-      {
-        $result = $e->getMessage();
-      }
-      return $result;
-    }
+    // public function ValidatePassword($password)
+    // {
+    //   try
+    //   {
+    //     $sql = "SELECT usu_contra FROM usuario WHERE usu_contra = ?";
+    //
+    //     $query = $this->pdo->prepare($sql);
+    //
+    //     $query->execute(array($password));
+    //
+    //     $result = $query->fetch(PDO::FETCH_BOTH);
+    //   }
+    //   catch(PDOException $e)
+    //   {
+    //     $result = $e->getMessage();
+    //   }
+    //   return $result;
+    // }
 
   }
 

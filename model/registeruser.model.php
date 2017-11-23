@@ -37,7 +37,42 @@ class RegisteruserModel
     return $msn;
   }
 
+  public function ValidateExistsEmail($comprobeEmail)
+  {
+    try
+    {
+      $sql = "SELECT usu_correo, fk_rol_id, usu_num_doc FROM usuario WHERE usu_correo= ?";
 
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($comprobeEmail));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+  public function ValidateExistsId($comprobeId)
+  {
+    try
+    {
+      $sql = "SELECT usu_num_doc FROM usuario WHERE usu_num_doc = ?";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($comprobeId));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
 }
 
 

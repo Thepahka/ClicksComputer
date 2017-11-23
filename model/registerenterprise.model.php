@@ -16,7 +16,7 @@ class RegisterenterpriseModel
     }
   }
 
-  public function RegisterEnterprise($data)
+  public function RegisterNewEnterprise($data)
   {
     try
     {
@@ -35,6 +35,46 @@ class RegisterenterpriseModel
     }
 
     return $msn;
+  }
+
+  public function ValidateEnterpriseEmail($comprobeEmailEnterprise)
+  {
+    try
+    {
+      $sql = "SELECT emp_correo FROM empresa WHERE emp_correo = ?";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($comprobeEmailEnterprise));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
+  public function ValidateEnterpriseId($comprobeIdEnterprise)
+  {
+    try
+    {
+      $sql = "SELECT emp_nit, fk_rol_id, emp_correo FROM empresa WHERE emp_nit = ?";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($comprobeIdEnterprise));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+
   }
 
 

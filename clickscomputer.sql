@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2017 a las 23:36:39
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 23-11-2017 a las 05:50:14
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -24,8 +26,24 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `usu_correo` VARCHAR(30))  BEGIN
+SELECT usu_correo, fk_rol_id, usu_num_doc FROM usuario WHERE usu_correo = usu_correo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarId` (IN `usu_num_doc` BIGINT(30))  BEGIN
+SELECT usu_correo FROM usuario;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(20), IN `emp_contra` VARCHAR(20), IN `fk_rol_id` INT)  BEGIN
+INSERT INTO empresa(emp_id, emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id) VALUES (emp_id, emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id);
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Guardarpc` (IN `pc_id` INT, IN `pc_nom` VARCHAR(30), IN `pc_desc` TEXT, IN `pc_mod` VARCHAR(50), IN `fk_tipopc_id` INT, IN `ficha_tecnica` VARCHAR(30))  BEGIN
 INSERT INTO pc (pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id) VALUES(pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarUsuario` (IN `usu_num_doc` BIGINT, `usu_nom` VARCHAR(30), `usu_nom2` VARCHAR(30), `usu_ape` VARCHAR(30), `usu_ape2` VARCHAR(30), `usu_tel` INT, `usu_correo` VARCHAR(30), `usu_nac` DATE, `usu_contra` VARCHAR(20), `fk_rol_id` INT)  BEGIN
+INSERT INTO usuario(usu_num_doc, usu_nom, usu_nom2, usu_ape, usu_ape2, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id) VALUES (usu_num_doc, usu_nom, usu_nom2, usu_ape, usu_ape2, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id);
 END$$
 
 DELIMITER ;
@@ -85,12 +103,22 @@ CREATE TABLE `com_pie` (
 
 CREATE TABLE `empresa` (
   `emp_id` int(11) NOT NULL,
+  `emp_nit` bigint(20) NOT NULL,
   `emp_nom` varchar(20) NOT NULL,
   `emp_dir` varchar(20) NOT NULL,
   `emp_desc` text NOT NULL,
   `emp_tel` int(11) NOT NULL,
-  `emp_correo` varchar(20) NOT NULL
+  `emp_correo` varchar(20) NOT NULL,
+  `emp_contra` varchar(20) NOT NULL,
+  `fk_rol_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
+(3, 9909251364199, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender electrodomesticos y demas', 2085072, 'pccomponentes@pc.com', '$2y$10$YYyZrrXAE8w7r', 1);
 
 -- --------------------------------------------------------
 
@@ -196,6 +224,14 @@ CREATE TABLE `marca` (
   `mar_nombre` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`mar_id`, `mar_nombre`) VALUES
+(1, 'Lenovo'),
+(2, 'Alienware');
+
 -- --------------------------------------------------------
 
 --
@@ -206,6 +242,13 @@ CREATE TABLE `mar_pc` (
   `fk_mar_id` int(11) NOT NULL,
   `fk_pc_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `mar_pc`
+--
+
+INSERT INTO `mar_pc` (`fk_mar_id`, `fk_pc_id`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -238,8 +281,7 @@ CREATE TABLE `pc` (
 --
 
 INSERT INTO `pc` (`pc_id`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_tipopc_id`, `ficha_tecnica`) VALUES
-(1, 'pc', 'descripcion', 'modelo', 1, 'ficha tecnica'),
-(2984, 'pc marta', 'pc hecho por marta', 'modelo marta', 1, 'fichatecnicamarta.pdf');
+(1, 'marta', 'marta', 'marta', 1, 'marta');
 
 -- --------------------------------------------------------
 
@@ -363,7 +405,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_nom2`, `usu_ape`, `usu_ape2`, `usu_tel`, `usu_correo`, `usu_nac`, `usu_contra`, `fk_rol_id`) VALUES
-(1, 99092513641, 'Sergio', 'Esteban', 'Cifuentes', 'Arango', 2085072, 'scifuentes@misena.edu.co', '2019-03-02', 'pahka123', 2);
+(26, 9909251364112, 'sergio', 'esteban', 'cifuentes', 'arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$HEIrDcxkqudhu', 2),
+(29, 99092513641, 'sergio', 'esteban', 'cifuentes', 'arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$SecqbP6A4q5/i', 2);
 
 --
 -- Índices para tablas volcadas
@@ -402,7 +445,8 @@ ALTER TABLE `com_pie`
 -- Indices de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`emp_id`);
+  ADD PRIMARY KEY (`emp_id`),
+  ADD KEY `fk_rol_id` (`fk_rol_id`);
 
 --
 -- Indices de la tabla `emp_pc`
@@ -557,10 +601,15 @@ ALTER TABLE `com_pc`
 ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- Restricciones para tablas volcadas
 --
@@ -569,8 +618,8 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `cli_emp`
 --
 ALTER TABLE `cli_emp`
-  ADD CONSTRAINT `cli_emp_ibfk_1` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `cli_emp_ibfk_2` FOREIGN KEY (`fk_usu_id`) REFERENCES `usuario` (`usu_id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `cli_emp_ibfk_2` FOREIGN KEY (`fk_usu_id`) REFERENCES `usuario` (`usu_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `cli_emp_ibfk_3` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `com_pc`
@@ -589,18 +638,24 @@ ALTER TABLE `com_pie`
   ADD CONSTRAINT `com_pie_ibfk_3` FOREIGN KEY (`fk_usu_id`) REFERENCES `usuario` (`usu_id`) ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `empresa`
+--
+ALTER TABLE `empresa`
+  ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `emp_pc`
 --
 ALTER TABLE `emp_pc`
-  ADD CONSTRAINT `emp_pc_ibfk_1` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `emp_pc_ibfk_2` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `emp_pc_ibfk_2` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `emp_pc_ibfk_3` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `emp_pie`
 --
 ALTER TABLE `emp_pie`
-  ADD CONSTRAINT `emp_pie_ibfk_1` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `emp_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `emp_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `emp_pie_ibfk_3` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `fil_pc`
@@ -675,6 +730,7 @@ ALTER TABLE `pi_inv`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
