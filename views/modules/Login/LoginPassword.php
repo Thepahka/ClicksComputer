@@ -9,7 +9,7 @@
     <div class="wrap-login">
     <form class="" action="ConsultaP" method="post">
       <h2 class="titulo-up">iniciar sesion</h2>
-      <i class="fa fa-unlock-alt pass-icon fa-5x" aria-hidden="true"></i>
+      <i class="fa fa-lock pass-icon fa-5x" aria-hidden="true"></i>
       <div class="contain-login">
         <input class="log-pass" id="LoginPass" type="password" placeholder="contraseña" name="data[]" value="">
       </div>

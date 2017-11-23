@@ -27,7 +27,12 @@
 
       $result=$this->login->ValidateEmail($comprobar);
 
-      if($result[0] == $comprobar)
+      if($comprobar == "")
+      {
+        echo '<script language="javascript">alert("Debe completar el campo con un correo");</script>';
+        echo "<script>history.back(1)</script>";
+      }
+      elseif($result[0] == $comprobar)
       {
         header("Location: Pass");
       }
