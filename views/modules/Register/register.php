@@ -16,7 +16,7 @@
     </div>
     <div class="body-registro">
       <h1 class="registro-titulo">formulario de Registro</h1>
-    <form class="wrap-formulario" action="Registrado" method="post">
+    <form id="validate" class="wrap-formulario" action="Registrado" method="post">
       <div class="for-quest">
       <div class="for-quest">
         <label for="UsuId">Documento de Identidad</label>
@@ -54,5 +54,7 @@
 </div>
 <?php include 'views/include/scope.header.php';
       include 'views/include/scope.menutopregistro.php';?>
+      <script src="views/assets/js/validaciones.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>

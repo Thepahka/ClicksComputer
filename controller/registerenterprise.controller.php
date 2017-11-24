@@ -80,8 +80,10 @@
         else
         {
           $result = $this->registerenterprise->RegisterNewEnterprise($data);
-
-          header("Location: main");
+          echo '<script language="javascript">
+          alert("Registrado con exito!");
+          window.location.href="main";
+          </script>';
         }
         echo "<script>history.back(1)</script>";
       }
