@@ -4,18 +4,6 @@
         <div class="logo--principal">
           <img src="views/assets/image/logo.png" alt="">
         </div>
-        <div class="wrap--icons">
-          <i class="fa fa-share-square-o fa-2x icono one" aria-hidden="true"></i>
-          <i class="fa fa-users fa-2x icono three" aria-hidden="true"></i>
-          <i class="fa fa-info fa-2x icono two" aria-hidden="true"></i>
-          <i class="fa fa-search fa-2x icono four" aria-hidden="true"></i>
-        </div>
-        <div class="wrap--titulo">
-          <a class="titulo">Busca</a>
-          <a class="titulo">Comunicate</a>
-          <a class="titulo">Informate</a>
-          <a class="titulo">Comparte</a>
-        </div>
         <div class="wrap--texto">
             <p class="texto">aqui podras encontrar tu equipo ideal
             especialmente hecho a tu medida y comodidad,

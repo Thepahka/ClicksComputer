@@ -15,7 +15,7 @@ require_once("scope.header.php");
         <a class="item" href="pc">pc</a>
         <a class="item" href="piezas">piezas</a>
         <a class="item" href="marca">marcas</a>
-        <a class="object" href="Registro"><i class="fa fa-user-plus" aria-hidden="true"></i>acceder</a>
       </ul>
     </div>
+    <a class="object" href="Registro"><i class="fa fa-user-plus" aria-hidden="true"></i>acceder</a>
 </div>

@@ -160,11 +160,12 @@ div.menu-top{
 }
 
 div.menu-top ul{
-  width: 100%;
+  width: 449px;
   position: relative;
   display: inline-flex;
   background: #305eb8;
   color: #ffffff;
+  justify-content: space-around;
 }
 
 .menu-top .cc{
@@ -186,9 +187,11 @@ div.menu-top ul{
 .item{
   position: relative;
   display: inline-flex;
-  font-size: 30px;
-  margin-right: 118px;
-  padding: 9px;
+  font-size: 20px;
+  padding: 17px 10px;
+  margin: 0px 10px;
+  left: 30px;
+  text-transform: uppercase;
   font-weight: lighter;
   font-family: 'Oswald', sans-serif;
 }
@@ -202,11 +205,12 @@ div.menu-top ul{
 }
 
 .object{
+  position: static;
   display: inline-flex;
-  margin-left: 65%;
   font-size: 25px;
   padding: 13px;
-  margin-left: 29px;
+  left: 0px;
+  color: #ffffff;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -242,58 +246,12 @@ div.background2{
  position: relative;
 }
 
-.wrap--titulo{
-  background: #7797d8;
-  position: absolute;
-  border-radius: 5px 5px;
-  width: 780px;
-  height: 90px;
-  left: 394px;
-  bottom: 72%;
-  border-radius: 5px 5px;
-  font-family: 'Oswald', sans-serif;
-  color: white;
-  font-size: 23px;
-}
-
 .titulo{
   display: inline-flex;
   font-family: 'Anton', sans-serif;
   margin: 10px;
   padding: 42px;
 }
-
-.wrap--icons{
-  width: 100%;
-  position: absolute;
-  background-color: black;
-  text-align: center;
-  margin-top: -16%;
-  z-index: 1;
-  color: #fff;
-}
-/*ICONS*/
-.one{
-  position: absolute;
-  margin-left: 28%;
-  top: 10%;
-}
-
-.two{
-  position: absolute;
-  margin-left: 14%;
-}
-
-.three{
-  position: absolute;
-  margin-left: -2%;
-}
-
-.four{
-  position: absolute;
-  margin-left: -16%;
-}
-/*FIN ICONS*/
 
 .wrap--texto{
   background-color: rgba(120, 151, 215, 0.81);
