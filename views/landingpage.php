@@ -1,19 +1,15 @@
 <div id="fullpage">
   <section class="vertical">
     <div class="principal">
-        <div class="logo--principal">
-          <img src="views/assets/image/logo.png" alt="">
-        </div>
-        <div class="wrap--texto">
-            <p class="texto">aqui podras encontrar tu equipo ideal
-            especialmente hecho a tu medida y comodidad,
-            tambien podras hacer que encuentren a tu empresa mas rapido y facil.</p>
-        </div>
-        <div class="white">
-        </div>
-        <div class="blue">
-        </div>
       </div>
+      <div class="wrap--texto">
+        <p class="texto">aqui podras encontrar tu equipo ideal
+          especialmente hecho a tu medida y comodidad,
+          tambien podras hacer que encuentren a tu empresa mas rapido y facil.</p>
+        </div>
+        <div class="btn-registrate">
+          <a class="btn-registrate" href="registro">registrate</a>
+        </div>
   </section>
   <section class="vertical">
     <div class="slideback">

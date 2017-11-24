@@ -149,10 +149,11 @@ body{
 }
 
 /*menu top*/
+
 div.menu-top{
+  background: rgba(39, 40, 39, 0.21);
   position: fixed;
   width: 100%;
-  background-color: #305eb8;
   display: flex;
   justify-content: space-between;
   top: 0%;
@@ -160,10 +161,9 @@ div.menu-top{
 }
 
 div.menu-top ul{
-  width: 449px;
+  width: 360px;
   position: relative;
   display: inline-flex;
-  background: #305eb8;
   color: #ffffff;
   justify-content: space-around;
 }
@@ -190,40 +190,20 @@ div.menu-top ul{
   font-size: 20px;
   padding: 17px 10px;
   margin: 0px 10px;
-  left: 30px;
+  left: 9px;
   text-transform: uppercase;
   font-weight: lighter;
   font-family: 'Oswald', sans-serif;
 }
 
 .item:hover{
-  border-radius: 10px 10px;
   transition:all .2s ease-in-out;
-  background: #fff;
-  color: #7797d8;
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.object{
-  position: static;
-  display: inline-flex;
-  font-size: 25px;
-  padding: 13px;
-  left: 0px;
+  background: rgba(166, 166, 166, 0.59);
   color: #ffffff;
-  font-family: 'Oswald', sans-serif;
-}
-
-.object:hover{
-  border-radius: 10px 10px;
-  transition:all .2s ease-in-out;
-  background: #fff;
-  color: #7797d8;
-  box-shadow: inset 0 0 0 3px #fff;
 }
 
 div.principal{
- background-image: url(../image/landing/fondo2.jpeg);
+ background-image: url(../image/landing/teclado.jpg);
  background-size: contain;
  background-repeat: no-repeat;
  background-size: cover;
@@ -231,7 +211,10 @@ div.principal{
  width: 100%;
  display: flex;
  align-items: center;
+ text-align: center;
  position: relative;
+ -webkit-filter: brightness(20%);
+ filter: brightness(55%);
 }
 
 div.background2{
@@ -254,15 +237,29 @@ div.background2{
 }
 
 .wrap--texto{
-  background-color: rgba(120, 151, 215, 0.81);
-  width: 780px;
+  width: 85%;
   height: 260px;
-  position: relative;
+  position: absolute;
   left: 120px;
-  border-radius: 7px 7px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
+  z-index: 100;
+  top: 30vh;
+}
+
+.btn-registrate{
+  position: absolute;
+  width: 85%;
+  height: 260px;
+  left: 120px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-size: 35px;
+  z-index: 100;
+  top: 35vh;
 }
 
 div.logo--principal{
@@ -308,32 +305,10 @@ footer{
 .texto{
   padding: 15px;
   text-align: center;
+  z-index: 1000;
 }
 
 /*lineas que separan la seccion*/
-
-.white{
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  background-color: #305eb8;
-  height: 11vh;
-  margin-top: -5%;
-  z-index: 2;
-}
-
-.blue{
-  position: absolute;
-  background: #305eb8;
-  top: 100%;
-  width: 100%;
-  height: 135px;
-  content: "";
-  margin-top: -86px;
-  transform-origin: top left;
-  transform: skewY(-2deg);
-  z-index: 100;
-}
 
 .slideback{
   background-image: url(../image/landing/fondo1.jpeg);
@@ -345,19 +320,6 @@ footer{
   display: flex;
   align-items: center;
   position: relative;
-}
-
-.green{
-  position: absolute;
-  background: #7797d8;
-  top: 100%;
-  width: 100%;
-  height: 100px;
-  content: "";
-  margin-top: -86px;
-  transform-origin: top left;
-  transform: skewY(2deg);
-  z-index: 100;
 }
 
 .wrap-fin{
@@ -372,14 +334,6 @@ footer{
   font-family: 'Bree+Serif', sans-serif;
   top: -66px;
   text-align: center;
-}
-
-.fin-icon{
-
-}
-
-.fin{
-
 }
 
 /*fullPage*/
