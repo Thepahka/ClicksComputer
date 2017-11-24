@@ -21,7 +21,7 @@
 
       $comprobeId = $data[0];
 
-      $comprobeEmail = $data[6];
+      $comprobeEmail = $data[4];
 
       $result = $this->register->ValidateExistsEmail($comprobeEmail);
 
@@ -37,7 +37,7 @@
         echo '<script language="javascript">alert("Ya existe un usuario registrado con ese documento");</script>';
         echo "<script>history.back(1)</script>";
       }
-      elseif($data[6] =="")
+      elseif($data[4] =="")
       {
         echo '<script language="javascript">alert("Se debe completar el campo Correo electronico");</script>';
         echo "<script>history.back(1)</script>";
@@ -51,46 +51,44 @@
       {
         if($data[1] =="")
         {
-          echo '<script language="javascript">alert("Se debe completar el campo Primer nombre");</script>';
+          echo '<script language="javascript">alert("Se debe completar el campo Nombre(s)");</script>';
         }
-        elseif($data[3] == "")
+        elseif($data[2] == "")
         {
-          echo '<script language="javascript">alert("Se debe completar el campo Primer Apellido");</script>';
+          echo '<script language="javascript">alert("Se debe completar el campo Apellido(s)");</script>';
         }
-        elseif($data[7] =="")
+        elseif($data[5] =="")
         {
           echo '<script language="javascript">alert("Se debe completar el campo Fecha de nacimiento");</script>';
         }
-        elseif($data[8] =="")
+        elseif($data[6] =="")
         {
           echo '<script language="javascript">alert("Se debe completar el campo Contraseña");</script>';
         }
-        elseif(strlen($data[8]) < 8)
+        elseif(strlen($data[6]) < 8)
         {
           echo '<script language="javascript">alert("La contraseña debe ser minimo 8 caracteres");</script>';
         }
-        elseif(!preg_match('/(?=[a-z])/', $data[8]))
+        elseif(!preg_match('/(?=[a-z])/', $data[6]))
         {
           echo '<script language="javascript">alert("La contraseña debe contener al menos una letra");</script>';
         }
-        elseif(!preg_match('/(?=\d)/', $data[8]))
+        elseif(!preg_match('/(?=\d)/', $data[6]))
         {
           echo '<script language="javascript">alert("La contraseña debe contener al menos una número");</script>';
         }
-        elseif(!preg_match('/(?=[@#%&]|-|_)/', $data[8]))
+        elseif(!preg_match('/(?=[@#%&]|-|_)/', $data[6]))
         {
           echo '<script language="javascript">alert("La contraseña debe contener al menos uno de estos simbolos: @#%&-_");</script>';
         }
         else
         {
           $result = $this->register->RegisterUser($data);
-
-          header("Location: main");
+          echo '<script language="javascript">alert("Registrado con exito!");</script>';
         }
         echo "<script>history.back(1)</script>";
       }
-
-     }
+      }
 
   }
 

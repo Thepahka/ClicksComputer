@@ -23,20 +23,12 @@
         <input class="UsuId" id="UsuId" type="text" name="data[]" onkeyup="validate();">
       </div>
       <div class="for-quest">
-        <label for="UsuNombre">Primer Nombre</label>
+        <label for="UsuNombre">Nombre(s)</label>
         <input class="UsuNombre" id="UsuNombre" type="text" name="data[]">
       </div>
       <div class="for-quest">
-        <label for="UsuNombre2" class="notrequired">Segundo Nombre</label>
-        <input class="UsuNombre2" id="UsuNombre2" type="text" name="data[]">
-      </div>
-      <div class="for-quest">
-        <label for="UsuApellido">Primer Apellido</label>
+        <label for="UsuApellido">Apellido(s)</label>
         <input class="UsuApellido" id="UsuApellido" type="text" name="data[]">
-      </div>
-      <div class="for-quest">
-        <label for="UsuApellido2" class="notrequired">Segundo Apellido</label>
-        <input class="UsuApellido2" id="UsuApellido2" type="text" name="data[]">
       </div>
       <div class="for-quest">
         <label for="UsuTelefono" class="notrequired">Telefono</label>

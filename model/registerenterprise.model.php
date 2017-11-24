@@ -41,7 +41,7 @@ class RegisterenterpriseModel
   {
     try
     {
-      $sql = "SELECT emp_correo FROM empresa WHERE emp_correo = ?";
+      $sql = "CALL ConsultarEmpEmail(?)";
 
       $query = $this->pdo->prepare($sql);
 
@@ -60,7 +60,7 @@ class RegisterenterpriseModel
   {
     try
     {
-      $sql = "SELECT emp_nit, fk_rol_id, emp_correo FROM empresa WHERE emp_nit = ?";
+      $sql = "CALL ConsultarEmpId(?)";
 
       $query = $this->pdo->prepare($sql);
 
