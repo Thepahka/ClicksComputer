@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2017 a las 05:50:14
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Tiempo de generación: 24-11-2017 a las 21:46:02
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,12 +24,20 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `usu_correo` VARCHAR(30))  BEGIN
-SELECT usu_correo, fk_rol_id, usu_num_doc FROM usuario WHERE usu_correo = usu_correo;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `correo` VARCHAR(50))  BEGIN
+SELECT usu_correo FROM usuario WHERE correo = usu_correo;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarId` (IN `usu_num_doc` BIGINT(30))  BEGIN
-SELECT usu_correo FROM usuario;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpEmail` (IN `correo` VARCHAR(50))  BEGIN
+SELECT emp_correo FROM empresa WHERE correo = emp_correo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpId` (IN `nit` BIGINT)  BEGIN
+SELECT emp_nit FROM empresa WHERE nit = emp_nit;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarId` (IN `documento` BIGINT(30))  BEGIN
+SELECT usu_num_doc FROM usuario WHERE documento = usu_num_doc;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(20), IN `emp_contra` VARCHAR(20), IN `fk_rol_id` INT)  BEGIN
@@ -42,8 +48,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Guardarpc` (IN `pc_id` INT, IN `pc_
 INSERT INTO pc (pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id) VALUES(pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarUsuario` (IN `usu_num_doc` BIGINT, `usu_nom` VARCHAR(30), `usu_nom2` VARCHAR(30), `usu_ape` VARCHAR(30), `usu_ape2` VARCHAR(30), `usu_tel` INT, `usu_correo` VARCHAR(30), `usu_nac` DATE, `usu_contra` VARCHAR(20), `fk_rol_id` INT)  BEGIN
-INSERT INTO usuario(usu_num_doc, usu_nom, usu_nom2, usu_ape, usu_ape2, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id) VALUES (usu_num_doc, usu_nom, usu_nom2, usu_ape, usu_ape2, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarUsuario` (IN `usu_num_doc` BIGINT, IN `usu_nom` VARCHAR(50), IN `usu_ape` VARCHAR(50), IN `usu_tel` INT, IN `usu_correo` VARCHAR(50), IN `usu_nac` DATE, IN `usu_contra` VARCHAR(20), IN `fk_rol_id` INT)  BEGIN
+INSERT INTO usuario(usu_num_doc, usu_nom, usu_ape, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id) VALUES (usu_num_doc, usu_nom, usu_ape, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id);
 END$$
 
 DELIMITER ;
@@ -108,7 +114,7 @@ CREATE TABLE `empresa` (
   `emp_dir` varchar(20) NOT NULL,
   `emp_desc` text NOT NULL,
   `emp_tel` int(11) NOT NULL,
-  `emp_correo` varchar(20) NOT NULL,
+  `emp_correo` varchar(50) NOT NULL,
   `emp_contra` varchar(20) NOT NULL,
   `fk_rol_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -345,7 +351,7 @@ CREATE TABLE `rol` (
 --
 
 INSERT INTO `rol` (`rol_id`, `rol_nom`) VALUES
-(1, 'admin'),
+(1, 'empresa'),
 (2, 'usuario');
 
 -- --------------------------------------------------------
@@ -389,12 +395,10 @@ CREATE TABLE `tipopieza` (
 CREATE TABLE `usuario` (
   `usu_id` int(11) NOT NULL,
   `usu_num_doc` bigint(20) NOT NULL,
-  `usu_nom` varchar(30) NOT NULL,
-  `usu_nom2` varchar(30) DEFAULT NULL,
-  `usu_ape` varchar(30) NOT NULL,
-  `usu_ape2` varchar(30) DEFAULT NULL,
+  `usu_nom` varchar(50) NOT NULL,
+  `usu_ape` varchar(50) NOT NULL,
   `usu_tel` int(11) DEFAULT NULL,
-  `usu_correo` varchar(30) NOT NULL,
+  `usu_correo` varchar(50) NOT NULL,
   `usu_nac` date NOT NULL,
   `usu_contra` varchar(20) NOT NULL,
   `fk_rol_id` int(11) NOT NULL
@@ -404,9 +408,10 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_nom2`, `usu_ape`, `usu_ape2`, `usu_tel`, `usu_correo`, `usu_nac`, `usu_contra`, `fk_rol_id`) VALUES
-(26, 9909251364112, 'sergio', 'esteban', 'cifuentes', 'arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$HEIrDcxkqudhu', 2),
-(29, 99092513641, 'sergio', 'esteban', 'cifuentes', 'arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$SecqbP6A4q5/i', 2);
+INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_ape`, `usu_tel`, `usu_correo`, `usu_nac`, `usu_contra`, `fk_rol_id`) VALUES
+(1, 11, 'bb', 'bb', 45, 'hola@gmail.com', '2017-11-15', 'yo', 1),
+(52, 99092513641, 'Sergio Esteban', 'Cifuentes Arango', 2085072, 'scifuentesarango@misena.edu.com', '1999-09-25', '$2y$10$024QMJjsD41aU', 2),
+(54, 1026451245, 'dagobert', 'suarez agudelo', 5465241, 'dagoberts@hotmail.com', '1998-08-29', '$2y$10$7R47VzHqTbKM5', 2);
 
 --
 -- Índices para tablas volcadas
@@ -609,7 +614,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 --
 -- Restricciones para tablas volcadas
 --
@@ -730,7 +735,6 @@ ALTER TABLE `pi_inv`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
