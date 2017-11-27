@@ -21,18 +21,20 @@
 
     public function ConsultEmail()
     {
-      $email = $_POST["data"];
+      $comprobar = $_POST["data"];
 
-      $comprobar = $email[0];
+      $_SESSION["correoelectronico"] = $comprobar;
 
-      $result=$this->login->ValidateEmail($comprobar);
+      $email = $comprobar[0];
 
-      if($comprobar == "")
+      $result = $this->login->ValidateEmail($email);
+
+      if($email == "")
       {
         echo '<script language="javascript">alert("Debe completar el campo con un correo");</script>';
         echo "<script>history.back(1)</script>";
       }
-      elseif($result[0] == $comprobar)
+      elseif($result[0] == $email)
       {
         header("Location: Pass");
       }
@@ -41,25 +43,30 @@
         echo '<script language="javascript">alert("No existe un usuario registrado con ese correo");</script>';
         echo "<script>history.back(1)</script>";
       }
-     }
+    }
 
-    // public function ConsultPassword()
-    // {
-    //   $pass = $_POST["data"];
-    //
-    //   $password = $pass[0];
-    //
-    //   $result = $this->login->ValidatePassword($password);
-    //
-    //   if($result[0] == password_verify($password, PASSWORD_BCRYPT))
-    //   {
-    //       echo '<script language="javascript">alert("Guelcom user");</script>';
-    //   }
-    //   else
-    //   {
-    //     echo '<script language="javascript">alert("puto");</script>';
-    //   }
-    // }
+    public function ConsultPassword()
+    {
+      $comprobarcorreo = $_SESSION["correoelectronico"];
+
+      $comprobarpass = $_POST["data"];
+
+      $pass = $comprobarpass[0];
+
+      $result = $this->login->ValidateEmail($_SESSION["correoelectronico"][0]);
+      
+      if (password_verify($pass,$result[1]))
+      {
+        echo '<script language="javascript">
+        alert("Has iniciado sesion");
+        window.location.href="main";
+        </script>';
+      }else
+      {
+        echo '<script language="javascript">alert("La contraseña no coincide con el correo");</script>';
+        echo "<script>history.back(1)</script>";
+      }
+    }
   }
 
 ?>
