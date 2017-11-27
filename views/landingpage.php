@@ -7,9 +7,7 @@
           especialmente hecho a tu medida y comodidad,
           tambien podras hacer que encuentren a tu empresa mas rapido y facil.</p>
         </div>
-        <div class="btn-registrate">
-          <a class="btn-registrate" href="registro">registrate</a>
-        </div>
+          <a class="btn-registrate" href="Registro">registrate</a>
   </section>
   <section class="vertical">
     <div class="slideback">
