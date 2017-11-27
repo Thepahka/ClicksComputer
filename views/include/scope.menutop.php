@@ -13,7 +13,7 @@ require_once("scope.header.php");
       <ul class="buttons-menu">
         <a class="item" href="tienda">tiendas</a>
         <a class="item" href="pc">productos</a>
-        <a class="item" href="Registro"><i class="fa fa-user-plus" aria-hidden="true"></i>acceder</a>
+        <a class="item" href="Email"><i class="fa fa-user-plus" aria-hidden="true"></i>acceder</a>
       </ul>
     </div>
 </div>

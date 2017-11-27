@@ -198,7 +198,7 @@ div.menu-top ul{
 
 .item:hover{
   transition:all .2s ease-in-out;
-  background: rgba(166, 166, 166, 0.59);
+  background: rgba(166, 166, 166, 0.85);
   color: #ffffff;
 }
 
@@ -214,11 +214,11 @@ div.principal{
  text-align: center;
  position: relative;
  -webkit-filter: brightness(20%);
- filter: brightness(55%);
+ filter: brightness(70%);
 }
 
 div.background2{
- background-image: url(../image/landing/pexels-photo.jpg);
+ background-image: url(../image/landing/compu.jpg);
  background-size: contain;
  background-repeat: no-repeat;
  background-size: cover;
@@ -245,7 +245,6 @@ div.background2{
   text-transform: uppercase;
   color: white;
   font-size: 35px;
-  z-index: 100;
   top: 30vh;
 }
 
@@ -279,40 +278,6 @@ div.logo--principal{
   padding-left: 2%;
 }
 
-footer{
- position: absolute;
- background: #7797d8;
- height: 151px;
- content: "";
- margin-top: -161px;
- transform-origin: top left;
- transform: skewY(-2deg);
- z-index: 100;
-}
-
-.down{
-  padding: 60px;
-  transform-origin: top right;
-  transform: skewY(2deg);
-  text-align: left;
-}
-
-.botton--footer{
-  position: absolute;
-  width: 100%;
-  background-color: #7797d8;
-  height: 25vh;
-  margin-top: -5%;
-  z-index: 2;
-}
-
-.presentacion{
-  width: 710px;
-  margin: 0px;
-  padding: 0px;
-  background-color: #7797d8;
-}
-
 .texto{
   padding: 15px;
   text-align: center;
@@ -322,7 +287,7 @@ footer{
 /*lineas que separan la seccion*/
 
 .slideback{
-  background-image: url(../image/landing/fondo1.jpeg);
+  background: #808080;
   background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
@@ -331,20 +296,6 @@ footer{
   display: flex;
   align-items: center;
   position: relative;
-}
-
-.wrap-fin{
-  background: rgba(18, 53, 224, 0.76);
-  width: 1100px;
-  height: 360px;
-  position: relative;
-  left: 135px;
-  border-radius: 7px 7px;
-  color: white;
-  font-size: 35px;
-  font-family: 'Bree+Serif', sans-serif;
-  top: -66px;
-  text-align: center;
 }
 
 /*fullPage*/
@@ -406,7 +357,7 @@ footer{
   float: left;
   margin: 0;
   padding: 0;
-  width: 700px;
+  width: 1200px;
   height: 300px;
   background: #ccc;
   text-align: center;
@@ -457,7 +408,7 @@ a.control_next {
 
 .body-registroem{
   position: relative;
-  left: 8%;
+  left: 25%;
   top: 2%;
   bottom: 0%;
   background-color: rgba(181, 181, 181, 0.85);
@@ -479,173 +430,13 @@ a.control_next {
   position: relative;
 }
 
-/*diseño inputs registro de empresa*/
-
-.EmpId{
-  position: relative;
-  left: 117px;
-}
-
-.EmpId{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.EmpId:focus{
-  width: 50%;
-}
-
-.EmpNom{
-  position: relative;
-  left: 117px;
-}
-
-.EmpNom{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.EmpNom:focus{
-  width: 50%;
-}
-
-.EmpDir{
-  position: relative;
-  left: 30px;
-}
-
-.EmpDir{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.EmpDir:focus{
-  width: 50%;
-}
-
-.EmpTel{
-  position: relative;
-  left: 30px;
-}
-
-.EmpTel{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.EmpTel:focus{
-  width: 50%;
-}
-
-.EmpCorreo{
-  position: relative;
-  left: 30px;
-}
-
-.EmpCorreo{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.EmpCorreo:focus{
-  width: 50%;
-}
-
-.EmpContra{
-  position: relative;
-  left: 198px;
-}
-
-.EmpContra{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.EmpContra:focus{
-  width: 50%;
-}
-
-.EmpDesc{
-  margin: 0px;
-  width: 570px;
-  height: 127px;
-  resize: none;
-  border-radius: 7px;
-}
-
-.EmpDesc:focus{
-  box-shadow: 2px 4px #454545;
-}
+/**/
 
 .titulo-em{
   font-size: 40px;
   margin-left: 150px;
   color: #ffffff;
   font-family: 'Bree serif', sans-serif;
-}
-
-.inicio-sesionregis{
-background: rgba(145, 184, 177, 0.66);
-position: relative;
-left: 40px;
-height: 430px;
-width: 590px;
-margin: 0px;
-border-radius: 3%;
 }
 
 .mini-fregis{
@@ -657,17 +448,17 @@ border-radius: 3%;
 
 .body-registro{
   position: relative;
-  left: 8%;
-  top: 2%;
-  bottom: 0%;
+  left: 700px;
   background-color: rgba(119, 150, 215, 0.71);
-  width: 50%;
-  padding: 32px;
-  margin: 0px;
+  width: 600px;
+  height: 500px;
+  padding: 30px;
 }
 
-body{
-  background-image: url(../image/registroback.jpg);
+/*input registro*/
+
+.body-register{
+  background-image: url(../image/woman.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
@@ -678,13 +469,6 @@ body{
   position: relative;
 }
 
-.for-quest{
-  font-size: 20px;
-  padding: 2px;
-  color: #ffffff;
-  font-family: 'Barlow Semi Condensed', sans-serif;
-}
-
 .registro-titulo{
   font-size: 40px;
   margin-left: 138px;
@@ -692,225 +476,14 @@ body{
   font-family: 'Bree serif', sans-serif;
 }
 
-/*diseño inputs*/
-
-.UsuId{
-  position: relative;
-  left: 30px;
-}
-
-.UsuId{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuId:focus{
-  width: 60%;
-}
-
-.UsuNombre{
-  position: relative;
-  left: 101px;
-}
-
-.UsuNombre{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuNombre:focus{
-  width: 60%;
-}
-
-.UsuNombre2{
-  position: relative;
-  left: 10px;
-}
-
-.notrequired:after{
-  content: '(Opcional)';
-  font-style: italic;
-}
-
-.UsuNombre2{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuNombre2:focus{
-  width: 60%;
-}
-
-.UsuApellido{
-  position: relative;
-  left: 102px;
-}
-
-.UsuApellido{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuApellido:focus{
-  width: 60%;
-}
-
-.UsuApellido2{
-  position: relative;
-  left: 10px;
-}
-
-.UsuApellido2{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuApellido2:focus{
-  width: 60%;
-}
-
-.UsuTelefono{
-  position: relative;
-  left: 77px;
-}
-
-.UsuTelefono{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuTelefono:focus{
-  width: 60%;
-}
-
-.UsuCorreo{
-  position: relative;
-  left: 78px;
-}
-
-.UsuCorreo{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuCorreo:focus{
-  width: 60%;
-}
-
-.UsuNacimiento{
-  position: relative;
-  left: 59px;
-}
-
-.UsuNacimiento{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuNacimiento:focus{
-  width: 60%;
-}
-
-.UsuContra{
-  position: relative;
-  left: 133px;
-}
-
-.UsuContra{
-  width: 220px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 20px;
-  background-color: white;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 5px 5px 5px 5px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.UsuContra:focus{
-  width: 60%;
-}
+/*botones de formulario*/
 
 .boton-registro{
+  position: relative;
   font-family: 'Fjalla One', sans-serif;
   padding: 10px;
   margin-left: 100px;
-  top: 0px;
+  top: 55px;
   cursor: pointer;
   border-radius: 10px 10px;
   background: #fff;
@@ -924,26 +497,6 @@ body{
  transition: all 1s ease;
 }
 
-.boton-empresa{
-  position: absolute;
-  font-size: 20px;
-  font-family: 'Fjalla One', sans-serif;
-  padding: 10px 30px;
-  bottom: 39px;
-  margin-left: 460px;
-  cursor: pointer;
-  border-radius: 10px 10px;
-  background: #fff;
-  color: #000000;
-  box-shadow: inset 0 0 0 0px #fff;
-}
-
-.boton-empresa:hover{
- background: rgb(152, 202, 255);
- border-radius: 10px;
- transition: all 1s ease;
-}
-
 .btn-mid{
   position: absolute;
   color: #ffffff;
@@ -951,23 +504,6 @@ body{
   bottom: 36px;
   left: 262px;
   font-family: 'Oswald', sans-serif;
-}
-
-.inicio-sesion{
-background: rgba(48, 94, 184, 0.73);
-position: relative;
-left: 40px;
-height: 430px;
-width: 590px;
-margin: 0px;
-border-radius: 3%;
-}
-
-.inicio-sesion{
-  position: relative;
-  margin: 0px;
-  padding: 0px;
-  top: 30px;
 }
 
 .wrap-btn{

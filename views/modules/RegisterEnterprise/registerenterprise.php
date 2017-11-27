@@ -7,13 +7,6 @@
   </head>
   <body class="body-regisem">
     <div class="inicio-sesionregis">
-      <div class="wrap-btn">
-        <i class="fa fa-user-circle fa-5x user-icon" aria-hidden="true"></i>
-        <p class="titulo-sesion">si ya tienes cuenta inicia sesion aqui!</p>
-        <a href="Email"><input type="submit" class="btn-inicio" name="" value="Iniciar Sesion"></a>
-      </div>
-      <p class="mini-fregis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </div>
     <div class="body-registroem">
       <h1 class="titulo-em">Registro de empresa</h1>
     <form class="wrap-formulario" action="Registrado-emp" method="post">

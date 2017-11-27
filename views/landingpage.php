@@ -24,38 +24,16 @@
     <li>SLIDE 4</li>
   </ul>
 </div>
-<div class="green">
-</div>
 </div>
   </section>
   <section class="vertical">
     <div class="background2">
-      <div class="wrap-fin">
           <div class="fin">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            </p>
+            <h4>1.</h4><p>Lorem ipsum on ullamco</p>
+            <h4>2.</h4><p>Lorem ipsum on ullamco</p>
+            <h4>3.</h4><p>Lorem ipsum on ullamco</p>
           </div>
-          <i class="fa fa-desktop fa-4x fin-icon" aria-hidden="true"></i>
-      </div>
     </div>
-    <footer>
-      <div class="down">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun
-      </p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-    </p>
-  </div>
-</footer>
-<div class="botton--footer">
-</div>
-  </section>
-</div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'></script>
 <script type="text/javascript" src="views/assets/js/fullpage.js"></script>
