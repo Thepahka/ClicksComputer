@@ -14,7 +14,7 @@
         <input class="log-email" id="LoginEmail" type="email" placeholder="correo electronico" name="data[]" value="">
       </div>
       <div class="">
-        <input class="log-btn" id="EmailButton" type="submit" name="" value="Validar">
+        <input class="log-btn" id="EmailButton" type="submit" name="" value="Acceder">
       </div>
       <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
     </form>
