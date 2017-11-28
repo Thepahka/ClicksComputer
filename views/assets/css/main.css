@@ -23,24 +23,20 @@ body{
 
 .body-login{
   background-image: url(../image/loginback.jpg);
-  background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 .wrap-login{
-  position: relative;
+  width: 55%;
   padding: 100px;
-  margin: 0px;
-  left: 32%;
-  background: rgba(48, 94, 184, 0.73);
-  border-radius: 4%;
-  top: 32px;
+  background: rgba(148, 101, 47, 0.66);
+  height: 90.3vh;
+  margin-top: 4.5%;
 }
 
 .titulo-up{
@@ -70,20 +66,18 @@ body{
   margin: -25px;
   left: 150px;
   padding: 10px;
-  top: -45px;
+  top: -10px;
   font-family: 'Fjalla One', sans-serif;
   font-size: 20px;
   border-radius: 4px;
+  background: rgb(209, 209, 209);
 }
 
 .log-btn:hover{
-  background: rgb(152, 202, 255);
-  border-radius: 10px;
+  background: rgba(173, 173, 173, 0.85);
   transition: all 1s ease;
   cursor: pointer;
-  -webkit-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
+  color: #ffffff;
 }
 
 
@@ -145,7 +139,9 @@ body{
 }
 
 .mini-foot{
+  position: relative;
   color: #ffffff;
+  top: 70px;
 }
 
 /*menu top*/
@@ -204,7 +200,6 @@ div.menu-top ul{
 
 div.principal{
  background-image: url(../image/landing/teclado.jpg);
- background-size: contain;
  background-repeat: no-repeat;
  background-size: cover;
  height: 100vh;
@@ -212,21 +207,18 @@ div.principal{
  display: flex;
  align-items: center;
  text-align: center;
- position: relative;
  -webkit-filter: brightness(20%);
- filter: brightness(70%);
+ filter: brightness(40%);
 }
 
 div.background2{
  background-image: url(../image/landing/compu.jpg);
- background-size: contain;
  background-repeat: no-repeat;
  background-size: cover;
  height: 100vh;
  width: 100%;
  display: flex;
  align-items: center;
- position: relative;
 }
 
 .titulo{
@@ -237,39 +229,46 @@ div.background2{
 }
 
 .wrap--texto{
-  width: 85%;
+  width: 96%;
   height: 260px;
   position: absolute;
-  left: 120px;
-  font-family: 'Roboto', sans-serif;
+  left: 2%;
+  font-family: 'Barlow Condensed', sans-serif;
   text-transform: uppercase;
   color: white;
-  font-size: 35px;
+  font-size: 45px;
   top: 30vh;
+}
+
+.equipo{
+  color: rgb(46, 194, 209);
 }
 
 .btn-registrate{
   position: absolute;
   width: 250px;
-  height: 55px;
+  height: 46px;
   text-align: center;
-  left: 550px;
-  font-family: 'Roboto', sans-serif;
+  left: 40%;
+  font-family: 'roboto', sans-serif;
   text-transform: uppercase;
   color: white;
-  font-size: 35px;
-  z-index: 100;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
   top: 70vh;
-  background: rgba(33, 33, 33, 0.78);
+  background: transparent;
   color: #ffffff;
-  box-shadow: inset 0 0 0 3px #ffffff;
+  box-shadow: inset 0 0 0 1px rgb(46, 194, 209);
+  border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .btn-registrate:hover{
-  background: rgba(255, 255, 255, 0.59);
-  color: #000000;
-  box-shadow: inset 0 0 0 3px #141414;
-  transition: all 1s ease;
+  background: rgb(46, 194, 209);
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
 div.logo--principal{
@@ -322,11 +321,8 @@ div.logo--principal{
 /*carrusel*/
 
 .wrap-gal{
-  position: relative;
   left: 618px;
   top: -200px;
-  background: rgba(78, 149, 255, 0.86);
-  border-radius: 5%;
 }
 
 .gal{
@@ -420,14 +416,12 @@ a.control_next {
 
 .body-regisem{
   background-image: url(../image/rempresaback.jpg);
-  background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 /**/
@@ -448,53 +442,119 @@ a.control_next {
 
 .body-registro{
   position: relative;
-  left: 700px;
-  background-color: rgba(119, 150, 215, 0.71);
-  width: 600px;
-  height: 500px;
-  padding: 30px;
+  left: 50%;
+  background-color: rgba(46, 194, 209, 0.68);
+  width: 50%;
+  height: 598px;
+  top: 64px;
+  padding: 45px;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #ffffff;
+  font-size: 23px;
 }
 
 /*input registro*/
 
+.UsuId{
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+}
+
+.UsuNombre{
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  left: 110px;
+  position: relative;
+}
+
+.UsuApellido{
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  left: 110px;
+  position: relative;
+}
+
+.UsuTelefono{
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  left: 124px;
+  position: relative;
+}
+
+.UsuCorreo{
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  left: 47px;
+  position: relative;
+}
+
+.UsuNacimiento{
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  left: 29px;
+  position: relative;
+}
+
+.UsuContra{
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  left: 104px;
+  position: relative;
+}
+
+
 .body-register{
   background-image: url(../image/woman.jpg);
-  background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100%;
+  height: cover;
+  width: cover;
   display: flex;
-  align-items: center;
-  position: relative;
 }
 
 .registro-titulo{
   font-size: 40px;
-  margin-left: 138px;
+  left: 22%;
   color: #ffffff;
+  position: relative;
   font-family: 'Bree serif', sans-serif;
+  display: inline-table;
 }
 
 /*botones de formulario*/
 
 .boton-registro{
   position: relative;
-  font-family: 'Fjalla One', sans-serif;
-  padding: 10px;
-  margin-left: 100px;
-  top: 55px;
+  font-family: 'Roboto', sans-serif;
+  padding: 5px;
+  left: 44%;
+  top: 10px;
   cursor: pointer;
   border-radius: 10px 10px;
-  background: #fff;
-  color: #000000;
-  box-shadow: inset 0 0 0 0px #fff;
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: block;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  width: 200px;
 }
 
 .boton-registro:hover{
- background: rgb(152, 202, 255);
- border-radius: 10px;
- transition: all 1s ease;
+    border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.68);
+    font-size: 15px;
+    border-radius: 10px;
+    color: #fff;
+    transition: all 1s ease;
 }
 
 .btn-mid{

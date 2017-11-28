@@ -3,9 +3,8 @@
     <div class="principal">
       </div>
       <div class="wrap--texto">
-        <p class="texto">aqui podras encontrar tu equipo ideal
-          especialmente hecho a tu medida y comodidad,
-          tambien podras hacer que encuentren a tu empresa mas rapido y facil.</p>
+        <p class="texto">aqui podras encontrar tu <a class="equipo">equipo</a> ideal
+          especialmente hecho a tu medida y comodidad,tambien podras <a class="equipo">promocionar</a> tu empresa.</p>
         </div>
           <a class="btn-registrate" href="Registro">registrate</a>
   </section>
