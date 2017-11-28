@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2017 a las 21:46:02
+-- Tiempo de generación: 28-11-2017 a las 23:41:50
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -24,23 +24,39 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `correo` VARCHAR(50))  BEGIN
-SELECT usu_correo FROM usuario WHERE correo = usu_correo;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `correo` VARCHAR(200))  BEGIN
+SELECT usu_correo, usu_contra, fk_rol_id FROM usuario WHERE correo = usu_correo;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpEmail` (IN `correo` VARCHAR(50))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail2` (IN `correo` VARCHAR(100))  BEGIN 
+SELECT emp_correo, emp_contra, fk_rol_id FROM empresa WHERE correo = emp_correo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpEmail` (IN `correo` VARCHAR(200))  BEGIN
 SELECT emp_correo FROM empresa WHERE correo = emp_correo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpEmail2` (IN `correo` VARCHAR(100))  BEGIN
+SELECT usu_correo FROM usuario WHERE correo = usu_correo;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpId` (IN `nit` BIGINT)  BEGIN
 SELECT emp_nit FROM empresa WHERE nit = emp_nit;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpId2` (IN `id` BIGINT)  BEGIN
+SELECT usu_num_doc FROM usuario WHERE id = usu_num_doc;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarId` (IN `documento` BIGINT(30))  BEGIN
 SELECT usu_num_doc FROM usuario WHERE documento = usu_num_doc;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(20), IN `emp_contra` VARCHAR(20), IN `fk_rol_id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarId2` (IN `id` BIGINT)  BEGIN
+SELECT emp_nit FROM empresa WHERE id = emp_nit;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
 INSERT INTO empresa(emp_id, emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id) VALUES (emp_id, emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id);
 END$$
 
@@ -48,7 +64,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Guardarpc` (IN `pc_id` INT, IN `pc_
 INSERT INTO pc (pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id) VALUES(pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarUsuario` (IN `usu_num_doc` BIGINT, IN `usu_nom` VARCHAR(50), IN `usu_ape` VARCHAR(50), IN `usu_tel` INT, IN `usu_correo` VARCHAR(50), IN `usu_nac` DATE, IN `usu_contra` VARCHAR(20), IN `fk_rol_id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarUsuario` (IN `usu_num_doc` BIGINT, IN `usu_nom` VARCHAR(50), IN `usu_ape` VARCHAR(50), IN `usu_tel` INT, IN `usu_correo` VARCHAR(50), IN `usu_nac` DATE, IN `usu_contra` VARCHAR(100), IN `fk_rol_id` INT)  BEGIN
 INSERT INTO usuario(usu_num_doc, usu_nom, usu_ape, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id) VALUES (usu_num_doc, usu_nom, usu_ape, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id);
 END$$
 
@@ -115,7 +131,7 @@ CREATE TABLE `empresa` (
   `emp_desc` text NOT NULL,
   `emp_tel` int(11) NOT NULL,
   `emp_correo` varchar(50) NOT NULL,
-  `emp_contra` varchar(20) NOT NULL,
+  `emp_contra` varchar(200) NOT NULL,
   `fk_rol_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -124,7 +140,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
-(3, 9909251364199, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender electrodomesticos y demas', 2085072, 'pccomponentes@pc.com', '$2y$10$YYyZrrXAE8w7r', 1);
+(6, 123456789, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1);
 
 -- --------------------------------------------------------
 
@@ -351,7 +367,7 @@ CREATE TABLE `rol` (
 --
 
 INSERT INTO `rol` (`rol_id`, `rol_nom`) VALUES
-(1, 'empresa'),
+(1, 'Tienda'),
 (2, 'usuario');
 
 -- --------------------------------------------------------
@@ -400,7 +416,7 @@ CREATE TABLE `usuario` (
   `usu_tel` int(11) DEFAULT NULL,
   `usu_correo` varchar(50) NOT NULL,
   `usu_nac` date NOT NULL,
-  `usu_contra` varchar(20) NOT NULL,
+  `usu_contra` varchar(200) NOT NULL,
   `fk_rol_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -409,9 +425,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_ape`, `usu_tel`, `usu_correo`, `usu_nac`, `usu_contra`, `fk_rol_id`) VALUES
-(1, 11, 'bb', 'bb', 45, 'hola@gmail.com', '2017-11-15', 'yo', 1),
-(52, 99092513641, 'Sergio Esteban', 'Cifuentes Arango', 2085072, 'scifuentesarango@misena.edu.com', '1999-09-25', '$2y$10$024QMJjsD41aU', 2),
-(54, 1026451245, 'dagobert', 'suarez agudelo', 5465241, 'dagoberts@hotmail.com', '1998-08-29', '$2y$10$7R47VzHqTbKM5', 2);
+(6, 99092513641, 'Sergio Esteban', 'Cifuentes Arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$2d/hEWpslV7QaBe2LnivYOJzC/cJ4tA/ZsGvQ7eUgG4hpxKUaa7CC', 2);
 
 --
 -- Índices para tablas volcadas
@@ -609,12 +623,12 @@ ALTER TABLE `com_pie`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Restricciones para tablas volcadas
 --
