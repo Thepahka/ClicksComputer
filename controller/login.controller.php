@@ -29,12 +29,18 @@
 
       $result = $this->login->ValidateEmail($email);
 
+      $result2 = $this->login->ValidateEmail2($email);
+
       if($email == "")
       {
         echo '<script language="javascript">alert("Debe completar el campo con un correo");</script>';
         echo "<script>history.back(1)</script>";
       }
       elseif($result[0] == $email)
+      {
+        header("Location: Pass");
+      }
+      elseif($result2[0] == $email)
       {
         header("Location: Pass");
       }
@@ -54,14 +60,24 @@
       $pass = $comprobarpass[0];
 
       $result = $this->login->ValidateEmail($_SESSION["correoelectronico"][0]);
-      
-      if (password_verify($pass,$result[1]))
+
+      $result2 = $this->login->ValidateEmail2($_SESSION["correoelectronico"][0]);
+
+      if(password_verify($pass,$result[1]))
       {
         echo '<script language="javascript">
-        alert("Has iniciado sesion");
+        alert("Guelcom user");
         window.location.href="main";
         </script>';
-      }else
+      }
+      elseif(password_verify($pass,$result2[1]))
+      {
+        echo '<script language="javascript">
+        alert("Guelcom tienda");
+        window.location.href="main";
+        </script>';
+      }
+      else
       {
         echo '<script language="javascript">alert("La contraseña no coincide con el correo");</script>';
         echo "<script>history.back(1)</script>";

@@ -27,14 +27,23 @@
 
       $result2 = $this->register->ValidateExistsId($comprobeId);
 
+      $result3 = $this->register->ValidateExistsEmail2($comprobeEmail);
+
+      $result4 = $this->register->ValidateExistsId2($comprobeId);
+
       if($data[0] =="")
       {
         echo '<script language="javascript">alert("Se debe completar el campo Documento de identidad");</script>';
         echo "<script>history.back(1)</script>";
       }
+      elseif($comprobeId == $result4[0])
+      {
+        echo '<script language="javascript">alert("Ya existe un usuario/empresa registrado con ese documento/NIT");</script>';
+        echo "<script>history.back(1)</script>";
+      }
       elseif($comprobeId == $result2[0])
       {
-        echo '<script language="javascript">alert("Ya existe un usuario registrado con ese documento");</script>';
+        echo '<script language="javascript">alert("Ya existe un usuario/empresa registrado con ese documento/NIT");</script>';
         echo "<script>history.back(1)</script>";
       }
       elseif($data[4] =="")
@@ -42,9 +51,14 @@
         echo '<script language="javascript">alert("Se debe completar el campo Correo electronico");</script>';
         echo "<script>history.back(1)</script>";
       }
+      elseif($comprobeEmail == $result3[0])
+      {
+        echo '<script language="javascript">alert("Ya existe un usuario/empresa registrado con ese correo electronico");</script>';
+        echo "<script>history.back(1)</script>";
+      }
       elseif($comprobeEmail == $result[0])
       {
-        echo '<script language="javascript">alert("Ya existe un usuario registrado con ese correo electronico");</script>';
+        echo '<script language="javascript">alert("Ya existe un usuario/empresa registrado con ese correo electronico");</script>';
         echo "<script>history.back(1)</script>";
       }
       else
@@ -91,7 +105,7 @@
         }
         echo "<script>history.back(1)</script>";
       }
-      }
+    }
 
   }
 

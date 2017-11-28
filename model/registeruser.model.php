@@ -55,11 +55,50 @@ class RegisteruserModel
     }
     return $result;
   }
+
+  public function ValidateExistsEmail2($comprobeEmail)
+  {
+    try
+    {
+      $sql = "CALL ConsultarEmail2(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($comprobeEmail));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
   public function ValidateExistsId($comprobeId)
   {
     try
     {
       $sql = "CALL ConsultarId(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($comprobeId));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
+  public function ValidateExistsId2($comprobeId)
+  {
+    try
+    {
+      $sql = "CALL ConsultarId2(?)";
 
       $query = $this->pdo->prepare($sql);
 

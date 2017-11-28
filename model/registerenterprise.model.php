@@ -55,12 +55,51 @@ class RegisterenterpriseModel
     }
     return $result;
   }
+  public function ValidateEnterpriseEmail2($comprobeEmailEnterprise)
+  {
+    try
+    {
+      $sql = "CALL ConsultarEmpEmail2(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($comprobeEmailEnterprise));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
 
   public function ValidateEnterpriseId($comprobeIdEnterprise)
   {
     try
     {
       $sql = "CALL ConsultarEmpId(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($comprobeIdEnterprise));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+
+  }
+
+  public function ValidateEnterpriseId2($comprobeIdEnterprise)
+  {
+    try
+    {
+      $sql = "CALL ConsultarEmpId2(?)";
 
       $query = $this->pdo->prepare($sql);
 
