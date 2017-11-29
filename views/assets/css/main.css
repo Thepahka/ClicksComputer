@@ -32,7 +32,7 @@ body{
 }
 
 .wrap-login{
-  width: 55%;
+  width: 700px;
   padding: 100px;
   background: rgba(148, 101, 47, 0.66);
   height: 90.3vh;
@@ -41,17 +41,18 @@ body{
 
 .titulo-up{
   position: relative;
-  padding: 80px;
+  padding: 40px;
   top: -100px;
+  left: 25%;
   color: #ffffff;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .email-icon{
   position: relative;
   color: #ffffff;
-  top: -130px;
-  left: 120px;
+  top: -100px;
+  left: 40%;
 }
 
 .pass-icon{
@@ -64,9 +65,9 @@ body{
 .log-btn{
   position: relative;
   margin: -25px;
-  left: 150px;
+  left: 44%;
   padding: 10px;
-  top: -10px;
+  top: 60px;
   font-family: 'Fjalla One', sans-serif;
   font-size: 20px;
   border-radius: 4px;
@@ -132,8 +133,8 @@ body{
 
 .log-email{
   position: relative;
-  left: 14px;
-  top: -100px;
+  left: 16%;
+  top: -20px;
   width: 300px;
   text-align: center;
 }
@@ -141,7 +142,8 @@ body{
 .mini-foot{
   position: relative;
   color: #ffffff;
-  top: 70px;
+  top: 140px;
+  left: 16%;
 }
 
 /*menu top*/
@@ -241,6 +243,10 @@ div.background2{
 }
 
 .equipo{
+  color: rgb(46, 194, 209);
+}
+
+.equipo:hover{
   color: rgb(46, 194, 209);
 }
 
@@ -459,6 +465,10 @@ a.control_next {
   font-size: 15px;
   margin: 10px;
   width: 300px;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .UsuNombre{
@@ -467,6 +477,10 @@ a.control_next {
   width: 300px;
   left: 110px;
   position: relative;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .UsuApellido{
@@ -475,6 +489,10 @@ a.control_next {
   width: 300px;
   left: 110px;
   position: relative;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .UsuTelefono{
@@ -483,6 +501,10 @@ a.control_next {
   width: 300px;
   left: 124px;
   position: relative;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .UsuCorreo{
@@ -491,6 +513,10 @@ a.control_next {
   width: 300px;
   left: 47px;
   position: relative;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .UsuNacimiento{
@@ -499,6 +525,10 @@ a.control_next {
   width: 300px;
   left: 29px;
   position: relative;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .UsuContra{
@@ -507,6 +537,10 @@ a.control_next {
   width: 300px;
   left: 104px;
   position: relative;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 

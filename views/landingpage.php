@@ -4,7 +4,7 @@
       </div>
       <div class="wrap--texto">
         <p class="texto">aqui podras encontrar tu <a class="equipo">equipo</a> ideal
-          especialmente hecho a tu medida y comodidad,tambien podras <a class="equipo">promocionar</a> tu empresa.</p>
+          especialmente hecho a tu medida y comodidad, tambien podras <a class="equipo">promocionar</a> tu empresa.</p>
         </div>
           <a class="btn-registrate" href="Registro">registrate</a>
   </section>
