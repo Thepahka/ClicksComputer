@@ -19,3 +19,8 @@ RewriteRule ^ConsultaP$ index.php?c=login&a=ConsultPassword
 
 #Pc
 RewriteRule ^Registrar-Computador$ index.php?c=pc&a=ViewsSavePc
+
+#Shop
+RewriteRule ^MyDashboard$ index.php?c=shop&a=shopDashboard
+#Shop
+RewriteRule ^CerrarSesion$ index.php?c=shop&a=SessionOff

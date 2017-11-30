@@ -65,16 +65,21 @@
 
       if(password_verify($pass,$result[1]))
       {
+        $_SESSION["user"]["correo"] = $comprobarcorreo;
+        $_SESSION["user"]["contra"] = $pass;
         echo '<script language="javascript">
         alert("Guelcom user");
         window.location.href="main";
         </script>';
+
       }
       elseif(password_verify($pass,$result2[1]))
       {
+        $_SESSION["user"]["correo"] = $comprobarcorreo;
+        $_SESSION["user"]["contra"] = $pass;
         echo '<script language="javascript">
         alert("Guelcom tienda");
-        window.location.href="main";
+        window.location.href="MyDashboard";
         </script>';
       }
       else
