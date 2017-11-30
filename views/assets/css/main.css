@@ -19,6 +19,10 @@ body{
   top: 0;
 }
 
+input{
+  background: #f2f2f2;
+}
+
 /*diseño de login*/
 
 .body-login{
@@ -75,7 +79,7 @@ body{
   display: block;
   padding: 7px;
   top: 70vh;
-  background: transparent;
+  background: rgba(145, 255, 197, 0.64);
   color: #ffffff;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -143,7 +147,7 @@ body{
 .log-email{
   position: relative;
   left: 16%;
-  top: -20px;
+  top: -10px;
   width: 300px;
   text-align: center;
 }
@@ -201,6 +205,7 @@ div.menu-top ul{
   text-transform: uppercase;
   font-weight: lighter;
   font-family: 'Oswald', sans-serif;
+  transition:all .2s ease-in-out;
 }
 
 .item:hover{
@@ -419,14 +424,15 @@ a.control_next {
 
 .body-registroem{
   position: relative;
-  left: 25%;
-  top: 2%;
+  left: 0%;
+  top: 26px;
   bottom: 0%;
   background-color: rgba(181, 181, 181, 0.85);
-  width: 50%;
-  height: 96vh;
-  padding: 30px;
-  margin: 0px;
+  width: 130%;
+  font-family: 'Barlow Condensed', sans-serif;
+  height: 90.5vh;
+  color: #ffffff;
+  font-size: 23px;
 }
 
 .body-regisem{
@@ -439,9 +445,103 @@ a.control_next {
   align-items: center;
 }
 
-/**/
+
+/*inputs de registro empresa*/
+
+.EmpId{
+  position: relative;
+  left: 20px;
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.EmpNom{
+  position: relative;
+  left: 20px;
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+textarea{
+  resize: none;
+  background: #f2f2f2;
+}
+
+.EmpDir{
+  position: relative;
+  left: 10px;
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.EmpDesc{
+  position: relative;
+    display: -webkit-box;
+  left: 20px;
+  font-size: 15px;
+  margin: 10px;
+  width: 494px;
+  height: 62px;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.EmpTel{
+  position: relative;
+  left: 20px;
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.EmpCorreo{
+  position: relative;
+  left: 34px;
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.EmpContra{
+  position: relative;
+  left: 112px;
+  font-size: 15px;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #DBE1EB;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
 
 .titulo-em{
+  position: relative;
+  top: 50px;
   font-size: 40px;
   margin-left: 150px;
   color: #ffffff;
@@ -457,15 +557,21 @@ a.control_next {
 
 .body-registro{
   position: relative;
+  padding-top: 3%;
   left: 50%;
   background-color: rgba(46, 194, 209, 0.68);
   width: 50%;
-  height: 598px;
-  top: 64px;
-  padding: 45px;
+  height: 90.5vh;
+  top: 63px;
   font-family: 'Barlow Condensed', sans-serif;
   color: #ffffff;
   font-size: 23px;
+}
+
+.wrap-formulario{
+  left: 88px;
+  position: relative;
+  top: 50px;
 }
 
 /*input registro*/
@@ -577,7 +683,7 @@ a.control_next {
   position: relative;
   font-family: 'Roboto', sans-serif;
   padding: 5px;
-  left: 44%;
+  left: 38%;
   top: 10px;
   cursor: pointer;
   border-radius: 10px 10px;
@@ -585,10 +691,11 @@ a.control_next {
   font-size: 15px;
   text-transform: uppercase;
   display: block;
-  background: transparent;
+  background: #ffffff;
   border: 1px solid white;
-  color: white;
+  color: black;
   width: 200px;
+  transition: all 1s ease;
 }
 
 .boton-registro:hover{
@@ -646,4 +753,49 @@ a.control_next {
   color: #ffffff;
   margin: 20px;
   left: 230px;
+}
+
+.foot-titulo{
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(133, 133, 133);
+  left: 40%;
+  top: -67px;
+}
+
+.paso1{
+  position: relative;
+  font-family: 'Archivo Black', sans-serif;
+  color: rgb(42, 161, 205);
+  left: 60%;
+  top: -10px;
+  font-size: 48px
+}
+
+.paso2{
+  position: relative;
+  font-family: 'Archivo Black', sans-serif;
+  color: rgb(42, 161, 205);
+  left: 70%;
+  top: 10px;
+  font-size: 48px
+}
+
+.paso3{
+  position: relative;
+  font-family: 'Archivo Black', sans-serif;
+  color: rgb(42, 161, 205);
+  left: 80%;
+  top: 30px;
+  font-size: 48px
+}
+
+.footer-l{
+  background: rgba(167, 189, 252, 0.77);
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0%;
+  display: block;
+  z-index: 100;
 }
