@@ -68,14 +68,14 @@ body{
   height: 46px;
   text-align: center;
   left: 19%;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'roboto', sans-serif;
   text-transform: uppercase;
   color: white;
   font-size: 20px;
   display: block;
   padding: 7px;
   top: 70vh;
-  background: rgba(251, 214, 152, 0.65);
+  background: transparent;
   color: #ffffff;
   border-radius: 8px;
   transition: all 0.3s ease;
