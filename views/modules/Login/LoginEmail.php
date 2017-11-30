@@ -9,7 +9,7 @@
     <div class="wrap-login">
     <form class="formulario" action="Consulta" method="post">
       <h2 class="titulo-up">iniciar sesion</h2>
-      <i class="fa fa-envelope email-icon fa-5x" aria-hidden="true"></i>
+      <i class="fa fa-envelope email-icon fa-4x" aria-hidden="true"></i>
       <div class="contain-login">
         <input class="log-email" id="LoginEmail" type="email" placeholder="correo electronico" name="data[]" value="">
       </div>
