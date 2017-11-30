@@ -28,11 +28,14 @@
   <section class="vertical">
     <div class="background2">
           <div class="fin">
-            <h4>1.</h4><p>Lorem ipsum on ullamco</p>
-            <h4>2.</h4><p>Lorem ipsum on ullamco</p>
-            <h4>3.</h4><p>Lorem ipsum on ullamco</p>
+            <h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1>
+            <h4 class="paso1">1.</h4><p class="paso 1">ten en cuenta tus estudios o empleos.</p>
+            <h4 class="paso2">2.</h4><p class="paso 2">debes saber cuanto tienes ahorrado o tu bolsillo.</p>
+            <h4 class="paso3">3.</h4><p class="paso 3">REGISTRATE EN NUESTRA PAGINA Y BUSCA SEGURA Y CONFIABLEMENTE!!!</p>
+            <div class="footer-l"> :v</div>
           </div>
     </div>
+    </section>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'></script>
 <script type="text/javascript" src="views/assets/js/fullpage.js"></script>
