@@ -29,9 +29,9 @@
     <div class="background2">
           <div class="fin">
             <h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1>
-            <h4 class="paso1">1.</h4><p class="paso 1">ten en cuenta tus estudios o empleos.</p>
-            <h4 class="paso2">2.</h4><p class="paso 2">debes saber cuanto tienes ahorrado o tu bolsillo.</p>
-            <h4 class="paso3">3.</h4><p class="paso 3">REGISTRATE EN NUESTRA PAGINA Y BUSCA SEGURA Y CONFIABLEMENTE!!!</p>
+            <h4 class="paso1">1.</h4><p class="paso-1">ten en cuenta tus estudios o empleos.</p>
+            <h4 class="paso2">2.</h4><p class="paso-2">debes saber cuanto dinero posees.</p>
+            <h4 class="paso3">3.</h4><p class="paso-3">REGISTRATE EN NUESTRA PAGINA Y BUSCA SEGURA Y CONFIABLEMENTE!!!</p>
             <div class="footer-l"> :v</div>
           </div>
     </div>
