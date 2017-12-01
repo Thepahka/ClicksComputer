@@ -31,6 +31,8 @@
 
       $result2 = $this->login->ValidateEmail2($email);
 
+      $_SESSION["nom"] = $result2[3];
+
       if($email == "")
       {
         echo '<script language="javascript">alert("Debe completar el campo con un correo");</script>';
@@ -55,6 +57,8 @@
     {
       $comprobarcorreo = $_SESSION["correoelectronico"];
 
+      $comprobarname = $_SESSION["nom"];
+
       $comprobarpass = $_POST["data"];
 
       $pass = $comprobarpass[0];
@@ -67,6 +71,8 @@
       {
         $_SESSION["user"]["correo"] = $comprobarcorreo;
         $_SESSION["user"]["contra"] = $pass;
+        $_SESSION["user"]["nombre"] = $comprobarname;
+        $_SESSION["user"]["auth"] = true;
         echo '<script language="javascript">
         alert("Guelcom user");
         window.location.href="main";
@@ -77,6 +83,8 @@
       {
         $_SESSION["user"]["correo"] = $comprobarcorreo;
         $_SESSION["user"]["contra"] = $pass;
+        $_SESSION["user"]["nombre"] = $comprobarname;
+        $_SESSION["user"]["auth"] = true;
         echo '<script language="javascript">
         alert("Guelcom tienda");
         window.location.href="MyDashboard";

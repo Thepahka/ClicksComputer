@@ -12,15 +12,26 @@ class ShopController
 
   public function shopDashboard()
   {
+    if (isset($_SESSION["user"]["auth"]) && $_SESSION["user"]["auth"] == true)
+    {
+    }
+    else
+    {
+      header("Location: Email");
+    }
+    require_once "views/include/scope.header.php";
     require_once "views/modules/Shop_User/Shop/DashboardShop.php";
+    require_once "views/include/scope.footershop.php";
   }
 
   public function SessionOff()
   {
+      session_destroy();
       echo "<script language='javascript'>
       alert('Cerraste Sesion');
       window.location.href='Email';
       </script>";
   }
+
 }
 ?>

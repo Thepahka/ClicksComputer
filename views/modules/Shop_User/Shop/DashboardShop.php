@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>MyDashboard</title>
-    <a href="CerrarSesion"><input type="submit" value="Cerrar Sesion"></a></input>
-  </head>
-  <body>
-    tobienpa?
-  </body>
-</html>
+<?php
+echo "Gestion"." ".($_SESSION["user"]["nombre"]);
+?>
+<a href="CerrarSesion"> <input type="submit" name="" value="Cerrar Sesion"></a>

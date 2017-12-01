@@ -16,6 +16,26 @@ class ShopModel
     }
   }
 
+  public function selectname()
+  {
+    try
+    {
+      $sql = "CALL ConsultarTienda(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($_SESSION["user"]["name"]));
+
+      $result = $query->fetch(FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
 }
 
 ?>
