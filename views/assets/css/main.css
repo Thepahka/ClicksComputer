@@ -429,7 +429,7 @@ a.control_next {
   bottom: 0%;
   background-color: rgba(181, 181, 181, 0.85);
   width: 130%;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'roboto', sans-serif;
   height: 90.5vh;
   color: #ffffff;
   font-size: 23px;
@@ -479,7 +479,7 @@ textarea{
 
 .EmpDir{
   position: relative;
-  left: 10px;
+  left: 8px;
   font-size: 15px;
   margin: 10px;
   width: 300px;
@@ -492,7 +492,7 @@ textarea{
 .EmpDesc{
   position: relative;
     display: -webkit-box;
-  left: 20px;
+  left: 16px;
   font-size: 15px;
   margin: 10px;
   width: 494px;
@@ -505,7 +505,7 @@ textarea{
 
 .EmpTel{
   position: relative;
-  left: 20px;
+  left: 13px;
   font-size: 15px;
   margin: 10px;
   width: 300px;
@@ -529,7 +529,7 @@ textarea{
 
 .EmpContra{
   position: relative;
-  left: 112px;
+  left: 135px;
   font-size: 15px;
   margin: 10px;
   width: 300px;
@@ -563,7 +563,7 @@ textarea{
   width: 50%;
   height: 90.5vh;
   top: 63px;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'roboto', sans-serif;
   color: #ffffff;
   font-size: 23px;
 }
@@ -590,7 +590,7 @@ textarea{
   font-size: 15px;
   margin: 10px;
   width: 300px;
-  left: 110px;
+  left: 140px;
   position: relative;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
@@ -602,7 +602,7 @@ textarea{
   font-size: 15px;
   margin: 10px;
   width: 300px;
-  left: 110px;
+  left: 140px;
   position: relative;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
@@ -614,7 +614,7 @@ textarea{
   font-size: 15px;
   margin: 10px;
   width: 300px;
-  left: 124px;
+  left: 160px;
   position: relative;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
@@ -626,7 +626,7 @@ textarea{
   font-size: 15px;
   margin: 10px;
   width: 300px;
-  left: 47px;
+  left: 60px;
   position: relative;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
@@ -638,7 +638,7 @@ textarea{
   font-size: 15px;
   margin: 10px;
   width: 300px;
-  left: 29px;
+  left: 33px;
   position: relative;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
@@ -650,7 +650,7 @@ textarea{
   font-size: 15px;
   margin: 10px;
   width: 300px;
-  left: 104px;
+  left: 131px;
   position: relative;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
@@ -683,7 +683,7 @@ textarea{
   position: relative;
   font-family: 'Roboto', sans-serif;
   padding: 5px;
-  left: 38%;
+  left: 43%;
   top: 10px;
   cursor: pointer;
   border-radius: 10px 10px;
@@ -759,35 +759,61 @@ textarea{
   position: relative;
   font-family: 'Montserrat', sans-serif;
   color: rgb(133, 133, 133);
-  left: 40%;
-  top: -67px;
+  left: 24%;
+  top: -10px;
 }
 
 .paso1{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
-  color: rgb(42, 161, 205);
-  left: 60%;
-  top: -10px;
-  font-size: 48px
+  color: #ff5dab;
+  left: 41%;
+  top: -4px;
+  font-size: 50px
 }
 
 .paso2{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
-  color: rgb(42, 161, 205);
-  left: 70%;
+  color: #ff5dab;
+  left: 26%;
   top: 10px;
-  font-size: 48px
+  font-size: 50px
 }
 
 .paso3{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
-  color: rgb(42, 161, 205);
-  left: 80%;
+  color: #ff5dab;
+  left: 5%;
   top: 30px;
-  font-size: 48px
+  font-size: 50px
+}
+
+.paso-1{
+  position: relative;
+  left: 47%;
+  font-size: 40px;
+  font-family: 'roboto', sans-serif;
+  top: -78px;
+}
+
+.paso-2{
+  position: relative;
+  left: 32%;
+  font-size: 40px;
+  font-family: 'roboto', sans-serif;
+  top: -64px;
+}
+
+.paso-3{
+  position: relative;
+  left: 11%;
+  font-size: 36px;
+  font-family: 'roboto', sans-serif;
+  top: -40px;
+  text-transform: lowercase;
+
 }
 
 .footer-l{
