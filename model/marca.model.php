@@ -20,7 +20,7 @@ class MarcaModel
   {
     try
     {
-      $sql = "CALL ConsultarMarca";
+      $sql = "SELECT * FROM marca";
 
       $query = $this->pdo->prepare($sql);
 

@@ -12,6 +12,13 @@
 
     public function ViewsSavePc()
     {
+      if (isset($_SESSION["user"]["auth"]) && $_SESSION["user"]["auth"] == true)
+      {
+      }
+      else
+      {
+        header("Location: Email");
+      }
       require_once "views/modules/Pcs/CreatePc.php";
     }
 
