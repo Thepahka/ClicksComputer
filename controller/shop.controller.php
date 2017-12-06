@@ -19,9 +19,7 @@ class ShopController
     {
       header("Location: Email");
     }
-    require_once "views/include/scope.header.php";
     require_once "views/modules/Shop_User/Shop/DashboardShop.php";
-    require_once "views/include/scope.footershop.php";
   }
 
   public function SessionOff()

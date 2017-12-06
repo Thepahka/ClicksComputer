@@ -825,3 +825,53 @@ textarea{
   display: block;
   z-index: 100;
 }
+
+/*dashboard*/
+
+.item-dash{
+  position: relative;
+  display: inline-table;
+  font-size: 20px;
+  padding: 20px 10px;
+  left: 103px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-family: 'Oswald', sans-serif;
+  transition:all .2s ease-in-out;
+}
+
+.item-dash:hover{
+  transition:all .2s ease-in-out;
+  background: rgba(166, 166, 166, 0.85);
+  color: #ffffff;
+}
+
+.body-dash{
+  background-image: url(../image/dashback.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: cover;
+  width: cover;
+  display: flex;
+}
+
+.EnterpriseProfile{
+  position: relative;
+  background: rgba(190, 163, 141, 0.73);
+  left: 0%;
+  width: 320px;
+  top: 11%;
+  height: 89vh;
+}
+
+.img-enterprise{
+  width: 200px;
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 180px;
+  margin: 10px 60px;
+}
+
+.enterprise-name{
+  color: #ffffff;
+}
