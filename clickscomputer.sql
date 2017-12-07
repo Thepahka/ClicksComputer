@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2017 a las 23:41:50
+-- Tiempo de generación: 07-12-2017 a las 18:37:50
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -29,7 +29,7 @@ SELECT usu_correo, usu_contra, fk_rol_id FROM usuario WHERE correo = usu_correo;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail2` (IN `correo` VARCHAR(100))  BEGIN 
-SELECT emp_correo, emp_contra, fk_rol_id FROM empresa WHERE correo = emp_correo;
+SELECT emp_correo, emp_contra, fk_rol_id, emp_nom FROM empresa WHERE correo = emp_correo;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpEmail` (IN `correo` VARCHAR(200))  BEGIN
@@ -54,6 +54,14 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarId2` (IN `id` BIGINT)  BEGIN
 SELECT emp_nit FROM empresa WHERE id = emp_nit;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarMarca` ()  BEGIN
+SELECT * FROM marca;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTienda` (IN `nombre` VARCHAR(20))  BEGIN
+SELECT emp_nombre FROM empresa WHERE nombre = emp_nombre;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
@@ -140,7 +148,8 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
-(6, 123456789, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1);
+(6, 123456789, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
+(7, 987654321, 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1);
 
 -- --------------------------------------------------------
 
@@ -242,7 +251,7 @@ CREATE TABLE `inventario` (
 --
 
 CREATE TABLE `marca` (
-  `mar_id` int(11) NOT NULL,
+  `mar_id` bigint(11) NOT NULL,
   `mar_nombre` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -261,7 +270,7 @@ INSERT INTO `marca` (`mar_id`, `mar_nombre`) VALUES
 --
 
 CREATE TABLE `mar_pc` (
-  `fk_mar_id` int(11) NOT NULL,
+  `fk_mar_id` bigint(11) NOT NULL,
   `fk_pc_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -279,7 +288,7 @@ INSERT INTO `mar_pc` (`fk_mar_id`, `fk_pc_id`) VALUES
 --
 
 CREATE TABLE `mar_pie` (
-  `fk_mar_id` int(11) NOT NULL,
+  `fk_mar_id` bigint(11) NOT NULL,
   `fk_pi_cod` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -291,6 +300,7 @@ CREATE TABLE `mar_pie` (
 
 CREATE TABLE `pc` (
   `pc_id` int(11) NOT NULL,
+  `pc_cod` bigint(20) NOT NULL,
   `pc_nom` varchar(50) NOT NULL,
   `pc_desc` text NOT NULL,
   `pc_mod` varchar(50) NOT NULL,
@@ -302,8 +312,8 @@ CREATE TABLE `pc` (
 -- Volcado de datos para la tabla `pc`
 --
 
-INSERT INTO `pc` (`pc_id`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_tipopc_id`, `ficha_tecnica`) VALUES
-(1, 'marta', 'marta', 'marta', 1, 'marta');
+INSERT INTO `pc` (`pc_id`, `pc_cod`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_tipopc_id`, `ficha_tecnica`) VALUES
+(1, 0, 'marta', 'marta', 'marta', 1, 'marta');
 
 -- --------------------------------------------------------
 
@@ -623,7 +633,12 @@ ALTER TABLE `com_pie`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de la tabla `pc`
+--
+ALTER TABLE `pc`
+  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
@@ -645,8 +660,8 @@ ALTER TABLE `cli_emp`
 --
 ALTER TABLE `com_pc`
   ADD CONSTRAINT `com_pc_ibfk_1` FOREIGN KEY (`fk_com_id`) REFERENCES `comentarios` (`com_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `com_pc_ibfk_2` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `com_pc_ibfk_3` FOREIGN KEY (`fk_usu_id`) REFERENCES `usuario` (`usu_id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `com_pc_ibfk_3` FOREIGN KEY (`fk_usu_id`) REFERENCES `usuario` (`usu_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `com_pc_ibfk_4` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `com_pie`
@@ -666,8 +681,8 @@ ALTER TABLE `empresa`
 -- Filtros para la tabla `emp_pc`
 --
 ALTER TABLE `emp_pc`
-  ADD CONSTRAINT `emp_pc_ibfk_2` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `emp_pc_ibfk_3` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `emp_pc_ibfk_3` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `emp_pc_ibfk_4` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `emp_pie`
@@ -687,8 +702,8 @@ ALTER TABLE `fil_pc`
 -- Filtros para la tabla `gal_pc`
 --
 ALTER TABLE `gal_pc`
-  ADD CONSTRAINT `gal_pc_ibfk_1` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `gal_pc_ibfk_2` FOREIGN KEY (`fk_gal_id`) REFERENCES `galeria` (`gal_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `gal_pc_ibfk_2` FOREIGN KEY (`fk_gal_id`) REFERENCES `galeria` (`gal_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `gal_pc_ibfk_3` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `gal_pie`
@@ -701,15 +716,15 @@ ALTER TABLE `gal_pie`
 -- Filtros para la tabla `mar_pc`
 --
 ALTER TABLE `mar_pc`
-  ADD CONSTRAINT `mar_pc_ibfk_2` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `mar_pc_ibfk_3` FOREIGN KEY (`fk_mar_id`) REFERENCES `marca` (`mar_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `mar_pc_ibfk_1` FOREIGN KEY (`fk_mar_id`) REFERENCES `marca` (`mar_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `mar_pc_ibfk_2` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `mar_pie`
 --
 ALTER TABLE `mar_pie`
-  ADD CONSTRAINT `mar_pie_ibfk_1` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `mar_pie_ibfk_2` FOREIGN KEY (`fk_mar_id`) REFERENCES `marca` (`mar_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `mar_pie_ibfk_1` FOREIGN KEY (`fk_mar_id`) REFERENCES `marca` (`mar_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `mar_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pc`
@@ -721,15 +736,15 @@ ALTER TABLE `pc`
 -- Filtros para la tabla `pc_inv`
 --
 ALTER TABLE `pc_inv`
-  ADD CONSTRAINT `pc_inv_ibfk_1` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `pc_inv_ibfk_2` FOREIGN KEY (`fk_inv_id`) REFERENCES `inventario` (`inv_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `pc_inv_ibfk_2` FOREIGN KEY (`fk_inv_id`) REFERENCES `inventario` (`inv_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `pc_inv_ibfk_3` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pc_pie`
 --
 ALTER TABLE `pc_pie`
-  ADD CONSTRAINT `pc_pie_ibfk_1` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `pc_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `pc_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `pc_pie_ibfk_3` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `piezas`
