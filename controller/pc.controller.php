@@ -24,16 +24,98 @@
 
     public function SaveNewPc()
     {
-      try
-      {
-        $data = $_POST["data"];
+      $data = $_POST["data"];
 
-        $result = $this->savepc->newPc($data);
-      }
-      catch(PDOException $e)
+      $marca = $data[6];
+
+      $pc = $data[0];
+
+      $tipo = $data[4];
+
+      $result2 = $this->savepc->newPc2($marca);
+
+      $result4 = $this->savepc->ConsultPc($pc);
+
+      $_SESSION["marca"]["id"] = $result2[0];
+
+      $result5 = $this->savepc->Consulttype($tipo);
+
+
+      if(strtolower($data[4]) == "")
       {
-        $result = $e->getMessage();
+        echo '<script language="javascript">alert("Se debe completar el campo Tipo de computador");</script>';
+        echo "<script>history.back(1)</script>";
       }
+      if(strtolower($data[4]) == strtolower($result5[1]))
+      {
+      }
+      elseif(strtolower($data[6]) == "")
+      {
+        echo '<script language="javascript">alert("Se debe completar el campo Marca del computador");</script>';
+        echo "<script>history.back(1)</script>";
+      }
+      elseif(strtolower($data[6]) == strtolower($result2[1]))
+      {
+        $result = $this->savepc->newPc3($data);
+      }
+      else
+      {
+        if($data[0] == "")
+        {
+          echo '<script language="javascript">alert("Se debe completar el campo Codigo del computador");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif($data[0] == $result4[1])
+        {
+          echo '<script language="javascript">alert("Ya existe un computador registrado con ese codigo");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif($data[1] == "")
+        {
+          echo '<script language="javascript">alert("Se debe completar el campo nombre del computador");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif($data[2] == "")
+        {
+          echo '<script language="javascript">alert("Se debe completar el campo Descripcion del computador");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif($data[3] == "")
+        {
+          echo '<script language="javascript">alert("Se debe completar el campo Modelo del computador");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif($data[5] == "")
+        {
+          if($data[0] == "")
+          {
+            echo '<script language="javascript">alert("Se debe completar el campo Codigo del computador");</script>';
+            echo "<script>history.back(1)</script>";
+          }
+          elseif($data[0] == $result4[1])
+          {
+            echo '<script language="javascript">alert("Ya existe un computador registrado con ese codigo");</script>';
+            echo "<script>history.back(1)</script>";
+          }
+          elseif($data[1] == "")
+          {
+            echo '<script language="javascript">alert("Se debe completar el campo nombre del computador");</script>';
+            echo "<script>history.back(1)</script>";
+          }
+          elseif($data[2] == "")
+          {
+            echo '<script language="javascript">alert("Se debe completar el campo Descripcion del computador");</script>';
+            echo "<script>history.back(1)</script>";
+          }
+          elseif($data[3] == "")
+          {
+            echo '<script language="javascript">alert("Debe montar un archivo que contenga la ficha tecnica del computador");</script>';
+            echo "<script>history.back(1)</script>";
+          }
+          elseif
+        }
+      }
+
     }
 
     public function ReadPcId($data)

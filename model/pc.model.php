@@ -20,11 +20,11 @@ class PcModel
   {
     try
     {
-      $sql = "CALL GuardarPc(?,?,?,?,?,?)";
+      $sql = "CALL GuardarPc(?,?,?,?,?,?,?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5]));
+      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6]));
 
       $msn = "Se guardo con exito";
     }
@@ -35,7 +35,84 @@ class PcModel
 
     return $msn;
   }
+  public function newPc2($marca)
+  {
+    try
+    {
+      $sql = "CALL ConsultarMarca(?)";
 
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array(strtolower($marca)));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
+  public function newPc3($data)
+  {
+    try
+    {
+      $sql = "CALL GuardarMarcaExistente(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($_SESSION["marca"]["id"],$data[0]));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
+  public function ConsultPc($pc)
+  {
+    try
+    {
+      $sql = "CALL ConsultarPc(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($pc));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+  public function Consulttype($tipo)
+  {
+    try
+    {
+      $sql = "CALL ConsultarTipo(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array(strtolower($tipo)));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
 
   public function readPcById($data)
   {
