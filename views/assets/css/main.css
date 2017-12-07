@@ -29,8 +29,6 @@ input{
   background-image: url(../image/loginback.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -239,7 +237,7 @@ div.background2{
 
 .titulo{
   display: inline-flex;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Oswald', sans-serif;
   margin: 10px;
   padding: 42px;
 }
@@ -425,7 +423,7 @@ a.control_next {
 .body-registroem{
   position: relative;
   left: 0%;
-  top: 26px;
+  top: 24px;
   bottom: 0%;
   background-color: rgba(181, 181, 181, 0.85);
   width: 130%;
@@ -436,15 +434,12 @@ a.control_next {
 }
 
 .body-regisem{
-  background-image: url(../image/rempresaback.jpg);
+  background-image: url(../image/remback.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100%;
   display: flex;
   align-items: center;
 }
-
 
 /*inputs de registro empresa*/
 
@@ -663,8 +658,6 @@ textarea{
   background-image: url(../image/woman.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: cover;
-  width: cover;
   display: flex;
 }
 
@@ -725,7 +718,7 @@ textarea{
 .titulo-sesion{
   position: relative;
   top: 40px;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 27px;
   text-align: center;
   color: #ffffff;
@@ -831,9 +824,9 @@ textarea{
 .item-dash{
   position: relative;
   display: inline-table;
+  right: -2%;
   font-size: 20px;
   padding: 20px 10px;
-  left: 103px;
   text-transform: uppercase;
   font-weight: lighter;
   font-family: 'Oswald', sans-serif;
@@ -847,11 +840,11 @@ textarea{
 }
 
 .body-dash{
-  background-image: url(../image/dashback.jpg);
+  background-image: url(../image/dashback.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: cover;
-  width: cover;
+  height: 100vh;
+  width: 100%;
   display: flex;
 }
 
@@ -874,4 +867,63 @@ textarea{
 
 .enterprise-name{
   color: #ffffff;
+}
+
+.enterprise-name{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+  justify-content: flex-start;
+  padding-bottom: 25px;
+}
+
+.wrap-nav{
+  position: relative;
+  padding: 20px;
+  background: rgba(204, 175, 151, 0.81);
+  width: 70%;
+  height: 80vh;
+  left: 3%;
+  top: 16%;
+  border-radius: 15px;
+}
+
+.nav-btns{
+  text-align: -webkit-right;
+}
+
+.gest-pc{
+  color: rgb(255, 255, 255);
+  font-size: 23px;
+  background: #FFB171;
+  padding: 10px 8px;
+  border-radius: 4px;
+  font-family: 'Oswald',sans-serif;
+  transition:all .2s ease-in-out;
+}
+
+.gest-pc:hover{
+  transition:all .2s ease-in-out;
+  background: rgba(226, 211, 182, 0.79);
+  color: #000000;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.modalwindow{
+  background: rgba(0, 0, 0, 0.72);
+  position: fixed;
+  opacity: 0;
+  z-index: -2;
+  -moz-transition: opacity 2s;
+}
+
+/*diseño de gestiones en perfil*/
+
+.gest{
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  font-family: 'roboto', sans-serif;
+  margin: 0px 70px;
+  padding: 10px 0px;
+  display: inline-block;
 }
