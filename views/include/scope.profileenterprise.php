@@ -3,7 +3,15 @@
     <img class="img-enterprise" src="views/assets/image/default.jpg" alt="enterpriseP">
   </div>
   <div class="enterprise-name">
-    <h2>cc</h2>
-    <small>clickscomputer</small>
+    <?php
+   echo ($_SESSION["user"]["nombre"]);
+  ?>
+  </div>
+  <div class="gestion">
+    <a class="gest" href="#">Gestionar productos</a>
+    <a class="gest" href="#">Gestionar perfil</a>
+    <a class="gest" href="#">Gestionar categorias</a>
+    <a class="gest" href="#">Gestionar proveedores</a>
+    <a class="gest" href="#">Gestionar marcas</a>
   </div>
 </div>
