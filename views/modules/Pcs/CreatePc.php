@@ -8,7 +8,7 @@
     </header>
   </head>
   <body>
-    <form class="" action="" method="post">
+    <form class="" action="Registro-Completado" method="post">
       <div class="">
         <label for="CreateId">Codigo del articulo</label>
         <input id="CreateId" type="text" name="data[]">
@@ -27,15 +27,19 @@
       </div>
       <div class="">
         <label for="CreateTip">Tipo de computador</label>
-        <select id="CreateTip" name="data[]">
-          <option value="">Seleccione</option>
-        </select>
+        <input id="CreateTip" type="text" name="data[]">
+        </input>
       </div>
       <div class="">
+        <label for="CreateFicha">Ficha tecnica del computador</label>
+        <input id="CreateFicha" type="text" name="data[]">
+      </div>
+      <!-- <div class="">
         <label for="CreateMarca">Marca del computador</label>
-        <select id="CreateMarca" name="data[]">
-        <option>Seleccione</option>
-        </select>
+        <input id="CreateMarca" type="text" name="data[]">
+      </div> -->
+      <div class="">
+        <input id="CreateEnter" type="submit" value="Registrar">
       </div>
     </form>
   </body>

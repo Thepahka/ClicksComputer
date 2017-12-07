@@ -20,11 +20,11 @@ class PcModel
   {
     try
     {
-      $sql = 'CALL Guardarpc(pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica, fk_tipopc_id)';
+      $sql = "CALL GuardarPc(?,?,?,?,?,?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6]));
+      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5]));
 
       $msn = "Se guardo con exito";
     }
@@ -41,7 +41,7 @@ class PcModel
   {
     try
     {
-      $sql = "SELECT * from tipopc INNER JOIN pc ON tipopc.tipopc_id=pc.fk_tipopc_id INNER JOIN mar_pc ON mar_pc.fk_pc_id=pc.pc_id INNER JOIN marca ON marca.mar_id=mar_pc.fk_mar_id WHERE pc.pc_id = ?";
+      $sql = "SELECT * from tipopc INNER JOIN pc ON tipopc.tipopc_id=pc.fk_tipopc_id INNER JOIN mar_pc ON mar_pc.fk_pc_id=pc.pc_cod INNER JOIN marca ON marca.mar_id=mar_pc.fk_mar_id WHERE pc.pc_cod = ?";
 
       $query = $this->pdo->prepare($sql);
 

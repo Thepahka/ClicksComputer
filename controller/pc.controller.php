@@ -24,11 +24,16 @@
 
     public function SaveNewPc()
     {
-      $data = $_POST["data"];
+      try
+      {
+        $data = $_POST["data"];
 
-      $result = $this->savepc->newPc($data);
-
-      echo "Se guardo el computador con exito";
+        $result = $this->savepc->newPc($data);
+      }
+      catch(PDOException $e)
+      {
+        $result = $e->getMessage();
+      }
     }
 
     public function ReadPcId($data)
