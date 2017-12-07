@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2017 a las 18:37:50
+-- Tiempo de generación: 07-12-2017 a las 23:08:33
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -56,20 +56,32 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarId2` (IN `id` BIGINT)  BEG
 SELECT emp_nit FROM empresa WHERE id = emp_nit;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarMarca` ()  BEGIN
-SELECT * FROM marca;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarMarca` (IN `marca` VARCHAR(30))  BEGIN
+SELECT * FROM marca WHERE marca = mar_nombre;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarPc` (IN `computador` VARCHAR(30))  BEGIN 
+SELECT * FROM pc WHERE computador = pc_cod;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTienda` (IN `nombre` VARCHAR(20))  BEGIN
 SELECT emp_nombre FROM empresa WHERE nombre = emp_nombre;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTipo` (IN `tipo` VARCHAR(30))  BEGIN
+SELECT * FROm tipopc WHERE tipo = tipopc_nom;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
 INSERT INTO empresa(emp_id, emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id) VALUES (emp_id, emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Guardarpc` (IN `pc_id` INT, IN `pc_nom` VARCHAR(30), IN `pc_desc` TEXT, IN `pc_mod` VARCHAR(50), IN `fk_tipopc_id` INT, IN `ficha_tecnica` VARCHAR(30))  BEGIN
-INSERT INTO pc (pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id) VALUES(pc_id, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarMarcaExistente` (IN `marcaid` BIGINT, IN `pcid` INT)  BEGIN 
+INSERT INTO mar_pc (fk_mar_id, fk_pc_id) VALUES (marcaid, pcid);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Guardarpc` (IN `pc_cod` BIGINT, IN `pc_nom` VARCHAR(30), IN `pc_desc` TEXT, IN `pc_mod` VARCHAR(50), IN `fk_tipopc_id` INT, IN `ficha_tecnica` VARCHAR(30), IN `pc_precio` BIGINT)  BEGIN
+INSERT INTO pc (pc_cod, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id, pc_precio) VALUES(pc_cod, pc_nom, pc_desc, pc_mod, ficha_tecnica,fk_tipopc_id, pc_precio);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarUsuario` (IN `usu_num_doc` BIGINT, IN `usu_nom` VARCHAR(50), IN `usu_ape` VARCHAR(50), IN `usu_tel` INT, IN `usu_correo` VARCHAR(50), IN `usu_nac` DATE, IN `usu_contra` VARCHAR(100), IN `fk_rol_id` INT)  BEGIN
@@ -260,8 +272,8 @@ CREATE TABLE `marca` (
 --
 
 INSERT INTO `marca` (`mar_id`, `mar_nombre`) VALUES
-(1, 'Lenovo'),
-(2, 'Alienware');
+(1, 'lenovo'),
+(2, 'alienware');
 
 -- --------------------------------------------------------
 
@@ -305,15 +317,17 @@ CREATE TABLE `pc` (
   `pc_desc` text NOT NULL,
   `pc_mod` varchar(50) NOT NULL,
   `fk_tipopc_id` int(11) NOT NULL,
-  `ficha_tecnica` varchar(50) NOT NULL
+  `ficha_tecnica` varchar(50) NOT NULL,
+  `pc_precio` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `pc`
 --
 
-INSERT INTO `pc` (`pc_id`, `pc_cod`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_tipopc_id`, `ficha_tecnica`) VALUES
-(1, 0, 'marta', 'marta', 'marta', 1, 'marta');
+INSERT INTO `pc` (`pc_id`, `pc_cod`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_tipopc_id`, `ficha_tecnica`, `pc_precio`) VALUES
+(1, 1, 'marta', 'marta', 'marta', 1, 'marta', 5),
+(3, 2, 'asdsa', 'asdsad', 'ada', 3, 'sprint review n2.docx', 12500);
 
 -- --------------------------------------------------------
 
@@ -638,7 +652,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
-  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
