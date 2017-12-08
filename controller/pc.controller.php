@@ -40,26 +40,8 @@
 
       $result5 = $this->savepc->Consulttype($tipo);
 
+      $_SESSION["tipo"]["nom"] = $result5[1];
 
-      if(strtolower($data[4]) == "")
-      {
-        echo '<script language="javascript">alert("Se debe completar el campo Tipo de computador");</script>';
-        echo "<script>history.back(1)</script>";
-      }
-      if(strtolower($data[4]) == strtolower($result5[1]))
-      {
-      }
-      elseif(strtolower($data[6]) == "")
-      {
-        echo '<script language="javascript">alert("Se debe completar el campo Marca del computador");</script>';
-        echo "<script>history.back(1)</script>";
-      }
-      elseif(strtolower($data[6]) == strtolower($result2[1]))
-      {
-        $result = $this->savepc->newPc3($data);
-      }
-      else
-      {
         if($data[0] == "")
         {
           echo '<script language="javascript">alert("Se debe completar el campo Codigo del computador");</script>';
@@ -67,12 +49,12 @@
         }
         elseif($data[0] == $result4[1])
         {
-          echo '<script language="javascript">alert("Ya existe un computador registrado con ese codigo");</script>';
+          echo '<script language="javascript">alert("Lo lamento ya existe un computador registrado con ese codigo");</script>';
           echo "<script>history.back(1)</script>";
         }
         elseif($data[1] == "")
         {
-          echo '<script language="javascript">alert("Se debe completar el campo nombre del computador");</script>';
+          echo '<script language="javascript">alert("Se debe completar el campo Nombre del computador");</script>';
           echo "<script>history.back(1)</script>";
         }
         elseif($data[2] == "")
@@ -85,38 +67,60 @@
           echo '<script language="javascript">alert("Se debe completar el campo Modelo del computador");</script>';
           echo "<script>history.back(1)</script>";
         }
+        elseif($data[4] == "")
+        {
+          echo '<script language="javascript">alert("Se debe completar el campo Tipo de computador");</script>';
+          echo "<script>history.back(1)</script>";
+        }
         elseif($data[5] == "")
         {
-          if($data[0] == "")
+          echo '<script language="javascript">alert("Debe adjuntar la ficha tecnica del computador");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif($data[6] == "")
+        {
+          echo '<script language="javascript">alert("Debe llenar el campo Marca del computador");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif($data[7] == "")
+        {
+          echo '<script language="javascript">alert("Se debe completar el campo Precio del computador");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        else
+        {
+          if(strtolower($result2[1]) == strtolower($data[6]))
           {
-            echo '<script language="javascript">alert("Se debe completar el campo Codigo del computador");</script>';
-            echo "<script>history.back(1)</script>";
+            if(strtolower($result5[1]) == strtolower($data[4]))
+            {
+              $result = $this->savepc->newPc($data);
+              $result2 = $this->savepc->newPc3($data);
+              echo '<script language="javascript">
+              alert("Computador registrado con exito!");
+              </script>';
+            }
+            else
+            {
+              $result = $this->savepc->newPc($data);
+              $result2 = $this->savepc->newPc3($data);
+              $result3 = $this->savepc->newPc4($data);
+              echo '<script language="javascript">
+              alert("Computador registrado con exito!");
+              </script>';
+            }
           }
-          elseif($data[0] == $result4[1])
+          else
           {
-            echo '<script language="javascript">alert("Ya existe un computador registrado con ese codigo");</script>';
-            echo "<script>history.back(1)</script>";
+            $result = $this->savepc->newPc($data);
+            $result3 = $this->savepc->newPc4($data);
+            $result3 = $this->savepc->newPc5($data);
+            $result2 = $this->savepc->newPc3($data);
+            echo '<script language="javascript">
+            alert("Computador registrado con exito!")
+            </script>';
           }
-          elseif($data[1] == "")
-          {
-            echo '<script language="javascript">alert("Se debe completar el campo nombre del computador");</script>';
-            echo "<script>history.back(1)</script>";
-          }
-          elseif($data[2] == "")
-          {
-            echo '<script language="javascript">alert("Se debe completar el campo Descripcion del computador");</script>';
-            echo "<script>history.back(1)</script>";
-          }
-          elseif($data[3] == "")
-          {
-            echo '<script language="javascript">alert("Debe montar un archivo que contenga la ficha tecnica del computador");</script>';
-            echo "<script>history.back(1)</script>";
-          }
-          elseif
         }
       }
-
-    }
 
     public function ReadPcId($data)
     {

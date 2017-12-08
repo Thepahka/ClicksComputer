@@ -94,6 +94,7 @@ class PcModel
 
     return $result;
   }
+
   public function Consulttype($tipo)
   {
     try
@@ -103,6 +104,43 @@ class PcModel
       $query = $this->pdo->prepare($sql);
 
       $query->execute(array(strtolower($tipo)));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+  }
+
+  public function newPc4($data)
+  {
+    try
+    {
+      $sql = "CALL GuardarTipo(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($_SESSION["tipo"]["nom"]));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+  public function newPc5($data)
+  {
+    try
+    {
+      $sql = "CALL GuardarMarca(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($_SESSION["tipo"]["nom"]));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }

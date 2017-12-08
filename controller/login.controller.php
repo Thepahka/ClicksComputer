@@ -86,7 +86,7 @@
         $_SESSION["user"]["nombre"] = $comprobarname;
         $_SESSION["user"]["auth"] = true;
         echo '<script language="javascript">
-        alert("Guelcom tienda");
+        alert("Bienvendido");
         window.location.href="MyDashboard";
         </script>';
       }
