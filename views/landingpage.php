@@ -7,6 +7,7 @@
           especialmente hecho a tu medida y comodidad, tambien podras <a class="equipo">promocionar</a> tu empresa.</p>
         </div>
           <a class="btn-registrate" href="Registro">registrate</a>
+          <a class="btn-registraem" href="Registro-Empresa">registrar una empresa</a>
   </section>
   <section class="vertical">
     <div class="slideback">
