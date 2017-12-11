@@ -25,3 +25,9 @@ RewriteRule ^Registro-Completado$ index.php?c=pc&a=SaveNewPc
 RewriteRule ^MyDashboard$ index.php?c=shop&a=shopDashboard
 #Shop
 RewriteRule ^CerrarSesion$ index.php?c=shop&a=SessionOff
+
+#Marcas
+RewriteRule ^GestionMarcas$ index.php?c=marca&a=ViewMarca
+RewriteRule ^NuevaMarca$ index.php?c=marca&a=ViewNewMarca
+RewriteRule ^ActualizarMarcas$ index.php?c=marca&a=ViewUpdateMarca
+RewriteRule ^CrearMarca$ index.php?c=marca&a=CreateMarca

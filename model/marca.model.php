@@ -16,19 +16,75 @@ class MarcaModel
     }
   }
 
-  public function readMarca()
+  public function newMarca($marca)
   {
     try
     {
-      $sql = "SELECT * FROM marca";
+      $sql = "CALL GuardarMarca(?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute();
+      $query->execute(array($marca));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }
-    catch(PDOEXception $e)
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+  public function newMarca2()
+  {
+    try
+    {
+      $sql = "CALL GuardarMarca2(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($_SESSION["emp"]["id"], $_SESSION["emp"]["idmar"]));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
+  public function ConsultIdEmp()
+  {
+    try
+    {
+      $sql = "CALL ConsultarIdEmpresa(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute($_SESSION["user"]["correo"]);
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
+  public function ConsultMarca($marca)
+  {
+    try
+    {
+      $sql = "CALL ConsultarMarca(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array(strtolower($marca)));
+
+      $result = $query->fetch(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
     {
       $result = $e->getMessage();
     }

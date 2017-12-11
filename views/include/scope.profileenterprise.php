@@ -8,10 +8,9 @@
   ?>
   </div>
   <div class="gestion">
-    <a class="gest" href="#">Gestionar productos</a>
-    <a class="gest" href="#">Gestionar perfil</a>
-    <a class="gest" href="#">Gestionar categorias</a>
-    <a class="gest" href="#">Gestionar proveedores</a>
-    <a class="gest" href="#">Gestionar marcas</a>
+    <a class="gest" href="">Gestionar productos</a>
+    <a class="gest" href="">Gestionar perfil</a>
+    <a class="gest" href="">Gestionar categorias</a>
+    <a class="gest" href="GestionMarcas">Mis marcas</a>
   </div>
 </div>
