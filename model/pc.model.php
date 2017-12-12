@@ -95,7 +95,7 @@ class PcModel
     return $result;
   }
 
-  public function Consulttype($tipo)
+  public function consultType($tipo)
   {
     try
     {
@@ -103,7 +103,7 @@ class PcModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array(strtolower($tipo)));
+      $query->execute(array($tipo));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }
@@ -132,7 +132,7 @@ class PcModel
 
     return $result;
   }
-  public function newPc5($data)
+  public function newPc5($marca)
   {
     try
     {
@@ -140,7 +140,7 @@ class PcModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($_SESSION["tipo"]["nom"]));
+      $query->execute(array(strtolower($marca)));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }

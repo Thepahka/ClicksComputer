@@ -18,8 +18,12 @@ RewriteRule ^Consulta$ index.php?c=login&a=ConsultEmail
 RewriteRule ^ConsultaP$ index.php?c=login&a=ConsultPassword
 
 #Pc
-RewriteRule ^Registrar-Computador$ index.php?c=pc&a=ViewsSavePc
-RewriteRule ^Registro-Completado$ index.php?c=pc&a=SaveNewPc
+RewriteRule ^Registrar-Computador$ index.php?c=pc&a=ViewsSavePc1
+RewriteRule ^Registrar-Computador2$ index.php?c=pc&a=ViewsSavePc2
+RewriteRule ^Registrar-Computador3$ index.php?c=pc&a=ViewsSavePc
+RewriteRule ^Registro1$ index.php?c=pc&a=Step1
+RewriteRule ^Registro2$ index.php?c=pc&a=Step2
+
 
 #Shop
 RewriteRule ^MyDashboard$ index.php?c=shop&a=shopDashboard
