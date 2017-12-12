@@ -33,9 +33,20 @@
             <h4 class="paso1">1.</h4><p class="paso-1">ten en cuenta tus estudios o empleos.</p>
             <h4 class="paso2">2.</h4><p class="paso-2">debes saber cuanto dinero posees.</p>
             <h4 class="paso3">3.</h4><p class="paso-3">REGISTRATE EN NUESTRA PAGINA Y BUSCA SEGURA Y CONFIABLEMENTE!!!</p>
-            <div class="footer-l"> :v</div>
           </div>
     </div>
+    		<footer class="footer-final">
+    			<p class="footer-c">final</p>
+    			<p class="footer-links">
+    				<a href="#">informacion</a>
+    				·
+    				<a href="#">Contactos</a>
+    				<a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+    				<a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+    				<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    			</p>
+    			<p class="footer-cname">clickscomputer &copy; 2017</p>
+    		</footer>
     </section>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'></script>

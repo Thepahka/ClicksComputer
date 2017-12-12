@@ -1,5 +1,187 @@
-@media screen (max-width: 800px){
-  a.object{
-    margin-left: -10%;
+/*
+author: yesid
+company: clickscomputer
+update: actualizaciones fecha y lo que se actualiza
+
+CONTENT RYLES MEDIA CSS
+*/
+@media (max-width: 800px){
+
+  /*MENU TOP*/
+
+  .item{
+    display: none;
   }
+
+
+  /*landing*/
+
+  .menu-top{
+    width: 100%;
+  }
+
+  .wrap--texto{
+    height: 100vh;
+    margin-top: -15%;
+    position:absolute;
+  }
+
+ .texto{
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  .right{
+    display:none;
+  }
+
+  .btn-registrate{
+    padding-right: 10px;
+    margin-left: -22%;
+  }
+
+  .btn-registraem{
+    padding-right: 10px;
+    margin-left: -22%;
+  }
+
+  /*registro*/
+
+  .body-registro{
+    margin-left: -50%;
+    width: 100%;
+    padding: 0px;
+  }
+
+  .wrap-formulario {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+  .registro-titulo{
+    font-size: 30px;
+    left: 8%;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    font-family: 'Bree serif', sans-serif;
+    display: inline-table;
+  }
+
+  .UsuId{
+    font-size: 15px;
+    margin: 0px 68px;
+    width: 200px;
+    left: 0px;
+    position: relative;
+    border: 1px solid #DBE1EB;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+
+  .UsuNombre{
+    font-size: 15px;
+    margin: 0px 68px;
+    width: 200px;
+    left: 0px;
+    position: relative;
+    border: 1px solid #DBE1EB;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+
+  .UsuApellido{
+    font-size: 15px;
+    margin: 0px 68px;
+    width: 200px;
+    left: 0px;
+    position: relative;
+    border: 1px solid #DBE1EB;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+
+  .UsuTelefono{
+    font-size: 15px;
+    margin: 0px 68px;
+    width: 200px;
+    left: 0px;
+    position: relative;
+    border: 1px solid #DBE1EB;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+
+  .UsuCorreo {
+    font-size: 15px;
+    margin: 0px 68px;
+    width: 200px;
+    left: 0px;
+    position: relative;
+    border: 1px solid #DBE1EB;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+  .UsuContra{
+    font-size: 15px;
+    margin: 0px 68px;
+    width: 200px;
+    left: 0px;
+    position: relative;
+    border: 1px solid #DBE1EB;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+
+  .UsuNacimiento {
+    font-size: 15px;
+    margin: 0px 68px;
+    width: 200px;
+    left: 0px;
+    position: relative;
+    border: 1px solid #DBE1EB;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+  .boton-registro{
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    left: 16%;
+    top: 10px;
+    cursor: pointer;
+    border-radius: 10px 10px;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: block;
+    background: #ffffff;
+    border: 1px solid white;
+    color: black;
+    width: 200px;
+    transition: all 1s ease;
+  }
+  label {
+    font-size: 20px;
+    text-align: center;
+    left: 76px;
+    position: relative;
+}
+
+input{
+  display: block;
+  margin: 0px 0px;
+}
+
 }
