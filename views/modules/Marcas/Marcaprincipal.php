@@ -9,17 +9,11 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
   </head>
+  <body class="body-dash">
 
-  <body>
-    <a href="NuevaMarca"><input type="submit" name="" value="Registrar nueva marca"></a>
-    <h1>Mis marcas</h1>
-    <table id="marcas">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Acciones</th>
-            </tr>
-    </table>
+    <?php require_once 'views/include/scope.menutopdashboard.php';
+    require_once 'views/include/scope.profileenterprise.php';
+    require_once 'views/include/scope.createmarca.php';?>
     <script type="text/javascript" src="views/assets/js/datagrid.js"></script>
   </body>
 </html>

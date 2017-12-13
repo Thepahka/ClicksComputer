@@ -1,4 +1,12 @@
 <div class="wrap-nav">
+  <h1>Mis marcas</h1>
+  <table id="marcas">
+      <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Acciones</th>
+          </tr>
+  </table>
   <div class="nav-btns">
     <a class="gest-pc" id="myBtn">Registrar marca</a>
   </div>
