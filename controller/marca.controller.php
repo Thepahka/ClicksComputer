@@ -33,27 +33,27 @@ class MarcaController
 
     $result2 = $this->marca->ConsultMarca($marca);
 
-    $_SESSION["emp"]["id"] = $result[0];
+    $_SESSION["user"]["idmar"] = $result2[0];
+    $_SESSION["user"]["idemp"] = $result[0];
 
-    $_SESSION["emp"]["idmar"] = $result2[0];
-
-    if(strtolower($data[0]) == strtolower($result2[1]))
+    if($data[0] == "")
     {
-      $result3 = $this->marca->newMarca2($_SESSION["emp"]["id"], $_SESSION["emp"]["idmar"]);
-      echo '<script language="javascript">
-      alert("Se registro la marca con exito");
-      // window.location.href="MyDashboard";
-      </script>';
+      echo '<script language="javascript">alert("Completa el campo con el nombre de la marca que desea registrar");</script>';
+      echo "<script>history.back(1)</script>";
     }
     else
     {
-      $result4 = $this->marca->newMarca($marca);
-      $result3 = $this->marca->newMarca2($_SESSION["emp"]["id"], $_SESSION["emp"]["idmar"]);
-      // echo '<script language="javascript">
-      // alert("Se registro la marca con exito");
-      // // window.location.href="MyDashboard";
-      // </script>';
+      if($marca == $result2[1])
+      {
+        $this->marca->newMarca($_SESSION["user"]["idmar"], $_SESSION["user"]["correo"]);
+        echo '<script language="javascript">
+        alert("Marca registrada con exito");
+        window.location.href="GestionMarcas"
+        </script>';
+      }
     }
+
+
   }
 
   public function Read()

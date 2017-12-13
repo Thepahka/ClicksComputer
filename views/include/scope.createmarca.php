@@ -13,8 +13,11 @@
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-    <p class="model-textp">marca niu</p>
-    <a href="NuevaMarca"><input type="submit">marca de awa</a>
+    <p class="model-textp">Registrar nueva marca</p>
+    <form class="" action="CrearMarca" method="post">
+      <input type="text" name="data[]" value="">
+      <input type="submit" value="Registrar marca">
+    </form>
   </div>
 </div>
 <script type="text/javascript" src="views/assets/js/modal.js"></script>

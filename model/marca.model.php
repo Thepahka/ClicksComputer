@@ -16,33 +16,16 @@ class MarcaModel
     }
   }
 
-  public function newMarca($marca)
+
+  public function newMarca()
   {
     try
     {
-      $sql = "CALL GuardarMarca(?)";
+      $sql = "CALL GuardarMarca(?,?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($marca));
-
-      $result = $query->fetch(PDO::FETCH_BOTH);
-    }
-    catch(PDOException $e)
-    {
-      $result = $e->getMessage();
-    }
-    return $result;
-  }
-  public function newMarca2()
-  {
-    try
-    {
-      $sql = "CALL GuardarMarca2(?,?)";
-
-      $query = $this->pdo->prepare($sql);
-
-      $query->execute(array($_SESSION["emp"]["id"], $_SESSION["emp"]["idmar"]));
+      $query->execute(array($_SESSION["user"]["idmar"], $_SESSION["user"]["idemp"]));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }
