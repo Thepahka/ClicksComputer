@@ -56,6 +56,12 @@ class MarcaController
     }
   }
 
+  public function Read()
+  {
+    $result = $this->marca->allMarcas();
+
+  }
+
 
 
 }

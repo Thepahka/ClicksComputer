@@ -91,5 +91,25 @@ class MarcaModel
     return $result;
   }
 
+  public function allMarcas()
+  {
+    try
+    {
+      $sql = "SELECT mar_nombre FROM marca";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute();
+
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
+
 }
 ?>

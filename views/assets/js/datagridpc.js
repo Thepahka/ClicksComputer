@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    $('#marcas').DataTable();
+    $('#datapc').DataTable();
 } );

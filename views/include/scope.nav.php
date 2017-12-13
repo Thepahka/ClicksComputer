@@ -1,4 +1,15 @@
 <div class="wrap-nav">
+  <table id="datapc">
+      <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Modelo</th>
+              <th>Tipo</th>
+              <th>precio</th>
+              <th>marca</th>
+              <th>Acciones</th>
+          </tr>
+  </table>
   <div class="nav-btns">
     <a class="gest-pc" id="myBtn">Registrar producto</a>
   </div>
