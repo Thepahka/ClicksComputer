@@ -6,6 +6,23 @@
               <th>Nombre</th>
               <th>Acciones</th>
           </tr>
+      </thead>
+      <tbody>
+        <?php
+        $item = 0;
+        foreach($this->Read() as $row) {
+            $item++;
+            ?>
+          <tr>
+            <td><?php echo $row["mar_nombre"]; ?></td>
+              <td>
+                  <a>Actualizar</a>
+                  <a>Eliminar</a>
+                  <a><?php echo $_SESSION["user"]["idemp"] ?></a>
+              </td>
+          </tr>
+        <?php } ?>
+      </tbody>
   </table>
   <div class="nav-btns">
     <a class="gest-pc" id="myBtn">Registrar marca</a>

@@ -21,7 +21,7 @@ class MarcaModel
   {
     try
     {
-      $sql = "CALL GuardarMarca(?,?)";
+      $sql = "CALL GuardarMarca2(?,?)";
 
       $query = $this->pdo->prepare($sql);
 
@@ -78,13 +78,13 @@ class MarcaModel
   {
     try
     {
-      $sql = "SELECT mar_nombre FROM marca";
+      $sql = "CALL ConsultarMarEmp(?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute();
+      $query->execute(array($_SESSION["user"]["idmar"]));
 
-      $result = $query->fetch(PDO::FETCH_ASSOC);
+      $result = $query->fetch(PDO::FETCH_BOTH);
     }
     catch(PDOException $e)
     {

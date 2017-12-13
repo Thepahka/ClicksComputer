@@ -58,8 +58,7 @@ class MarcaController
 
   public function Read()
   {
-    $result = $this->marca->allMarcas();
-
+    $result = $this->marca->allMarcas($_SESSION["user"]["idmar"]);
   }
 
 
