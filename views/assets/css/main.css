@@ -947,8 +947,17 @@ textarea{
   border-radius: 15px;
 }
 
+.nav-titulop{
+  color: #ffffff;
+  font-size: 45px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
 .nav-btns{
   text-align: -webkit-right;
+  top: -10%;
+  position: relative;
 }
 
 .gest-pc{
@@ -968,6 +977,38 @@ textarea{
   color: #ffffff;
   border: 1px solid rgb(0, 0, 0);
   cursor: pointer;
+}
+
+/* data grid estilo*/
+
+table.dataTable th.dt-center, table.dataTable td.dt-center, table.dataTable td.dataTables_empty {
+    text-align: center;
+    background: rgb(236, 236, 236);
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+table.dataTable thead .sorting {
+    background-image: url(../images/sort_both.png);
+    color: rgb(255, 255, 255);
+    font-family: 'roboto', sans-serif;
+}
+
+table.dataTable thead .sorting_asc {
+    background-image: url(../images/sort_asc.png);
+    color: rgb(255, 255, 255);
+    font-family: 'roboto', sans-serif;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0.5em;
+    background: rgb(236, 236, 236);
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
 }
 
 /*ventana modal*/

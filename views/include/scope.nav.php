@@ -1,4 +1,8 @@
 <div class="wrap-nav">
+  <h1 class="nav-titulop">Mis productos</h1>
+  <div class="nav-btns">
+    <a class="gest-pc" id="myBtn">Registrar producto</a>
+  </div>
   <table id="datapc">
       <thead>
           <tr>
@@ -10,9 +14,6 @@
               <th>Acciones</th>
           </tr>
   </table>
-  <div class="nav-btns">
-    <a class="gest-pc" id="myBtn">Registrar producto</a>
-  </div>
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
