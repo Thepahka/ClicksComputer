@@ -3,11 +3,13 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
     <title>Mis Marcas</title>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
   </head>
+
   <body>
     <a href="NuevaMarca"><input type="submit" name="" value="Registrar nueva marca"></a>
     <h1>Mis marcas</h1>
