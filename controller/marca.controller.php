@@ -12,14 +12,35 @@ class MarcaController
 
   public function ViewMarca()
   {
+    if (isset($_SESSION["user"]["auth"]) && $_SESSION["user"]["auth"] == true)
+    {
+    }
+    else
+    {
+      header("Location: Email");
+    }
     require_once "views/modules/Marcas/Marcaprincipal.php";
   }
   public function ViewNewMarca()
   {
+    if (isset($_SESSION["user"]["auth"]) && $_SESSION["user"]["auth"] == true)
+    {
+    }
+    else
+    {
+      header("Location: Email");
+    }
     require_once "views/modules/Marcas/NewMarca.php";
   }
   public function ViewUpdateMarca()
   {
+    if (isset($_SESSION["user"]["auth"]) && $_SESSION["user"]["auth"] == true)
+    {
+    }
+    else
+    {
+      header("Location: Email");
+    }
     require_once "views/modules/Marcas/ActualizarMarca.php.php";
   }
 
@@ -58,9 +79,10 @@ class MarcaController
 
   public function Read()
   {
-    $result = $this->marca->allMarcas($_SESSION["user"]["idmar"]);
+    $marid = $_SESSION["user"]["idemp"];
+    $result = $this->marca->allMarcas($marid);
+    return $result;
   }
-
 
 
 }

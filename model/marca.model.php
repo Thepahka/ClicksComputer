@@ -74,7 +74,7 @@ class MarcaModel
     return $result;
   }
 
-  public function allMarcas()
+  public function allMarcas($marid)
   {
     try
     {
@@ -82,7 +82,7 @@ class MarcaModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($_SESSION["user"]["idmar"]));
+      $query->execute(array($marid));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }
@@ -92,7 +92,5 @@ class MarcaModel
     }
     return $result;
   }
-
-
 }
 ?>

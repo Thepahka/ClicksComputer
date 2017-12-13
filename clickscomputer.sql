@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-12-2017 a las 19:14:17
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 14-12-2017 a las 00:18:30
+-- Versión del servidor: 10.1.28-MariaDB
+-- Versión de PHP: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -65,7 +67,7 @@ SELECT * FROM marca WHERE marca = mar_nombre;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarMarEmp` (IN `mar` INT)  BEGIN
-SELECT emp_nom,mar_nombre FROM emp_mar INNER JOIN marca ON marca.mar_id=emp_mar.fk_mar_id INNER JOIN empresa ON empresa.emp_id=emp_mar.fk_emp_id WHERE emp_mar.fk_emp_id = mar;
+SELECT mar_nombre FROM emp_mar INNER JOIN marca ON marca.mar_id=emp_mar.fk_mar_id INNER JOIN empresa ON empresa.emp_id=emp_mar.fk_emp_id WHERE emp_mar.fk_emp_id = mar;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarPc` (IN `computador` VARCHAR(30))  BEGIN 
@@ -195,7 +197,8 @@ CREATE TABLE `emp_mar` (
 --
 
 INSERT INTO `emp_mar` (`fk_mar_id`, `fk_emp_id`) VALUES
-(9, 6);
+(32, 6),
+(19, 6);
 
 -- --------------------------------------------------------
 
@@ -306,10 +309,29 @@ CREATE TABLE `marca` (
 --
 
 INSERT INTO `marca` (`mar_id`, `mar_nombre`) VALUES
-(2, 'alienware'),
-(3, 'lenovo'),
-(4, 'Toshiba'),
-(9, 'jesucristo');
+(10, 'hp'),
+(11, 'compaq'),
+(12, 'asus'),
+(13, 'lg'),
+(14, 'lenovo'),
+(15, 'acer'),
+(16, 'vaio'),
+(17, 'alienware'),
+(18, 'toshiba'),
+(19, 'dell'),
+(20, 'gateway'),
+(21, 'fujitsu'),
+(22, 'apple'),
+(23, 'everex'),
+(24, 'simpletech'),
+(25, 'panasonic'),
+(26, 'systemax'),
+(27, 'averatec'),
+(28, 'olivetti'),
+(29, 'samsung'),
+(30, 'sony'),
+(31, 'lanix'),
+(32, 'msi');
 
 -- --------------------------------------------------------
 
@@ -321,13 +343,6 @@ CREATE TABLE `mar_pc` (
   `fk_mar_id` bigint(11) NOT NULL,
   `fk_pc_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `mar_pc`
---
-
-INSERT INTO `mar_pc` (`fk_mar_id`, `fk_pc_id`) VALUES
-(3, 1);
 
 -- --------------------------------------------------------
 
@@ -676,36 +691,43 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `comentarios`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `com_pc`
 --
 ALTER TABLE `com_pc`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `com_pie`
 --
 ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `mar_id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `mar_id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
   MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -833,6 +855,7 @@ ALTER TABLE `pi_inv`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

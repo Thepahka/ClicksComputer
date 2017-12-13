@@ -1,4 +1,3 @@
-<?php $registrosmarcas = $this->Read(); ?>
 <!DOCTYPE html>
 <html>
   <head>
