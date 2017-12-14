@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
+
+
     <meta charset="utf-8">
-    <title> Elegir marca </title>
-  </head>
-  <body>
+    <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
+
+  <body class="body-dash">
+    <div class="wrap-nav">
+      <h1 class="titulo-newpc">Elige la marca del computador</h1>
+      <div class="wrap-marca-int">
     <form class="" action="Registro1" method="post">
-      <h1>Elige la marca del computador</h1>
-      <input type="text" name="data[]" value="">
-      <input type="submit" name="" value="Siguiente">
+      <input class="marca-int" type="text" name="data[]" placeholder="Marca">
+      <input type="submit" class="btn-marca-int" value="Siguiente">
     </form>
+  </div>
+  <p class="marca-pinfo">Aqui es necesario tomar la marca para identificarla en tu tienda.</p>
+</div>
+
+    <?php require_once 'views/include/scope.menutopdashboard.php';
+          require_once 'views/include/scope.profileenterprise.php';?>
   </body>
-</html>
