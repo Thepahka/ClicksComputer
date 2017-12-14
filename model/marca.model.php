@@ -84,13 +84,50 @@ class MarcaModel
 
       $query->execute(array($marid));
 
-      $result = $query->fetch(PDO::FETCH_BOTH);
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
     }
     catch(PDOException $e)
     {
       $result = $e->getMessage();
     }
     return $result;
+  }
+  public function allMarcas2($mi, $ei)
+  {
+    try
+    {
+      $sql = "CALL ConsultarMarEmp2(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($mi, $ei));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
+  public function Delete($data, $data2)
+  {
+    try
+    {
+      $sql = "CALL DeleteMarca(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($data, $data2));
+
+      $msn = "Se elimino la marca con exito";
+    }
+    catch(PDOException $e)
+    {
+      $msn = $e->getMessage();
+    }
+    return $msn;
   }
 }
 ?>

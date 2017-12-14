@@ -67,6 +67,8 @@
 
       $result2 = $this->login->ValidateEmail2($_SESSION["correoelectronico"][0]);
 
+      $idempresa = $result2[4];
+
       if(password_verify($pass,$result[1]))
       {
         $_SESSION["user"]["correo"] = $comprobarcorreo;
@@ -82,6 +84,7 @@
       elseif(password_verify($pass,$result2[1]))
       {
         $_SESSION["user"]["correo"] = $comprobarcorreo;
+        $_SESSION["emp"]["id"] = $idempresa;
         $_SESSION["user"]["contra"] = $pass;
         $_SESSION["user"]["nombre"] = $comprobarname;
         $_SESSION["user"]["auth"] = true;

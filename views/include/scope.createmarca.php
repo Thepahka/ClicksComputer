@@ -10,16 +10,16 @@
       </thead>
       <tbody>
         <?php
-         $item = 0;
-         foreach($this->Read() as $row) {
-           $item++
+          $item = 0;
+          foreach($this->Read() as $row) {
+            $item++
             ?>
           <tr>
             <td><?php echo $item; ?></td>
-            <td><?php echo $row; ?></td>
+            <td><?php echo ucwords($row["mar_nombre"]); ?></td>
               <td>
                   <a>Actualizar</a>
-                  <a>Eliminar</a>
+                  <a href="EliminarMarca-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Eliminar</a>
               </td>
           </tr>
         <?php } ?>
