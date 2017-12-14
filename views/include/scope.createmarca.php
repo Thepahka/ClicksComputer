@@ -1,5 +1,5 @@
 <div class="wrap-nav">
-  <h1>Mis marcas</h1>
+  <h1 class="nav-titulo">Mis marcas</h1>
   <table id="marcas">
       <thead>
           <tr>
