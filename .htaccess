@@ -33,6 +33,7 @@ RewriteRule ^CerrarSesion$ index.php?c=shop&a=SessionOff
 #Marcas
 RewriteRule ^GestionMarcas$ index.php?c=marca&a=ViewMarca
 RewriteRule ^NuevaMarca$ index.php?c=marca&a=ViewNewMarca
-RewriteRule ^ActualizarMarcas$ index.php?c=marca&a=ViewUpdateMarca
 RewriteRule ^CrearMarca$ index.php?c=marca&a=CreateMarca
+RewriteRule ^ActualizarMarcas-(\w+)-(\w+)$ index.php?c=marca&a=ViewUpdateMarca&data=$1&data2=$2
 RewriteRule ^EliminarMarca-(\w+)-(\w+)$ index.php?c=marca&a=DeleteMar&data=$1&data2=$2
+RewriteRule ^MarcaActualizada$ index.php?c=marca&a=UpdateMar

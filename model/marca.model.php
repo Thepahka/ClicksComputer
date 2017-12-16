@@ -129,5 +129,23 @@ class MarcaModel
     }
     return $msn;
   }
+
+  public function Update($newid, $oldid, $idemp)
+  {
+    try
+    {
+      $sql = "CALL ActualizarMarca(?,?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($newid, $oldid, $idemp));
+
+      $msn = "Se actualizo la marca con exito";
+    }
+    catch(PDOException $e)
+    {
+      $msn = $e->getMessage();
+    }
+  }
 }
 ?>

@@ -18,7 +18,7 @@
             <td><?php echo $item; ?></td>
             <td><?php echo ucwords($row["mar_nombre"]); ?></td>
               <td>
-                  <a>Actualizar</a>
+                  <a href="ActualizarMarcas-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Actualizar</a>
                   <a href="EliminarMarca-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Eliminar</a>
               </td>
           </tr>

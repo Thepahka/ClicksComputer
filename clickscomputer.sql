@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-12-2017 a las 00:18:30
+-- Tiempo de generación: 16-12-2017 a las 02:02:54
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.11
 
@@ -26,12 +26,16 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarMarca` (IN `newmar` BIGINT, `marid` BIGINT, `empid` INT)  BEGIN
+UPDATE emp_mar SET fk_mar_id = newmar  WHERE fk_mar_id = marid AND fk_emp_id = empid;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `correo` VARCHAR(200))  BEGIN
 SELECT usu_correo, usu_contra, fk_rol_id FROM usuario WHERE correo = usu_correo;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail2` (IN `correo` VARCHAR(100))  BEGIN 
-SELECT emp_correo, emp_contra, fk_rol_id, emp_nom FROM empresa WHERE correo = emp_correo;
+SELECT emp_correo, emp_contra, fk_rol_id, emp_nom, emp_id FROM empresa WHERE correo = emp_correo;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpEmail` (IN `correo` VARCHAR(200))  BEGIN
@@ -67,7 +71,11 @@ SELECT * FROM marca WHERE marca = mar_nombre;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarMarEmp` (IN `mar` INT)  BEGIN
-SELECT mar_nombre FROM emp_mar INNER JOIN marca ON marca.mar_id=emp_mar.fk_mar_id INNER JOIN empresa ON empresa.emp_id=emp_mar.fk_emp_id WHERE emp_mar.fk_emp_id = mar;
+SELECT mar_nombre, mar_id, emp_id FROM emp_mar INNER JOIN marca ON marca.mar_id=emp_mar.fk_mar_id INNER JOIN empresa ON empresa.emp_id=emp_mar.fk_emp_id WHERE emp_mar.fk_emp_id = mar;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarMarEmp2` (IN `marid` BIGINT, `empid` INT)  BEGIN 
+SELECT * FROM emp_mar WHERE marid = fk_mar_id AND empid = fk_emp_id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarPc` (IN `computador` VARCHAR(30))  BEGIN 
@@ -82,8 +90,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTipo` (IN `tipo` VARCHAR(5
 SELECT * FROM tipopc WHERE tipopc_nom = tipo;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteMarca` (IN `marid` BIGINT, `empid` INT)  BEGIN
+DELETE FROM emp_mar WHERE marid = fk_mar_id AND empid = fk_emp_id;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
-INSERT INTO empresa(emp_id, emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id) VALUES (emp_id, emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id);
+INSERT INTO empresa(emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id) VALUES (emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarMarca` (IN `marca` VARCHAR(50))  BEGIN
@@ -178,8 +190,10 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
+(0, 123889, 'jabon', 'jabon', 'jabon', 10290120, 'jabon@jabon.com', '$2y$10$yWJLzwaKy041oxKv/ML.QO9lUl55Jr3CAuELCvqlTGhzZGzdyA4OO', 1),
 (6, 123456789, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
-(7, 987654321, 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1);
+(7, 987654321, 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
+(8, 12312321, 'jbon2', 'jbon2', 'jbon2', 123132, 'jbon2@jbon', '$2y$10$EvoHAgswjntvwsWuN6/VwuizC4GojxLLmNMbXPeMN0qZbiH6eD5TG', 1);
 
 -- --------------------------------------------------------
 
@@ -197,8 +211,10 @@ CREATE TABLE `emp_mar` (
 --
 
 INSERT INTO `emp_mar` (`fk_mar_id`, `fk_emp_id`) VALUES
-(32, 6),
-(19, 6);
+(32, 0),
+(19, 0),
+(17, 0),
+(14, 6);
 
 -- --------------------------------------------------------
 
@@ -708,7 +724,7 @@ ALTER TABLE `com_pie`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
@@ -721,6 +737,12 @@ ALTER TABLE `marca`
 --
 ALTER TABLE `pc`
   MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `tipopc`
+--
+ALTER TABLE `tipopc`
+  MODIFY `tipopc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
