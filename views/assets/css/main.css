@@ -1105,6 +1105,18 @@ select{
   font-size: 18px;
 }
 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+  background: rgb(205, 205, 205);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
+}
+
 /*ventana modal*/
 
 .modal {

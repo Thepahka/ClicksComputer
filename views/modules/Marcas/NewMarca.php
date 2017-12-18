@@ -6,10 +6,12 @@
     <title>Registrar marca</title>
   </head>
   <body>
+    <div class="nav-btns">
     <form class="" action="CrearMarca" method="post">
       <label for="Marca">Nombre de la marca</label>
       <input id="Marca" type="text" name="data[]">
       <input type="submit" name="" value="Registrar">
     </form>
+  </div>
   </body>
 </html>
