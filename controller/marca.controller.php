@@ -69,11 +69,6 @@ class MarcaController
       echo '<script language="javascript">alert("Completa el campo con el nombre de la marca que desea registrar");</script>';
       echo "<script>history.back(1)</script>";
     }
-    elseif(is_string($data[0]))
-    {
-      echo '<script language="javascript">alert("Solo puede ingresar texto en este campo");</script>';
-      echo "<script>history.back(1)</script>";
-    }
     else
     {
       if($result3[0][0] == $result2[0] && $result3[0][1] == $_SESSION["emp"]["id"])
