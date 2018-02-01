@@ -9,7 +9,7 @@ $('#fullpage').fullpage({
   controlArrows: false,
   menu: '#menu',
 
-  afterSlideLoad: function( anchorLink, index,slideIndex) {
+  afterSlideLoad: function( anchorLink,index,slideIndex) {
       $.fn.fullpage.setAllowScrolling(false, 'up');
   },
 });

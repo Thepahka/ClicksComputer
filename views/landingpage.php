@@ -15,13 +15,12 @@
       <h1 class="gal">galeria</h1>
       </div>
 <div id="slider">
-  <a href="#" class="control_next">>></a>
+  <a href="#" class="control_next">></a>
   <a href="#" class="control_prev"><</a>
   <ul>
     <li>SLIDE 1</li>
     <li>SLIDE 2</li>
     <li>SLIDE 3</li>
-    <li>SLIDE 4</li>
   </ul>
 </div>
 </div>
@@ -29,10 +28,10 @@
   <section class="vertical">
     <div class="background2">
           <div class="fin">
-            <h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1>
-            <h4 class="paso1">1.</h4><p class="paso-1">ten en cuenta tus estudios o empleos.</p>
-            <h4 class="paso2">2.</h4><p class="paso-2">debes saber cuanto dinero posees.</p>
-            <h4 class="paso3">3.</h4><p class="paso-3">REGISTRATE EN NUESTRA PAGINA Y BUSCA SEGURA Y CONFIABLEMENTE!!!</p>
+            <a href="#"><h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1></a>
+            <a href="#"><h4 class="paso1">1.</h4><p class="paso-1">ten en cuenta tus estudios o empleos.</p></a>
+            <a href="#"><h4 class="paso2">2.</h4><p class="paso-2">debes saber cuanto dinero posees.</p></a>
+            <a href="#"><h4 class="paso3">3.</h4><p class="paso-3">REGISTRATE EN NUESTRA PAGINA Y BUSCA SEGURA Y CONFIABLEMENTE!!!</p></a>
           </div>
     </div>
     		<footer class="footer-final">
@@ -40,10 +39,10 @@
     			<p class="footer-links">
     				<a href="#">informacion</a>
     				·
-    				<a href="#">Contactos</a>
-    				<a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-    				<a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-    				<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    				<a>Contactos</a>
+    				<a><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+    				<a><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+    				<a><i class="fa fa-instagram" aria-hidden="true"></i></a>
     			</p>
     			<p class="footer-cname">clickscomputer &copy; 2017</p>
     		</footer>

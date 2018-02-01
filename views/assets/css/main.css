@@ -77,15 +77,15 @@ input{
   display: block;
   padding: 7px;
   top: 70vh;
-  background: rgba(145, 255, 197, 0.64);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 1);
+  color: #000000;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .log-btn:hover{
-  background: rgb(255, 255, 255);
-  color: black;
+  background: rgb(89, 89, 89);
+  color: white;
   transition: all 0.3s ease;
   border-radius: 8px;
   cursor: pointer;
@@ -331,15 +331,12 @@ div.logo--principal{
 /*lineas que separan la seccion*/
 
 .slideback{
-  background: #808080;
-  background-size: contain;
+  background-image: url(../image/landing/carrusel.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100%;
   display: flex;
   align-items: center;
-  position: relative;
+  height: 100%;
 }
 
 /*fullPage*/
@@ -371,24 +368,32 @@ div.logo--principal{
 }
 
 .gal{
-  padding: 5px;
-  font-size: 34px;
-  color: #ffffff;
+  padding: 9px;
+  font-size: 55px;
   font-family: 'Pacifico', cursive;
+  background: -webkit-linear-gradient(#84e903,#ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wrap-gal{
+  top: 9%;
+  position: absolute;
 }
 
 #slider {
   position: relative;
   overflow: hidden;
-  margin: 0px;
+  margin: 83px;
   border-radius: 4px;
+  padding: 0px;
 }
 
 #slider ul {
   position: relative;
-  margin: 0;
-  padding: 0;
-  height: 200px;
+  margin: 0px;
+  padding: 0px;
+  height: 800px;
   list-style: none;
 }
 
@@ -396,13 +401,17 @@ div.logo--principal{
   position: relative;
   display: block;
   float: left;
-  margin: 0;
-  padding: 0;
-  width: 1200px;
-  height: 300px;
+  margin: 0px;
+  padding: 0px;
+  width: 1305px;
+  height: 100px;
   background: #ccc;
   text-align: center;
   line-height: 300px;
+  border-radius: 10px;
+  border: 3px rgb(214, 70, 217);
+  border: 5px solid rgb(0, 0, 0);
+  right: 20px;
 }
 
 a.control_prev, a.control_next {
