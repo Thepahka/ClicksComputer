@@ -28,10 +28,10 @@
   <section class="vertical">
     <div class="background2">
           <div class="fin">
-            <a href="#"><h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1></a>
-            <a href="#"><h4 class="paso1">1.</h4><p class="paso-1">ten en cuenta tus estudios o empleos.</p></a>
-            <a href="#"><h4 class="paso2">2.</h4><p class="paso-2">debes saber cuanto dinero posees.</p></a>
-            <a href="#"><h4 class="paso3">3.</h4><p class="paso-3">REGISTRATE EN NUESTRA PAGINA Y BUSCA SEGURA Y CONFIABLEMENTE!!!</p></a>
+            <h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1>
+            <h4 class="paso1">1.</h4><p class="paso-1">ten en cuenta tus estudios o empleos.</p>
+            <h4 class="paso2">2.</h4><p class="paso-2">debes saber cuanto dinero posees.</p>
+            <h4 class="paso3">3.</h4><p class="paso-3">REGISTRATE EN NUESTRA PAGINA Y BUSCA SEGURA Y CONFIABLEMENTE!!!</p>
           </div>
     </div>
     		<footer class="footer-final">
