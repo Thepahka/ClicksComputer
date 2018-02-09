@@ -10,17 +10,14 @@
   </head>
   <body class="body-login">
     <div class="wrap-login">
-    <form class="formulario" action="Consulta" method="post">
       <h2 class="titulo-up">iniciar sesion</h2>
       <i class="fa fa-envelope email-icon fa-4x" aria-hidden="true"></i>
-      <div class="contain-login">
-        <input class="log-email" id="LoginEmail" type="email" placeholder="correo electronico" name="data[]" value="">
-      </div>
-      <div class="">
+    <form class="formulario" action="Consulta" method="post">
+        <input class="log-email des-log" id="LoginEmail" type="email" name="data[]" required>
+        <label for="LoginEmail" class="correo-fo des-co">correo electronico</label>
         <input class="log-btn" id="EmailButton" type="submit" name="" value="Acceder">
-      </div>
-      <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
     </form>
+    <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
   </div>
   </body>
   <?php include 'views/include/scope.header.php';

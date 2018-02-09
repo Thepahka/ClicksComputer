@@ -66,16 +66,16 @@ input{
 
 .log-btn{
   position: absolute;
-  width: 140px;
-  height: 46px;
+  width: 130px;
+  height: 40px;
   text-align: center;
-  left: 19%;
+  left: 270px;
   font-family: 'roboto', sans-serif;
   text-transform: uppercase;
   color: white;
   font-size: 20px;
   display: block;
-  padding: 7px;
+  padding: 5px;
   top: 70vh;
   background: rgba(255, 255, 255, 1);
   color: #000000;
@@ -94,67 +94,56 @@ input{
 
 /*diseño login email and pass*/
 
-.log-email{
-  border: 1px solid #DBE1EB;
-  font-size: 18px;
-  font-family: Arial, Verdana;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  background: #FFFFFF;
-  background: linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
-  color: #2E3133;
+.des-co{
+  position: absolute;
+  color: rgba(0, 0, 0, 0.66);
+  left: 253px;
+  font-size: 20px;
+  transition: 0.3s;
 }
 
-.log-pass{
-  border: 1px solid #DBE1EB;
-  font-size: 18px;
-  font-family: Arial, Verdana;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  background: #FFFFFF;
-  background: linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
-  background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
-  color: #2E3133;
+.des-log{
+  position: absolute;
 }
 
-.log-pass{
+.des-log:valid ~ .des-co, .des-log:focus ~ .des-co{
+  color: Black;
+  font-size: 20px;
+  transform: translateY(-30px);
+  transition: 0.3s;
+  left: 253px;
+}
+
+.des-log:focus, .des-co:focus {
+  position: relative;
+  border-bottom: 3px solid rgb(0, 156, 255);
+  transition: 0.5s;
+}
+
+/* .log-pass{
   position: relative;
   left: 16%;
   top: -20px;
   width: 300px;
   text-align: center;
-}
+} */
 
 .log-email{
   position: relative;
   left: 16%;
-  top: -10px;
+  top: 3px;
   width: 300px;
   text-align: center;
+  background: rgba(255, 226, 193, 1);
+  border-radius: 5px;
+  border: none;
 }
 
 .mini-foot{
-  position: relative;
+  position: absolute;
   color: #ffffff;
-  top: 140px;
-  left: 16%;
+  bottom: 60px;
+  left: 13%;
 }
 
 /*menu top*/

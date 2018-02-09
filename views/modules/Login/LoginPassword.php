@@ -7,15 +7,12 @@
   </head>
   <body class="body-login">
     <div class="wrap-login">
-    <form class="" action="ConsultaP" method="post">
       <h2 class="titulo-up">iniciar sesion</h2>
       <i class="fa fa-lock pass-icon fa-5x" aria-hidden="true"></i>
-      <div class="contain-login">
-        <input class="log-pass" id="LoginPass" type="password" placeholder="contraseña" name="data[]" value="">
-      </div>
-      <div class="">
+    <form class="" action="ConsultaP" method="post">
+        <input class="log-email des-log" id="LoginPass" type="password" name="data[]">
+        <label for="LoginEmail" class="correo-fo des-co">contraseña</label>
         <input class="log-btn" id="PassEmail" type="submit" name="" value="Ingresar">
-      </div>
         <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
     </form>
   </div>
