@@ -10,8 +10,8 @@
       <h2 class="titulo-up">iniciar sesion</h2>
       <i class="fa fa-lock pass-icon fa-5x" aria-hidden="true"></i>
     <form class="" action="ConsultaP" method="post">
-        <input class="log-email des-log" id="LoginPass" type="password" name="data[]">
-        <label for="LoginEmail" class="correo-fo des-co">contraseña</label>
+        <input class="log-pass des-logc" id="LoginPass" type="password" name="data[]">
+        <label for="LoginPass" class="des-con">contraseña</label>
         <input class="log-btn" id="PassEmail" type="submit" name="" value="Ingresar">
         <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
     </form>

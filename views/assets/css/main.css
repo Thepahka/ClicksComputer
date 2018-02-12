@@ -111,31 +111,59 @@ input{
   font-size: 20px;
   transform: translateY(-30px);
   transition: 0.3s;
-  left: 253px;
 }
 
 .des-log:focus, .des-co:focus {
   position: relative;
-  border-bottom: 3px solid rgb(0, 156, 255);
+  border-bottom: 4px solid rgb(0, 156, 255);
   transition: 0.5s;
 }
 
-/* .log-pass{
+.des-con{
+  position: absolute;
+  color: rgba(0, 0, 0, 0.66);
+  left: 280px;
+  font-size: 20px;
+  transition: 0.3s;
+  bottom: 264px;
+}
+
+.des-logc{
+  position: absolute;
+}
+
+.des-logc:valid ~ .des-con, .des-logc:focus ~ .des-con{
+  color: Black;
+  font-size: 20px;
+  transform: translateY(-30px);
+  transition: 0.3s;
+}
+
+.des-logc:focus, .des-con:focus {
   position: relative;
-  left: 16%;
-  top: -20px;
-  width: 300px;
-  text-align: center;
-} */
+  border-bottom: 4px solid rgb(0, 156, 255);
+  transition: 0.5s;
+}
 
 .log-email{
   position: relative;
   left: 16%;
-  top: 3px;
+  top: -1px;
   width: 300px;
+  height: 35px;
   text-align: center;
-  background: rgba(255, 226, 193, 1);
-  border-radius: 5px;
+  background: rgba(255, 238, 223, 1);
+  border: none;
+}
+
+.log-pass{
+  position: relative;
+  left: 16%;
+  top: -16px;
+  width: 300px;
+  height: 35px;
+  text-align: center;
+  background: rgba(255, 238, 223, 1);
   border: none;
 }
 
@@ -174,6 +202,11 @@ div.menu-top ul{
   padding-left: 10px;
   margin: 2px;
   font-family: 'Lobster', sans-serif;
+}
+
+.icon-r{
+  display: none;
+  visibility: hidden;
 }
 
 .menu-top .logo{
@@ -786,55 +819,39 @@ textarea{
     height: 100vh;
 }
 
-.paso1{
+.numps{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
-  color: #fe007a;
-  left: 21%;
-  top: 65px;
+  color: #ff4747;
+  left: 24%;
+  top: 60px;
   font-size: 50px;
 }
 
-.paso2{
+.numpa{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
-  color: #fe007a;
-  left: 23%;
-  top: 53px;
+  color: #ff4747;
+  left: 26%;
+  top: 60px;
   font-size: 50px;
 }
 
-.paso3{
+.nump{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
-  color: #fe007a;
-  left: 9%;
-  top: 30px;
+  color: #ff4747;
+  left: 16%;
+  top: 60px;
   font-size: 50px;
 }
 
-.paso-1{
+
+.paso{
   position: relative;
-  font-size: 40px;
+  font-size: 33px;
   font-family: 'roboto', sans-serif;
   top: -8px;
-  text-align: center;
-}
-
-.paso-2{
-  position: relative;
-  font-size: 40px;
-  font-family: 'roboto', sans-serif;
-  top: -20px;
-  text-align: center;
-}
-
-.paso-3{
-  position: relative;
-  font-size: 36px;
-  font-family: 'roboto', sans-serif;
-  top: -40px;
-  text-transform: lowercase;
   text-align: center;
 }
 
@@ -847,11 +864,20 @@ textarea{
   width: 100%;
   text-align: center;
   font: normal 18px sans-serif;
-  padding: 20px;
+  padding: 6px;
   margin-top: 80px;
   z-index: 1000;
   position: absolute;
   bottom: 0px;
+  height: 110px;
+}
+
+.footer-final .footer-links {
+    list-style: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 11px 0 23px;
+    margin: 0;
 }
 
 .footer-final .footer-c{
@@ -870,7 +896,7 @@ textarea{
   list-style: none;
   font-weight: bold;
   color:  #ffffff;
-  padding: 35px 0 23px;
+  padding: 10px 0 23px;
   margin: 0;
 }
 

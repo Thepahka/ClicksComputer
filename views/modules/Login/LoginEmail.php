@@ -14,7 +14,7 @@
       <i class="fa fa-envelope email-icon fa-4x" aria-hidden="true"></i>
     <form class="formulario" action="Consulta" method="post">
         <input class="log-email des-log" id="LoginEmail" type="email" name="data[]" required>
-        <label for="LoginEmail" class="correo-fo des-co">correo electronico</label>
+        <label for="LoginEmail" class="des-co">correo electronico</label>
         <input class="log-btn" id="EmailButton" type="submit" name="" value="Acceder">
     </form>
     <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>

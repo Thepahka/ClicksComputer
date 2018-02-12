@@ -16,8 +16,15 @@ CONTENT RYLES MEDIA CSS
 
   /*landing*/
 
-  .menu-top{
-    width: 100%;
+  .cc{
+    display: none;
+    visibility: hidden;
+  }
+
+  .icon-r{
+    display: none;
+    visibility: visible;
+    margin-top: 15px;
   }
 
   .wrap--texto{
