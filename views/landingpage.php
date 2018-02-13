@@ -40,9 +40,9 @@
     				<a href="#">informacion</a>
     				·
     				<a>Contactos</a>
-    				<a><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-    				<a><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-    				<a><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    				<a href="#"><i class="fab fa-facebook-square f-fa" aria-hidden="true"></i></a>
+    				<a href="#"><i class="fab fa-twitter-square f-tw" aria-hidden="true"></i></a>
+    				<a href="#"><i class="fab fa-instagram f-ins" aria-hidden="true"></i></a>
     			</p>
     			<p class="footer-cname">clickscomputer &copy; 2017</p>
     		</footer>

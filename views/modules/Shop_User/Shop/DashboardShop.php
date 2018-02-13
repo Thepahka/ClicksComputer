@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
   <head>
     <meta charset="utf-8">
     <title>Dashboard</title>
@@ -15,4 +13,3 @@
       require_once 'views/include/scope.nav.php';?>
       <script type="text/javascript" src="views/assets/js/datagridpc.js"></script>
   </body>
-</html>
