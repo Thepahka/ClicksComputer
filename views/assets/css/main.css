@@ -54,7 +54,7 @@ input{
   position: relative;
   color: #ffffff;
   top: -100px;
-  left: 40%;
+  left: 201px;
 }
 
 .pass-icon{
@@ -397,16 +397,19 @@ div.logo--principal{
 .gal{
   padding: 0px;
   margin: 0px;
-  font-size: 50px;
+  font-size: 45px;
   font-family: 'Pacifico', cursive;
   color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  margin-top: 1px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .wrap-gal{
   top: 10%;
   position: absolute;
   background: rgba(0, 0, 0, 0.48);
-  padding: 4px 10px;
   border: 4px solid rgb(255, 255, 255);
   border-radius: 5px;
 }
@@ -963,11 +966,11 @@ textarea{
 
 .EnterpriseProfile{
   position: absolute;
-  background: rgba(193, 131, 81, 1);
+  background: rgba(193, 131, 81, 0.69);
   left: 0%;
   width: 320px;
-  top: 11%;
-  height: 89vh;
+  top: 69px;
+  height: 89.6vh;
 }
 
 .img-enterprise{
@@ -1003,7 +1006,7 @@ textarea{
 
 .nav-titulo{
   color: #ffffff;
-  font-size: 45px;
+  font-size: 40px;
   font-family: 'Oswald', sans-serif;
   text-align: center;
 }
@@ -1093,6 +1096,10 @@ textarea{
 
 /* data grid estilo*/
 
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 10px 100px;
+  }
+
 table.dataTable th.dt-center, table.dataTable td.dt-center, table.dataTable td.dataTables_empty {
     text-align: center;
     background: rgb(236, 236, 236);
@@ -1180,6 +1187,7 @@ select{
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.65);
+    transition:all .2s ease-in-out;
 }
 
 .modal-content {
@@ -1204,7 +1212,6 @@ select{
     text-decoration: none;
     cursor: pointer;
     transition:all .2s ease-in-out;
-
 }
 
 .model-textp{
@@ -1243,9 +1250,9 @@ select{
 
 .gest{
   color: rgb(255, 255, 255);
-  font-size: 17px;
+  font-size: 18px;
   font-family: 'roboto', sans-serif;
-  margin: 0px 70px;
+  margin: 5px 70px;
   padding: 10px 0px;
   display: inline-block;
 }
@@ -1259,7 +1266,7 @@ select{
   transition: all .16s ease-in-out;
   outline: none;
   cursor: pointer;
-  background-color: rgba(82, 82, 82, 0.49);
+  background-color: rgba(89, 89, 89, 1);
   border-left: 3px solid #ffffff;
   box-shadow: 0 4px 9px 6px rgba(0,0,0,0.2);
   text-decoration: none;
