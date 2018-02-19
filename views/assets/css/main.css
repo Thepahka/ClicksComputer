@@ -91,7 +91,6 @@ input{
   cursor: pointer;
 }
 
-
 /*diseño login email and pass*/
 
 .des-co{
@@ -219,9 +218,9 @@ div.menu-top ul{
   position: relative;
   display: inline-flex;
   font-size: 20px;
-  padding: 17px 10px;
+  padding: 17px 19px;
   margin: 0px 0px;
-  left: 9px;
+  left: 2px;
   text-transform: uppercase;
   font-weight: lighter;
   font-family: 'Oswald', sans-serif;
@@ -940,9 +939,9 @@ textarea{
 .item-dash{
   position: relative;
   display: inline-table;
-  right: -2%;
+  right: 1%;
   font-size: 20px;
-  padding: 20px 10px;
+  padding: 20px 16px;
   text-transform: uppercase;
   font-weight: lighter;
   font-family: 'Oswald', sans-serif;
@@ -951,7 +950,7 @@ textarea{
 
 .item-dash:hover{
   transition:all .2s ease-in-out;
-  background: rgba(166, 166, 166, 0.85);
+  background: rgba(166, 166, 166, 0.68);
   color: #ffffff;
 }
 
