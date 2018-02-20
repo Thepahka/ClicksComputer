@@ -17,4 +17,6 @@ require_once("scope.header.php");
         <a class="item" href="Email"><i class="fa fa-user-plus f-re" aria-hidden="true"></i>acceder</a>
       </ul>
     </div>
+    <?php require_once 'views/include/scope.header.php';
+          require_once 'views/modules/producto/searchproducto.php'; ?>
 </div>

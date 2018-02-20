@@ -6,25 +6,20 @@ update: actualizaciones fecha y lo que se actualiza
 
 CONTENT RYLES CSS
 */
-
 @import "reset.css";
 *{
   padding: 0px;
   margin: 0px;
 }
-
 body{
   width: 100%;
   height: 100vh;
   top: 0;
 }
-
 input{
   background: #f2f2f2;
 }
-
 /*diseño de login*/
-
 .body-login{
   background-image: url(../image/loginback.jpg);
   background-repeat: no-repeat;
@@ -32,7 +27,6 @@ input{
   display: flex;
   align-items: center;
 }
-
 .wrap-login{
   width: 700px;
   padding: 100px;
@@ -40,7 +34,6 @@ input{
   height: 90.3vh;
   margin-top: 4.5%;
 }
-
 .titulo-up{
   position: relative;
   padding: 40px;
@@ -49,21 +42,18 @@ input{
   color: #ffffff;
   font-family: 'Oswald', sans-serif;
 }
-
 .email-icon{
   position: relative;
   color: #ffffff;
   top: -100px;
   left: 201px;
 }
-
 .pass-icon{
   position: relative;
   color: #ffffff;
   top: -100px;
   left: 40%;
 }
-
 .log-btn{
   position: absolute;
   width: 130px;
@@ -82,7 +72,6 @@ input{
   border-radius: 8px;
   transition: all 0.3s ease;
 }
-
 .log-btn:hover{
   background: rgb(89, 89, 89);
   color: white;
@@ -90,9 +79,7 @@ input{
   border-radius: 8px;
   cursor: pointer;
 }
-
 /*diseño login email and pass*/
-
 .des-co{
   position: absolute;
   color: rgba(0, 0, 0, 0.66);
@@ -100,24 +87,20 @@ input{
   font-size: 20px;
   transition: 0.3s;
 }
-
 .des-log{
   position: absolute;
 }
-
 .des-log:valid ~ .des-co, .des-log:focus ~ .des-co{
   color: Black;
   font-size: 20px;
   transform: translateY(-30px);
   transition: 0.3s;
 }
-
 .des-log:focus, .des-co:focus {
   position: relative;
   border-bottom: 4px solid rgb(0, 156, 255);
   transition: 0.5s;
 }
-
 .des-con{
   position: absolute;
   color: rgba(0, 0, 0, 0.66);
@@ -126,24 +109,20 @@ input{
   transition: 0.3s;
   bottom: 264px;
 }
-
 .des-logc{
   position: absolute;
 }
-
 .des-logc:valid ~ .des-con, .des-logc:focus ~ .des-con{
   color: Black;
   font-size: 20px;
   transform: translateY(-30px);
   transition: 0.3s;
 }
-
 .des-logc:focus, .des-con:focus {
   position: relative;
   border-bottom: 4px solid rgb(0, 156, 255);
   transition: 0.5s;
 }
-
 .log-email{
   position: relative;
   left: 16%;
@@ -154,7 +133,6 @@ input{
   background: rgba(255, 238, 223, 1);
   border: none;
 }
-
 .log-pass{
   position: relative;
   left: 16%;
@@ -165,16 +143,13 @@ input{
   background: rgba(255, 238, 223, 1);
   border: none;
 }
-
 .mini-foot{
   position: absolute;
   color: #ffffff;
   bottom: 60px;
   left: 13%;
 }
-
 /*menu top*/
-
 div.menu-top{
   background: rgba(39, 40, 39, 0.21);
   position: fixed;
@@ -184,7 +159,6 @@ div.menu-top{
   top: 0%;
   z-index: 1000;
 }
-
 div.menu-top ul{
   width: 360px;
   position: relative;
@@ -192,7 +166,6 @@ div.menu-top ul{
   color: #ffffff;
   justify-content: space-around;
 }
-
 .menu-top .cc{
   position: relative;
   display: flex;
@@ -202,18 +175,15 @@ div.menu-top ul{
   margin: 2px;
   font-family: 'Lobster', sans-serif;
 }
-
 .icon-r{
   display: none;
   visibility: hidden;
 }
-
 .menu-top .logo{
   width: 60px;
   height: 60px;
   margin-left: 5px;
 }
-
 .item{
   position: relative;
   display: inline-flex;
@@ -226,18 +196,15 @@ div.menu-top ul{
   font-family: 'Oswald', sans-serif;
   transition:all .2s ease-in-out;
 }
-
 .item:hover{
   transition:all .2s ease-in-out;
   background: rgba(166, 166, 166, 0.85);
   color: #ffffff;
 }
-
 .f-re{
   margin-top: 3px;
   margin-right: 4px;
 }
-
 div.principal{
  background-image: url(../image/landing/teclado.jpg);
  background-repeat: no-repeat;
@@ -250,7 +217,6 @@ div.principal{
  -webkit-filter: brightness(20%);
  filter: brightness(40%);
 }
-
 div.background2{
  background-image: url(../image/landing/compu.jpg);
  background-repeat: no-repeat;
@@ -260,14 +226,12 @@ div.background2{
  display: flex;
  align-items: center;
 }
-
 .titulo{
   display: inline-flex;
   font-family: 'Oswald', sans-serif;
   margin: 10px;
   padding: 42px;
 }
-
 .wrap--texto{
   width: 96%;
   height: 260px;
@@ -279,15 +243,12 @@ div.background2{
   font-size: 45px;
   top: 30vh;
 }
-
 .equipo{
   color: rgb(46, 194, 209);
 }
-
 .equipo:hover{
   color: rgb(46, 194, 209);
 }
-
 .btn-registrate{
   position: absolute;
   width: 250px;
@@ -307,14 +268,12 @@ div.background2{
   border-radius: 8px;
     transition: all 0.3s ease;
 }
-
 .btn-registrate:hover{
   background: rgb(46, 194, 209);
   color: white;
   transition: all 0.3s ease;
   border-radius: 8px;
 }
-
 .btn-registraem{
   position: absolute;
   width: 250px;
@@ -334,28 +293,23 @@ div.background2{
   border-radius: 8px;
     transition: all 0.3s ease;
 }
-
 .btn-registraem:hover{
   background: rgb(46, 194, 209);
   color: white;
   transition: all 0.3s ease;
   border-radius: 8px;
 }
-
 div.logo--principal{
   width: 20%;
   padding-top: 7%;
   padding-left: 2%;
 }
-
 .texto{
   padding: 15px;
   text-align: center;
   z-index: 1000;
 }
-
 /*lineas que separan la seccion*/
-
 .slideback{
   background-image: url(../image/landing/carrusel.jpg);
   background-repeat: no-repeat;
@@ -364,35 +318,28 @@ div.logo--principal{
   align-items: center;
   height: 100%;
 }
-
 /*fullPage*/
-
 *, *:before, *:after {
     box-sizing: content-box;
 }
-
 #fp-nav ul li a.active span,.fp-slidesNav ul li a.active span,#fp-nav ul li:hover a.active span,.fp-slidesNav ul li:hover a.active span {
     height: 12px;
     width: 12px;
     margin: -6px 0 0 -6px;
     border-radius: 100%;
     background: #ffffff;
-  }
-
+}
 #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span{
     height: 20px;
     width: 20px;
     margin: -6px 0 0 -6px;
     border-radius: 100%;
 }
-
 /*carrusel*/
-
 .wrap-gal{
   left: 618px;
   top: -200px;
 }
-
 .gal{
   padding: 0px;
   margin: 0px;
@@ -404,7 +351,6 @@ div.logo--principal{
   margin-left: 12px;
   margin-right: 12px;
 }
-
 .wrap-gal{
   top: 10%;
   position: absolute;
@@ -412,14 +358,12 @@ div.logo--principal{
   border: 4px solid rgb(255, 255, 255);
   border-radius: 5px;
 }
-
 #slider {
   position: absolute;
   margin: 83px;
   border-radius: 4px;
   padding: 0px;
 }
-
 #slider ul {
   position: relative;
   margin: 0px;
@@ -427,7 +371,6 @@ div.logo--principal{
   height: 800px;
   list-style: none;
 }
-
 #slider ul li {
   position: absolute;
   display: block;
@@ -444,7 +387,6 @@ div.logo--principal{
   left: 1226px;
   bottom: 340px;
 }
-
 a.control_prev, a.control_next {
   position: absolute;
   top: 35%;
@@ -459,33 +401,26 @@ a.control_prev, a.control_next {
   opacity: 0.8;
   cursor: pointer;
 }
-
 a.control_prev:hover, a.control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.4s ease;
 }
-
 a.control_prev {
   border-radius: 0 2px 2px 0;
   right: 1266px;
 }
-
 a.control_next {
   border-radius: 2px 0 0 2px;
   right: 64px;
 }
-
 .slider_option {
   position: relative;
   margin: 0px auto;
   width: 160px;
   font-size: 18px;
 }
-
 /*diseño registro*/
-
 /*contenedor de formulario de empresa*/
-
 .body-registroem{
   position: relative;
   left: 0%;
@@ -498,7 +433,6 @@ a.control_next {
   color: #ffffff;
   font-size: 23px;
 }
-
 .body-regisem{
   background-image: url(../image/remback.jpg);
   background-repeat: no-repeat;
@@ -506,9 +440,7 @@ a.control_next {
   display: flex;
   align-items: center;
 }
-
 /*inputs de registro empresa*/
-
 .EmpId{
   position: relative;
   left: 20px;
@@ -520,7 +452,6 @@ a.control_next {
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .EmpNom{
   position: relative;
   left: 20px;
@@ -532,12 +463,10 @@ a.control_next {
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 textarea{
   resize: none;
   background: #f2f2f2;
 }
-
 .EmpDir{
   position: relative;
   left: 8px;
@@ -549,10 +478,9 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .EmpDesc{
   position: relative;
-    display: -webkit-box;
+  display: -webkit-box;
   left: 16px;
   font-size: 15px;
   margin: 10px;
@@ -563,7 +491,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .EmpTel{
   position: relative;
   left: 13px;
@@ -575,7 +502,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .EmpCorreo{
   position: relative;
   left: 34px;
@@ -587,7 +513,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .EmpContra{
   position: relative;
   left: 135px;
@@ -599,7 +524,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .titulo-em{
   position: relative;
   top: 50px;
@@ -608,14 +532,11 @@ textarea{
   color: #ffffff;
   font-family: 'Bree serif', sans-serif;
 }
-
 .mini-fregis{
   color: rgb(255, 255, 255);
   text-align: center;
 }
-
 /*contenedor de formulario*/
-
 .body-registro{
   position: relative;
   padding-top: 3%;
@@ -628,15 +549,12 @@ textarea{
   color: #ffffff;
   font-size: 23px;
 }
-
 .wrap-formulario{
   left: 88px;
   position: relative;
   top: 50px;
 }
-
 /*input registro*/
-
 .UsuId{
   font-size: 15px;
   margin: 10px;
@@ -646,7 +564,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .UsuNombre{
   font-size: 15px;
   margin: 10px;
@@ -658,7 +575,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .UsuApellido{
   font-size: 15px;
   margin: 10px;
@@ -670,7 +586,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .UsuTelefono{
   font-size: 15px;
   margin: 10px;
@@ -682,7 +597,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .UsuCorreo{
   font-size: 15px;
   margin: 10px;
@@ -694,7 +608,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .UsuNacimiento{
   font-size: 15px;
   margin: 10px;
@@ -706,7 +619,6 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .UsuContra{
   font-size: 15px;
   margin: 10px;
@@ -718,15 +630,12 @@ textarea{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
-
 .body-register{
   background-image: url(../image/woman.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
 }
-
 .registro-titulo{
   font-size: 40px;
   left: 22%;
@@ -735,9 +644,7 @@ textarea{
   font-family: 'Bree serif', sans-serif;
   display: inline-table;
 }
-
 /*botones de formulario*/
-
 .boton-registro{
   position: relative;
   font-family: 'Roboto', sans-serif;
@@ -756,7 +663,6 @@ textarea{
   width: 200px;
   transition: all 1s ease;
 }
-
 .boton-registro:hover{
     border: 1px solid #fff;
     background-color: rgba(0, 0, 0, 0.68);
@@ -765,7 +671,6 @@ textarea{
     color: #fff;
     transition: all 1s ease;
 }
-
 .btn-mid{
   position: absolute;
   color: #ffffff;
@@ -774,13 +679,11 @@ textarea{
   left: 262px;
   font-family: 'Oswald', sans-serif;
 }
-
 .wrap-btn{
   margin: 0px;
   padding: 0px;
   top: 0px;
 }
-
 .titulo-sesion{
   position: relative;
   top: 40px;
@@ -789,7 +692,6 @@ textarea{
   text-align: center;
   color: #ffffff;
 }
-
 .btn-inicio{
   position: relative;
   margin: 70px;
@@ -799,21 +701,18 @@ textarea{
   font-size: 20px;
   border-radius: 4px;
 }
-
 .btn-inicio:hover{
   background: rgb(152, 202, 255);
   border-radius: 10px;
   transition: all 1s ease;
   cursor: pointer;
 }
-
 .user-icon{
   position: relative;
   color: #ffffff;
   margin: 20px;
   left: 230px;
 }
-
 .foot-titulo{
   position: relative;
   text-align: center;
@@ -821,12 +720,10 @@ textarea{
   color: rgb(23, 23, 23);
   top: 64px;
 }
-
 .fin{
     width: 100%;
     height: 100vh;
 }
-
 .numps{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
@@ -835,7 +732,6 @@ textarea{
   top: 60px;
   font-size: 50px;
 }
-
 .numpa{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
@@ -844,7 +740,6 @@ textarea{
   top: 60px;
   font-size: 50px;
 }
-
 .nump{
   position: relative;
   font-family: 'Archivo Black', sans-serif;
@@ -853,8 +748,6 @@ textarea{
   top: 60px;
   font-size: 50px;
 }
-
-
 .paso{
   position: relative;
   font-size: 33px;
@@ -862,9 +755,7 @@ textarea{
   top: -8px;
   text-align: center;
 }
-
 /*footer*/
-
 .footer-final{
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -879,7 +770,6 @@ textarea{
   bottom: 0px;
   height: 110px;
 }
-
 .footer-final .footer-links {
     list-style: none;
     font-weight: bold;
@@ -887,19 +777,16 @@ textarea{
     padding: 11px 0 23px;
     margin: 0;
 }
-
 .footer-final .footer-c{
   color:  #8d9093;
   font-size: 24px;
   margin: 0;
 }
-
 .footer-final .footer-cname{
   color:  #8f9296;
   font-size: 14px;
   margin: 0px;
 }
-
 .footer-final .footer-links{
   list-style: none;
   font-weight: bold;
@@ -907,35 +794,27 @@ textarea{
   padding: 10px 0 23px;
   margin: 0;
 }
-
 .footer-basic-centered .footer-links a{
   display:inline-block;
   text-decoration: none;
   color: inherit;
 }
-
 .f-fa, .f-tw, .f-ins{
   margin-right: 8px;
 }
-
 .f-fa{
   margin-left: 5px;
 }
-
 .f-fa:hover{
   color: rgb(88, 159, 252);
 }
-
 .f-tw:hover{
   color: rgb(102, 241, 255);
 }
-
 .f-ins:hover{
   color: rgb(255, 113, 237);
 }
-
 /*dashboard*/
-
 .item-dash{
   position: relative;
   display: inline-table;
@@ -947,13 +826,11 @@ textarea{
   font-family: 'Oswald', sans-serif;
   transition:all .2s ease-in-out;
 }
-
 .item-dash:hover{
   transition:all .2s ease-in-out;
   background: rgba(166, 166, 166, 0.68);
   color: #ffffff;
 }
-
 .body-dash{
   background-image: url(../image/dashback.jpeg);
   background-repeat: no-repeat;
@@ -962,7 +839,6 @@ textarea{
   width: 100%;
   display: flex;
 }
-
 .EnterpriseProfile{
   position: absolute;
   background: rgba(193, 131, 81, 0.69);
@@ -971,7 +847,6 @@ textarea{
   top: 69px;
   height: 89.6vh;
 }
-
 .img-enterprise{
   width: 200px;
   padding: 20px 15px;
@@ -979,11 +854,9 @@ textarea{
   border-radius: 180px;
   margin: 10px 60px;
 }
-
 .enterprise-name{
   color: #ffffff;
 }
-
 .enterprise-name{
   text-align: center;
   font-size: 30px;
@@ -991,7 +864,6 @@ textarea{
   justify-content: flex-start;
   padding-bottom: 25px;
 }
-
 .wrap-nav{
   position: relative;
   padding: 20px;
@@ -1002,20 +874,17 @@ textarea{
   top: 16%;
   border-radius: 15px;
 }
-
 .nav-titulo{
   color: #ffffff;
   font-size: 40px;
   font-family: 'Oswald', sans-serif;
   text-align: center;
 }
-
 .nav-btns{
   text-align: -webkit-right;
   top: -10%;
   position: relative;
 }
-
 .gest-pc{
   color: rgb(0, 0, 0);
   font-size: 23px;
@@ -1026,7 +895,6 @@ textarea{
   transition:all .2s ease-in-out;
   text-transform: uppercase;
 }
-
 .gest-pc:hover{
   transition:all .2s ease-in-out;
   background: rgba(254, 217, 145, 0.79);
@@ -1034,7 +902,6 @@ textarea{
   border: 1px solid rgb(0, 0, 0);
   cursor: pointer;
 }
-
 .marca-int{
   font-size: 18px;
   padding-left: 7px;
@@ -1049,7 +916,6 @@ textarea{
   text-align: center;
   border: 1px solid black;
 }
-
 .wrap-marca-int{
   top: 20%;
   left: 36%;
@@ -1057,7 +923,6 @@ textarea{
   position: relative;
   margin: 10px 0px;
 }
-
 .btn-marca-int{
   top: 70%;
   left: 2%;
@@ -1076,14 +941,12 @@ textarea{
   border-radius: 8px;
   transition: all 0.3s ease;
 }
-
 .btn-marca-int:hover{
   transition: all 0.3s ease;
   cursor: pointer;
   color: rgb(0, 0, 0);
   background: rgb(204, 204, 204);
 }
-
 .marca-pinfo{
   font-size: 30px;
   color: white;
@@ -1092,13 +955,10 @@ textarea{
   top: 50%;
   left: 11%;
 }
-
 /* data grid estilo*/
-
 table.dataTable tbody th, table.dataTable tbody td {
     padding: 10px 100px;
-  }
-
+}
 table.dataTable th.dt-center, table.dataTable td.dt-center, table.dataTable td.dataTables_empty {
     text-align: center;
     background: rgb(236, 236, 236);
@@ -1107,19 +967,16 @@ table.dataTable th.dt-center, table.dataTable td.dt-center, table.dataTable td.d
     border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
 }
-
 table.dataTable thead .sorting {
     background-image: url(../images/sort_both.png);
     color: rgb(255, 255, 255);
     font-family: 'roboto', sans-serif;
 }
-
 table.dataTable thead .sorting_asc {
     background-image: url(../images/sort_asc.png);
     color: rgb(255, 255, 255);
     font-family: 'roboto', sans-serif;
 }
-
 .dataTables_wrapper .dataTables_filter input {
     margin-left: 0.5em;
     background: rgb(236, 236, 236);
@@ -1128,26 +985,21 @@ table.dataTable thead .sorting_asc {
     border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
 }
-
 label{
   color: white;
   font-family: 'Roboto', sans-serif;
 }
-
 select{
   border: 1px solid Black;
 }
-
 .dataTables_wrapper .dataTables_info{
   color: rgb(0, 0, 0);
 }
-
 .paginate_button.disabled{
   color: rgb(255, 255, 255);
   background: rgb(22, 22, 22);
   border-radius: 5px;
 }
-
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled{
@@ -1160,21 +1012,17 @@ select{
   font-family: 'Oswald', sans-serif;
   font-size: 18px;
 }
-
 .dataTables_wrapper .dataTables_paginate .paginate_button.current{
   background: rgb(205, 205, 205);
   color: rgb(0, 0, 0);
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
 }
-
 .dataTables_wrapper .dataTables_paginate .paginate_button.current{
   font-size: 18px;
   font-family: 'Oswald', sans-serif;
 }
-
 /*ventana modal*/
-
 .modal {
     display: none;
     position: fixed;
@@ -1188,7 +1036,6 @@ select{
     background-color: rgba(0, 0, 0, 0.65);
     transition:all .2s ease-in-out;
 }
-
 .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -1197,7 +1044,6 @@ select{
     width: 80%;
     border-radius: 10px;
 }
-
 .close {
     color: #acacac;
     float: right;
@@ -1205,20 +1051,17 @@ select{
     font-weight: bold;
     transition:all .2s ease-in-out;
 }
-
 .close:hover,.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
     transition:all .2s ease-in-out;
 }
-
 .model-textp{
   text-align: center;
   font-size: 25px;
   font-family: 'Oswald'
 }
-
 .btn-dash{
     width: 180px;
     height: 46px;
@@ -1235,18 +1078,14 @@ select{
     transition: all 0.3s ease;
     left: 31%;
     position: relative;
-
 }
-
 .btn-dash:hover{
   background: rgb(148, 148, 148);
   color: white;
   transition: all 0.3s ease;
   border-radius: 8px;
 }
-
 /*diseño de gestiones en perfil*/
-
 .gest{
   color: rgb(255, 255, 255);
   font-size: 18px;
@@ -1255,7 +1094,6 @@ select{
   padding: 10px 0px;
   display: inline-block;
 }
-
 .gest:hover{
   border: 3px solid transparent;
   padding: 10px 5px;
@@ -1271,27 +1109,22 @@ select{
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
-
 /*registrar pc nuevo*/
-
 .titulo-newpc{
   text-align: center;
   font-family: 'Oswald', sans-serif;
   color: #ffffff;
 }
-
 .cpc{
   color: #ffffff;
   font-size: 20px;
   font-family: 'roboto', sans-serif;
   padding: 0px 60px;
 }
-
 .wrap-pcnew{
   position: relative;
   top: 2%;
 }
-
 .btn-cpc{
   left: 85%;
   position: relative;
@@ -1304,7 +1137,6 @@ select{
   transition: all .2s ease-in-out;
   text-transform: uppercase;
 }
-
 .btn-cpc:hover{
   transition:all .2s ease-in-out;
   background: rgba(231, 196, 129, 0.79);
@@ -1312,13 +1144,11 @@ select{
   border: 1px solid rgb(0, 0, 0);
   cursor: pointer;
 }
-
 .in-cpc{
   position: relative;
   margin: 7px 0px;
   align-items: center;
 }
-
 .in-cpcod{
   position: relative;
   left: 20px;
@@ -1330,7 +1160,6 @@ select{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .in-cpcname{
   position: relative;
   left: 13px;
@@ -1342,7 +1171,6 @@ select{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .in-cpcarea{
   position: relative;
   left: -20px;
@@ -1354,12 +1182,10 @@ select{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .desc{
   position: relative;
   top: -24px;
 }
-
 .in-cpcmodel{
   position: relative;
   left: 19px;
@@ -1371,7 +1197,6 @@ select{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .in-cpctipo{
   position: relative;
   left: 52px;
@@ -1383,7 +1208,6 @@ select{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .in-cpcmarca{
   position: relative;
   font-size: 15px;
@@ -1395,7 +1219,6 @@ select{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .in-cpcprecio{
   position: relative;
   left: 30px;
@@ -1407,11 +1230,9 @@ select{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
 }
-
 .custom-file-input::before {
   content: 'Seleccione algun archivo.';
   display: inline-block;
@@ -1427,11 +1248,10 @@ select{
   font-weight: 700;
   font-size: 10pt;
 }
-
 .custom-file-input:hover::before {
   border-color: black;
 }
-
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
+/* buscador de producto */
