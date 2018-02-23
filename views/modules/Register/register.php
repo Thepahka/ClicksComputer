@@ -7,23 +7,27 @@
   </head>
   <body class="body-register">
     <div class="body-registro">
-      <h1 class="registro-titulo">formulario de Registro</h1>
-      <form id="validate" class="wrap-formulario" action="Registrado" method="post">
-        <label for="UsuId">Documento de Identidad</label>
-        <input class="UsuId" id="UsuId" type="text" name="data[]" onkeyup="validate();"><br>
-        <label for="UsuNombre">Nombre(s)</label>
-        <input class="UsuNombre" id="UsuNombre" type="text" name="data[]"><br>
-        <label for="UsuApellido">Apellido(s)</label>
-        <input class="UsuApellido" id="UsuApellido" type="text" name="data[]"><br>
-        <label for="UsuTelefono" class="notrequired">Telefono</label>
-        <input class="UsuTelefono" id="UsuTelefono" type="text" name="data[]"><br>
-        <label for="UsuCorreo">Correo Electronico</label>
-        <input class="UsuCorreo" id="UsuCorreo" type="email" name="data[]"><br>
-        <label for="UsuNacimiento">Fecha de Nacimiento</label>
-        <input class="UsuNacimiento" id="UsuNacimiento" type="date" name="data[]"><br>
-        <label for="UsuContra">Contraseña</label>
-        <input class="UsuContra" id="UsuContra" type="password" name="data[]"><br>
-        <input type="submit" id="validar" class="boton-registro" value="REGISTRARSE"></input>
+      <h1 class="registro-titulo">Formulario de Registro</h1>
+        <div class="input-registrousuario">
+          <form id="validate" class="wrap-formulario" action="Registrado" method="post">
+            <input class="inputs-reg" id="UsuId" type="text" name="data[]" onkeyup="validate();"><br>
+            <input class="inputs-reg" id="UsuNombre" type="text" name="data[]"><br>
+            <input class="inputs-reg" id="UsuApellido" type="text" name="data[]"><br>
+            <input class="inputs-reg" id="UsuTelefono" type="text" name="data[]"><br>
+            <input class="inputs-reg" id="UsuCorreo" type="email" name="data[]"><br>
+            <input class="inputs-reg" id="UsuNacimiento" type="date" name="data[]"><br>
+            <input class="inputs-reg" id="UsuContra" type="password" name="data[]"><br>
+            <input type="submit" id="validar" class="boton-registro" value="REGISTRARSE"></input>
+        </div>
+        <div class="label-registrousuario">
+          <label class="labels-reg" for="UsuId">Documento de Identidad</label>
+          <label class="labels-reg" for="UsuNombre">Nombre(s)</label>
+          <label class="labels-reg" for="UsuApellido">Apellido(s)</label>
+          <label class="labels-reg" for="UsuTelefono" class="notrequired">Telefono</label>
+          <label class="labels-reg" for="UsuCorreo">Correo Electronico</label>
+          <label class="labels-reg" for="UsuNacimiento">Fecha de Nacimiento</label>
+          <label class="labels-reg" for="UsuContra">Contraseña</label>
+        </div>
       </div>
     </form>
     <?php include 'views/include/scope.header.php';

@@ -187,8 +187,8 @@ div.menu-top ul{
 .item{
   position: relative;
   display: inline-flex;
-  font-size: 20px;
-  padding: 17px 19px;
+  font-size: 16px;
+  padding: 20px 27px;
   margin: 0px 0px;
   left: 2px;
   text-transform: uppercase;
@@ -240,8 +240,8 @@ div.background2{
   font-family: 'Barlow Condensed', sans-serif;
   text-transform: uppercase;
   color: white;
-  font-size: 45px;
-  top: 30vh;
+  font-size: 40px;
+  top: 35vh;
 }
 .equipo{
   color: rgb(46, 194, 209);
@@ -291,7 +291,7 @@ div.background2{
   color: #ffffff;
   box-shadow: inset 0 0 0 1px rgb(46, 194, 209);
   border-radius: 8px;
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .btn-registraem:hover{
   background: rgb(46, 194, 209);
@@ -423,114 +423,62 @@ a.control_next {
 /*contenedor de formulario de empresa*/
 .body-registroem{
   position: relative;
-  left: 0%;
-  top: 24px;
-  bottom: 0%;
-  background-color: rgba(181, 181, 181, 0.85);
-  width: 130%;
-  font-family: 'roboto', sans-serif;
+  padding-top: 3%;
+  right: 0%;
+  background-color: rgba(128, 150, 159, 1);
+  width: 50%;
   height: 90.5vh;
+  top: 63px;
+  font-family: 'roboto', sans-serif;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 18px;
+}
+.wrap-labels-regem{
+  position: relative;
+  right: 130px;
+}
+.labels-regem{
+  padding: 0px 85px;
+  position: relative;
+  display: flex;
+}
+.wrap-input-regem{
+  position: relative;
+  left: 208px;
+  bottom: 168px;
+  padding: 0px 85px;
 }
 .body-regisem{
   background-image: url(../image/remback.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
   align-items: center;
 }
 /*inputs de registro empresa*/
-.EmpId{
-  position: relative;
-  left: 20px;
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.EmpNom{
-  position: relative;
-  left: 20px;
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
+
+.input-regem{
+ position: relative;
+ left: 20px;
+ font-size: 15px;
+ margin: 10px;
+ width: 300px;
+ border: 1px solid #DBE1EB;
+ border-radius: 4px;
+ -moz-border-radius: 4px;
+ -o-border-radius: 4px;
 }
 textarea{
   resize: none;
   background: #f2f2f2;
-}
-.EmpDir{
-  position: relative;
-  left: 8px;
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.EmpDesc{
-  position: relative;
-  display: -webkit-box;
-  left: 16px;
-  font-size: 15px;
-  margin: 10px;
-  width: 494px;
-  height: 62px;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.EmpTel{
-  position: relative;
-  left: 13px;
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.EmpCorreo{
-  position: relative;
-  left: 34px;
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.EmpContra{
-  position: relative;
-  left: 135px;
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
+  outline: none;
 }
 .titulo-em{
-  position: relative;
-  top: 50px;
-  font-size: 40px;
-  margin-left: 150px;
+  font-size: 30px;
+  left: 33%;
   color: #ffffff;
+  position: relative;
   font-family: 'Bree serif', sans-serif;
+  display: inline-table;
 }
 .mini-fregis{
   color: rgb(255, 255, 255);
@@ -541,89 +489,43 @@ textarea{
   position: relative;
   padding-top: 3%;
   left: 50%;
-  background-color: rgba(46, 194, 209, 0.68);
+  background-color: rgba(128, 150, 159, 1);
   width: 50%;
   height: 90.5vh;
   top: 63px;
   font-family: 'roboto', sans-serif;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 18px;
 }
 .wrap-formulario{
   left: 88px;
   position: relative;
   top: 50px;
 }
+input{
+  outline: none;
+}
+.label-registrousuario{
+  bottom: 344px;
+  position: relative;
+}
+.labels-reg{
+  display: flex;
+  padding: 9px 85px;
+  position: relative;
+}
 /*input registro*/
-.UsuId{
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
+.input-registrousuario{
+  position: relative;
+  top: -18px;
+  padding: 12px 85px;
+  z-index: 1000;
 }
-.UsuNombre{
+.inputs-reg{
   font-size: 15px;
   margin: 10px;
   width: 300px;
   left: 140px;
-  position: relative;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.UsuApellido{
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  left: 140px;
-  position: relative;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.UsuTelefono{
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  left: 160px;
-  position: relative;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.UsuCorreo{
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  left: 60px;
-  position: relative;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.UsuNacimiento{
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  left: 33px;
-  position: relative;
-  border: 1px solid #DBE1EB;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-}
-.UsuContra{
-  font-size: 15px;
-  margin: 10px;
-  width: 300px;
-  left: 131px;
   position: relative;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
@@ -634,11 +536,10 @@ textarea{
   background-image: url(../image/woman.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
 }
 .registro-titulo{
-  font-size: 40px;
-  left: 22%;
+  font-size: 30px;
+  left: 33%;
   color: #ffffff;
   position: relative;
   font-family: 'Bree serif', sans-serif;
@@ -648,26 +549,23 @@ textarea{
 .boton-registro{
   position: relative;
   font-family: 'Roboto', sans-serif;
-  padding: 5px;
-  left: 43%;
-  top: 10px;
+  padding: 10px 0px;
+  left: 45%;
+  top: 40px;
   cursor: pointer;
   border-radius: 10px 10px;
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
-  display: block;
-  background: #ffffff;
+  background: none;
   border: 1px solid white;
-  color: black;
-  width: 200px;
+  color: white;
+  width: 140px;
   transition: all 1s ease;
 }
 .boton-registro:hover{
     border: 1px solid #fff;
     background-color: rgba(0, 0, 0, 0.68);
-    font-size: 15px;
-    border-radius: 10px;
     color: #fff;
     transition: all 1s ease;
 }
@@ -818,9 +716,9 @@ textarea{
 .item-dash{
   position: relative;
   display: inline-table;
-  right: 1%;
-  font-size: 20px;
-  padding: 20px 16px;
+  right: 0%;
+  font-size: 16px;
+  padding: 20px 29px;
   text-transform: uppercase;
   font-weight: lighter;
   font-family: 'Oswald', sans-serif;
@@ -830,14 +728,6 @@ textarea{
   transition:all .2s ease-in-out;
   background: rgba(166, 166, 166, 0.68);
   color: #ffffff;
-}
-.body-dash{
-  background-image: url(../image/dashback.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  display: flex;
 }
 .EnterpriseProfile{
   position: absolute;
