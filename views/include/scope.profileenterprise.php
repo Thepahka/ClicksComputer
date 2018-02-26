@@ -7,10 +7,10 @@
    echo ($_SESSION["user"]["nombre"]);
   ?>
   </div>
-  <div class="gestion">
-    <a class="gest" href="MyDashboard">Gestionar productos</a>
-    <a class="gest" href="">Gestionar perfil</a>
-    <a class="gest" href="">Mis Categorias</a>
-    <a class="gest" href="GestionMarcas">Mis marcas</a>
-  </div>
+  <ul class="gestion">
+    <a href="MyDashboard"><li class="gest">Gestionar productos</li></a>
+    <a href="#"><a href="#"><li class="gest">Gestionar perfil</li></a>
+    <a href="#"><li class="gest">Mis Categorias</li></a>
+    <a href="GestionMarcas"><li class="gest">Mis marcas</li></a>
+  </ul>
 </div>

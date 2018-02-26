@@ -12,7 +12,7 @@
       <div class="wrap-labels-regem">
         <form class="wrap-formulario" action="Registrado-emp" method="post">
           <label class="labels-regem" for="EmpId">NIT o ID de la empresa</label><br>
-          <label class="labels-regem" for="EmpNom">Nombre de la empresa</label><br>
+          <label class="labels-regem" for="EmpNom" style="bottom:3px;">Nombre de la empresa</label><br>
           <label class="labels-regem" for="EmpDir" class="notrequired">Direccion de la empresa</label><br>
           <label class="labels-regem" for="EmpDesc">Descripcion de la empresa</label><br>
           <label class="labels-regem" for="EmpTel" class="notrequired">Telefono de la empresa</label><br>
@@ -20,13 +20,13 @@
           <label class="labels-regem" for="EmpContra">Contraseña</label><br>
       </div>
         <div class="wrap-input-regem">
-          <input class="input-regem" type="text" name="data[]"><br>
+          <input class="input-regem" type="text" name="data[]" style="bottom:3px;"><br>
           <input class="input-regem" type="text" name="data[]"><br>
           <input class="input-regem" type="text" name="data[]"><br>
           <textarea class="input-regem" name="data[]"></textarea><br>
           <input class="input-regem" type="text" name="data[]"><br>
           <input class="input-regem" type="email" name="data[]"><br>
-          <input type="input-regem" class="boton-registro" value="Registrarse"></input><br>
+          <input type="input-regem" class="boton-registroem" value="Registrarse"></input><br>
           <input class="input-regem" type="password" name="data[]"><br>
         </div>
     </form>

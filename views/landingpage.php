@@ -10,20 +10,10 @@
           <a class="btn-registraem" href="Registro-Empresa">registrar una empresa</a>
   </section>
   <section class="vertical">
-    <div class="slideback">
-      <div class="wrap-gal">
-      <h1 class="gal">galeria</h1>
-      </div>
-<div id="slider">
-  <a href="#" class="control_next">></a>
-  <a href="#" class="control_prev"><</a>
-  <ul>
-    <li>SLIDE 1</li>
-    <li>SLIDE 2</li>
-    <li>SLIDE 3</li>
-  </ul>
-</div>
-</div>
+  <!-- carrusel aqui -->
+  <div class="back-carrusel">
+
+  </div>
   </section>
   <section class="vertical">
     <div class="background2">
