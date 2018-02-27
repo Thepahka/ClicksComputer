@@ -12,13 +12,23 @@ require_once("scope.header.php");
     <div class="wrap--btn">
       <ul class="buttons-menu">
         <input class="item" id="mostrar-modal" name="modal" type="radio" />
-        <label style="cursor:pointer;" for="mostrar-modal" class="item">tiendas</label style="cursor:pointer;">
+        <label style="cursor:pointer;" for="mostrar-modal" class="item">Tiendas</label style="cursor:pointer;">
         <input id="cerrar-modal" name="modal" type="radio" />
-        <label for="cerrar-modal"><i class="fas fa-times-octagon"></i></label>
+        <label for="cerrar-modal"><i class="fas fa-times-circle fa-2x"></i></label>
         <div id="modal">
-  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nihil id commodi ipsa vitae dolore molestiae minus enim. Nulla ut recusandae nemo quam autem minus totam impedit, quod accusamus optio?</p>
-</div>
-        <a class="item" href="pc">productos</a>
+          <input type="text" class="barra-busqueda" placeholder="Buscar..."></input>
+          <p class="t-buscador">Tiendas</p>
+          <i class="fas fa-search fa-2x icon-bus"></i>
+        </div>
+        <input class="item" id="mostrar-modal2" name="modal2" type="radio" />
+        <label style="cursor:pointer;" for="mostrar-modal2" class="item">Productos</label style="cursor:pointer;">
+        <input id="cerrar-modal2" name="modal2" type="radio" />
+        <label for="cerrar-modal2"><i class="fas fa-times-circle fa-2x"></i></label>
+        <div id="modal2">
+          <input type="text" class="barra-busqueda" placeholder="Buscar..."></input>
+          <p class="t-buscador">Productos</p>
+          <i class="fas fa-search fa-2x icon-bus"></i>
+        </div>
         <a class="item" href="Email"><i class="fa fa-user-plus f-re" aria-hidden="true"></i>acceder</a>
       </ul>
     </div>
