@@ -11,8 +11,13 @@ require_once("scope.header.php");
     </div>
     <div class="wrap--btn">
       <ul class="buttons-menu">
-
-        <a class="item" href="tienda">tiendas</a>
+        <input class="item" id="mostrar-modal" name="modal" type="radio" />
+        <label style="cursor:pointer;" for="mostrar-modal" class="item">tiendas</label style="cursor:pointer;">
+        <input id="cerrar-modal" name="modal" type="radio" />
+        <label for="cerrar-modal"><i class="fas fa-times-octagon"></i></label>
+        <div id="modal">
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum nihil id commodi ipsa vitae dolore molestiae minus enim. Nulla ut recusandae nemo quam autem minus totam impedit, quod accusamus optio?</p>
+</div>
         <a class="item" href="pc">productos</a>
         <a class="item" href="Email"><i class="fa fa-user-plus f-re" aria-hidden="true"></i>acceder</a>
       </ul>
