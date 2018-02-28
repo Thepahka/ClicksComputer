@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-12-2017 a las 02:02:54
--- Versión del servidor: 10.1.28-MariaDB
--- Versión de PHP: 7.1.11
+-- Tiempo de generación: 28-02-2018 a las 19:17:29
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -193,28 +191,8 @@ INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `e
 (0, 123889, 'jabon', 'jabon', 'jabon', 10290120, 'jabon@jabon.com', '$2y$10$yWJLzwaKy041oxKv/ML.QO9lUl55Jr3CAuELCvqlTGhzZGzdyA4OO', 1),
 (6, 123456789, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
 (7, 987654321, 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
-(8, 12312321, 'jbon2', 'jbon2', 'jbon2', 123132, 'jbon2@jbon', '$2y$10$EvoHAgswjntvwsWuN6/VwuizC4GojxLLmNMbXPeMN0qZbiH6eD5TG', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `emp_mar`
---
-
-CREATE TABLE `emp_mar` (
-  `fk_mar_id` bigint(20) NOT NULL,
-  `fk_emp_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `emp_mar`
---
-
-INSERT INTO `emp_mar` (`fk_mar_id`, `fk_emp_id`) VALUES
-(32, 0),
-(19, 0),
-(17, 0),
-(14, 6);
+(8, 12312321, 'jbon2', 'jbon2', 'jbon2', 123132, 'jbon2@jbon', '$2y$10$EvoHAgswjntvwsWuN6/VwuizC4GojxLLmNMbXPeMN0qZbiH6eD5TG', 1),
+(9, 1036687877, 'bambu corp', 'cra bambu # bambu', 'empresa dedicada a todo lo que tiene que ver con bambú', 1234567, 'bambu@bambu.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1);
 
 -- --------------------------------------------------------
 
@@ -317,57 +295,9 @@ CREATE TABLE `inventario` (
 
 CREATE TABLE `marca` (
   `mar_id` bigint(11) NOT NULL,
-  `mar_nombre` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `marca`
---
-
-INSERT INTO `marca` (`mar_id`, `mar_nombre`) VALUES
-(10, 'hp'),
-(11, 'compaq'),
-(12, 'asus'),
-(13, 'lg'),
-(14, 'lenovo'),
-(15, 'acer'),
-(16, 'vaio'),
-(17, 'alienware'),
-(18, 'toshiba'),
-(19, 'dell'),
-(20, 'gateway'),
-(21, 'fujitsu'),
-(22, 'apple'),
-(23, 'everex'),
-(24, 'simpletech'),
-(25, 'panasonic'),
-(26, 'systemax'),
-(27, 'averatec'),
-(28, 'olivetti'),
-(29, 'samsung'),
-(30, 'sony'),
-(31, 'lanix'),
-(32, 'msi');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `mar_pc`
---
-
-CREATE TABLE `mar_pc` (
-  `fk_mar_id` bigint(11) NOT NULL,
-  `fk_pc_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `mar_pie`
---
-
-CREATE TABLE `mar_pie` (
-  `fk_mar_id` bigint(11) NOT NULL,
+  `mar_nombre` varchar(30) NOT NULL,
+  `fk_pc_id` int(11) NOT NULL,
+  `fk_emp_id` int(11) NOT NULL,
   `fk_pi_cod` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -516,7 +446,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_ape`, `usu_tel`, `usu_correo`, `usu_nac`, `usu_contra`, `fk_rol_id`) VALUES
-(6, 99092513641, 'Sergio Esteban', 'Cifuentes Arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$2d/hEWpslV7QaBe2LnivYOJzC/cJ4tA/ZsGvQ7eUgG4hpxKUaa7CC', 2);
+(6, 99092513641, 'Sergio Esteban', 'Cifuentes Arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$2d/hEWpslV7QaBe2LnivYOJzC/cJ4tA/ZsGvQ7eUgG4hpxKUaa7CC', 2),
+(7, 12121212, '121212', '121212', 1212121, '121212@12121.com', '1999-09-25', '$2y$10$N7MBceg3OhEwaImyEe1QBOtLVZoN9GPYx/94ZRyk6G931jam4CTGe', 2);
 
 --
 -- Índices para tablas volcadas
@@ -557,13 +488,6 @@ ALTER TABLE `com_pie`
 ALTER TABLE `empresa`
   ADD PRIMARY KEY (`emp_id`),
   ADD KEY `fk_rol_id` (`fk_rol_id`);
-
---
--- Indices de la tabla `emp_mar`
---
-ALTER TABLE `emp_mar`
-  ADD KEY `fk_mar_id` (`fk_mar_id`),
-  ADD KEY `fk_emp_id` (`fk_emp_id`);
 
 --
 -- Indices de la tabla `emp_pc`
@@ -622,20 +546,9 @@ ALTER TABLE `inventario`
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
-  ADD PRIMARY KEY (`mar_id`);
-
---
--- Indices de la tabla `mar_pc`
---
-ALTER TABLE `mar_pc`
-  ADD KEY `fk_mar_id` (`fk_mar_id`),
-  ADD KEY `fk_pc_id` (`fk_pc_id`);
-
---
--- Indices de la tabla `mar_pie`
---
-ALTER TABLE `mar_pie`
-  ADD KEY `fk_mar_id` (`fk_mar_id`),
+  ADD PRIMARY KEY (`mar_id`),
+  ADD KEY `fk_pc_id` (`fk_pc_id`),
+  ADD KEY `fk_emp_id` (`fk_emp_id`),
   ADD KEY `fk_pi_cod` (`fk_pi_cod`);
 
 --
@@ -707,49 +620,41 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `comentarios`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `com_pc`
 --
 ALTER TABLE `com_pc`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `com_pie`
 --
 ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `mar_id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
+  MODIFY `mar_id` bigint(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
   MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT de la tabla `tipopc`
 --
 ALTER TABLE `tipopc`
   MODIFY `tipopc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --
@@ -782,13 +687,6 @@ ALTER TABLE `com_pie`
 --
 ALTER TABLE `empresa`
   ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `emp_mar`
---
-ALTER TABLE `emp_mar`
-  ADD CONSTRAINT `emp_mar_ibfk_1` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `emp_mar_ibfk_2` FOREIGN KEY (`fk_mar_id`) REFERENCES `marca` (`mar_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `emp_pc`
@@ -826,18 +724,12 @@ ALTER TABLE `gal_pie`
   ADD CONSTRAINT `gal_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `mar_pc`
+-- Filtros para la tabla `marca`
 --
-ALTER TABLE `mar_pc`
-  ADD CONSTRAINT `mar_pc_ibfk_2` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `mar_pc_ibfk_3` FOREIGN KEY (`fk_mar_id`) REFERENCES `marca` (`mar_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `mar_pie`
---
-ALTER TABLE `mar_pie`
-  ADD CONSTRAINT `mar_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `mar_pie_ibfk_3` FOREIGN KEY (`fk_mar_id`) REFERENCES `marca` (`mar_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `marca`
+  ADD CONSTRAINT `marca_ibfk_1` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`),
+  ADD CONSTRAINT `marca_ibfk_2` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`),
+  ADD CONSTRAINT `marca_ibfk_3` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`);
 
 --
 -- Filtros para la tabla `pc`
@@ -877,7 +769,6 @@ ALTER TABLE `pi_inv`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
