@@ -6,6 +6,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
   </head>
   <body class="body-login">
+    <div class="container" id="container">
+      <div class="preloader">
+        <i class="fas fa-circle-notch fa-spin fa-6x spiner-pre"></i>
+        <p>Cargando...</p>
+      </div>
+    </div>
+  </div>
     <div class="wrap-login">
       <h2 class="titulo-up">Iniciar sesion</h2>
       <i class="fa fa-lock pass-icon fa-5x" aria-hidden="true"></i>
@@ -16,6 +23,7 @@
         <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
     </form>
   </div>
+    <script type="text/javascript" src="views/assets/js/cerrar.js"></script>
   </body>
   <?php include 'views/include/scope.header.php';
         include 'views/include/scope.menutopregistro.php';?>

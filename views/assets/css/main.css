@@ -390,7 +390,6 @@ div.logo--principal{
 textarea{
   resize: none;
   background: #f2f2f2;
-  outline: none;
 }
 .titulo-em{
   font-size: 30px;
@@ -422,9 +421,6 @@ textarea{
   position: relative;
   top: 50px;
 }
-input{
-  outline: none;
-}
 .label-registrousuario{
   bottom: 344px;
   position: relative;
@@ -448,9 +444,13 @@ input{
   left: 140px;
   position: relative;
   border: 1px solid #DBE1EB;
-  border-radius: 4px;
+  border-radius: 2px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+}
+.inputs-reg:focus{
+  border: 2px solid rgb(255, 130, 0);
+  transition: 0.5s;
 }
 .body-register{
   background-image: url(../image/woman.jpg);
@@ -943,7 +943,6 @@ select{
   width: 100%;
   line-height: 1.30;
   transition: all 0.35s ease-in-out;
-  outline: none;
   cursor: pointer;
   background-color: rgba(89, 89, 89, 1);
   border-left: 5px solid #ffffff;
@@ -1081,7 +1080,6 @@ select{
   border: 1px solid #999;
   border-radius: 3px;
   padding: 5px 8px;
-  outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
   cursor: pointer;
@@ -1196,7 +1194,6 @@ select{
   display: block;
   width: 400px;
   height: 35px;
-  outline: none;
   border: none;
   background: rgb(232, 232, 232);
   border-radius: 4px;
@@ -1214,27 +1211,28 @@ select{
 .container {
     position: absolute;
     top: 0;
-    background: #4dabd9;
+    background: rgba(77, 171, 217, 0.94);
     color: #fff;
     width: 100%;
     min-height: 100vh;
     display: flex;
-    z-index: 1000;
+    z-index: 1500;
 }
 .preloader {
     margin: auto;
     width: 350px;
-    height: 30px;
+    height: 35px;
     background: rgba(255,255,255,0.1);
     position: relative;
 }
 .preloader:before {
     content: "";
     position: absolute;
-    background: green;
+    background: rgb(0, 217, 146);
     width: 0;
-    height: 30px;
-    animation: preloader 7s infinite;
+    height: 35px;
+    animation: preloader 3s infinite;
+    border-radius: 3px;
 }
 .preloader p {
     margin: 0;
