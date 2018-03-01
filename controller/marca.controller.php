@@ -46,52 +46,39 @@ class MarcaController
 
   public function CreateMarca()
   {
-    $data = $_POST["data"];
+      $data = $_POST["data"];
 
-    $marca = strtolower($data[0]);
+      $idempresa = $_SESSION["emp"]["id"];
 
-    $result = $this->marca->ConsultIdEmp($_SESSION["user"]["correo"]);
+      $nommarca = $data[0];
 
-    $result2 = $this->marca->ConsultMarca($marca);
+      $result = $this->marca->ConsultMarca($nommarca);
 
-    $mi = $result2[0];
-
-    $ei = $_SESSION["emp"]["id"];
-
-    $result3 = $this->marca->AllMarcas2($mi, $ei);
-
-    $_SESSION["user"]["idmar"] = $result2[0];
-    $_SESSION["user"]["idemp"] = $result[0];
-
-
-    if($data[0] == "")
     {
-      echo '<script language="javascript">alert("Completa el campo con el nombre de la marca que desea registrar");</script>';
-      echo "<script>history.back(1)</script>";
-    }
-    else
-    {
-      if($result3[0][0] == $result2[0] && $result3[0][1] == $_SESSION["emp"]["id"])
+      if($data[0] == "")
       {
-        echo '<script language="javascript">alert("Esta marca ya se encuentra registrada en su tienda");</script>';
-        echo "<script>history.back(1)</script>";
+          echo '<script language="javascript">alert("Completa el campo con el nombre de la marca que desea registrar");</script>';
+          echo "<script>history.back(1)</script>";
       }
-      elseif($marca == $result2[1])
+      elseif($result[3] == $idempresa)
       {
-        $this->marca->newMarca($_SESSION["user"]["idmar"], $_SESSION["user"]["correo"]);
-        echo '<script language="javascript">
-        alert("Marca registrada con exito");
-        window.location.href="GestionMarcas"
-        </script>';
+          echo '<script language="javascript">alert("Esta marca ya esta registrada en tu tienda");</script>';
+          echo "<script>history.back(1)</script>";
       }
-    }
+      else
+      {
+          $this->marca->newMarca($nommarca ,$idempresa);
+          echo '<script language="javascript">alert("Marca registrada con exito");</script>';
+          echo "<script>history.back(1)</script>";
+      }
+      // $this->marca->newMarca($nommarca, $idempresa);
   }
 
   public function Read()
   {
-    $marid = $_SESSION["emp"]["id"];
-    $result = $this->marca->allMarcas($marid);
-    return $result;
+      $empid = $_SESSION["emp"]["id"];
+      $result = $this->marca->allMarcas($empid);
+      return $result;
   }
 
   public function DeleteMar()

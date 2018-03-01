@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-02-2018 a las 19:17:29
+-- Tiempo de generación: 01-03-2018 a las 23:16:34
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -24,10 +24,6 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarMarca` (IN `newmar` BIGINT, `marid` BIGINT, `empid` INT)  BEGIN
-UPDATE emp_mar SET fk_mar_id = newmar  WHERE fk_mar_id = marid AND fk_emp_id = empid;
-END$$
-
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `correo` VARCHAR(200))  BEGIN
 SELECT usu_correo, usu_contra, fk_rol_id FROM usuario WHERE correo = usu_correo;
 END$$
@@ -69,11 +65,7 @@ SELECT * FROM marca WHERE marca = mar_nombre;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarMarEmp` (IN `mar` INT)  BEGIN
-SELECT mar_nombre, mar_id, emp_id FROM emp_mar INNER JOIN marca ON marca.mar_id=emp_mar.fk_mar_id INNER JOIN empresa ON empresa.emp_id=emp_mar.fk_emp_id WHERE emp_mar.fk_emp_id = mar;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarMarEmp2` (IN `marid` BIGINT, `empid` INT)  BEGIN 
-SELECT * FROM emp_mar WHERE marid = fk_mar_id AND empid = fk_emp_id;
+SELECT * FROM marca INNER JOIN empresa ON marca.fk_emp_id=empresa.emp_id WHERE emp_id = mar;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarPc` (IN `computador` VARCHAR(30))  BEGIN 
@@ -88,10 +80,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTipo` (IN `tipo` VARCHAR(5
 SELECT * FROM tipopc WHERE tipopc_nom = tipo;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteMarca` (IN `marid` BIGINT, `empid` INT)  BEGIN
-DELETE FROM emp_mar WHERE marid = fk_mar_id AND empid = fk_emp_id;
-END$$
-
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
 INSERT INTO empresa(emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id) VALUES (emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id);
 END$$
@@ -100,12 +88,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarMarca` (IN `marca` VARCHAR(5
 INSERT INTO marca (mar_nombre) VALUES (marca);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarMarca2` (IN `marca2` BIGINT, IN `marca3` INT)  BEGIN
-INSERT INTO emp_mar (fk_mar_id, fk_emp_id) VALUES (marca2, marca3);
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarMarcaExistente` (IN `marcaid` BIGINT, IN `pcid` INT)  BEGIN 
-INSERT INTO mar_pc (fk_mar_id, fk_pc_id) VALUES (marcaid, pcid);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarMarcaEmpresa` (IN `nombre` VARCHAR(30), IN `emp_id` INT)  BEGIN
+INSERT INTO marca(mar_nombre, fk_pc_id, fk_emp_id, fk_pi_cod) VALUES (nombre, NULL, emp_id, NULL);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Guardarpc` (IN `pc_cod` BIGINT, IN `pc_nom` VARCHAR(30), IN `pc_desc` TEXT, IN `pc_mod` VARCHAR(50), IN `fk_tipopc_id` INT, IN `ficha_tecnica` VARCHAR(30), IN `pc_precio` BIGINT)  BEGIN
@@ -294,12 +278,21 @@ CREATE TABLE `inventario` (
 --
 
 CREATE TABLE `marca` (
-  `mar_id` bigint(11) NOT NULL,
+  `mar_id` int(11) NOT NULL,
   `mar_nombre` varchar(30) NOT NULL,
-  `fk_pc_id` int(11) NOT NULL,
-  `fk_emp_id` int(11) NOT NULL,
-  `fk_pi_cod` int(11) NOT NULL
+  `fk_pc_id` int(11) DEFAULT NULL,
+  `fk_emp_id` int(11) DEFAULT NULL,
+  `fk_pi_cod` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`mar_id`, `mar_nombre`, `fk_pc_id`, `fk_emp_id`, `fk_pi_cod`) VALUES
+(19, 'msi', NULL, 6, NULL),
+(20, 'cabeza', NULL, 6, NULL),
+(21, 'cabeza2', NULL, 6, NULL);
 
 -- --------------------------------------------------------
 
@@ -639,7 +632,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `mar_id` bigint(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --

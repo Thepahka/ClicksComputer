@@ -17,15 +17,15 @@ class MarcaModel
   }
 
 
-  public function newMarca()
+  public function newMarca($nommarca, $idempresa)
   {
     try
     {
-      $sql = "CALL GuardarMarca2(?,?)";
+      $sql = "CALL GuardarMarcaEmpresa(?,?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($_SESSION["user"]["idmar"], $_SESSION["user"]["idemp"]));
+      $query->execute(array($nommarca, $idempresa));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }
@@ -74,7 +74,7 @@ class MarcaModel
     return $result;
   }
 
-  public function allMarcas($marid)
+  public function allMarcas($empid)
   {
     try
     {
@@ -82,7 +82,7 @@ class MarcaModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($marid));
+      $query->execute(array($empid));
 
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }
