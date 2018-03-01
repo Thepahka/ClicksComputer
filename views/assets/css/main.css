@@ -19,6 +19,10 @@ body{
 input{
   background: #f2f2f2;
 }
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 /*diseño de login*/
 .body-login{
   background-image: url(../image/loginback.jpg);
@@ -33,6 +37,8 @@ input{
   background: rgba(173, 142, 105, 1);
   height: 90.3vh;
   margin-top: 4.5%;
+  top: 0%;
+  position: relative;
 }
 .titulo-up{
   position: relative;
@@ -103,26 +109,20 @@ input{
   transition: 0.5s;
 }
 .des-con{
-  position: absolute;
-  color: rgba(0, 0, 0, 0.66);
-  left: 280px;
+  position: relative;
+  color: rgba(0, 0, 0, 1);
+  right: 124px;
   font-size: 20px;
   transition: 0.3s;
-  bottom: 264px;
-}
-.des-logc{
-  position: absolute;
-}
-.des-logc:valid ~ .des-con, .des-logc:focus ~ .des-con{
-  color: Black;
-  font-size: 20px;
-  transform: translateY(-30px);
-  transition: 0.3s;
+  bottom: 48px;
 }
 .des-logc:focus, .des-con:focus {
   position: relative;
   border-bottom: 4px solid rgb(0, 156, 255);
   transition: 0.5s;
+}
+.des-logc{
+  position: absolute;
 }
 .log-email{
   position: relative;
@@ -148,7 +148,7 @@ input{
   position: absolute;
   color: #ffffff;
   bottom: 60px;
-  left: 13%;
+  left: 25%;
 }
 /*menu top*/
 div.menu-top{
@@ -680,10 +680,11 @@ textarea{
 .EnterpriseProfile{
   position: relative;
   background: rgba(201, 156, 119, 1);
-  left: 0%;
   width: 250px;
-  top: 64px;
-  height: 598px;
+  height: 100vh;
+  margin-top: 64px;
+  top: 0%;
+  position: relative;
 }
 .img-enterprise{
   width: 150px;
@@ -708,9 +709,8 @@ textarea{
   width: 70%;
   height: 80vh;
   left: 24%;
-  bottom: 83%;
+  bottom: 100%;
   border-radius: 15px;
-  display: flow-root;
 }
 .nav-titulo{
   color: #ffffff;
@@ -941,7 +941,6 @@ select{
 }
 .gest:hover{
   width: 100%;
-  line-height: 1.30;
   transition: all 0.35s ease-in-out;
   cursor: pointer;
   background-color: rgba(89, 89, 89, 1);
@@ -1108,7 +1107,7 @@ select{
   display: none;
 }
 #mostrar-modal:checked ~ #modal{
-  top: 0;
+  top: 0px;
 }
 #cerrar-modal {
   display: none;
@@ -1150,7 +1149,7 @@ select{
   display: none;
 }
 #mostrar-modal2:checked ~ #modal2{
-  top: 0;
+  top: 0px;
 }
 #cerrar-modal2 {
   display: none;
