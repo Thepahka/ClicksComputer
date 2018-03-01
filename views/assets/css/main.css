@@ -1210,3 +1210,58 @@ select{
   top: 185px;
   left: 331px;
 }
+/* preloader */
+.container {
+    position: absolute;
+    top: 0;
+    background: #4dabd9;
+    color: #fff;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    z-index: 1000;
+}
+.preloader {
+    margin: auto;
+    width: 350px;
+    height: 30px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+}
+.preloader:before {
+    content: "";
+    position: absolute;
+    background: green;
+    width: 0;
+    height: 30px;
+    animation: preloader 7s infinite;
+}
+.preloader p {
+    margin: 0;
+    line-height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cerrar {
+    transform: translateY(-100%);
+    transition: all 0.9s;
+}
+.spiner-pre{
+  position: absolute;
+  margin: auto;
+  bottom: 80px;
+  left: 125px;
+}
+@keyframes preloader {
+    90% {
+        width: 100%;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
