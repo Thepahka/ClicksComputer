@@ -115,7 +115,7 @@ class MarcaModel
   {
     try
     {
-      $sql = "CALL DeleteMarca(?,?)";
+      $sql = "CALL DeleteMarcaEmpresa(?,?)";
 
       $query = $this->pdo->prepare($sql);
 
