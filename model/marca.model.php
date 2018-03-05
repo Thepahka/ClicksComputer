@@ -134,7 +134,7 @@ class MarcaModel
   {
     try
     {
-      $sql = "CALL ActualizarMarca(?,?,?)";
+      $sql = "CALL ActualizarMarcaEmpresa(?,?,?)";
 
       $query = $this->pdo->prepare($sql);
 
