@@ -10,7 +10,7 @@
   <ul class="gestion">
     <a href="MyDashboard"><li class="gest">Gestionar productos</li></a>
     <a href=""><li class="gest">Gestionar perfil</li></a>
-    <a href="GestionCategoria"><li class="gest">Mis Categorias</li></a>
+    <a href="GestionCategorias"><li class="gest">Mis Categorias</li></a>
     <a href="GestionMarcas"><li class="gest">Mis marcas</li></a>
   </ul>
 </div>
