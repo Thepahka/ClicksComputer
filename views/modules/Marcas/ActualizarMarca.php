@@ -8,6 +8,7 @@
   </head>
   <body class="body-dash">
     <div class="wrap-nav">
+      <div class="modal-content">
       <h1 class="titulo-newpc">Actualizar marca</h1>
     <form class="" action="MarcaActualizada" method="post">
       <input type="hidden" readonly name="data[]" value="<?php echo $marcas[0][1]; ?>">
@@ -16,7 +17,7 @@
       <input type="submit" value="Actualizar marca">
     </form>
   </div>
-    <?php require_once 'views/include/scope.menutopdashboard.php';
-    require_once 'views/include/scope.profileenterprise.php';?>
+  </div>
+  <script type="text/javascript" src="views/assets/js/modal.js"></script>
   </body>
 </html>

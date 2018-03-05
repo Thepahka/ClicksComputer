@@ -1,5 +1,6 @@
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis marcas</h1>
+  <hr>
   <div class="nav-btns">
     <a class="gest-pc" id="myBtn">Registrar marca</a>
     <div class="wrap-marca-int">
@@ -8,8 +9,8 @@
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
         <p class="model-textp">Registrar nueva marca</p>
         <form class="" action="CrearMarca" method="post">
-          <input type="text" name="data[]" value="">
-          <input type="submit" value="Registrar marca">
+          <input class="crear-marca-fmodal" type="text" name="data[]" value="">
+          <input class="btn-dash-mar" type="submit" value="Registrar marca">
         </form>
       </div>
     </div>

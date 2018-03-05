@@ -67,22 +67,20 @@ html {
   text-align: center;
   left: 270px;
   font-family: 'roboto', sans-serif;
-  text-transform: uppercase;
   color: white;
   font-size: 20px;
-  display: block;
   padding: 5px;
-  top: 70vh;
-  background: rgba(255, 255, 255, 1);
+  top: 60vh;
+  background: none;
   color: #000000;
-  border-radius: 8px;
+  border-radius: 2px;
+  border: 2px solid rgb(0, 0, 0);
   transition: all 0.3s ease;
 }
 .log-btn:hover{
-  background: rgb(89, 89, 89);
+  background: rgb(0, 0, 0);
   color: white;
   transition: all 0.3s ease;
-  border-radius: 8px;
   cursor: pointer;
 }
 /*diseño login email and pass*/
@@ -678,7 +676,6 @@ textarea{
   color: #000000;
 }
 .EnterpriseProfile{
-  position: relative;
   background: rgba(201, 156, 119, 1);
   width: 250px;
   height: 100vh;
@@ -713,30 +710,32 @@ textarea{
   border-radius: 15px;
 }
 .nav-titulo{
-  color: #ffffff;
+  color: #000000;
   font-size: 40px;
   font-family: 'Oswald', sans-serif;
   text-align: center;
 }
 .nav-btns{
   text-align: -webkit-right;
-  top: -10%;
+  top: -64px;
   position: relative;
 }
 .gest-pc{
   color: rgb(0, 0, 0);
-  font-size: 23px;
-  background: #ffd8b9;
+  font-size: 18px;
+  background: rgb(251, 251, 251);
   padding: 10px 8px;
   border-radius: 4px;
   font-family: 'Oswald',sans-serif;
   transition:all .2s ease-in-out;
-  text-transform: uppercase;
+  border: 2px solid rgb(0, 0, 0);
 }
 .gest-pc:hover{
   transition:all .2s ease-in-out;
-  border: 2px solid rgb(0, 0, 0);
   cursor: pointer;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
 }
 .marca-int{
   font-size: 18px;
@@ -793,7 +792,8 @@ textarea{
 }
 /* data grid estilo*/
 table.dataTable tbody th, table.dataTable tbody td {
-    padding: 10px 100px;
+    padding: 10px 114px;
+    font-size: 13px;
 }
 .sorting_asc{
   background-color: rgb(0, 0, 0);
@@ -804,7 +804,7 @@ table.dataTable tbody th, table.dataTable tbody td {
 table.dataTable th.dt-center, table.dataTable td.dt-center, table.dataTable td.dataTables_empty {
     text-align: center;
     font-family: 'roboto', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
 }
 table.dataTable thead .sorting {
     background-image: url(../images/sort_both.png);
@@ -873,7 +873,6 @@ select{
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.65);
-    transition:all .2s ease-in-out;
 }
 .modal-content {
     background-color: #fefefe;
@@ -882,6 +881,7 @@ select{
     border: 1px solid #888;
     width: 80%;
     border-radius: 10px;
+    height: 220px;
 }
 .close {
     color: #acacac;
@@ -899,30 +899,71 @@ select{
 .model-textp{
   text-align: center;
   font-size: 25px;
-  font-family: 'Oswald'
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 30px;
 }
 .btn-dash{
     width: 180px;
     height: 46px;
-    text-align: center;
     font-family: 'roboto', sans-serif;
-    text-transform: uppercase;
     color: white;
     font-size: 18px;
     display: inline-block;
+    text-align: center;
     padding: 10px;
-    background: rgb(0, 0, 0);
-    color: #ffffff;
-    border-radius: 8px;
+    background: none;
+    color: #000000;
+    border-radius: 4px;
     transition: all 0.3s ease;
     left: 31%;
     position: relative;
+    border: 3px solid rgb(0, 0, 0);
 }
 .btn-dash:hover{
-  background: rgb(148, 148, 148);
-  color: white;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 3px solid rgb(162, 162, 162);
+  cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 8px;
+}
+/* formularios dentro de la modal */
+.crear-marca-fmodal{
+  background: rgb(237, 237, 237);
+  outline: none;
+  width: 300px;
+  height: 30px;
+  border: 1px solid rgb(0, 156, 255);
+  position: relative;
+  right: 200px;
+  top: 0px;
+  text-align: center;
+}
+.crear-marca-fmodal:focus{
+  border: 1px solid rgb(255, 0, 0);
+  transition: 0.3s;
+}
+.btn-dash-mar{
+    width: 180px;
+    height: 46px;
+    font-family: 'roboto', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    background: none;
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    border: 3px solid rgb(0, 0, 0);
+    transition: all 0.3s ease;
+    left: -42%;
+    position: relative;
+    top: 60px;
+}
+.btn-dash-mar:hover{
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 3px solid rgb(162, 162, 162);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 /*diseño de gestiones en perfil*/
 .gestion{
