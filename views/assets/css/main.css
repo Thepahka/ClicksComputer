@@ -150,7 +150,7 @@ html {
 }
 /*menu top*/
 div.menu-top{
-  background: rgba(39, 40, 39, 0.21);
+  background: rgba(0, 0, 0, 0.68);
   position: fixed;
   width: 100%;
   display: flex;
@@ -373,7 +373,6 @@ div.logo--principal{
   align-items: center;
 }
 /*inputs de registro empresa*/
-
 .input-regem{
  position: relative;
  left: 20px;
@@ -381,9 +380,14 @@ div.logo--principal{
  margin: 10px;
  width: 300px;
  border: 1px solid #DBE1EB;
- border-radius: 4px;
+ border-radius: 1px;
  -moz-border-radius: 4px;
  -o-border-radius: 4px;
+ outline: none;
+}
+.input-regem:focus{
+  border: 1px solid rgb(255, 130, 0);
+  transition: 0.5s;
 }
 textarea{
   resize: none;
@@ -394,7 +398,7 @@ textarea{
   left: 33%;
   color: #ffffff;
   position: relative;
-  font-family: 'Bree serif', sans-serif;
+  font-family: 'roboto', sans-serif;
   display: inline-table;
 }
 .mini-fregis{
@@ -442,12 +446,13 @@ textarea{
   left: 140px;
   position: relative;
   border: 1px solid #DBE1EB;
-  border-radius: 2px;
+  border-radius: 1px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+  outline: none;
 }
 .inputs-reg:focus{
-  border: 2px solid rgb(255, 130, 0);
+  border: 1px solid rgb(255, 130, 0);
   transition: 0.5s;
 }
 .body-register{
@@ -460,7 +465,7 @@ textarea{
   left: 33%;
   color: #ffffff;
   position: relative;
-  font-family: 'Bree serif', sans-serif;
+  font-family: 'roboto', sans-serif;
   display: inline-table;
 }
 /*botones de formulario*/
@@ -493,7 +498,7 @@ textarea{
   font-family: 'Roboto', sans-serif;
   padding: 10px 0px;
   left: 22%;
-  top: 60px;
+  top: 10px;
   cursor: pointer;
   border-radius: 10px 10px;
   text-align: center;
@@ -1133,7 +1138,7 @@ select{
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 /* buscador de producto ventana modal */
-#modal {
+#modal{
   background: rgba(0, 0, 0, 0.96);
   color: #fff;
   position: fixed;
@@ -1143,7 +1148,7 @@ select{
   width: 50%;
   transition: all .5s;
 }
-#mostrar-modal {
+#mostrar-modal{
   display: none;
 }
 #mostrar-modal:checked ~ #modal{
@@ -1152,7 +1157,7 @@ select{
 #cerrar-modal {
   display: none;
 }
-#cerrar-modal + label {
+#cerrar-modal + label{
   position: absolute;
   top: 80px;
   right: 30px;
