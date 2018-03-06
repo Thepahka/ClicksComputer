@@ -6,6 +6,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
   </head>
   <body class="body-regisem">
+    <div class="container" id="container">
+      <div class="preloader">
+        <i class="fas fa-circle-notch fa-spin fa-6x spiner-pre"></i>
+        <p>Cargando...</p>
+      </div>
+    </div>
     <div class="inicio-sesionregis">
     <div class="body-registroem">
       <h1 class="titulo-em">Registro de empresa</h1>
@@ -34,5 +40,6 @@
 </div>
 <?php include 'views/include/scope.header.php';
       include 'views/include/scope.menutopregistro.php';?>
+      <script type="text/javascript" src="views/assets/js/cerrar.js"></script>
   </body>
 </html>

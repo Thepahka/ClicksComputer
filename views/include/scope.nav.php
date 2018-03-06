@@ -5,7 +5,7 @@
   </div>
   <table id="datapc">
       <thead>
-          <tr>
+          <tr class="grid-item-ob">
               <th>Nombre</th>
               <th>Modelo</th>
               <th>Tipo</th>

@@ -795,11 +795,9 @@ textarea{
 table.dataTable tbody th, table.dataTable tbody td {
     padding: 10px 100px;
 }
-.sorting_asc{
-  background-color: rgb(0, 0, 0);
-}
-.sorting_asc:hover{
-
+.grid-item-ob{
+  background: rgb(0, 0, 0);
+  margin: 10px;
 }
 table.dataTable th.dt-center, table.dataTable td.dt-center, table.dataTable td.dataTables_empty {
     text-align: center;
@@ -823,6 +821,7 @@ table.dataTable thead .sorting_asc {
     font-size: 18px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 label{
   color: white;
