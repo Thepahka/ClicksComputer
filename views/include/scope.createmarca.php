@@ -18,7 +18,7 @@
 </div>
   <table id="marcas">
       <thead>
-          <tr>
+          <tr class="grid-item-ob">
               <th>#</th>
               <th>Nombre</th>
               <th>Acciones</th>
