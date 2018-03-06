@@ -31,7 +31,7 @@
             ?>
           <tr>
             <td><?php echo $item; ?></td>
-            <td><?php echo ucwords($row["fil_nombre"]); ?></td>
+            <td><?php echo ucwords($row["fil_nom"]); ?></td>
               <td>
                   <a class="btn-datagrid" href="ActualizarCategorias-<?php echo $row['fil_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Actualizar</a>
                   <a class="btn-datagrid" href="EliminarCategoria-<?php echo $row['fil_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Eliminar</a>

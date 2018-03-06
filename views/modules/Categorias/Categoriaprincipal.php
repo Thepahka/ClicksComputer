@@ -13,6 +13,6 @@
     <?php require_once 'views/include/scope.menutopdashboard.php';
     require_once 'views/include/scope.profileenterprise.php';
     require_once 'views/include/scope.createcategoria.php';?>
-    <script type="text/javascript" src="views/assets/js/datagrid.js"></script>
+    <script type="text/javascript" src="views/assets/js/datagridcat.js"></script>
   </body>
 </html>

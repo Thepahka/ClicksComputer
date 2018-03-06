@@ -16,7 +16,6 @@
       <input type="submit" value="Actualizar categoria">
     </form>
   </div>
-    <?php require_once 'views/include/scope.menutopdashboard.php';
-    require_once 'views/include/scope.profileenterprise.php';?>
+  <script type="text/javascript" src="views/assets/js/modal.js"></script>
   </body>
 </html>
