@@ -97,6 +97,8 @@ class CategoriaController
   {
     $data = $_POST["data"];
 
+    print_r($data);
+
     $categoria = $data[2];
 
     $result = $this->categoria->ConsultCategoria($categoria);
@@ -122,7 +124,7 @@ class CategoriaController
       window.location.href="GestionCategorias"
       </script>';
     }
-  }
+   }
 
 
 }
