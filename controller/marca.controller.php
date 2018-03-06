@@ -21,6 +21,7 @@ class MarcaController
     }
     require_once "views/modules/Marcas/Marcaprincipal.php";
   }
+
   public function ViewNewMarca()
   {
     if (isset($_SESSION["user"]["auth"]) && $_SESSION["user"]["auth"] == true)
@@ -32,6 +33,7 @@ class MarcaController
     }
     require_once "views/modules/Marcas/NewMarca.php";
   }
+
   public function ViewUpdateMarca()
   {
     if (isset($_SESSION["user"]["auth"]) && $_SESSION["user"]["auth"] == true)
@@ -54,7 +56,6 @@ class MarcaController
 
       $result = $this->marca->ConsultMarca($nommarca);
 
-    {
       if($data[0] == "")
       {
           echo '<script language="javascript">alert("Completa el campo con el nombre de la marca que desea registrar");</script>';

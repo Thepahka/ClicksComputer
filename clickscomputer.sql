@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-03-2018 a las 23:16:34
+-- Tiempo de generación: 05-03-2018 a las 21:58:04
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -24,6 +24,10 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarMarcaEmpresa` (IN `nombre` VARCHAR(30), IN `marcaid` INT, IN `empresaid` INT)  BEGIN
+UPDATE marca SET mar_nombre = nombre WHERE mar_id = marcaid AND fk_emp_id = empresaid;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `correo` VARCHAR(200))  BEGIN
 SELECT usu_correo, usu_contra, fk_rol_id FROM usuario WHERE correo = usu_correo;
 END$$
@@ -78,6 +82,10 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTipo` (IN `tipo` VARCHAR(50))  BEGIN
 SELECT * FROM tipopc WHERE tipopc_nom = tipo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteMarcaEmpresa` (IN `marcaid` INT, `empid` INT)  BEGIN 
+DELETE FROM marca WHERE mar_id = marcaid AND fk_emp_id = empid;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
@@ -208,6 +216,7 @@ CREATE TABLE `emp_pie` (
 
 CREATE TABLE `filtros` (
   `fil_id` int(11) NOT NULL,
+  `fk_emp_id` int(11) DEFAULT NULL,
   `fil_nom` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -290,9 +299,7 @@ CREATE TABLE `marca` (
 --
 
 INSERT INTO `marca` (`mar_id`, `mar_nombre`, `fk_pc_id`, `fk_emp_id`, `fk_pi_cod`) VALUES
-(19, 'msi', NULL, 6, NULL),
-(20, 'cabeza', NULL, 6, NULL),
-(21, 'cabeza2', NULL, 6, NULL);
+(34, 'msi', NULL, 9, NULL);
 
 -- --------------------------------------------------------
 
@@ -500,7 +507,8 @@ ALTER TABLE `emp_pie`
 -- Indices de la tabla `filtros`
 --
 ALTER TABLE `filtros`
-  ADD PRIMARY KEY (`fil_id`);
+  ADD PRIMARY KEY (`fil_id`),
+  ADD KEY `fk_emp_id` (`fk_emp_id`);
 
 --
 -- Indices de la tabla `fil_pc`
@@ -632,7 +640,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
@@ -694,6 +702,12 @@ ALTER TABLE `emp_pc`
 ALTER TABLE `emp_pie`
   ADD CONSTRAINT `emp_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `emp_pie_ibfk_3` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `filtros`
+--
+ALTER TABLE `filtros`
+  ADD CONSTRAINT `filtros_ibfk_1` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `fil_pc`

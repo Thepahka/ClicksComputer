@@ -1,5 +1,5 @@
 <?php
-class MarcaModel
+class CategoriaModel
 {
   private $pdo;
 
@@ -17,15 +17,15 @@ class MarcaModel
   }
 
 
-  public function newMarca($nommarca, $idempresa)
+  public function newCategoria($nomcategoria, $idempresa)
   {
     try
     {
-      $sql = "CALL GuardarMarcaEmpresa(?,?)";
+      $sql = "CALL GuardarCategoriaEmpresa(?,?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($nommarca, $idempresa));
+      $query->execute(array($nomcategoria, $idempresa));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }
@@ -55,15 +55,15 @@ class MarcaModel
     return $result;
   }
 
-  public function ConsultMarca($marca)
+  public function ConsultCategoria($categoria)
   {
     try
     {
-      $sql = "CALL ConsultarMarca(?)";
+      $sql = "CALL ConsultarCategoria(?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array(strtolower($marca)));
+      $query->execute(array(strtolower($categoria)));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }
@@ -74,11 +74,11 @@ class MarcaModel
     return $result;
   }
 
-  public function allMarcas($empid)
+  public function allCategorias($empid)
   {
     try
     {
-      $sql = "CALL ConsultarMarEmp(?)";
+      $sql = "CALL ConsultarCatEmp(?)";
 
       $query = $this->pdo->prepare($sql);
 
@@ -92,11 +92,11 @@ class MarcaModel
     }
     return $result;
   }
-  public function allMarcas2($mi, $ei)
+  public function allCategorias2($mi, $ei)
   {
     try
     {
-      $sql = "CALL ConsultarMarEmp2(?,?)";
+      $sql = "CALL ConsultarCatEmp2(?,?)";
 
       $query = $this->pdo->prepare($sql);
 
@@ -115,13 +115,13 @@ class MarcaModel
   {
     try
     {
-      $sql = "CALL DeleteMarcaEmpresa(?,?)";
+      $sql = "CALL DeleteCategoriaEmpresa(?,?)";
 
       $query = $this->pdo->prepare($sql);
 
       $query->execute(array($data, $data2));
 
-      $msn = "Se elimino la marca con exito";
+      $msn = "Se elimino la categoria con exito";
     }
     catch(PDOException $e)
     {
@@ -134,13 +134,13 @@ class MarcaModel
   {
     try
     {
-      $sql = "CALL ActualizarMarcaEmpresa(?,?,?)";
+      $sql = "CALL ActualizarCategoriaEmpresa(?,?,?)";
 
       $query = $this->pdo->prepare($sql);
 
       $query->execute(array($newid, $oldid, $idemp));
 
-      $msn = "Se actualizo la marca con exito";
+      $msn = "Se actualizo la categoria con exito";
     }
     catch(PDOException $e)
     {

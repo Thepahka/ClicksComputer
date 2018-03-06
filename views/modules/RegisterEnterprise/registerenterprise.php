@@ -32,7 +32,7 @@
           <textarea class="input-regem" name="data[]"></textarea><br>
           <input class="input-regem" type="text" name="data[]"><br>
           <input class="input-regem" type="email" name="data[]"><br>
-          <input type="input-regem" class="boton-registroem" value="Registrarse"></input><br>
+          <input  type="submit" class="boton-registroem input-regem" value="Registrarse"></input><br>
           <input class="input-regem" type="password" name="data[]"><br>
         </div>
     </form>

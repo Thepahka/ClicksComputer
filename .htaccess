@@ -37,3 +37,11 @@ RewriteRule ^CrearMarca$ index.php?c=marca&a=CreateMarca
 RewriteRule ^ActualizarMarcas-(\w+)-(\w+)$ index.php?c=marca&a=ViewUpdateMarca&data=$1&data2=$2
 RewriteRule ^EliminarMarca-(\w+)-(\w+)$ index.php?c=marca&a=DeleteMar&data=$1&data2=$2
 RewriteRule ^MarcaActualizada$ index.php?c=marca&a=UpdateMar
+
+#Categorias
+RewriteRule ^GestionCategorias$ index.php?c=categoria&a=ViewCategoria
+RewriteRule ^NuevaCategoria$ index.php?c=categoria&a=ViewNewCategoria
+RewriteRule ^CrearCategoria$ index.php?c=categoria&a=CreateCategoria
+RewriteRule ^ActualizarCategorias-(\w+)-(\w+)$ index.php?c=categoria&a=ViewUpdateCategoria&data=$1&data2=$2
+RewriteRule ^EliminarCategoria-(\w+)-(\w+)$ index.php?c=categoria&a=DeleteMar&data=$1&data2=$2
+RewriteRule ^CategoriaActualizada$ index.php?c=categoria&a=UpdateCat

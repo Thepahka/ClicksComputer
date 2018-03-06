@@ -1,22 +1,21 @@
 <div class="wrap-nav">
-  <h1 class="nav-titulo">Mis marcas</h1>
-  <hr>
+  <h1 class="nav-titulo">Mis categorias</h1>
   <div class="nav-btns">
-    <a class="gest-pc" id="myBtn">Registrar marca</a>
-    <div class="wrap-marca-int">
+    <a class="gest-pc" id="myBtn">Registrar categoria</a>
+    <div class="wrap-categoria-int">
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-        <p class="model-textp">Registrar nueva marca</p>
-        <form class="" action="CrearMarca" method="post">
-          <input class="crear-marca-fmodal" type="text" name="data[]" value="">
-          <input class="btn-dash-mar" type="submit" value="Registrar marca">
+        <p class="model-textp">Registrar nueva categoria</p>
+        <form class="" action="CrearCategoria" method="post">
+          <input type="text" name="data[]" value="">
+          <input type="submit" value="Registrar categoria">
         </form>
       </div>
     </div>
   </div>
 </div>
-  <table id="marcas">
+  <table id="categorias">
       <thead>
           <tr>
               <th>#</th>
@@ -32,10 +31,10 @@
             ?>
           <tr>
             <td><?php echo $item; ?></td>
-            <td><?php echo ucwords($row["mar_nombre"]); ?></td>
+            <td><?php echo ucwords($row["fil_nombre"]); ?></td>
               <td>
-                  <a class="btn-datagrid" href="ActualizarMarcas-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Actualizar</a>
-                  <a class="btn-datagrid" href="EliminarMarca-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Eliminar</a>
+                  <a class="btn-datagrid" href="ActualizarCategorias-<?php echo $row['fil_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Actualizar</a>
+                  <a class="btn-datagrid" href="EliminarCategoria-<?php echo $row['fil_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Eliminar</a>
               </td>
           </tr>
         <?php } ?>
