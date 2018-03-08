@@ -11,7 +11,8 @@ require_once("scope.header.php");
     </div>
     <div class="wrap--btn">
       <ul class="buttons-menu">
-        <input class="item" id="mostrar-modal" name="modal" type="radio" />
+        <a class="item" href="tiendas.php"><i aria-hidden="true"></i>Tiendas</a>
+        <!-- <input class="item" id="mostrar-modal" name="modal" type="radio" />
         <label style="cursor:pointer;" for="mostrar-modal" class="item">Tiendas</label style="cursor:pointer;">
         <input id="cerrar-modal" name="modal" type="radio" />
         <label for="cerrar-modal"><i class="fas fa-times-circle fa-2x"></i></label>
@@ -19,7 +20,7 @@ require_once("scope.header.php");
           <input type="text" class="barra-busqueda" placeholder="Buscar..."></input>
           <p class="t-buscador">Tiendas</p>
           <i class="fas fa-search fa-2x icon-bus"></i>
-        </div>
+        </div> -->
         <input class="item" id="mostrar-modal2" name="modal2" type="radio" />
         <label style="cursor:pointer;" for="mostrar-modal2" class="item">Productos</label style="cursor:pointer;">
         <input id="cerrar-modal2" name="modal2" type="radio" />

@@ -1,5 +1,6 @@
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis categorias</h1>
+  <hr>
   <div class="nav-btns">
     <a class="gest-pc" id="myBtn">Registrar categoria</a>
     <div class="wrap-categoria-int">
@@ -8,8 +9,8 @@
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
         <p class="model-textp">Registrar nueva categoria</p>
         <form class="" action="CrearCategoria" method="post">
-          <input type="text" name="data[]" value="">
-          <input type="submit" value="Registrar categoria">
+          <input class="crear-fmodal" type="text" name="data[]" value="">
+          <input class="btn-dash-mar" type="submit" value="Registrar categoria">
         </form>
       </div>
     </div>
@@ -17,7 +18,7 @@
 </div>
   <table id="categorias">
       <thead>
-          <tr>
+          <tr class="grid-item-ob">
               <th>#</th>
               <th>Nombre</th>
               <th>Acciones</th>

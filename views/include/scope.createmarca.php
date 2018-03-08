@@ -9,7 +9,7 @@
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
         <p class="model-textp">Registrar nueva marca</p>
         <form class="" action="CrearMarca" method="post">
-          <input class="crear-marca-fmodal" type="text" name="data[]" value="">
+          <input class="crear-fmodal" type="text" name="data[]" value="">
           <input class="btn-dash-mar" type="submit" value="Registrar marca">
         </form>
       </div>

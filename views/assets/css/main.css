@@ -34,7 +34,7 @@ html {
 .wrap-login{
   width: 700px;
   padding: 100px;
-  background: rgba(173, 142, 105, 1);
+  background: rgba(98, 148, 133, 1);
   height: 90.3vh;
   margin-top: 4.5%;
   top: 0%;
@@ -52,13 +52,13 @@ html {
   position: relative;
   color: #ffffff;
   top: -100px;
-  left: 201px;
+  left: 204px;
 }
 .pass-icon{
   position: relative;
   color: #ffffff;
   top: -100px;
-  left: 40%;
+  left: 204px;
 }
 .log-btn{
   position: absolute;
@@ -681,7 +681,7 @@ textarea{
   color: #000000;
 }
 .EnterpriseProfile{
-  background: rgba(201, 156, 119, 1);
+  background: rgba(119, 147, 201, 1);
   width: 250px;
   height: 100vh;
   margin-top: 64px;
@@ -755,13 +755,6 @@ textarea{
   color: #2E3133;
   text-align: center;
   border: 1px solid black;
-}
-.wrap-marca-int{
-  top: 20%;
-  left: 36%;
-  display: flex;
-  position: relative;
-  margin: 10px 0px;
 }
 .btn-marca-int{
   top: 70%;
@@ -931,7 +924,7 @@ select{
   transition: all 0.3s ease;
 }
 /* formularios dentro de la modal */
-.crear-marca-fmodal{
+.crear-fmodal{
   background: rgb(237, 237, 237);
   outline: none;
   width: 300px;
@@ -942,7 +935,7 @@ select{
   top: 0px;
   text-align: center;
 }
-.crear-marca-fmodal:focus{
+.crear-fmodal:focus{
   border: 1px solid rgb(255, 0, 0);
   transition: 0.3s;
 }
@@ -1255,7 +1248,7 @@ select{
 .container {
     position: absolute;
     top: 0;
-    background: rgba(77, 171, 217, 0.94);
+    background: rgba(77, 171, 217, 1);
     color: #fff;
     width: 100%;
     min-height: 100vh;
