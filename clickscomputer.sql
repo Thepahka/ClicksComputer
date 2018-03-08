@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-03-2018 a las 21:58:04
+-- Tiempo de generación: 08-03-2018 a las 18:25:47
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -26,6 +26,14 @@ DELIMITER $$
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarMarcaEmpresa` (IN `nombre` VARCHAR(30), IN `marcaid` INT, IN `empresaid` INT)  BEGIN
 UPDATE marca SET mar_nombre = nombre WHERE mar_id = marcaid AND fk_emp_id = empresaid;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarCategoria` (IN `categoria` VARCHAR(30))  BEGIN
+SELECT * FROM filtros WHERE categoria = fil_nom;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarCatEmp` (IN `cat` INT)  BEGIN
+SELECT * FROM filtros INNER JOIN empresa ON filtros.fk_emp_id=empresa.emp_id WHERE emp_id = cat;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail` (IN `correo` VARCHAR(200))  BEGIN
@@ -84,8 +92,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTipo` (IN `tipo` VARCHAR(5
 SELECT * FROM tipopc WHERE tipopc_nom = tipo;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteCategoriaEmpresa` (IN `categoriaid` INT, `empid` INT)  BEGIN
+DELETE FROM filtros WHERE fil_id = categoriaid AND fk_emp_id = empid;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteMarcaEmpresa` (IN `marcaid` INT, `empid` INT)  BEGIN 
 DELETE FROM marca WHERE mar_id = marcaid AND fk_emp_id = empid;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarCategoriaEmpresa` (IN `nombre` VARCHAR(30), IN `emp_id` INT)  BEGIN
+INSERT INTO filtros(fil_nom, fk_pc_id, fk_emp_id, fk_pi_cod) VALUES (nombre, NULL, emp_id, NULL);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
@@ -180,10 +196,8 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
-(0, 123889, 'jabon', 'jabon', 'jabon', 10290120, 'jabon@jabon.com', '$2y$10$yWJLzwaKy041oxKv/ML.QO9lUl55Jr3CAuELCvqlTGhzZGzdyA4OO', 1),
 (6, 123456789, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
 (7, 987654321, 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
-(8, 12312321, 'jbon2', 'jbon2', 'jbon2', 123132, 'jbon2@jbon', '$2y$10$EvoHAgswjntvwsWuN6/VwuizC4GojxLLmNMbXPeMN0qZbiH6eD5TG', 1),
 (9, 1036687877, 'bambu corp', 'cra bambu # bambu', 'empresa dedicada a todo lo que tiene que ver con bambú', 1234567, 'bambu@bambu.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1);
 
 -- --------------------------------------------------------
@@ -216,19 +230,10 @@ CREATE TABLE `emp_pie` (
 
 CREATE TABLE `filtros` (
   `fil_id` int(11) NOT NULL,
+  `fil_nom` varchar(30) NOT NULL,
+  `fk_pc_id` int(11) DEFAULT NULL,
   `fk_emp_id` int(11) DEFAULT NULL,
-  `fil_nom` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `fil_pc`
---
-
-CREATE TABLE `fil_pc` (
-  `fk_fil_id` int(11) NOT NULL,
-  `fk_pc_id` int(11) NOT NULL
+  `fk_pi_cod` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -299,7 +304,7 @@ CREATE TABLE `marca` (
 --
 
 INSERT INTO `marca` (`mar_id`, `mar_nombre`, `fk_pc_id`, `fk_emp_id`, `fk_pi_cod`) VALUES
-(34, 'msi', NULL, 9, NULL);
+(41, 'asdsad', NULL, 9, NULL);
 
 -- --------------------------------------------------------
 
@@ -447,7 +452,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_ape`, `usu_tel`, `usu_correo`, `usu_nac`, `usu_contra`, `fk_rol_id`) VALUES
 (6, 99092513641, 'Sergio Esteban', 'Cifuentes Arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$2d/hEWpslV7QaBe2LnivYOJzC/cJ4tA/ZsGvQ7eUgG4hpxKUaa7CC', 2),
-(7, 12121212, '121212', '121212', 1212121, '121212@12121.com', '1999-09-25', '$2y$10$N7MBceg3OhEwaImyEe1QBOtLVZoN9GPYx/94ZRyk6G931jam4CTGe', 2);
+(7, 12121212, '121212', '121212', 1212121, '121212@12121.com', '1999-09-25', '$2y$10$N7MBceg3OhEwaImyEe1QBOtLVZoN9GPYx/94ZRyk6G931jam4CTGe', 2),
+(8, 0, '333', '333', 333333333, '1@2.com', '2018-09-06', '$2y$10$u6ufWLBHXKhIkGflfw6jleurPeTLHy.Lo8s43xsY8Qa9ReJhB0Mf6', 2);
 
 --
 -- Índices para tablas volcadas
@@ -508,14 +514,9 @@ ALTER TABLE `emp_pie`
 --
 ALTER TABLE `filtros`
   ADD PRIMARY KEY (`fil_id`),
-  ADD KEY `fk_emp_id` (`fk_emp_id`);
-
---
--- Indices de la tabla `fil_pc`
---
-ALTER TABLE `fil_pc`
-  ADD KEY `fk_fil_id` (`fk_fil_id`),
-  ADD KEY `fk_pc_id` (`fk_pc_id`);
+  ADD KEY `fk_pc_id` (`fk_pc_id`),
+  ADD KEY `fk_emp_id` (`fk_emp_id`),
+  ADD KEY `fk_pi_cod` (`fk_pi_cod`);
 
 --
 -- Indices de la tabla `galeria`
@@ -637,10 +638,15 @@ ALTER TABLE `com_pie`
 ALTER TABLE `empresa`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
+-- AUTO_INCREMENT de la tabla `filtros`
+--
+ALTER TABLE `filtros`
+  MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
@@ -655,7 +661,7 @@ ALTER TABLE `tipopc`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Restricciones para tablas volcadas
 --
@@ -707,14 +713,9 @@ ALTER TABLE `emp_pie`
 -- Filtros para la tabla `filtros`
 --
 ALTER TABLE `filtros`
-  ADD CONSTRAINT `filtros_ibfk_1` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `fil_pc`
---
-ALTER TABLE `fil_pc`
-  ADD CONSTRAINT `fil_pc_ibfk_1` FOREIGN KEY (`fk_fil_id`) REFERENCES `filtros` (`fil_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `fil_pc_ibfk_2` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `filtros_ibfk_1` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `filtros_ibfk_2` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `filtros_ibfk_3` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `gal_pc`
