@@ -8,9 +8,9 @@
   ?>
   </div>
   <ul class="gestion">
-    <a href="MyDashboard"><li class="gest">Gestionar productos</li></a>
-    <a href=""><li class="gest">Gestionar perfil</li></a>
-    <a href="GestionCategorias"><li class="gest">Mis Categorias</li></a>
+    <a href="MyDashboard"><li class="gest"><i class="fas fa-box gest-icon"></i>Gestionar productos</li></a>
+    <a href=""><li class="gest"><i class="fas fa-address-book gest-icon"></i>Gestionar perfil</li></a>
+    <a href="GestionCategorias"><li class="gest"><i class="fas fa-folder-open gest-icon"></i>Mis Categorias</li></a>
     <a href="GestionMarcas"><li class="gest">Mis marcas</li></a>
   </ul>
 </div>
