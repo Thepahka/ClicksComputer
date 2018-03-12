@@ -8,4 +8,6 @@
   <body>
     <h1>nepe de duende</h1>
   </body>
+  <?php include 'views/include/scope.header.php';
+        include 'views/include/scope.menutopregistro.php';?>
 </html>

@@ -975,7 +975,6 @@ select{
   padding: 10px 0px;
   position: relative;
   top: 100px;
-  text-align: center;
 }
 .gest:hover{
   width: 100%;
@@ -988,6 +987,7 @@ select{
 }
 .gest-icon{
   margin-right: 20px;
+  margin-left: 25px;
 }
 /*registrar pc nuevo*/
 .titulo-newpc{
