@@ -3,15 +3,18 @@
 require_once("scope.header.php");
  ?>
 </div>
+
   <div class="menu-top">
     <div class="cc">
-      <i class="fas fa-align-justify icon-r"></i>
       <a>clickscomputer</a>
       <img class="logo" src="views/assets/image/logo.png">
     </div>
+    <div class="busc-cont">
+      <i class="fas fa-search lupa-busqued"></i>
+      <input class="busca-tien" type="text">
+    </div>
     <div class="wrap--btn">
       <ul class="buttons-menu">
-        <a class="item" href="Tiendas"><i aria-hidden="true"></i>Tiendas</a>
         <input class="item" id="mostrar-modal2" name="modal2" type="radio" />
         <label style="cursor:pointer;" for="mostrar-modal2" class="item">Productos</label style="cursor:pointer;">
         <input id="cerrar-modal2" name="modal2" type="radio" />
@@ -20,16 +23,8 @@ require_once("scope.header.php");
           <input type="text" class="barra-busqueda" placeholder="Buscar..."></input>
           <p class="t-buscador">Productos</p>
           <i class="fas fa-search fa-2x icon-bus"></i>
-          <div class="contenedor-productos">
-            <h3 style=" color:black;">feo</h3><br>
-            <h3 style=" color:black;">feo</h3><br>
-            <h3 style=" color:black;">feo</h3><br>
-            <h3 style=" color:black;">feo</h3><br>
-            <h3 style=" color:black;">feo</h3><br>
-          </div>
         </div>
-        <a class="item" href="Email"><i class="fa fa-user-plus f-re" aria-hidden="true"></i>acceder</a>
+        <a class="item" href="main">regresar</a>
       </ul>
     </div>
-    <?php require_once 'views/include/scope.header.php';?>
 </div>
