@@ -10,19 +10,20 @@
           <a class="btn-registraem" href="Registro-Empresa">registrar una empresa</a>
   </section>
   <section class="vertical">
-  <!-- carrusel aqui -->
-  <div class="back-carrusel">
-
-  </div>
-  </section>
-  <section class="vertical">
     <div class="background2">
           <div class="fin">
             <h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1>
-            <h4 class="numps">1.</h4><p class="paso">Ten en cuenta tus estudios o empleos.</p>
-            <h4 class="numpa">2.</h4><p class="paso">Debes saber cuanto dinero posees.</p>
-            <h4 class="nump">3.</h4><p class="paso">Registrate en nuestra pagina y busca confiablemente!!!</p>
+            <div class="cont-pasos">
+              <p class="numer-paso">1.</p> <p class="pasos"><p class="numer-paso">1.</p>Ten en cuenta tus estudios o empleos.</p>
+              <p class="numer-paso">2.</p> <p class="pasos">Debes saber cuanto dinero posees.</p>
+              <p class="numer-paso">3.</p> <p class="pasos">Registrate en nuestra pagina y busca confiablemente!!!</p>
           </div>
+          </div>
+    </div>
+  </section>
+  <section class="vertical">
+    <div class="back-bot">
+
     </div>
     		<footer class="footer-final">
     			<p class="footer-c">final</p>

@@ -36,10 +36,10 @@
         </div>
       </div>
     </form>
-    <?php include 'views/include/scope.header.php';
-      include 'views/include/scope.menutopregistro.php';?>
-      <script src="views/assets/js/validaciones.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="views/assets/js/cerrar.js"></script>
-  </body>
+  <?php include 'views/include/scope.header.php';
+  include 'views/include/scope.menutopregistro.php';?>
+  <script src="views/assets/js/validaciones.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="views/assets/js/cerrar.js"></script>
+</body>
 </html>
