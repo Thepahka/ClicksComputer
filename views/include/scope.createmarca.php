@@ -34,8 +34,8 @@
             <td><?php echo $item; ?></td>
             <td><?php echo ucwords($row["mar_nombre"]); ?></td>
               <td>
-                  <a id="myBtn" class="btn-datagrid" href="ActualizarMarcas-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Actualizar</a>
-                  <a class="btn-datagrid" href="EliminarMarca-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>">Eliminar</a>
+                  <a id="myBtn" class="btn-datagrid" href="ActualizarMarcas-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>"><i class="fas fa-pen-square"></i>Actualizar</a>
+                  <a class="btn-datagrid" href="EliminarMarca-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>"><i class="fas fa-trash-alt"></i>Eliminar</a>
               </td>
           </tr>
         <?php } ?>

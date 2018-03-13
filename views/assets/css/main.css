@@ -88,7 +88,7 @@ html {
   position: absolute;
   color: rgba(0, 0, 0, 0.66);
   left: 253px;
-  font-size: 20px;
+  font-size: 15px;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -572,7 +572,7 @@ textarea{
   margin: 5px;
 }
 .numer-paso{
-  
+
 }
 .cont-pasos{
   padding: 20px;
@@ -663,35 +663,35 @@ textarea{
 }
 .EnterpriseProfile{
   background: rgba(119, 147, 201, 1);
-  width: 250px;
+  width: 200px;
   height: 100vh;
   margin-top: 64px;
   top: 0%;
   position: relative;
 }
 .img-enterprise{
-  width: 150px;
+  width: 100px;
   border-radius: 180px;
   position: relative;
-  top: 35px;
-  left: 50px;
+  top: 30px;
+  left: 54px;
 }
 .enterprise-name{
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Oswald', sans-serif;
   justify-content: flex-start;
   color: #ffffff;
   position: relative;
-  top: 40px;
+  top: 60px;
 }
 .wrap-nav{
   position: relative;
   padding: 20px;
   background: none;
-  width: 70%;
+  width: 65%;
   height: 80vh;
-  left: 24%;
+  left: 25%;
   bottom: 100%;
   border-radius: 15px;
 }
@@ -770,75 +770,7 @@ textarea{
   left: 11%;
 }
 /* data grid estilo*/
-table.dataTable tbody th, table.dataTable tbody td {
-    padding: 10px 114px;
-    font-size: 13px;
-}
-.grid-item-ob{
-  background: rgb(0, 0, 0);
-  margin: 10px;
-}
-table.dataTable th.dt-center, table.dataTable td.dt-center, table.dataTable td.dataTables_empty {
-    text-align: center;
-    font-family: 'roboto', sans-serif;
-    font-size: 14px;
-}
-table.dataTable thead .sorting {
-    background-image: url(../images/sort_both.png);
-    color: rgb(255, 255, 255);
-    font-family: 'roboto', sans-serif;
-}
-table.dataTable thead .sorting_asc {
-    background-image: url(../images/sort_asc.png);
-    color: rgb(255, 255, 255);
-    font-family: 'roboto', sans-serif;
-}
-.dataTables_wrapper .dataTables_filter input {
-    margin-left: 0.5em;
-    background: rgb(236, 236, 236);
-    font-family: 'roboto', sans-serif;
-    font-size: 18px;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-label{
-  color: white;
-  font-family: 'Roboto', sans-serif;
-}
-select{
-  border: 1px solid Black;
-}
-.dataTables_wrapper .dataTables_info{
-  color: rgb(0, 0, 0);
-}
-.paginate_button.disabled{
-  color: rgb(255, 255, 255);
-  background: rgb(22, 22, 22);
-  border-radius: 5px;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
- .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
- .dataTables_wrapper .dataTables_paginate .paginate_button.disabled{
-  cursor: default;
-  border: 1px solid transparent;
-  box-shadow: none;
-  background: rgb(22, 22, 22);
-  border-radius: 5px;
-  color: #ffffff !important;
-  font-family: 'Oswald', sans-serif;
-  font-size: 18px;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button.current{
-  background: rgb(205, 205, 205);
-  color: rgb(0, 0, 0);
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 5px;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button.current{
-  font-size: 18px;
-  font-family: 'Oswald', sans-serif;
-}
+
 /*ventana modal*/
 .modal {
     display: none;
@@ -950,7 +882,7 @@ select{
 }
 .gest{
   color: rgb(255, 255, 255);
-  font-size: 18px;
+  font-size: 14px;
   font-family: 'roboto', sans-serif;
   margin: 7px 0px;
   padding: 10px 0px;
@@ -1237,10 +1169,7 @@ select{
     transition: all 0.9s;
 }
 .spiner-pre{
-  position: absolute;
   margin: auto;
-  bottom: 80px;
-  left: 125px;
 }
 @keyframes preloader {
     90% {
