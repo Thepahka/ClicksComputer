@@ -1,0 +1,76 @@
+/*
+author: yesid
+license: apache 2.0
+company: clickscomputer
+update: actualizaciones fecha y lo que se actualiza
+
+CONTENT RYLES CSS
+*/
+
+@import "reset.css";
+*{
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  top: 0;
+}
+input{
+  background: #f2f2f2;
+}
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.body-manual{
+  background: rgb(203, 203, 203);
+}
+/* menu hamburguesa */
+.menu-burguer{
+  background: rgb(33, 156, 235);
+  width: 330px;
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  padding: 0px;
+}
+.titu-Manualusu{
+  font-family: 'oswald', sans-serif;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+  margin: 20px;
+  text-align: center;
+}
+.book-manual{
+  margin-right: 10px;
+}
+.punto-manual{
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-family: 'roboto',sans-serif;
+  margin-top: 0px;
+  transition: 0.3s;
+  padding: 10px 6px;
+}
+.punto-manual:hover{
+  background: rgb(149, 149, 149);
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+.sub-punto{
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  transition: 0.3s;
+  margin-top: 13px;
+  padding: 5px 3px;
+}
+.sub-punto:hover{
+  background: rgb(149, 149, 149);
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}

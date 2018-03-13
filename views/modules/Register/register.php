@@ -7,10 +7,10 @@
   </head>
   <body class="body-register">
     <div class="container" id="container">
-      <div class="preloader">
-        <i class="fas fa-circle-notch fa-spin fa-6x spiner-pre"></i>
+      <i class="fas fa-circle-notch fa-spin fa-6x spiner-pre"></i>
+      <!-- <div class="preloader">
         <p>Cargando...</p>
-      </div>
+      </div> -->
     </div>
     <div class="body-registro">
       <h1 class="registro-titulo">Formulario de Registro</h1>
@@ -36,8 +36,8 @@
         </div>
       </div>
     </form>
-  <?php include 'views/include/scope.header.php';
-  include 'views/include/scope.menutopregistro.php';?>
+  <?php require_once 'views/include/scope.header.php';
+        require_once 'views/include/scope.menutopregistro.php';?>
   <script src="views/assets/js/validaciones.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="views/assets/js/cerrar.js"></script>

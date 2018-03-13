@@ -35,7 +35,7 @@ html {
   width: 700px;
   padding: 100px;
   background: rgba(98, 148, 133, 1);
-  height: 90.3vh;
+  height: 100%;
   margin-top: 4.5%;
   top: 0%;
   position: relative;
@@ -68,7 +68,7 @@ html {
   left: 270px;
   font-family: 'roboto', sans-serif;
   color: white;
-  font-size: 20px;
+  font-size: 17px;
   padding: 5px;
   top: 60vh;
   background: rgb(255, 255, 255);
@@ -87,17 +87,18 @@ html {
 .des-co{
   position: absolute;
   color: rgba(0, 0, 0, 0.66);
-  left: 253px;
+  left: 260px;
   font-size: 15px;
   transition: 0.3s;
   cursor: pointer;
+  top: 350px;
 }
 .des-log{
   position: absolute;
 }
 .des-log:valid ~ .des-co, .des-log:focus ~ .des-co{
   color: Black;
-  font-size: 20px;
+  font-size: 15px;
   transform: translateY(-30px);
   transition: 0.3s;
 }
@@ -107,12 +108,13 @@ html {
   transition: 0.5s;
 }
 .des-con{
-  position: relative;
+  position: absolute;
   color: rgba(0, 0, 0, 1);
-  right: 124px;
-  font-size: 20px;
+  left: 284px;
+  font-size: 15px;
   transition: 0.3s;
-  bottom: 48px;
+  cursor: pointer;
+  top: 310px;
 }
 .des-logc:focus, .des-con:focus {
   position: relative;
@@ -125,7 +127,7 @@ html {
 .log-email{
   position: relative;
   left: 16%;
-  top: -1px;
+  top: 40px;
   width: 300px;
   height: 35px;
   text-align: center;
@@ -135,18 +137,19 @@ html {
 .log-pass{
   position: relative;
   left: 16%;
-  top: -16px;
+  top: 20px;
   width: 300px;
   height: 35px;
   text-align: center;
   background: rgba(255, 238, 223, 1);
-  border: none;
+  border: 0px;
 }
 .mini-foot{
   position: absolute;
   color: #ffffff;
-  bottom: 60px;
-  left: 25%;
+  bottom: 80px;
+  left: 0px;
+  text-align: center;
 }
 /*menu top*/
 div.menu-top{
@@ -169,9 +172,9 @@ div.menu-top{
   position: relative;
   display: flex;
   color: #fff;
-  font-size: 40px;
+  font-size: 35px;
   padding-left: 10px;
-  margin: 2px;
+  margin: 0px;
   font-family: 'Lobster', sans-serif;
 }
 .icon-r{
@@ -185,7 +188,7 @@ div.menu-top{
 }
 .item{
   position: relative;
-  font-size: 16px;
+  font-size: 12px;
   padding: 20px 27px;
   margin: 0px 0px;
   left: 2px;
@@ -199,6 +202,9 @@ div.menu-top{
   transition:all .2s ease-in-out;
   background: rgba(166, 166, 166, 0.85);
   color: #ffffff;
+}
+.manual-libro{
+  margin-right: 5px;
 }
 /* botones tienda */
 .f-re{
@@ -343,8 +349,8 @@ div.logo--principal{
   right: 0%;
   background-color: rgba(128, 150, 159, 1);
   width: 50%;
-  height: 90.5vh;
-  top: 63px;
+  height: 100%;
+  top: 40px;
   font-family: 'roboto', sans-serif;
   color: #ffffff;
   font-size: 18px;
@@ -410,8 +416,8 @@ textarea{
   left: 50%;
   background-color: rgba(128, 150, 159, 1);
   width: 50%;
-  height: 90.5vh;
-  top: 63px;
+  height: 100%;
+  top: 40px;
   font-family: 'roboto', sans-serif;
   color: #ffffff;
   font-size: 18px;
@@ -648,7 +654,7 @@ textarea{
 .item-dash{
   position: relative;
   right: 0%;
-  font-size: 16px;
+  font-size: 12px;
   top: 20px;
   padding: 20px 29px;
   text-transform: uppercase;
@@ -665,7 +671,7 @@ textarea{
   background: rgba(119, 147, 201, 1);
   width: 200px;
   height: 100vh;
-  margin-top: 64px;
+  margin-top: 50px;
   top: 0%;
   position: relative;
 }
@@ -770,7 +776,30 @@ textarea{
   left: 11%;
 }
 /* data grid estilo*/
-
+input[type=search]{
+  background-color: rgb(172, 105, 201);
+}
+th.sorting{
+  text-align: center;
+}
+td{
+  text-align: center;
+}
+.dash-icon{
+  margin-right: 7px;
+  transition: 0.3s;
+}
+.dash-icon:hover{
+  color: rgb(252, 39, 39);
+  transition: 0.3s;
+}
+#myBtn{
+  transition: 0.3s;
+}
+#myBtn:hover{
+  transition: 0.3s;
+  color: rgb(252, 39, 39);
+}
 /*ventana modal*/
 .modal {
     display: none;

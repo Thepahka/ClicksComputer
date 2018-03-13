@@ -20,7 +20,7 @@
         <input class="log-pass des-logc" id="LoginPass" type="password" name="data[]">
         <label for="LoginPass" class="des-con">Contraseña</label>
         <input class="log-btn" id="PassEmail" type="submit" name="" value="Ingresar">
-        <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
+        <p class="mini-foot">la contraseña debe de coincidir con el correo ingresado anterior mente para abrir la vista del usuario segun su rol.</p>
     </form>
   </div>
     <script type="text/javascript" src="views/assets/js/cerrar.js"></script>

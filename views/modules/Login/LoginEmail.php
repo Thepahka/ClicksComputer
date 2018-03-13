@@ -23,10 +23,10 @@
         <label for="LoginEmail" class="des-co">Correo electronico</label>
         <input class="log-btn" id="EmailButton" type="submit" name="" value="Acceder">
     </form>
-    <p class="mini-foot">Lorem ipsum dolor sit dasda est laborum.</p>
+    <p class="mini-foot">el correo electronico que se debe ingresar aqui ya debe de estar registrado para ser validado y seguir con la contraseña.</p>
   </div>
   <script type="text/javascript" src="views/assets/js/cerrar.js"></script>
   </body>
-  <?php include 'views/include/scope.header.php';
-        include 'views/include/scope.menutopregistro.php';?>
+  <?php require_once 'views/include/scope.header.php';
+        require_once 'views/include/scope.menutopregistro.php';?>
 </html>

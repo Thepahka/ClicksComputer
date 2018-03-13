@@ -10,6 +10,6 @@
       <p class="tiendas-disponibles">Tiendas disponibles</p>
     </div>
   </body>
-  <?php include 'views/include/scope.header.php';
-        include 'views/include/scope.menutoptienda.php';?>
+  <?php require_once 'views/include/scope.header.php';
+        require_once 'views/include/scope.menutoptienda.php';?>
 </html>

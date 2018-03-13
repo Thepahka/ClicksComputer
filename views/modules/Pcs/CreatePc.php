@@ -30,11 +30,8 @@
         <input id="CreateEnter" type="submit" class="btn-cpc" value="Registrar">
       </div>
     </form>
-
     <?php require_once 'views/include/scope.menutopdashboard.php';
           require_once 'views/include/scope.profileenterprise.php';?>
-
   <script type="text/javascript" src="views/assets/js/unputfile.js"></script>
-
   </body>
 </html>
