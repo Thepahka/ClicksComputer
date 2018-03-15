@@ -20,7 +20,7 @@
           <input class="crear-fmodal" type="text" name="data[]" value="">
           <input class="btn-dash-mar" type="submit" value="Registrar categoria">
         </form>
-        <input id="categoriaAdicional" type="submit" value="agregar producto">
+        <input class="btn-dash-mar" id="categoriaAdicional" type="submit" value="agregar producto">
       </div>
     </div>
   </div>

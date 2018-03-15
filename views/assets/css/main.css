@@ -696,15 +696,16 @@ textarea{
 .wrap-nav{
   position: relative;
   padding: 20px;
-  background: none;
+  background: rgb(47, 47, 47);
   width: 65%;
   height: 80vh;
   left: 25%;
-  bottom: 100%;
+  bottom: 620px;
   border-radius: 15px;
+  border: 1px solid rgb(0, 0, 0);
 }
 .nav-titulo{
-  color: #000000;
+  color: #ffffff;
   font-size: 40px;
   font-family: 'Oswald', sans-serif;
   text-align: center;
@@ -793,16 +794,20 @@ input[type=search]{
 th.sorting,.sorting_asc{
   font-family: 'roboto',sans-serif;
   text-align: center;
-  background: rgb(222, 222, 222);
+  background: rgb(255, 255, 255);
   border: 1px solid rgb(26, 26, 26);
   transition: 0.3s;
 }
-th.sorting,.sorting_asc:focus{
-  transition: 0.3s;
+.sorting_asc:focus{
+  display: none;
 }
 /* tabla */
 td{
   text-align: center;
+}
+tbody td{
+  border: 1px solid rgba(0, 0, 0, 1);
+  background: rgb(242, 242, 242);
 }
 .icono-accion{
   margin-right: 10px;
@@ -834,8 +839,42 @@ tr[role="row"]{
   font-family: 'roboto',sans-serif;
   font-size: 18px;
 }
-{
-  color: rgb(0, 0, 0);
+.dataTables_wrapper{
+  background: rgb(205, 205, 205);
+  padding: 10px 20px;
+  border: 1px solid rgb(18, 18, 18);
+  border-radius: 5px;
+}
+#marcas_previous,#marcas_next{
+  background: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+}
+#marcas_previous:hover,#marcas_next:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 6px 0px rgb(0, 0, 0);
+}
+#datapc_previous,#datapc_next{
+  background: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+}
+#datapc_previous:hover,#datapc_next:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 6px 0px rgb(0, 0, 0);
+}
+#categorias_previous,#categorias_next{
+  background: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+}
+#categorias_previous:hover,#categorias_next:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 6px 0px rgb(0, 0, 0);
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,.paginate_button.current{
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
 }
 /*ventana modal*/
 .modal {
@@ -857,7 +896,7 @@ tr[role="row"]{
     border: 1px solid #888;
     width: 80%;
     border-radius: 10px;
-    height: 220px;
+    height: 520px;
 }
 .close {
     color: #acacac;
@@ -930,9 +969,9 @@ tr[role="row"]{
     border-radius: 2px;
     border: 3px solid rgb(0, 0, 0);
     transition: all 0.3s ease;
-    left: -42%;
-    position: relative;
-    top: 60px;
+    left: -4%;
+    top: -20px;
+    margin: 15px 0px;
 }
 .btn-dash-mar:hover{
   background: rgb(0, 0, 0);
@@ -969,14 +1008,9 @@ tr[role="row"]{
   margin-left: 25px;
 }
 /*registrar pc nuevo*/
-.titulo-newpc{
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  color: #ffffff;
-}
 .cpc{
   color: #ffffff;
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'roboto', sans-serif;
   padding: 0px 60px;
 }
@@ -1010,6 +1044,7 @@ tr[role="row"]{
 }
 .in-cpcod{
   position: relative;
+  height: 25px;
   left: 20px;
   font-size: 15px;
   margin: 10px;
@@ -1018,9 +1053,11 @@ tr[role="row"]{
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+  outline: none;
 }
 .in-cpcname{
   position: relative;
+  height: 25px;
   left: 13px;
   font-size: 15px;
   margin: 10px;
@@ -1047,6 +1084,7 @@ tr[role="row"]{
 }
 .in-cpcmodel{
   position: relative;
+  height: 25px;
   left: 19px;
   font-size: 15px;
   margin: 10px;
@@ -1058,6 +1096,7 @@ tr[role="row"]{
 }
 .in-cpctipo{
   position: relative;
+  height: 25px;
   left: 52px;
   font-size: 15px;
   margin: 10px;
@@ -1069,6 +1108,7 @@ tr[role="row"]{
 }
 .in-cpcmarca{
   position: relative;
+  height: 25px;
   font-size: 15px;
   left: 30px;
   margin: 10px;
@@ -1080,6 +1120,7 @@ tr[role="row"]{
 }
 .in-cpcprecio{
   position: relative;
+  height: 25px;
   left: 30px;
   font-size: 15px;
   margin: 10px;

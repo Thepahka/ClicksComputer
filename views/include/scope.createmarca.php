@@ -20,7 +20,7 @@
           <input class="crear-fmodal" type="text" name="data[]" value="">
           <input class="btn-dash-mar" type="submit" value="Registrar marca">
         </form>
-        <input id="marcaAdicional" type="submit" value="agregar marca">
+        <input class="btn-dash-mar" id="marcaAdicional" type="submit" value="agregar marca">
       </div>
     </div>
   </div>
