@@ -15,9 +15,9 @@
   </div>
     <div class="wrap-login">
       <h2 class="titulo-up">Iniciar sesion</h2>
-      <i class="fa fa-lock pass-icon fa-5x" aria-hidden="true"></i>
+      <i class="fa fa-lock email-icon fa-4x" aria-hidden="true"></i>
     <form class="" action="ConsultaP" method="post">
-        <input class="log-pass des-logc" id="LoginPass" type="password" name="data[]">
+        <input class="log-email des-log" id="LoginPass" type="password" name="data[]">
         <label for="LoginPass" class="des-con">Contraseña</label>
         <input class="log-btn" id="PassEmail" type="submit" name="" value="Ingresar">
         <p class="mini-foot">la contraseña debe de coincidir con el correo ingresado anterior mente para abrir la vista del usuario segun su rol.</p>

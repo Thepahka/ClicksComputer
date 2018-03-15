@@ -26,15 +26,14 @@ html {
 /*diseño de login*/
 .body-login{
   background-image: url(../image/loginback.jpg);
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   align-items: center;
 }
 .wrap-login{
   width: 700px;
-  padding: 100px;
-  background: rgba(98, 148, 133, 1);
+  background: rgba(105, 105, 105, 1);
   height: 100%;
   margin-top: 4.5%;
   top: 0%;
@@ -42,35 +41,29 @@ html {
 }
 .titulo-up{
   position: relative;
-  padding: 40px;
-  top: -100px;
-  left: 25%;
+  padding: 5px;
+  top: 110px;
+  margin-left: 38%;
   color: #ffffff;
   font-family: 'Oswald', sans-serif;
 }
 .email-icon{
   position: relative;
   color: #ffffff;
-  top: -100px;
-  left: 204px;
-}
-.pass-icon{
-  position: relative;
-  color: #ffffff;
-  top: -100px;
-  left: 204px;
+  top: 110px;
+  left: 312px;
 }
 .log-btn{
   position: absolute;
   width: 130px;
   height: 40px;
   text-align: center;
-  left: 270px;
+  left: 274px;
   font-family: 'roboto', sans-serif;
   color: white;
   font-size: 17px;
   padding: 5px;
-  top: 60vh;
+  top: 422px;
   background: rgb(255, 255, 255);
   color: #000000;
   border-radius: 2px;
@@ -87,7 +80,7 @@ html {
 .des-co{
   position: absolute;
   color: rgba(0, 0, 0, 0.66);
-  left: 260px;
+  left: 269px;
   font-size: 15px;
   transition: 0.3s;
   cursor: pointer;
@@ -97,10 +90,11 @@ html {
   position: absolute;
 }
 .des-log:valid ~ .des-co, .des-log:focus ~ .des-co{
-  color: Black;
+  color: rgb(255, 255, 255);
   font-size: 15px;
   transform: translateY(-30px);
   transition: 0.3s;
+  font-family: 'roboto',sans-serif;
 }
 .des-log:focus, .des-co:focus {
   position: relative;
@@ -109,25 +103,18 @@ html {
 }
 .des-con{
   position: absolute;
-  color: rgba(0, 0, 0, 1);
-  left: 284px;
+  color: rgba(255, 255, 255, 1);
+  left: 294px;
   font-size: 15px;
   transition: 0.3s;
   cursor: pointer;
   top: 310px;
-}
-.des-logc:focus, .des-con:focus {
-  position: relative;
-  border-bottom: 4px solid rgb(0, 156, 255);
-  transition: 0.5s;
-}
-.des-logc{
-  position: absolute;
+  font-family: 'roboto',sans-serif;
 }
 .log-email{
   position: relative;
-  left: 16%;
-  top: 40px;
+  left: 185px;
+  top: 207px;
   width: 300px;
   height: 35px;
   text-align: center;
@@ -151,7 +138,7 @@ html {
   left: 0px;
   text-align: center;
   font-family: 'roboto',sans-serif;
-  padding: 10px;
+  padding: 0px 60px;
 }
 /*menu top*/
 div.menu-top{
@@ -651,7 +638,7 @@ textarea{
 }
 /*dashboard*/
 .body-dash{
-  background-color: rgb(198, 198, 198);
+  background-color: rgb(244, 244, 244);
 }
 .item-dash{
   position: relative;
@@ -1003,6 +990,9 @@ tr[role="row"]{
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
+.manual-dash{
+  top: 130px
+}
 .gest-icon{
   margin-right: 20px;
   margin-left: 25px;
@@ -1047,36 +1037,39 @@ tr[role="row"]{
   height: 25px;
   left: 20px;
   font-size: 15px;
-  margin: 10px;
+  margin: 10px 0px;
   width: 400px;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
   outline: none;
+  font-family: 'roboto',sans-serif;
 }
 .in-cpcname{
   position: relative;
   height: 25px;
   left: 13px;
   font-size: 15px;
-  margin: 10px;
+  margin: 10px 2px;
   width: 400px;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+  font-family: 'roboto',sans-serif;
 }
 .in-cpcarea{
   position: relative;
   left: -20px;
   font-size: 15px;
-  margin: 10px;
+  margin: 10px 11px;
   width: 400px;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+  font-family: 'roboto',sans-serif;
 }
 .desc{
   position: relative;
@@ -1087,48 +1080,52 @@ tr[role="row"]{
   height: 25px;
   left: 19px;
   font-size: 15px;
-  margin: 10px;
+  margin: 10px 1px;
   width: 400px;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+  font-family: 'roboto',sans-serif;
 }
 .in-cpctipo{
   position: relative;
   height: 25px;
   left: 52px;
   font-size: 15px;
-  margin: 10px;
+  margin: 10px -6px;
   width: 400px;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+  font-family: 'roboto',sans-serif;
 }
 .in-cpcmarca{
   position: relative;
   height: 25px;
   font-size: 15px;
   left: 30px;
-  margin: 10px;
+  margin: 10px 0px;
   width: 400px;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+  font-family: 'roboto',sans-serif;
 }
 .in-cpcprecio{
   position: relative;
   height: 25px;
   left: 30px;
   font-size: 15px;
-  margin: 10px;
+  margin: 10px 0px;
   width: 400px;
   border: 1px solid #DBE1EB;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
+  font-family: 'roboto',sans-serif;
 }
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
