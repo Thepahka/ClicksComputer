@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2018 a las 18:25:47
+-- Tiempo de generación: 15-03-2018 a las 20:54:21
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -298,13 +298,6 @@ CREATE TABLE `marca` (
   `fk_emp_id` int(11) DEFAULT NULL,
   `fk_pi_cod` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `marca`
---
-
-INSERT INTO `marca` (`mar_id`, `mar_nombre`, `fk_pc_id`, `fk_emp_id`, `fk_pi_cod`) VALUES
-(41, 'asdsad', NULL, 9, NULL);
 
 -- --------------------------------------------------------
 
@@ -641,12 +634,12 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de la tabla `filtros`
 --
 ALTER TABLE `filtros`
-  MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
