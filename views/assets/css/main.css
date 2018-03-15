@@ -150,6 +150,8 @@ html {
   bottom: 80px;
   left: 0px;
   text-align: center;
+  font-family: 'roboto',sans-serif;
+  padding: 10px;
 }
 /*menu top*/
 div.menu-top{
@@ -188,7 +190,7 @@ div.menu-top{
 }
 .item{
   position: relative;
-  font-size: 12px;
+  font-size: 13px;
   padding: 20px 27px;
   margin: 0px 0px;
   left: 2px;
@@ -654,7 +656,7 @@ textarea{
 .item-dash{
   position: relative;
   right: 0%;
-  font-size: 12px;
+  font-size: 13px;
   top: 20px;
   padding: 20px 29px;
   text-transform: uppercase;
@@ -777,28 +779,63 @@ textarea{
 }
 /* data grid estilo*/
 input[type=search]{
-  background-color: rgb(172, 105, 201);
+  background-color: rgb(241, 241, 241);
+  border: 1px solid rgb(82, 82, 82);
+  width: 250px;
+  outline: none;
+  border-radius: 2px;
+  margin-bottom: 25px;
 }
-th.sorting{
+#marcas_filter{
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+th.sorting,.sorting_asc{
+  font-family: 'roboto',sans-serif;
   text-align: center;
+  background: rgb(222, 222, 222);
+  border: 1px solid rgb(26, 26, 26);
+  transition: 0.3s;
 }
+th.sorting,.sorting_asc:focus{
+  transition: 0.3s;
+}
+/* tabla */
 td{
   text-align: center;
 }
-.dash-icon{
-  margin-right: 7px;
+.icono-accion{
+  margin-right: 10px;
   transition: 0.3s;
 }
-.dash-icon:hover{
+.btn-datagrid{
+  transition: 0.3s;
+  margin: 10px 0px;
+}
+.btn-datagrid:hover{
   color: rgb(252, 39, 39);
-  transition: 0.3s;
+  transition: 0s
 }
-#myBtn{
-  transition: 0.3s;
+select[name="marcas_length"]{
+  border: 1px solid rgb(18, 18, 18);
+  font-size: 20px;
 }
-#myBtn:hover{
-  transition: 0.3s;
-  color: rgb(252, 39, 39);
+#marcas_length{
+  color: rgb(0, 0, 0);
+  font-size: 19px;
+  font-family: 'roboto', sans-serif;
+}
+tr[role="row"]{
+  border: 1px solid rgb(20, 20, 20);
+  background: rgb(232, 232, 232);
+}
+#marcas_info{
+  color: rgb(0, 0, 0);
+  font-family: 'roboto',sans-serif;
+  font-size: 18px;
+}
+{
+  color: rgb(0, 0, 0);
 }
 /*ventana modal*/
 .modal {
