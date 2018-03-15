@@ -4,7 +4,7 @@
   </div>
   <div class="enterprise-name">
     <?php
-   echo ($_SESSION["user"]["nombre"]);
+   echo (ucwords($_SESSION["user"]["nombre"]));
   ?>
   </div>
   <ul class="gestion">
