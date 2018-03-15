@@ -68,11 +68,25 @@ class CategoriaController
       }
       else
       {
-          $this->categoria->newCategoria($nomcategoria ,$idempresa);
-          echo '<script language="javascript">alert("Categoria registrada con exito");</script>';
-          echo "<script>history.back(1)</script>";
+        while(true)
+        {
+          $allcategorias = current($data);
+
+          $asignarcategorias=(( $allcategorias !== false) ? $allcategorias : ", &nbsp;");
+
+          $this->categoria->newCategoria($allcategorias ,$idempresa);
+
+          $allcategorias = next($data);
+
+          if($allcategorias === false && $allcategorias === false)
+          {
+            break;
+          }
+        }
+        echo '<script language="javascript">alert("Categoria(s) registrada(s) con exito");</script>';
+        echo "<script>history.back(1)</script>";
       }
-      // $this->categoria->newCategoria($nomcategoria, $idempresa);
+
   }
 
   public function Read()

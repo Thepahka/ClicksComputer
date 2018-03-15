@@ -68,12 +68,25 @@ class MarcaController
       }
       else
       {
-          $this->marca->newMarca($nommarca ,$idempresa);
-          echo '<script language="javascript">alert("Marca registrada con exito");</script>';
-          echo "<script>history.back(1)</script>";
+        while(true)
+        {
+          $allmarcas = current($data);
+
+          $asignarmarcas=(( $allmarcas !== false) ? $allmarcas : ", &nbsp;");
+
+          $this->marca->newMarca($allmarcas ,$idempresa);
+
+          $allmarcas = next($data);
+
+          if($allmarcas === false && $allmarcas === false)
+          {
+            break;
+          }
+        }
+        echo '<script language="javascript">alert("Marca(s) registrada(s) con exito");</script>';
+        echo "<script>history.back(1)</script>";
+        }
       }
-      // $this->marca->newMarca($nommarca, $idempresa);
-  }
 
   public function Read()
   {

@@ -1,3 +1,11 @@
+<script>
+
+    $(function(){
+        $("#marcaAdicional").on('click', function(){
+            $("#nuevamarca input:eq(0)").clone().appendTo("#nuevamarca");
+        });
+    });
+</script>
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis marcas</h1>
   <hr>
@@ -8,10 +16,11 @@
       <div class="modal-content">
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
         <p class="model-textp">Registrar nueva marca</p>
-        <form class="" action="CrearMarca" method="post">
+        <form id="nuevamarca" class="" action="CrearMarca" method="post">
           <input class="crear-fmodal" type="text" name="data[]" value="">
           <input class="btn-dash-mar" type="submit" value="Registrar marca">
         </form>
+        <input id="marcaAdicional" type="submit" value="agregar marca">
       </div>
     </div>
   </div>
