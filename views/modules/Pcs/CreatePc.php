@@ -10,7 +10,6 @@
   <body class="body-dash">
     <div class="wrap-nav">
     <h1 class="nav-titulo">Registrar Computador</h1>
-    <hr>
     <form class="wrap-pcnew" action="Registro-Completado" method="post">
         <label for="CreateId" class="cpc">Codigo del computador</label>
         <input id="CreateId" type="text" name="data[]" class="in-cpcod"></br>
@@ -28,7 +27,7 @@
         <input id="CreateMarca" type="text" name="data[]" class="in-cpcmarca"></br>
         <label for="CreatePrecio" class="cpc">Precio del computador</label>
         <input id="CreatePrecio" type="text" name="data[]" class="in-cpcprecio"></br>
-        <input id="CreateEnter" type="submit" class="btn-cpc" value="Registrar">
+        <input id="CreateEnter" type="submit" class="createpc" value="Registrar">
       </div>
     </form>
   <!-- <script type="text/javascript" src="views/assets/js/unputfile.js"></script> -->

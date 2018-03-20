@@ -719,6 +719,25 @@ textarea{
   color: rgb(255, 255, 255);
   border: 2px solid rgb(255, 255, 255);
 }
+.createpc{
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  background: rgb(251, 251, 251);
+  padding: 10px 8px;
+  border-radius: 4px;
+  font-family: 'Oswald',sans-serif;
+  transition:all .2s ease-in-out;
+  border: 2px solid rgb(0, 0, 0);
+  position: relative;
+  right: 10px;
+}
+.createpc:hover{
+  transition:all .2s ease-in-out;
+  cursor: pointer;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+}
 .marca-int{
   font-size: 18px;
   padding-left: 7px;
@@ -1007,25 +1026,6 @@ tr[role="row"]{
 .wrap-pcnew{
   position: relative;
   top: 2%;
-}
-.btn-cpc{
-  left: 85%;
-  position: relative;
-  color: rgb(0, 0, 0);
-  font-size: 23px;
-  background: #ffd8b9;
-  padding: 8px 8px;
-  border-radius: 4px;
-  font-family: 'Oswald',sans-serif;
-  transition: all .2s ease-in-out;
-  text-transform: uppercase;
-}
-.btn-cpc:hover{
-  transition:all .2s ease-in-out;
-  background: rgba(231, 196, 129, 0.79);
-  color: #ffffff;
-  border: 1px solid rgb(0, 0, 0);
-  cursor: pointer;
 }
 .in-cpc{
   position: relative;
