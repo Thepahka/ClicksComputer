@@ -22,12 +22,14 @@
         <label for="CreateTip" class="cpc">Tipo de computador</label>
         <input id="CreateTip" type="text" name="data[]" class="in-cpctipo"></br>
         <label for="CreateFicha" class="pdf cpc">Ficha tecnica del computador</label>
-        <input id="CreateFicha" type="file" name="data[]" class="in-cpcficha custom-file-input"></br>
+        <input id="CreateFicha" type="file" name="data[]" class="custom-file-input input-filep2"></br>
         <label for="CreateMarca" class="cpc">Marca del computador</label>
         <input id="CreateMarca" type="text" name="data[]" class="in-cpcmarca"></br>
         <label for="CreatePrecio" class="cpc">Precio del computador</label>
         <input id="CreatePrecio" type="text" name="data[]" class="in-cpcprecio"></br>
-        <input id="CreateEnter" type="submit" class="createpc" value="Registrar">
+        <label for="CreatePrecio" class="cpc">Imagen del producto.</label>
+        <input type="file" name="" value="" class="custom-file-input input-filep"><br>
+        <input id="CreateEnter" type="submit" class="createpc" value="Registrar producto">
       </div>
     </form>
   <!-- <script type="text/javascript" src="views/assets/js/unputfile.js"></script> -->

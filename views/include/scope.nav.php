@@ -16,7 +16,7 @@
           </tr>
   </table>
 <div id="myModal" class="modal">
-  <div class="modal-content">
+  <div class="modal-content-crearpro">
     <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
     <p class="model-textp">¿que tipo de producto desea registrar?</p>
     <a class="btn-dash" href="Registrar-Computador">Computador</a>

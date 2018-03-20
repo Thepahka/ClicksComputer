@@ -213,7 +213,7 @@ div.menu-top{
  filter: brightness(40%);
 }
 div.background2{
- background-image: url(../image/landing/compu.jpg);
+ background: rgb(222, 187, 252);
  background-repeat: no-repeat;
  background-size: cover;
  height: 100vh;
@@ -323,9 +323,8 @@ div.logo--principal{
     margin: -6px 0 0 -6px;
     border-radius: 100%;
 }
-/* carrusel nuevo */
 .back-bot{
-  background-color: rgb(174, 146, 254);
+  background-color: rgb(193, 207, 255);
   display: flex;
   align-items: center;
   height: 100%;
@@ -563,19 +562,64 @@ textarea{
     width: 100%;
     height: 100vh;
 }
-.pasos{
-  margin: 5px;
-}
-.numer-paso{
-
-}
 .cont-pasos{
   padding: 20px;
-  margin-left: 50px;
+  left: 50px;
   position: relative;
-  top: 58px;
-  background: rgba(186, 186, 186, 0.68);
+  top: 110px;
+  background: rgba(186, 186, 186, 1);
   width: 650px;
+  width: 650px;
+  height: 150px;
+  padding: 25px 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(154, 154, 154);
+  -webkit-box-shadow: 17px 26px 38px -16px rgba(0,0,0,0.75);
+  -moz-box-shadow: 17px 26px 38px -16px rgba(0,0,0,0.75);
+  box-shadow: 17px 26px 38px -16px rgba(0,0,0,0.75);
+}
+.pasos{
+  color: rgb(255, 255, 255);
+  font-family: 'roboto',sans-serif;
+  font-size: 20px;
+}
+.img-mid{
+  position: relative;
+  width: 450px;
+  height: 250px;
+  left: 59%;
+  bottom: 10px;
+}
+/* ultima seccion */
+.img-fot{
+  position: relative;
+  width: 450px;
+  height: 450px;
+  left: 30px;
+}
+.ti-con{
+  width: 650px;
+  height: 400px;
+  position: relative;
+  top: -30px;
+  left: 155px;
+  background: rgb(252, 252, 252);
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(154, 154, 154);
+  -webkit-box-shadow: 17px 26px 38px -16px rgba(0,0,0,0.75);
+  -moz-box-shadow: 17px 26px 38px -16px rgba(0,0,0,0.75);
+  box-shadow: 17px 26px 38px -16px rgba(0,0,0,0.75);
+}
+.title-tien{
+  font-size: 50px;
+  text-align: center;
+  font-family: 'roboto',sans-serif;
+}
+.tien-parra{
+  font-size: 20px;
+  text-align: left;
+  font-family: 'roboto',sans-serif;
 }
 /*footer*/
 .footer-final{
@@ -729,7 +773,8 @@ textarea{
   transition:all .2s ease-in-out;
   border: 2px solid rgb(0, 0, 0);
   position: relative;
-  right: 10px;
+  left: 84%;
+  bottom: 500px;
 }
 .createpc:hover{
   transition:all .2s ease-in-out;
@@ -903,6 +948,15 @@ tr[role="row"]{
     width: 80%;
     border-radius: 10px;
     height: 520px;
+}
+.modal-content-crearpro {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    height: 160px;
 }
 .close {
     color: #acacac;
@@ -1127,28 +1181,20 @@ tr[role="row"]{
   -o-border-radius: 4px;
   font-family: 'roboto',sans-serif;
 }
-.custom-file-input::-webkit-file-upload-button {
-  visibility: hidden;
+.input-filep{
+  position: relative;
+  left: 50px;
 }
-.custom-file-input::before {
-  content: 'Seleccione algun archivo.';
+.input-filep2{
+  position: relative;
+  left: -5px;
+}
+input[type="file"]{
+  background: rgb(154, 154, 154);
+  color: #fff;
+  padding: 3px 5px;
+  border-radius: 5px;
   display: inline-block;
-  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px 8px;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  text-shadow: 1px 1px #fff;
-  font-weight: 700;
-  font-size: 10pt;
-}
-.custom-file-input:hover::before {
-  border-color: black;
-}
-.custom-file-input:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 /* buscador de producto ventana modal */
 #modal2 {

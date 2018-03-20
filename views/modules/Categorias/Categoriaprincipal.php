@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
   </head>
   <body class="body-dash">
-
     <?php require_once 'views/include/scope.menutopdashboard.php';
     require_once 'views/include/scope.profileenterprise.php';
     require_once 'views/include/scope.createcategoria.php';?>

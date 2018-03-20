@@ -14,16 +14,24 @@
           <div class="fin">
             <h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1>
             <div class="cont-pasos">
-              <p class="numer-paso">1.</p> <p class="pasos"><p class="numer-paso">1.</p>Ten en cuenta tus estudios o empleos.</p>
-              <p class="numer-paso">2.</p> <p class="pasos">Debes saber cuanto dinero posees.</p>
-              <p class="numer-paso">3.</p> <p class="pasos">Registrate en nuestra pagina y busca confiablemente!!!</p>
+              <p class="pasos">1. Ten en cuenta tus estudios o empleos.</p>
+              <p class="pasos">2. Debes saber cuanto dinero posees.</p>
+              <p class="pasos">3. Registrate en nuestra pagina y busca confiablemente!!!</p>
           </div>
+          <img src="views/assets/image/landing/personas.png" class="img-mid" alt="">
           </div>
     </div>
   </section>
   <section class="vertical">
     <div class="back-bot">
-
+      <img src="views/assets/image/landing/tiendafoot.png" class="img-fot" alt="">
+      <div class="ti-con">
+        <h3 class="title-tien">¡Tiendas!</h3>
+        <p class="tien-parra">-Si tienes o conoces alguna tienda por favor aprende a usar nuestra pagina.</p><br>
+        <p class="tien-parra">-Podremos extender la informacion de tu tienda y productos para llamar la atencion de los clientes.</p><br>
+        <p class="tien-parra">-uso facil e intuitivo para manejar y administrar tus productos.</p><br>
+        <p class="tien-parra">Registrate ahora!!!</p><br>
+      </div>
     </div>
     		<footer class="footer-final">
     			<p class="footer-c">final</p>
