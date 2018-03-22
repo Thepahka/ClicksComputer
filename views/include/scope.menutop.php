@@ -6,7 +6,7 @@ require_once("scope.header.php");
   <div class="menu-top">
     <div class="cc">
       <i class="fas fa-align-justify icon-r"></i>
-      <a>clickscomputer</a>
+      <a class="cc-letra">clickscomputer</a>
       <img class="logo" src="views/assets/image/logo.png">
     </div>
     <div class="wrap--btn">
