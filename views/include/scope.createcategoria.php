@@ -11,7 +11,6 @@
   <hr>
   <div class="nav-btns">
     <a class="gest-pc" id="myBtn">Registrar categoria</a>
-    <div class="wrap-categoria-int">
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
@@ -23,7 +22,6 @@
         <input class="btn-dash-mar" id="categoriaAdicional" type="submit" value="agregar producto">
       </div>
     </div>
-  </div>
 </div>
   <table id="categorias">
       <thead>
