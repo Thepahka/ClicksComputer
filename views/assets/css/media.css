@@ -12,61 +12,52 @@ CONTENT RYLES MEDIA CSS
   .item{
     display: none;
   }
-
-
   /*landing*/
-
-  .cc{
+  .menu-top .logo{
     display: none;
     visibility: hidden;
   }
-
   .icon-r{
     display: none;
     visibility: visible;
     margin-top: 15px;
   }
-
+  .cc-letra{
+    margin: 0px 50px;
+  }
+  /* contenido landing */
   .wrap--texto{
     height: 100vh;
     margin-top: -15%;
     position:absolute;
   }
-
  .texto{
-    padding: 10px;
+    padding: 0px;
     font-size: 30px;
   }
-
   .right{
     display:none;
   }
-
-  .btn-registrate{
+  .btn-registrate {
     padding-right: 10px;
-    margin-left: -22%;
-  }
-
+    left: 60px;
+}
   .btn-registraem{
     padding-right: 10px;
     margin-left: -22%;
   }
-
   /*registro*/
-
   .body-registro{
     margin-left: -50%;
     width: 100%;
     padding: 0px;
   }
-
   .wrap-formulario {
     position: relative;
     top: 0px;
     left: 0px;
     overflow: hidden;
 }
-
   .registro-titulo{
     font-size: 30px;
     left: 8%;
@@ -76,7 +67,6 @@ CONTENT RYLES MEDIA CSS
     font-family: 'Bree serif', sans-serif;
     display: inline-table;
   }
-
   .UsuId{
     font-size: 15px;
     margin: 0px 68px;
@@ -88,7 +78,6 @@ CONTENT RYLES MEDIA CSS
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
   }
-
   .UsuNombre{
     font-size: 15px;
     margin: 0px 68px;
@@ -100,7 +89,6 @@ CONTENT RYLES MEDIA CSS
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
   }
-
   .UsuApellido{
     font-size: 15px;
     margin: 0px 68px;
@@ -112,7 +100,6 @@ CONTENT RYLES MEDIA CSS
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
   }
-
   .UsuTelefono{
     font-size: 15px;
     margin: 0px 68px;
@@ -124,7 +111,6 @@ CONTENT RYLES MEDIA CSS
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
   }
-
   .UsuCorreo {
     font-size: 15px;
     margin: 0px 68px;
@@ -136,7 +122,6 @@ CONTENT RYLES MEDIA CSS
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
 }
-
   .UsuContra{
     font-size: 15px;
     margin: 0px 68px;
@@ -148,7 +133,6 @@ CONTENT RYLES MEDIA CSS
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
   }
-
   .UsuNacimiento {
     font-size: 15px;
     margin: 0px 68px;
@@ -160,7 +144,6 @@ CONTENT RYLES MEDIA CSS
     -moz-border-radius: 4px;
     -o-border-radius: 4px;
 }
-
   .boton-registro{
     position: relative;
     font-family: 'Roboto', sans-serif;
@@ -185,7 +168,6 @@ CONTENT RYLES MEDIA CSS
     left: 76px;
     position: relative;
 }
-
 input{
   display: block;
   margin: 0px 0px;

@@ -7,6 +7,12 @@
   </head>
   <body class="body-manual">
 
+<section>
+  <h3 class="titulo-manual-pri">1. Indice.</h3>
+</section>
+
+<a href="main" class="boton-regresodem">Regresar</a>
+
     <?php require_once '../../include/scope.menuburguermanual.php';
           require_once '../../include/scope.header.php';?>
   </body>

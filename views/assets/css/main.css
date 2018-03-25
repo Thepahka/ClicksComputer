@@ -715,10 +715,10 @@ textarea{
   padding: 20px;
   background: rgb(47, 47, 47);
   width: 65%;
-  height: 80vh;
+  height: 550px;
   left: 25%;
-  bottom: 620px;
-  border-radius: 15px;
+  bottom: 640px;
+  border-radius: 5px;
   border: 1px solid rgb(0, 0, 0);
 }
 .nav-titulo{
