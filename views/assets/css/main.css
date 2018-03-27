@@ -30,6 +30,7 @@ html {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
+  background-position: 320px -35px;
 }
 .wrap-login{
   width: 700px;
@@ -324,7 +325,7 @@ div.logo--principal{
     border-radius: 100%;
 }
 .back-bot{
-  background-color: rgb(117, 55, 249);
+  background-color: rgb(179, 143, 255);
   display: flex;
   align-items: center;
   height: 100%;
@@ -823,6 +824,7 @@ input[type=search]{
   outline: none;
   border-radius: 2px;
   margin-bottom: 25px;
+  padding: 5px 9px;;
 }
 #marcas_filter{
   color: rgb(0, 0, 0);
@@ -859,23 +861,23 @@ tbody td{
   transition: 0s;
   cursor: pointer;
 }
-select[name="marcas_length"]{
+select[name="marcas_length"],select[name="datapc_length"],select[name="categorias_length"]{
   border: 1px solid rgb(18, 18, 18);
-  font-size: 20px;
+  font-size: 16px;
 }
-#marcas_length{
+#categorias_length,#datapc_length,#marcas_length{
   color: rgb(0, 0, 0);
-  font-size: 19px;
+  font-size: 15px;
   font-family: 'roboto', sans-serif;
 }
 tr[role="row"]{
   border: 1px solid rgb(20, 20, 20);
   background: rgb(232, 232, 232);
 }
-#marcas_info{
+#categorias_info,#datapc_info,#marcas_info{
   color: rgb(0, 0, 0);
   font-family: 'roboto',sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 .dataTables_wrapper{
   background: rgb(205, 205, 205);
@@ -1329,32 +1331,93 @@ input[type="file"]{
   width: 350px;
   font-family: 'roboto', sans-serif;
   outline: none;
-  border-radius: 6px;
+  border-radius: 2px;
   padding-left: 28px;
   font-size: 16px;
   border: 1px solid rgb(0, 195, 214);
+  transition: 0.9s
+}
+.busca-tien:focus{
+  border-bottom: 2px solid rgb(255, 0, 0);
+  transition: 0.9s;
 }
 .lupa-busqued{
   position: relative;
-  top: 20px;
+  top: 19px;
   left: 27px;
   color: rgb(168, 168, 168);
   z-index: 1000;
 }
 .body-tienda{
-  background-color: rgb(198, 198, 198);
+  background-color: rgb(245, 245, 245);
 }
 .contenedor-tien-lado{
   padding-top: 28px;
   text-align: center;
-  position: relative;
+  position: fixed;
   left: 0px;
   top: 50px;
   height: 100vh;
   width: 250px;
-  background: rgb(255, 255, 255);
+  background: rgb(150, 211, 255);
+  border: 1px solid rgb(0, 0, 0);
 }
 .tiendas-disponibles{
   font-size: 20px;
   font-family: 'roboto', sans-serif;
+  margin: 20px 0px;
+}
+.tienda-dis{
+  text-transform: capitalize;
+  font-family: 'roboto',sans-serif;
+  margin: 4px 0px;
+  padding: 5px 10px;
+  display: block;
+  width: 100%;
+  background: rgb(33, 33, 33);
+  outline: none;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+  border: none;
+}
+.tienda-dis:hover{
+  transition: 0.3s;
+  cursor: pointer;
+  background: rgb(0, 79, 196);
+}
+.producto-ti-lado{
+  background: none;
+  width: 200px;
+  margin: 0px 260px;
+  position: relative;
+  top: 75px;
+}
+.pro-ti-co-la{
+  background-color: rgb(255, 255, 255);
+  width: 250px;
+  height: 300px;
+  border-radius: 3px;
+  float: left;
+  margin: 5px 10px;
+  text-align: center;
+  transition: 0.7s;
+  border: 1px solid rgb(135, 135, 135);
+}
+.img-prod{
+  width: 150px;
+  height: 200px;
+}
+.atribu-pro{
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+.atri-con{
+  border: 2px solid rgb(107, 107, 107);
+  padding: 20px 0px;
+}
+.atri-con:hover{
+  background: rgba(162, 162, 162, 0.55);
+  cursor: pointer;
+  transition: 0.7s;
 }
