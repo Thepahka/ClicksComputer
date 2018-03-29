@@ -51,11 +51,6 @@
         echo '<script language="javascript">alert("Se debe completar el campo Correo electronico de la empresa");</script>';
         echo "<script>history.back(1)</script>";
       }
-      elseif($resul4[0] == $comprobeEmailEnterprise)
-      {
-        echo '<script language="javascript">alert("Ya existe una empresa/usuario registrado con ese correo electronico");</script>';
-        echo "<script>history.back(1)</script>";
-      }
       elseif($result[0] == $comprobeEmailEnterprise)
       {
         echo '<script language="javascript">alert("Ya existe una empresa/usuario registrado con ese correo electronico");</script>';

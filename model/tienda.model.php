@@ -14,7 +14,25 @@ class TiendaModel
     {
       die($e->getMessage());
     }
+  }
 
+  public function Tiendas()
+  {
+    try
+    {
+      $sql = "CALL ConsultarTiendas";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute();
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
   }
 
 }

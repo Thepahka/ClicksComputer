@@ -14,6 +14,12 @@ class TiendaController
   {
     require_once "views/modules/tienda/tiendas.php";
   }
+
+  public function Read()
+  {
+    $result = $this->tienda->Tiendas();
+    return $result;
+  }
 }
 
  ?>

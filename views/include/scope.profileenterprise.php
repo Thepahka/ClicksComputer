@@ -1,6 +1,6 @@
 <div class="EnterpriseProfile">
   <div class="Enterprise-img">
-    <img class="img-enterprise" src="views/assets/image/default.jpg" alt="enterpriseP">
+    <img class="img-enterprise" src="views/assets/image/default.jpg" alt="enterpriseP" usemap="#fotoperfil">
   </div>
   <div class="enterprise-name">
     <?php
