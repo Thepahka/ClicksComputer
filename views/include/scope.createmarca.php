@@ -2,7 +2,7 @@
 
     $(function(){
         $("#marcaAdicional").on('click', function(){
-            $("#nuevamarca input:eq(0)").clone().appendTo("#nuevamarca");
+            $("#nuevamarca input:eq(0)").clone().addClass("crear-clon").appendTo("#nuevamarca");
         });
     });
 </script>
@@ -16,11 +16,12 @@
       <div class="modal-content">
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
         <p class="model-textp">Registrar nueva marca</p>
-        <form id="nuevamarca" class="" action="CrearMarca" method="post">
+        <p class="indicacion-res">Escribe el nombre de las marcas aqui.</p>
+        <input class="btn-dash-mar" id="marcaAdicional" type="submit" value="agregar marca">
+        <form id="nuevamarca" class="form-conta" action="CrearMarca" method="post">
           <input class="crear-fmodal" type="text" name="data[]" value="">
           <input class="btn-dash-mar" type="submit" value="Registrar marca">
         </form>
-        <input class="btn-dash-mar" id="marcaAdicional" type="submit" value="agregar marca">
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 
     $(function(){
         $("#categoriaAdicional").on('click', function(){
-            $("#nuevocategoria input:eq(0)").clone().appendTo("#nuevocategoria");
+            $("#nuevocategoria input:eq(0)").clone().addClass("crear-clon").appendTo("#nuevocategoria");
         });
     });
 </script>
@@ -15,11 +15,12 @@
       <div class="modal-content">
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
         <p class="model-textp">Registrar nueva categoria</p>
-        <form id="nuevocategoria" class="" action="CrearCategoria" method="post">
+        <p class="indicacion-res">Escribe el nombre de las categorias aqui.</p>
+        <input class="btn-dash-mar" id="categoriaAdicional" type="submit" value="agregar producto">
+        <form id="nuevocategoria" class="form-conta" action="CrearCategoria" method="post">
           <input class="crear-fmodal" type="text" name="data[]" value="">
           <input class="btn-dash-mar" type="submit" value="Registrar categoria">
         </form>
-        <input class="btn-dash-mar" id="categoriaAdicional" type="submit" value="agregar producto">
       </div>
     </div>
 </div>

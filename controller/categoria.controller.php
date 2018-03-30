@@ -50,11 +50,6 @@ class CategoriaController
   {
       $data = $_POST["data"];
 
-      if()
-      {
-        echo "jabon";
-      }
-
       // $idempresa = $_SESSION["emp"]["id"];
       //
       // $nomcategoria = $data[0];
