@@ -6,6 +6,28 @@
         });
     });
 </script>
+<script>
+function letrasynumeros(e){
+  key=e.keyCode || e.which;
+
+  teclado=String.fromCharCode(key).toLowerCase();
+
+  letras="abcdefghijklmnopqrstuvwxyzñ";
+
+  especiales="8-37-38-46-164";
+
+  teclado_especial=false;
+
+  for(var i in especiales){
+    if(key==especiales[i]){
+      teclado_especial=true;break;
+    }
+  }
+  if(letras.indexOf(teclado)==-1 && !teclado_especial){
+    return false;
+  }
+}
+</script>
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis categorias</h1>
   <hr>
@@ -18,7 +40,7 @@
         <p class="indicacion-res">Escribe el nombre de las categorias aqui.</p>
         <input class="btn-dash-mar" id="categoriaAdicional" type="submit" value="agregar producto">
         <form id="nuevocategoria" class="form-conta" action="CrearCategoria" method="post">
-          <input class="crear-fmodal" type="text" name="data[]" value="">
+          <input class="crear-fmodal" type="text" name="data[]" value="" onkeypress="return letrasynumeros(event)" onpaste="return false">
           <input class="btn-dash-mar" type="submit" value="Registrar categoria">
         </form>
       </div>
