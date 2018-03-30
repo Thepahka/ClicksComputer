@@ -50,6 +50,34 @@ class CategoriaController
   {
       $data = $_POST["data"];
 
+      $empid = $_SESSION["emp"]["id"];
+
+      $result2 = $this->categoria->Categorias($empid);
+
+      $c = current($result2);
+      print_r($c["fil_nom"]);
+      $c = next($result2);
+      print_r($c["fil_nom"]);
+
+
+      // foreach($result2 as $row)
+      // {
+      //     $c = array($row["fil_nom"]);
+      //   if(current($c) == current($ingresadas))
+      //   {
+      //     echo "jabon";
+      //   }
+      //   print_r(current($c));
+      // }
+
+
+      // if($cat == $catemp or $cat == next($catemp))
+      // {
+      //   echo "jabon";
+      // }
+
+
+
       // $idempresa = $_SESSION["emp"]["id"];
       //
       // $nomcategoria = $data[0];
@@ -58,10 +86,10 @@ class CategoriaController
       //
       // if(($data[0] == "") or array_search("",$data))
       // {
-      //     echo '<script language="javascript">alert("te atrape sponja");</script>';
+      //     echo '<script language="javascript">alert("Tienes que llenar todos los campos");</script>';
       //     echo "<script>history.back(1)</script>";
       // }
-      // elseif($result[3] == $idempresa)
+      // elseif($result[3] == $idempresa or array_search($result[3],$data))
       // {
       //     echo '<script language="javascript">alert("Esta categoria ya esta registrada en tu tienda");</script>';
       //     echo "<script>history.back(1)</script>";

@@ -92,6 +92,26 @@ class CategoriaModel
     }
     return $result;
   }
+
+  public function Categorias($empid)
+  {
+    try
+    {
+      $sql = "CALL ConsultaCategorias(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($empid));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
   public function allCategorias2($mi, $ei)
   {
     try
