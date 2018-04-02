@@ -9,7 +9,7 @@
           <a class="btn-registrate" href="Registro">registrate</a>
           <a class="btn-registraem" href="Registro-Empresa">registrar una empresa</a>
   </section>
-  <section class="vertical">
+  <!-- <section class="vertical">
     <div class="background2">
           <div class="fin">
             <h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1>
@@ -21,7 +21,7 @@
           <img src="views/assets/image/landing/personas.png" class="img-mid" alt="">
           </div>
     </div>
-  </section>
+  </section> -->
   <section class="vertical">
     <div class="back-bot">
       <img src="views/assets/image/landing/tiendafoot.png" class="img-fot" alt="">
