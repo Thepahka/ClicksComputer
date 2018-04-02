@@ -831,7 +831,7 @@ input[type=search]{
   color: rgb(0, 0, 0);
   font-size: 18px;
 }
-th.sorting,.sorting_asc{
+th.sorting,.sorting_asc,.sorting_desc{
   font-family: 'roboto',sans-serif;
   text-align: center;
   background: rgb(255, 255, 255);
