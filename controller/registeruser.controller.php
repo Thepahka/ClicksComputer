@@ -31,7 +31,7 @@
 
       $result4 = $this->register->ValidateExistsId2($comprobeId);
 
-      if($data[0] =="")
+      if($data[0] == "")
       {
         echo '<script language="javascript">alert("Se debe completar el campo Documento de identidad");</script>';
         echo "<script>history.back(1)</script>";
@@ -39,6 +39,11 @@
       elseif($comprobeId == $result4[0])
       {
         echo '<script language="javascript">alert("Ya existe un usuario/empresa registrado con ese documento/NIT");</script>';
+        echo "<script>history.back(1)</script>";
+      }
+      elseif(!is_numeric($data[0]))
+      {
+        echo '<script language="javascript">alert("Solo puede ingresar datos numéricos en el campo Documento de identidad");</script>';
         echo "<script>history.back(1)</script>";
       }
       elseif($comprobeId == $result2[0])
@@ -66,34 +71,52 @@
         if($data[1] =="")
         {
           echo '<script language="javascript">alert("Se debe completar el campo Nombre(s)");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif(!ereg("^[A-Za-z_]*$",$data[1]))
+        {
+          echo '<script language="javascript">alert("Solo se puede ingresar letras en el campo Nombre(s)");</script>';
+          echo "<script>history.back(1)</script>";
         }
         elseif($data[2] == "")
         {
           echo '<script language="javascript">alert("Se debe completar el campo Apellido(s)");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif(!ereg("^[A-Za-z_]*$",$data[2]))
+        {
+          echo '<script language="javascript">alert("Solo se puede ingresar letras en el campo Apellido(s)");</script>';
+          echo "<script>history.back(1)</script>";
+        }
+        elseif(!is_numeric($data[3]))
+        {
+          echo '<script language="javascript">alert("Solo puede ingresar datos numéricos en el campo Telefono");</script>';
+          echo "<script>history.back(1)</script>";
         }
         elseif($data[5] =="")
         {
           echo '<script language="javascript">alert("Se debe completar el campo Fecha de nacimiento");</script>';
+          echo "<script>history.back(1)</script>";
         }
         elseif($data[6] =="")
         {
           echo '<script language="javascript">alert("Se debe completar el campo Contraseña");</script>';
+          echo "<script>history.back(1)</script>";
         }
         elseif(strlen($data[6]) < 8)
         {
           echo '<script language="javascript">alert("La contraseña debe ser minimo 8 caracteres");</script>';
+          echo "<script>history.back(1)</script>";
         }
         elseif(!preg_match('/(?=[a-z])/', $data[6]))
         {
           echo '<script language="javascript">alert("La contraseña debe contener al menos una letra");</script>';
+          echo "<script>history.back(1)</script>";
         }
         elseif(!preg_match('/(?=\d)/', $data[6]))
         {
           echo '<script language="javascript">alert("La contraseña debe contener al menos una número");</script>';
-        }
-        elseif(!preg_match('/(?=[@#%&]|-|_)/', $data[6]))
-        {
-          echo '<script language="javascript">alert("La contraseña debe contener al menos uno de estos simbolos: @#%&-_");</script>';
+          echo "<script>history.back(1)</script>";
         }
         else
         {
@@ -103,7 +126,6 @@
           window.location.href="main";
           </script>';
         }
-        echo "<script>history.back(1)</script>";
       }
     }
 
