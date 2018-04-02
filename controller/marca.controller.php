@@ -56,7 +56,7 @@ class MarcaController
 
       $result = $this->marca->ConsultMarca($nommarca);
 
-      if($data[0] == "" array_search("",$data))
+      if($data[0] == "" or array_search("",$data))
       {
           echo '<script language="javascript">alert("Completa el campo con el nombre de la marca que desea registrar");</script>';
           echo "<script>history.back(1)</script>";
