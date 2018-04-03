@@ -1,20 +1,43 @@
-// /* Capturar el click del botón */
-// $("#validar").on("click", function()
-//    {
-//     /* Validar el formulario */
-//     $("#validate").validate
-//          ({
-//              rules: /* Accedemos a los campos a través de su nombre: email, nombre, edad */
-//              {
-//                #UsuCorreo: {required: true, email: true},
-//                #UsuNacimiento: {required: true, date: true, min:2005-01-01, max: 1940-01-01},
-//                #UsuContra: {required: true, password: true},
-//              },
-//              messages: /* Accedemos a los campos a través de su nombre: email, nombre, edad */
-//              {
-//                #UsuCorreo: {required: 'Se debe completar el correo'},
-//                #UsuNacimiento: {required: 'Se debe completar la fecha de nacimiento', min: 'La fecha minima es 2005-01-01', max: 'La fecha maxima es 1950-01-01'},
-//                #UsuContra: {required: 'Se debe completar la contraseña',},
-//              }
-//          });
-//    });
+// document.form.boton.disabled=true;
+// validar.onmousemove = function()
+// {
+//     var input = document.getElementById('UsuId').value;
+//     var input2 = document.getElementById('UsuNombre').value;
+//     var input3 = document.getElementById('UsuApellido').value;
+//     var input4 = document.getElementById('UsuCorreo').value;
+//     var input5 = document.getElementById('UsuTelefono').value;
+//     var input6 = document.getElementById('UsuNacimiento').value;
+//     var input7 = document.getElementById('UsuContra').value;
+//     if(input.length > 0)
+//     {
+//         alert("jabon");
+//     }
+// }
+// var msg = document.getElementById('msg');
+//     UsuId.onblur = function()
+//     {
+//         var input = document.getElementById('UsuId').value;
+//         if (input == "")
+//         {
+//             msg.innerHTML = "<span class='jabon'>Por favor llena este campo</span>";
+//         }
+//         else
+//         {
+//             msg.innerHTML = "";
+//             document.form.boton.disabled=false;
+//         }
+//     }
+//
+//   UsuNombre.onblur = function()
+//   {
+//       var input2 = document.getElementById('UsuNombre').value;
+//       if (input2 == "")
+//       {
+//           msg2.innerHTML = "<span class='jabon'>Por favor llena este campo</span>";
+//       }
+//       else
+//       {
+//           msg2.innerHTML = "";
+//           document.form.boton.disabled=false;
+//       }
+//   }
