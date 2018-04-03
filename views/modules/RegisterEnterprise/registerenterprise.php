@@ -18,7 +18,7 @@
       <div class="wrap-labels-regem">
         <form class="wrap-formulario" action="Registrado-emp" method="post">
           <label class="labels-regem" for="EmpId">NIT o ID de la empresa</label><br>
-          <label class="labels-regem" for="EmpNom" style="bottom:3px;">Nombre de la empresa</label><br>
+          <label class="labels-regem" for="EmpNom">Nombre de la empresa</label><br>
           <label class="labels-regem" for="EmpDir" class="notrequired">Direccion de la empresa</label><br>
           <label class="labels-regem" for="EmpDesc">Descripcion de la empresa</label><br>
           <label class="labels-regem" for="EmpTel" class="notrequired">Telefono de la empresa</label><br>

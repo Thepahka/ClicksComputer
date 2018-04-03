@@ -30,7 +30,6 @@ function letrasynumeros(e){
 </script>
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis marcas</h1>
-  <hr>
   <div class="nav-btns">
     <a class="gest-pc" id="myBtn">Registrar marca</a>
     <div class="wrap-marca-int">

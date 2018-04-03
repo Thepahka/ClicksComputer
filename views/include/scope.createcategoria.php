@@ -30,7 +30,6 @@ function letrasynumeros(e){
 </script>
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis categorias</h1>
-  <hr>
   <div class="nav-btns">
     <a class="gest-pc" id="myBtn">Registrar categoria</a>
     <div id="myModal" class="modal">

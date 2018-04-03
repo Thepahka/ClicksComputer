@@ -27,7 +27,7 @@ html {
 .body-login{
   background-image: url(../image/loginback.jpg);
   background-size: 100%;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   display: flex;
   align-items: center;
   background-position: 320px -35px;
@@ -36,15 +36,14 @@ html {
   width: 700px;
   background: rgba(105, 105, 105, 1);
   height: 100%;
-  margin-top: 4.5%;
   top: 0%;
   position: relative;
 }
 .titulo-up{
   position: relative;
   padding: 5px;
+  left: 266px;
   top: 110px;
-  margin-left: 38%;
   color: #ffffff;
   font-family: 'Oswald', sans-serif;
 }
@@ -55,16 +54,14 @@ html {
   left: 312px;
 }
 .log-btn{
-  position: absolute;
+  position: relative;
   width: 130px;
   height: 40px;
   text-align: center;
-  left: 274px;
+  right: 112px;
   font-family: 'roboto', sans-serif;
-  color: white;
   font-size: 17px;
-  padding: 5px;
-  top: 422px;
+  top: 295px;
   background: rgb(255, 255, 255);
   color: #000000;
   border-radius: 2px;
@@ -77,42 +74,49 @@ html {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+.log-btnp{
+  position: relative;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  right: 158px;
+  font-family: 'roboto', sans-serif;
+  font-size: 17px;
+  top: 295px;
+  background: rgb(255, 255, 255);
+  color: #000000;
+  border-radius: 2px;
+  border: 2px solid rgb(0, 0, 0);
+  transition: all 0.3s ease;
+}
+.log-btnp:hover{
+  background: rgb(0, 0, 0);
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 /*diseño login email and pass*/
 .des-co{
-  position: absolute;
-  color: rgba(0, 0, 0, 0.66);
-  left: 269px;
-  font-size: 15px;
-  transition: 0.3s;
-  cursor: pointer;
-  top: 350px;
-}
-.des-log{
-  position: absolute;
-}
-.des-log:valid ~ .des-co, .des-log:focus ~ .des-co{
-  color: rgb(255, 255, 255);
-  font-size: 15px;
-  transform: translateY(-30px);
-  transition: 0.3s;
-  font-family: 'roboto',sans-serif;
-}
-.des-log:focus, .des-co:focus {
   position: relative;
-  border-bottom: 4px solid rgb(0, 156, 255);
-  transition: 0.5s;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  right: 29px;
+  font-size: 15px;
+  transition: 0.3s;
+  top: 168px;
+  font-family: 'roboto',sans-serif;
 }
 .des-con{
-  position: absolute;
+  position: relative;
+  text-align: center;
   color: rgba(255, 255, 255, 1);
-  left: 294px;
+  right: 9px;
   font-size: 15px;
   transition: 0.3s;
-  cursor: pointer;
-  top: 310px;
+  top: 168px;
   font-family: 'roboto',sans-serif;
 }
-.log-email{
+.log-email,.log-pass{
   position: relative;
   left: 185px;
   top: 207px;
@@ -121,22 +125,18 @@ html {
   text-align: center;
   background: rgba(255, 238, 223, 1);
   border: 0px;
+  transition: 0.3s;
+  outline: none;
+  border-radius: 3px;
 }
-.log-pass{
-  position: relative;
-  left: 16%;
-  top: 20px;
-  width: 300px;
-  height: 35px;
-  text-align: center;
-  background: rgba(255, 238, 223, 1);
-  border: 0px;
+.log-email:focus,.log-pass:focus{
+  border-bottom: 3px solid rgb(96, 202, 255);
+  transition: 0.3s;
 }
 .mini-foot{
   position: absolute;
   color: #ffffff;
-  bottom: 80px;
-  left: 0px;
+  bottom: 50px;
   text-align: center;
   font-family: 'roboto',sans-serif;
   padding: 0px 60px;
@@ -325,7 +325,7 @@ div.logo--principal{
     border-radius: 100%;
 }
 .back-bot{
-  background-color: rgb(179, 143, 255);
+  background-color: rgb(202, 181, 247);
   display: flex;
   align-items: center;
   height: 100%;
@@ -334,10 +334,9 @@ div.logo--principal{
 /*contenedor de formulario de empresa*/
 .body-registroem{
   position: relative;
-  padding-top: 3%;
-  right: 0%;
+  padding-top: 50px;
   background-color: rgba(128, 150, 159, 1);
-  width: 50%;
+  width: 700px;
   height: 100%;
   top: 40px;
   font-family: 'roboto', sans-serif;
@@ -349,15 +348,38 @@ div.logo--principal{
   right: 130px;
 }
 .labels-regem{
-  padding: 0px 85px;
+  left: 115px;
   position: relative;
   display: flex;
+}
+label[for="EmpNom"]{
+  top: -8px;
+}
+label[for="EmpDir"]{
+  top: -18px;
+}
+label[for="EmpDesc"]{
+  top: -16px;
+}
+label[for="EmpTel"]{
+  top: 8px;
+}
+label[for="EmpCorreo"]{
+  top: -3px;
+}
+label[for="EmpContra"]{
+  top: -14px;
 }
 .wrap-input-regem{
   position: relative;
   left: 208px;
-  bottom: 334px;
+  bottom: 348px;
   padding: 0px 85px;
+}
+form[id="validate"]{
+    left: 88px;
+    position: relative;
+    top: 50px;
 }
 .body-regisem{
   background-image: url(../image/remback.jpg);
@@ -377,6 +399,9 @@ div.logo--principal{
  -moz-border-radius: 4px;
  -o-border-radius: 4px;
  outline: none;
+}
+textarea.input-regem{
+  height: 60px;
 }
 .input-regem:focus{
   border: 1px solid rgb(255, 130, 0);
@@ -404,7 +429,7 @@ textarea{
   padding-top: 3%;
   left: 50%;
   background-color: rgba(128, 150, 159, 1);
-  width: 50%;
+  width: 700px;
   height: 100%;
   top: 40px;
   font-family: 'roboto', sans-serif;
@@ -414,7 +439,7 @@ textarea{
 .wrap-formulario{
   left: 88px;
   position: relative;
-  top: 50px;
+  top: 35px;
 }
 .label-registrousuario{
   bottom: 344px;
@@ -689,11 +714,12 @@ textarea{
   color: #000000;
 }
 .EnterpriseProfile{
-  background: rgba(119, 147, 201, 1);
+  background: rgb(34, 34, 34);
   width: 200px;
   height: 100vh;
   margin-top: 50px;
   top: 0%;
+  border: 2px solid rgb(0, 0, 0);
   position: relative;
 }
 .img-enterprise{
@@ -715,16 +741,14 @@ textarea{
 .wrap-nav{
   position: relative;
   padding: 20px;
-  background: rgb(47, 47, 47);
+  background-color: none;
   width: 65%;
   height: 550px;
   left: 25%;
-  bottom: 640px;
-  border-radius: 5px;
-  border: 1px solid rgb(0, 0, 0);
+  bottom: 670px;
 }
 .nav-titulo{
-  color: #ffffff;
+  color: #000000;
   font-size: 40px;
   font-family: 'Oswald', sans-serif;
   text-align: center;
@@ -735,6 +759,8 @@ textarea{
   position: relative;
 }
 .gest-pc{
+  position: relative;
+  top: 52px;
   color: rgb(0, 0, 0);
   font-size: 18px;
   background: rgb(251, 251, 251);
@@ -761,8 +787,8 @@ textarea{
   transition:all .2s ease-in-out;
   border: 2px solid rgb(0, 0, 0);
   position: relative;
-  left: 84%;
-  bottom: 500px;
+  left: 565px;
+  bottom: -15px;
 }
 .createpc:hover{
   transition:all .2s ease-in-out;
@@ -825,11 +851,11 @@ input[type=search]{
   outline: none;
   border-radius: 2px;
   margin-bottom: 25px;
-  padding: 5px 9px;;
+  padding: 3px 9px;;
 }
-#marcas_filter{
+#marcas_filter,#datapc_filter,#categorias_filter{
   color: rgb(0, 0, 0);
-  font-size: 18px;
+  font-size: 13px;
 }
 th.sorting,.sorting_asc,.sorting_desc{
   font-family: 'roboto',sans-serif;
@@ -881,7 +907,7 @@ tr[role="row"]{
   font-size: 16px;
 }
 .dataTables_wrapper{
-  background: rgb(205, 205, 205);
+  background: rgba(134, 175, 255, 1);
   padding: 10px 20px;
   border: 1px solid rgb(18, 18, 18);
   border-radius: 5px;
@@ -937,7 +963,7 @@ tr[role="row"]{
     border: 1px solid #888;
     width: 80%;
     border-radius: 10px;
-    height: 520px;
+    height: auto;
 }
 .modal-content-crearpro {
     background-color: #fefefe;
@@ -968,6 +994,8 @@ tr[role="row"]{
   margin-bottom: 30px;
 }
 .indicacion-res{
+  position: relative;
+  top: -16px;
   text-align: center;
   font-size: 18px;
   font-family: 'roboto', sans-serif;
@@ -1018,18 +1046,19 @@ tr[role="row"]{
   transition: 0.3s;
 }
 .btn-dash-mar{
+    position: relative;
+    top: -50px;
     width: 180px;
     height: 46px;
     font-family: 'roboto', sans-serif;
     text-align: center;
     font-size: 18px;
-    padding: 10px;
     background: none;
     color: rgb(0, 0, 0);
     border-radius: 2px;
     border: 3px solid rgb(0, 0, 0);
     transition: all 0.3s ease;
-    margin: 15px 0px;
+    margin: 5px 0px;
 }
 .btn-dash-mar:hover{
   background: rgb(0, 0, 0);
@@ -1053,13 +1082,13 @@ tr[role="row"]{
   top: 100px;
 }
 .gest:hover{
+  color: rgb(255, 255, 255);
   width: 100%;
   transition: all 0.35s ease-in-out;
   cursor: pointer;
-  background-color: rgba(89, 89, 89, 1);
+  background-color: rgba(98, 98, 98, 1);
   border-left: 5px solid #ffffff;
   text-decoration: none;
-  color: rgb(255, 255, 255);
 }
 .manual-dash{
   top: 130px
@@ -1070,7 +1099,7 @@ tr[role="row"]{
 }
 /*registrar pc nuevo*/
 .cpc{
-  color: #ffffff;
+  color: #000000;
   font-size: 15px;
   font-family: 'roboto', sans-serif;
   padding: 0px 60px;
@@ -1085,13 +1114,16 @@ tr[role="row"]{
   align-items: center;
 }
 .in-cpcod{
+  padding: 0px 8px;
   position: relative;
   height: 25px;
   left: 20px;
-  font-size: 15px;
+  font-size: 13px;
   margin: 10px 0px;
   width: 400px;
-  border: 1px solid #DBE1EB;
+  border: 1px solid #000000;
+  background-color: rgb(221, 221, 221);
+  outline: none;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1100,12 +1132,15 @@ tr[role="row"]{
 }
 .in-cpcname{
   position: relative;
+  padding: 0px 8px;
   height: 25px;
   left: 13px;
-  font-size: 15px;
+  font-size: 13px;
   margin: 10px 2px;
   width: 400px;
-  border: 1px solid #DBE1EB;
+  background-color: rgb(221, 221, 221);
+  border: 1px solid #000000;
+  outline: none;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1113,11 +1148,14 @@ tr[role="row"]{
 }
 .in-cpcarea{
   position: relative;
+  padding: 0px 8px;
   left: -20px;
-  font-size: 15px;
+  font-size: 13px;
   margin: 10px 11px;
   width: 400px;
-  border: 1px solid #DBE1EB;
+  border: 1px solid #000000;
+  background-color: rgb(221, 221, 221);
+  outline: none;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1129,12 +1167,15 @@ tr[role="row"]{
 }
 .in-cpcmodel{
   position: relative;
+  padding: 0px 8px;
   height: 25px;
   left: 19px;
-  font-size: 15px;
+  font-size: 13px;
   margin: 10px 1px;
   width: 400px;
-  border: 1px solid #DBE1EB;
+  border: 1px solid #000000;
+  background-color: rgb(221, 221, 221);
+  outline: none;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1142,12 +1183,15 @@ tr[role="row"]{
 }
 .in-cpctipo{
   position: relative;
+  padding: 0px 8px;
   height: 25px;
   left: 52px;
-  font-size: 15px;
+  font-size: 13px;
   margin: 10px -6px;
   width: 400px;
-  border: 1px solid #DBE1EB;
+  background-color: rgb(221, 221, 221);
+  border: 1px solid #000000;
+  outline: none;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1155,12 +1199,15 @@ tr[role="row"]{
 }
 .in-cpcmarca{
   position: relative;
+  padding: 0px 8px;
   height: 25px;
-  font-size: 15px;
+  font-size: 13px;
   left: 30px;
   margin: 10px 0px;
   width: 400px;
-  border: 1px solid #DBE1EB;
+  background-color: rgb(221, 221, 221);
+  border: 1px solid #000000;
+  outline: none;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1168,16 +1215,26 @@ tr[role="row"]{
 }
 .in-cpcprecio{
   position: relative;
+  padding: 0px 8px;
   height: 25px;
   left: 30px;
-  font-size: 15px;
+  font-size: 13px;
   margin: 10px 0px;
   width: 400px;
-  border: 1px solid #DBE1EB;
+  background-color: rgb(221, 221, 221);
+  border: 1px solid #000000;
+  outline: none;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
   font-family: 'roboto',sans-serif;
+}
+.in-cpcod:focus,.in-cpcname:focus,
+.in-cpcarea:focus,.in-cpcmodel:focus,
+.in-cpctipo:focus,.in-cpcmarca:focus,
+.in-cpcprecio:focus{
+  border: 1px solid rgb(255, 0, 0);
+  transition: 0.3s;
 }
 .input-filep{
   position: relative;
@@ -1193,6 +1250,8 @@ input[type="file"]{
   padding: 3px 5px;
   border-radius: 5px;
   display: inline-block;
+  width: 401px;
+  margin-left: -11px;
 }
 /* buscador de producto ventana modal */
 #modal2 {
@@ -1246,6 +1305,7 @@ input[type="file"]{
   position: relative;
 }
 .barra-busqueda{
+  outline: none;
   text-align: center;
   font-family: 'roboto', sans-serif;
   position: relative;
@@ -1257,6 +1317,7 @@ input[type="file"]{
   border: none;
   background: rgb(232, 232, 232);
   border-radius: 4px;
+  transition: 0.5s;
 }
 .barra-busqueda:focus{
   border: 2px solid rgb(0, 163, 255);
@@ -1392,8 +1453,9 @@ input[type="file"]{
 .tienda-dis:hover{
   transition: 0.3s;
   cursor: pointer;
-  background: rgb(219, 219, 219);
-  color: rgb(34, 34, 34);
+  background: rgb(144, 144, 144);
+  color: rgb(255, 255, 255);
+  border-left: 5px solid rgb(255, 255, 255);
 }
 .producto-ti-lado{
   background: none;

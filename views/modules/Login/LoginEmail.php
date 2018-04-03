@@ -21,7 +21,7 @@
     <form class="formulario" action="Consulta" method="post">
         <input class="log-email des-log" id="LoginEmail" type="email" name="data[]">
         <label for="LoginEmail" class="des-co">Correo electronico</label>
-        <input class="log-btn" id="EmailButton" type="submit" name="" value="Acceder">
+        <input class="log-btnp" id="EmailButton" type="submit" name="" value="Acceder">
     </form>
     <p class="mini-foot">el correo electronico que se debe ingresar aqui ya debe de estar registrado para ser validado y seguir con la contraseña.</p>
   </div>
