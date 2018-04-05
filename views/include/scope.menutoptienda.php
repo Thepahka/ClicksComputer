@@ -9,10 +9,6 @@ require_once("scope.header.php");
       <a>clickscomputer</a>
       <img class="logo" src="views/assets/image/logo.png">
     </div>
-    <div class="busc-cont">
-      <i class="fas fa-search lupa-busqued"></i>
-      <input class="busca-tien" type="text">
-    </div>
     <div class="wrap--btn">
       <ul class="buttons-menu">
         <a class="item" href="ManualDeUsuario"><i class="fas fa-book manual-libro" aria-hidden="true"></i>Manual de usuario</a>

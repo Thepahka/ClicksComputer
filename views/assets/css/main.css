@@ -34,7 +34,7 @@ html {
 }
 .wrap-login{
   width: 700px;
-  background: rgba(105, 105, 105, 1);
+  background: rgba(105, 105, 105, 0.97);
   height: 100%;
   top: 0%;
   position: relative;
@@ -67,6 +67,7 @@ html {
   border-radius: 2px;
   border: 2px solid rgb(0, 0, 0);
   transition: all 0.3s ease;
+  outline: none;
 }
 .log-btn:hover{
   background: rgb(0, 0, 0);
@@ -88,6 +89,7 @@ html {
   border-radius: 2px;
   border: 2px solid rgb(0, 0, 0);
   transition: all 0.3s ease;
+  outline: none;
 }
 .log-btnp:hover{
   background: rgb(0, 0, 0);
@@ -123,15 +125,16 @@ html {
   width: 300px;
   height: 35px;
   text-align: center;
-  background: rgba(255, 238, 223, 1);
   border: 0px;
   transition: 0.3s;
   outline: none;
   border-radius: 3px;
+  background-color: rgb(219, 219, 219);
 }
 .log-email:focus,.log-pass:focus{
   border-bottom: 3px solid rgb(96, 202, 255);
   transition: 0.3s;
+  background-color: rgb(255, 255, 255);
 }
 .mini-foot{
   position: absolute;
@@ -1235,6 +1238,7 @@ tr[role="row"]{
 .in-cpcprecio:focus{
   border: 1px solid rgb(255, 0, 0);
   transition: 0.3s;
+  background-color: rgb(255, 255, 255);
 }
 .input-filep{
   position: relative;
@@ -1393,19 +1397,19 @@ input[type="file"]{
 /* Tiendas */
 .busc-cont{
   position: relative;
-  left: 0%;
+  right: 11px;
 }
 .busca-tien{
-  top: 30%;
   position: relative;
-  width: 350px;
+  width: 225px;
   font-family: 'roboto', sans-serif;
   outline: none;
   border-radius: 2px;
   padding-left: 28px;
   font-size: 16px;
   border: 1px solid rgb(0, 195, 214);
-  transition: 0.9s
+  transition: 0.9s;
+  background-color: rgb(255, 255, 255);
 }
 .busca-tien:focus{
   border-bottom: 2px solid rgb(255, 0, 0);
@@ -1413,7 +1417,7 @@ input[type="file"]{
 }
 .lupa-busqued{
   position: relative;
-  top: 19px;
+  top: 0px;
   left: 27px;
   color: rgb(168, 168, 168);
   z-index: 1000;
