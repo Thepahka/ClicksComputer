@@ -50,71 +50,43 @@ class CategoriaController
   {
       $data = $_POST["data"];
 
-      $empid = $_SESSION["emp"]["id"];
+      $idempresa = $_SESSION["emp"]["id"];
 
-      $result2 = $this->categoria->Categorias($empid);
+      $nomcategoria = $data[0];
 
-      $c = current($result2);
-      print_r($c["fil_nom"]);
-      $c = next($result2);
-      print_r($c["fil_nom"]);
+      $result = $this->categoria->ConsultCategoria($nomcategoria);
 
+      if(($data[0] == "") or array_search("",$data))
+      {
+          echo '<script language="javascript">alert("Tienes que llenar todos los campos");</script>';
+          echo "<script>history.back(1)</script>";
+      }
+      elseif($result[3] == $idempresa or array_search($result[3],$data))
+      {
+          echo '<script language="javascript">alert("Esta categoria ya esta registrada en tu tienda");</script>';
+          echo "<script>history.back(1)</script>";
+      }
+      else
+      {
+        while(true)
+        {
+          $allcategorias = current($data);
 
-      // foreach($result2 as $row)
-      // {
-      //     $c = array($row["fil_nom"]);
-      //   if(current($c) == current($ingresadas))
-      //   {
-      //     echo "jabon";
-      //   }
-      //   print_r(current($c));
-      // }
+          $asignarcategorias=(( $allcategorias !== false) ? $allcategorias : ", &nbsp;");
 
+          $this->categoria->newCategoria($allcategorias ,$idempresa);
 
-      // if($cat == $catemp or $cat == next($catemp))
-      // {
-      //   echo "jabon";
-      // }
+          $allcategorias = next($data);
 
-
-
-      // $idempresa = $_SESSION["emp"]["id"];
-      //
-      // $nomcategoria = $data[0];
-      //
-      // $result = $this->categoria->ConsultCategoria($nomcategoria);
-      //
-      // if(($data[0] == "") or array_search("",$data))
-      // {
-      //     echo '<script language="javascript">alert("Tienes que llenar todos los campos");</script>';
-      //     echo "<script>history.back(1)</script>";
-      // }
-      // elseif($result[3] == $idempresa or array_search($result[3],$data))
-      // {
-      //     echo '<script language="javascript">alert("Esta categoria ya esta registrada en tu tienda");</script>';
-      //     echo "<script>history.back(1)</script>";
-      // }
-      // else
-      // {
-      //   while(true)
-      //   {
-      //     $allcategorias = current($data);
-      //
-      //     $asignarcategorias=(( $allcategorias !== false) ? $allcategorias : ", &nbsp;");
-      //
-      //     $this->categoria->newCategoria($allcategorias ,$idempresa);
-      //
-      //     $allcategorias = next($data);
-      //
-      //     if($allcategorias === false && $allcategorias === false)
-      //     {
-      //       break;
-      //     }
-      //   }
-      //   echo '<script language="javascript">alert("Categoria(s) registrada(s) con exito");</script>';
-      //   echo "<script>history.back(1)</script>";
-      // }
-       }
+          if($allcategorias === false && $allcategorias === false)
+          {
+            break;
+          }
+        }
+        echo '<script language="javascript">alert("Categoria(s) registrada(s) con exito");</script>';
+        echo "<script>history.back(1)</script>";
+      }
+  }
 
   public function Read()
   {

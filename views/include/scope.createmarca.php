@@ -66,7 +66,20 @@ function letrasynumeros(e){
             <td><?php echo ucwords($row["mar_nombre"]); ?></td>
               <td>
                   <a id="myBtn" class="btn-datagrid" href="ActualizarMarcas-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>"><i class="fas fa-pen-square icono-accion"></i>Actualizar</a>
-                  <a class="btn-datagrid" href="EliminarMarca-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>"><i class="fas fa-trash-alt icono-accion"></i>Eliminar</a>
+                  <a class="btn-datagrid" href="EliminarMarca-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>" onclick="return confirmar(this)"><i class="fas fa-trash-alt icono-accion"></i>Eliminar</a>
+                  <script type="text/javascript">
+                  function confirmar()
+                  {
+                      if (confirm("Eliminar marca?")==false)
+                      {
+                          return false;
+                      }
+                      else
+                      {
+                          return true;
+                      }
+                  }
+                  </script>
               </td>
           </tr>
         <?php } ?>

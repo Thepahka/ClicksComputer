@@ -31,26 +31,37 @@
 
       $result2 = $this->login->ValidateEmail2($email);
 
+      $emailvalido = filter_var($comprobar[0], FILTER_SANITIZE_EMAIL);
+
       $_SESSION["nom"] = $result2[3];
 
-      if($email == "")
+      if(!filter_var($emailvalido, FILTER_VALIDATE_EMAIL) === false)
       {
-        echo '<script language="javascript">alert("Debe completar el campo con un correo");</script>';
-        echo "<script>history.back(1)</script>";
-      }
-      elseif($result[0] == $email)
-      {
-        header("Location: Pass");
-      }
-      elseif($result2[0] == $email)
-      {
-        header("Location: Pass");
+          if($email == "")
+          {
+            echo '<script language="javascript">alert("Debe completar el campo con un correo");</script>';
+            echo "<script>history.back(1)</script>";
+          }
+          elseif($result[0] == $email)
+          {
+            header("Location: Pass");
+          }
+          elseif($result2[0] == $email)
+          {
+            header("Location: Pass");
+          }
+          else
+          {
+            echo '<script language="javascript">alert("No existe un usuario registrado con ese correo");</script>';
+            echo "<script>history.back(1)</script>";
+          }
       }
       else
       {
-        echo '<script language="javascript">alert("No existe un usuario registrado con ese correo");</script>';
-        echo "<script>history.back(1)</script>";
+          echo '<script language="javascript">alert("Ingrese una direccion de correo electronico valida");</script>';
+          echo "<script>history.back(1)</script>";
       }
+
     }
 
     public function ConsultPassword()
@@ -76,7 +87,7 @@
         $_SESSION["user"]["nombre"] = $comprobarname;
         $_SESSION["user"]["auth"] = true;
         echo '<script language="javascript">
-        alert("Guelcom user");
+        alert("Bienvenido '.ucwords($_SESSION["user"]["nombre"]).'");
         window.location.href="main";
         </script>';
 
@@ -89,7 +100,7 @@
         $_SESSION["user"]["nombre"] = $comprobarname;
         $_SESSION["user"]["auth"] = true;
         echo '<script language="javascript">
-        alert("Bienvendido");
+        alert("Bienvenido '.ucwords($_SESSION["user"]["nombre"]).'");
         window.location.href="MyDashboard";
         </script>';
       }

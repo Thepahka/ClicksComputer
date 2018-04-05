@@ -25,7 +25,7 @@ class MarcaModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($nommarca, $idempresa));
+      $query->execute(array(strtolower($nommarca), $idempresa));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }

@@ -25,7 +25,7 @@ class CategoriaModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($nomcategoria, $idempresa));
+      $query->execute(array(strtolower($nomcategoria), $idempresa));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }

@@ -19,7 +19,7 @@
       <h2 class="titulo-up">Iniciar sesion</h2>
       <i class="fa fa-envelope email-icon fa-4x" aria-hidden="true"></i>
     <form class="formulario" action="Consulta" method="post">
-        <input class="log-email des-log" id="LoginEmail" type="email" name="data[]">
+        <input class="log-email des-log" id="LoginEmail" type="text" name="data[]">
         <label for="LoginEmail" class="des-co">Correo electronico</label>
         <input class="log-btnp" id="EmailButton" type="submit" name="" value="Acceder">
     </form>
