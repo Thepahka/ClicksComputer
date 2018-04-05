@@ -24,7 +24,7 @@
             </div>
             <input class="inputs-reg" id="UsuApellido" type="text" name="data[]"><br>
             <input class="inputs-reg" id="UsuTelefono" type="text" name="data[]"><br>
-            <input class="inputs-reg" id="UsuCorreo" type="email" name="data[]"><br>
+            <input class="inputs-reg" id="UsuCorreo" type="text" name="data[]"><br>
             <input class="inputs-reg" id="UsuNacimiento" type="date" name="data[]"><br>
             <input class="inputs-reg" id="UsuContra" type="password" name="data[]"><br>
             <input name="boton" type="submit" id="validar" class="boton-registro" value="REGISTRARSE"></input>

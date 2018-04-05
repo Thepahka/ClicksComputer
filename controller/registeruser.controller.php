@@ -31,6 +31,10 @@
 
       $result4 = $this->register->ValidateExistsId2($comprobeId);
 
+      $emailvalidio = filter_var($data[4], FILTER_SANITIZE_EMAIL);
+
+      $array = array("");
+
       if($data[0] == "")
       {
         echo '<script language="javascript">alert("Se debe completar el campo Documento de identidad");</script>';
@@ -56,21 +60,31 @@
         echo '<script language="javascript">alert("Se debe completar el campo Nombre(s)");</script>';
         echo "<script>history.back(1)</script>";
       }
-      elseif(!ereg("^[A-Za-z_]*$",$data[1]))
+      elseif(strstr($data[1],"1") or strstr($data[1],"2") or strstr($data[1],"3") or strstr($data[1],"4") or strstr($data[1],"5"))
       {
         echo '<script language="javascript">alert("Solo se puede ingresar letras en el campo Nombre(s)");</script>';
         echo "<script>history.back(1)</script>";
-    }
+      }
+      elseif(strstr($data[1],"6") or strstr($data[1],"7") or strstr($data[1],"8") or strstr($data[1],"9") or strstr($data[1],"0"))
+      {
+        echo '<script language="javascript">alert("Solo se puede ingresar letras en el campo Nombre(s)");</script>';
+        echo "<script>history.back(1)</script>";
+      }
       elseif($data[2] == "")
       {
         echo '<script language="javascript">alert("Se debe completar el campo Apellido(s)");</script>';
         echo "<script>history.back(1)</script>";
       }
-      elseif(!ereg("^[A-Za-z_]*$",$data[1]))
+      elseif(strstr($data[2],"1") or strstr($data[2],"2") or strstr($data[2],"3") or strstr($data[2],"4") or strstr($data[2],"5"))
       {
         echo '<script language="javascript">alert("Solo se puede ingresar letras en el campo Apellido(s)");</script>';
         echo "<script>history.back(1)</script>";
-    }
+      }
+      elseif(strstr($data[2],"6") or strstr($data[2],"7") or strstr($data[2],"8") or strstr($data[2],"9") or strstr($data[2],"0"))
+      {
+        echo '<script language="javascript">alert("Solo se puede ingresar letras en el campo Apellido(s)");</script>';
+        echo "<script>history.back(1)</script>";
+      }
       elseif(!is_numeric($data[3]))
       {
         echo '<script language="javascript">alert("Solo puede ingresar datos numéricos en el campo Telefono");</script>';
@@ -80,6 +94,11 @@
       {
         echo '<script language="javascript">alert("Se debe completar el campo Correo electronico");</script>';
         echo "<script>history.back(1)</script>";
+      }
+      elseif(!filter_var($emailvalidio, FILTER_VALIDATE_EMAIL))
+      {
+          echo '<script language="javascript">alert("Ingrese una direccion de correo electronico valida");</script>';
+          echo "<script>history.back(1)</script>";
       }
       elseif($comprobeEmail == $result3[0])
       {

@@ -6,12 +6,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
   </head>
   <body class="body-regisem">
-    <div class="container" id="container">
+    <!-- <div class="container" id="container">
       <i class="fas fa-circle-notch fa-spin fa-6x spiner-pre"></i>
-      <!-- <div class="preloader">
+      <div class="preloader">
         <p>Cargando...</p>
-      </div> -->
-    </div>
+      </div>
+    </div> -->
     <div class="inicio-sesionregis">
     <div class="body-registroem">
       <h1 class="titulo-em">Registro de empresa</h1>
