@@ -9,6 +9,14 @@ btn.onclick = function() {
     modal.style.display = "block";
 }
 
+function abrir(nombre,id,otraId){
+  var modal = document.getElementById('myModal2');
+  var input = document.getElementById('nombreCat');
+  input.value =nombre;
+  $("#nombreCat").val(nombre);
+    modal.style.display = "block";
+}
+
 span.onclick = function() {
     modal.style.display = "none";
 }

@@ -7,7 +7,7 @@
     <title>Actualizar categoria</title>
   </head>
   <body class="body-dash">
-    <div class="wrap-nav">
+    <div class="wrap-nav modal">
       <h1 class="titulo-newpc">Actualizar categoria</h1>
     <form class="" action="CategoriaActualizada" method="post">
       <input type="hidden" readonly name="data[]" value="<?php echo $categorias[0][1]; ?>">
