@@ -6,12 +6,19 @@
     <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
   </head>
   <body class="body-register" id="validaciones">
-    <!-- <div class="container" id="container">
+    <div class="container" id="container">
       <i class="fas fa-circle-notch fa-spin fa-6x spiner-pre"></i>
-      <div class="preloader">
-        <p>Cargando...</p>
+      <!-- <div class="preloader">
+        <p>Cargando...</p> -->
       </div>
-    </div> -->
+    </div>
+    <input type="checkbox" id="cerrarres">
+    <label for="cerrarres" id="btn-cerrarres">x</label>
+    <div class="modalregis">
+      <div class="contenido-resg"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        onsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui .</p> </div>
+    </div>
     <div class="body-registro">
       <h1 class="registro-titulo">Formulario de Registro</h1>
         <div class="input-registrousuario">
@@ -44,7 +51,7 @@
         require_once 'views/include/scope.menutopregistro.php';?>
   <script src="views/assets/js/validaciones.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- <script type="text/javascript" src="views/assets/js/cerrar.js"></script> -->
+  <script type="text/javascript" src="views/assets/js/cerrar.js"></script>
   <script type="text/javascript" src="views/assets/js/validaciones.js">
   </script>
 </body>

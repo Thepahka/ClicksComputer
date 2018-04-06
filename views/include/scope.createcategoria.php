@@ -6,7 +6,7 @@
         });
     });
 </script>
-<script>
+<!-- <script>
 function letrasynumeros(e){
   key=e.keyCode || e.which;
 
@@ -27,7 +27,7 @@ function letrasynumeros(e){
     return false;
   }
 }
-</script>
+</script> -->
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis categorias</h1>
   <div class="nav-btns">
@@ -63,7 +63,7 @@ function letrasynumeros(e){
             <td><?php echo $item; ?></td>
             <td><?php echo ucwords($row["fil_nom"]); ?></td>
               <td>
-                  <a class="btn-datagrid" onclick="abrir('<?php echo $row["fil_nom"]; ?>',<?php echo $row['fil_id']; ?>,<?php echo $_SESSION['emp']['id'];?>)"  ><i class="fas fa-pen-square icono-accion"></i>Actualizar</a>
+                  <a class="btn-datagrid" onclick="abrir('<?php echo $row["fil_nom"]; ?>',<?php echo $row['fil_id']; ?>,<?php echo $_SESSION['emp']['id'];?>)"><i class="fas fa-pen-square icono-accion"></i>Actualizar</a>
                   <a class="btn-datagrid" href="EliminarCategoria-<?php echo $row['fil_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>" onclick="return confirmar(this)"><i class="fas fa-trash-alt icono-accion"></i>Eliminar</a>
 
                   <script type="text/javascript">
@@ -84,14 +84,16 @@ function letrasynumeros(e){
         <?php } ?>
       </tbody>
   </table>
-  <div class="wrap-nav modal" id="myModal2">
+  <div class="modal" id="myModal2">
     <div class="modal-content">
-      <h1 class="titulo-newpc">Actualizar categoria</h1>
+      <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+      <p class="model-textp">Actualizar categoria</p>
+      <p class="indicacion-res">Escribe el nombre de la nueva categoria.</p>
       <form class="" action="CategoriaActualizada" method="post">
+        <input class="crear-fmodalam" type="text" name="data[]" value=""  id="nombreCat">
+        <input class="btn-dash-maram" type="submit" value="Actualizar categoria">
         <input type="hidden" readonly name="data[]" value="<?php echo $categorias[0][1]; ?>">
         <input type="hidden" readonly name="data[]" value="<?php echo $categorias[0][0]; ?>">
-        <input type="text" name="data[]" value=""  id="nombreCat">
-        <input type="submit" value="Actualizar categoria">
       </form>
     </div>
   </div>

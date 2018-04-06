@@ -65,7 +65,7 @@ function letrasynumeros(e){
             <td><?php echo $item; ?></td>
             <td><?php echo ucwords($row["mar_nombre"]); ?></td>
               <td>
-                  <a id="myBtn" class="btn-datagrid" href="ActualizarMarcas-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>"><i class="fas fa-pen-square icono-accion"></i>Actualizar</a>
+                  <a id="myBtn" class="btn-datagrid" onclick="abrir('<?php echo $row["mar_nom"]; ?>',<?php echo $row['mar_id']; ?>,<?php echo $_SESSION['emp']['id'];?>)"><i class="fas fa-pen-square icono-accion"></i>Actualizar</a>
                   <a class="btn-datagrid" href="EliminarMarca-<?php echo $row['mar_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>" onclick="return confirmar(this)"><i class="fas fa-trash-alt icono-accion"></i>Eliminar</a>
                   <script type="text/javascript">
                   function confirmar()
@@ -85,5 +85,18 @@ function letrasynumeros(e){
         <?php } ?>
       </tbody>
   </table>
+  <div class="modal" id="myModal2">
+    <div class="modal-content">
+      <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+      <p class="model-textp">Actualizar categoria</p>
+      <p class="indicacion-res">Escribe el nombre de la nueva categoria.</p>
+      <form class="" action="CategoriaActualizada" method="post">
+        <input class="crear-fmodalam" type="text" name="data[]" value=""  id="nombreCat">
+        <input class="btn-dash-maram" type="submit" value="Actualizar categoria">
+        <input type="hidden" readonly name="data[]" value="<?php echo $categorias[0][1]; ?>">
+        <input type="hidden" readonly name="data[]" value="<?php echo $categorias[0][0]; ?>">
+      </form>
+    </div>
+  </div>
 <script type="text/javascript" src="views/assets/js/modal.js"></script>
 </div>

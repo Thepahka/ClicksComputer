@@ -334,6 +334,67 @@ div.logo--principal{
   height: 100%;
 }
 /*diseño registro*/
+/* modal de bienvenida */
+.modalregis{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: rgba(34, 34, 34, 0.77);
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: flex;
+  animation: modal 1s 3s forwards;
+  visibility: hidden;
+  opacity: 0;
+}
+.contenido-resg{
+  margin: 15% 30%;
+  width: 40%;
+  height: 40%;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'roboto', sans-serif;
+  font-size: 18px;
+  padding: 60px 0px;
+}
+#cerrarres{
+  display: none;
+}
+#cerrarres + label{
+  position: fixed;
+  color: #000000;
+  font-size: 19px;
+  z-index: 100000;
+  background: rgb(255, 255, 255);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  text-align: center;
+  right: 40px;
+  top: 100px;
+  transition: 0.3s;
+  animation: modal 1s 5s forwards;
+  visibility: hidden;
+  opacity: 0;
+}
+#cerrarres:hover + label{
+  background: rgb(255, 23, 23);
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+/* cerrar boton cerrar */
+#cerrarres:checked + label, #cerrarres:checked ~ .modalregis{
+  display: none;
+}
+@keyframes modal {
+  100%{
+    visibility: visible;
+    opacity: 1;
+  }
+}
 /*contenedor de formulario de empresa*/
 .body-registroem{
   position: relative;
@@ -982,7 +1043,7 @@ tr[role="row"]{
     float: right;
     font-size: 28px;
     font-weight: bold;
-    transition:all .2s ease-in-out;
+    transition:all 0.2s ease-in-out;
 }
 .close:hover,.close:focus {
     color: #000;
@@ -1043,6 +1104,47 @@ tr[role="row"]{
   border: 1px solid rgb(255, 0, 0);
   transition: 0.3s;
 }
+.btn-dash-maram{
+    position: relative;
+    top: -15px;
+    left: 500px;
+    width: 180px;
+    height: 46px;
+    font-family: 'roboto', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    background: none;
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    border: 3px solid rgb(0, 0, 0);
+    transition: all 0.3s ease;
+    margin: 5px 0px;
+    outline: none;
+}
+.btn-dash-maram:hover{
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 3px solid rgb(162, 162, 162);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* modales de actualizar y marcas */
+.crear-fmodalam{
+  background: rgb(237, 237, 237);
+  outline: none;
+  width: 300px;
+  height: 30px;
+  border: 1px solid rgb(0, 156, 255);
+  text-align: center;
+  bottom: 15px;
+  left: 373px;
+  position: relative;
+}
+.crear-fmodalam:focus{
+  border: 1px solid rgb(255, 0, 0);
+  transition: 0.3s;
+}
+
 .crear-clon{
   position: relative;
   right: 186px;
@@ -1062,6 +1164,7 @@ tr[role="row"]{
     border: 3px solid rgb(0, 0, 0);
     transition: all 0.3s ease;
     margin: 5px 0px;
+    outline: none;
 }
 .btn-dash-mar:hover{
   background: rgb(0, 0, 0);
