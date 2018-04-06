@@ -108,33 +108,17 @@ class CategoriaController
 
   public function UpdateCat()
   {
-    $data = $_POST["data"];
 
-    $categoria = $data[2];
+    // $result = $this->categoria->allCategorias2($idcat, $empid);
+    // print_r($result[0][1]);
 
-    $result = $this->categoria->ConsultCategoria($categoria);
 
-    $newid = $result[0];
 
-    $oldid = $data[0];
-
-    $idemp = $_SESSION["emp"]["id"];
-
-    $result3 = $this->categoria->AllCategorias2($newid, $idemp);
-
-    if($result3[0][0] == $oldid && $result3[0][1] == $idemp)
-    {
-      echo '<script language="javascript">alert("Esta categoria ya se encuentra registrada en su tienda");</script>';
-      echo "<script>history.back(1)</script>";
-    }
-    else
-    {
-      $result2 = $this->categoria->Update($newid, $oldid, $idemp);
-      echo '<script language="javascript">
-      alert("Categoria actualizada con exito");
-      window.location.href="GestionCategorias"
-      </script>';
-    }
+    // $result2 = $this->categoria->Update($newid, $oldid, $idemp);
+    // echo '<script language="javascript">
+    // alert("Categoria actualizada con exito");
+    // window.location.href="GestionCategorias"
+    // </script>';
    }
 
 

@@ -15,9 +15,19 @@
     <input type="checkbox" id="cerrarres">
     <label for="cerrarres" id="btn-cerrarres">x</label>
     <div class="modalregis">
-      <div class="contenido-resg"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        onsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui .</p> </div>
+      <div class="contenido-resg">
+        <ul>
+          <h3>Por favor tenga en cuenta a la hora de registrar su Tienda/Empresa que:</h3>
+        </ul>
+        <ul>
+          <p>-Debe registrar su Tienda/Empresa con un NIT valido</p>
+          <p>-Los campos NIT o ID de la empresa y telefono de la empresa solo aceptan datos númericos</p>
+          <p>-El campo Nombre de la empresa solo acepta letras</p>
+          <p>-Puede colocar una descripcion corta de la empresa y luego modificarla</p>
+          <p>-El campo correo electronico solo acepta correos validos(que tengan @texto.texto)</p>
+          <p>-El campo contraseña solo acepta minimo 8 caracteres y que contenga minimo una letra y un número</p>
+        </ul>
+      </div>
     </div>
     <div class="inicio-sesionregis">
     <div class="body-registroem">

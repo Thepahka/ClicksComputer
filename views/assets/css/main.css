@@ -337,19 +337,19 @@ div.logo--principal{
 /* modal de bienvenida */
 .modalregis{
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: absolute;
   background: rgba(34, 34, 34, 0.77);
   top: 0;
   left: 0;
   z-index: 10000;
   display: flex;
-  animation: modal 1s 3s forwards;
+  animation: modal 1s 2.13s forwards;
   visibility: hidden;
   opacity: 0;
 }
 .contenido-resg{
-  margin: 15% 30%;
+  margin: 10% 30%;
   width: 40%;
   height: 40%;
   background: rgb(255, 255, 255);
@@ -375,7 +375,7 @@ div.logo--principal{
   right: 40px;
   top: 100px;
   transition: 0.3s;
-  animation: modal 1s 5s forwards;
+  animation: modal 1s 3s forwards;
   visibility: hidden;
   opacity: 0;
 }

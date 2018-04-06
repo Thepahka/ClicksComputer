@@ -15,6 +15,7 @@ function abrir(nombre,id,otraId){
   input.value =nombre;
   $("#nombreCat").val(nombre);
     modal.style.display = "block";
+
 }
 
 span.onclick = function() {

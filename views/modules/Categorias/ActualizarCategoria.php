@@ -1,4 +1,4 @@
-<?php $categorias = $this->Read($_GET["data"], $_GET["data2"]); ?>
+<?php $categorias = $this->UpdateCat($_GET["data"], $_GET["data2"]);?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,8 +10,8 @@
     <div class="wrap-nav modal">
       <h1 class="titulo-newpc">Actualizar categoria</h1>
     <form class="" action="CategoriaActualizada" method="post">
-      <input type="hidden" readonly name="data[]" value="<?php echo $categorias[0][1]; ?>">
       <input type="hidden" readonly name="data[]" value="<?php echo $categorias[0][0]; ?>">
+      <input type="hidden" readonly name="data[]" value="<?php echo $categorias[0][3]; ?>">
       <input type="text" name="data[]" value="">
       <input type="submit" value="Actualizar categoria">
     </form>

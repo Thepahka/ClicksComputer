@@ -112,7 +112,7 @@ class CategoriaModel
     return $result;
   }
 
-  public function allCategorias2($mi, $ei)
+  public function allCategorias2($idcat, $empid)
   {
     try
     {
@@ -120,7 +120,7 @@ class CategoriaModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($mi, $ei));
+      $query->execute(array($idcat, $empid));
 
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }

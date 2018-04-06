@@ -15,9 +15,19 @@
     <input type="checkbox" id="cerrarres">
     <label for="cerrarres" id="btn-cerrarres">x</label>
     <div class="modalregis">
-      <div class="contenido-resg"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        onsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui .</p> </div>
+      <div class="contenido-resg">
+          <ul>
+            <h3>Por favor tenga en cuenta a la hora de registrarse que:</h3>
+          </ul>
+          <ul>
+            <p>-Los campos Documento de identidad y Telefono solo aceptan números</p>
+            <p>-Los campos Nombre(s) y Apellido(s) solo aceptan letras</p>
+            <p>-El campo correo electronico solo acepta correos validos (que tengan @texto.texto)</p>
+            <p>-Debe ingresar una fecha valida</p>
+            <p>-El campo contraseña solo acepta minimo 8 caracteres y que contenga minimo una letra y un número</p>
+          </ul>
+
+    </div>
     </div>
     <div class="body-registro">
       <h1 class="registro-titulo">Formulario de Registro</h1>
