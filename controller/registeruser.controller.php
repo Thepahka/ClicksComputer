@@ -33,8 +33,6 @@
 
       $emailvalidio = filter_var($data[4], FILTER_SANITIZE_EMAIL);
 
-      $array = array("");
-
       if($data[0] == "")
       {
         echo '<script language="javascript">alert("Se debe completar el campo Documento de identidad");</script>';

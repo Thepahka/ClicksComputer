@@ -3,7 +3,6 @@
 require_once("scope.header.php");
  ?>
 </div>
-
   <div class="menu-top">
     <div class="cc">
       <a>clickscomputer</a>
