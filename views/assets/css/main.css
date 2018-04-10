@@ -19,10 +19,6 @@ body{
 input{
   background: #f2f2f2;
 }
-html {
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
 /*diseño de login*/
 .body-login{
   background-image: url(../image/loginback.jpg);
@@ -129,7 +125,7 @@ html {
   transition: 0.3s;
   outline: none;
   border-radius: 3px;
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(240, 240, 240);
 }
 .log-email:focus,.log-pass:focus{
   border-bottom: 3px solid rgb(96, 202, 255);
@@ -367,13 +363,13 @@ div.logo--principal{
   color: #000000;
   font-size: 19px;
   z-index: 100000;
-  background: rgb(255, 255, 255);
+  background: rgb(168, 168, 168);
   height: 30px;
   width: 30px;
   border-radius: 50%;
   text-align: center;
-  right: 40px;
-  top: 100px;
+  right: 430px;
+  top: 170px;
   transition: 0.3s;
   animation: modal 1s 3s forwards;
   visibility: hidden;
@@ -452,6 +448,9 @@ form[id="validate"]{
   align-items: center;
 }
 /*inputs de registro empresa*/
+.noneed-overflow{
+  overflow-y: hidden;
+}
 .input-regem{
  position: relative;
  left: 20px;
@@ -784,7 +783,7 @@ textarea{
   margin-top: 50px;
   top: 0%;
   border: 2px solid rgb(0, 0, 0);
-  position: relative;
+  position: fixed;
 }
 .img-enterprise{
   width: 100px;
@@ -804,12 +803,12 @@ textarea{
 }
 .wrap-nav{
   position: relative;
+  top: 30px;
   padding: 20px;
   background-color: none;
-  width: 65%;
+  width: 1125px;
   height: 550px;
-  left: 25%;
-  bottom: 670px;
+  left: 220px;
 }
 .nav-titulo{
   color: #000000;
@@ -824,7 +823,7 @@ textarea{
 }
 .gest-pc{
   position: relative;
-  top: 52px;
+  top: 50px;
   color: rgb(0, 0, 0);
   font-size: 18px;
   background: rgb(251, 251, 251);
@@ -971,10 +970,11 @@ tr[role="row"]{
   font-size: 16px;
 }
 .dataTables_wrapper{
-  background: rgba(134, 175, 255, 1);
+  background: rgba(173, 201, 255, 1);
   padding: 10px 20px;
   border: 1px solid rgb(18, 18, 18);
   border-radius: 5px;
+  margin: 20px 0px;
 }
 #marcas_previous,#marcas_next{
   background: rgb(255, 255, 255);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="noneed-overflow">
   <head>
     <meta charset="utf-8">
     <title>Registro cc</title>
@@ -26,7 +26,6 @@
             <p>-Debe ingresar una fecha valida</p>
             <p>-El campo contraseña solo acepta minimo 8 caracteres y que contenga minimo una letra y un número</p>
           </ul>
-
     </div>
     </div>
     <div class="body-registro">
