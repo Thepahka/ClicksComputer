@@ -49,6 +49,5 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'></script>
 <script type="text/javascript" src="views/assets/js/fullpage.js"></script>
-<script type="text/javascript" src="views/assets/js/carrusel.js"></script>
 </body>
 </html>
