@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2018 a las 20:42:22
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Tiempo de generación: 11-04-2018 a las 20:02:54
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -98,12 +96,24 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTipo` (IN `tipo` VARCHAR(5
 SELECT * FROM tipopc WHERE tipopc_nom = tipo;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Correo` (IN `id` INT)  BEGIN
+SELECT emp_correo FROM empresa WHERE emp_id = id;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteCategoriaEmpresa` (IN `categoriaid` INT, `empid` INT)  BEGIN
 DELETE FROM filtros WHERE fil_id = categoriaid AND fk_emp_id = empid;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteMarcaEmpresa` (IN `marcaid` INT, `empid` INT)  BEGIN 
 DELETE FROM marca WHERE mar_id = marcaid AND fk_emp_id = empid;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Descripcion` (IN `id` INT)  BEGIN
+SELECT emp_desc FROM empresa WHERE emp_id = id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Direccion` (IN `id` INT)  BEGIN
+SELECT emp_dir FROM empresa WHERE emp_id = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarCategoriaEmpresa` (IN `nombre` VARCHAR(30), IN `emp_id` INT)  BEGIN
@@ -128,6 +138,14 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarUsuario` (IN `usu_num_doc` BIGINT, IN `usu_nom` VARCHAR(50), IN `usu_ape` VARCHAR(50), IN `usu_tel` INT, IN `usu_correo` VARCHAR(50), IN `usu_nac` DATE, IN `usu_contra` VARCHAR(100), IN `fk_rol_id` INT)  BEGIN
 INSERT INTO usuario(usu_num_doc, usu_nom, usu_ape, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id) VALUES (usu_num_doc, usu_nom, usu_ape, usu_tel, usu_correo, usu_nac, usu_contra, fk_rol_id);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `NIT` (IN `id` INT)  BEGIN
+SELECT emp_nit FROM empresa WHERE emp_id = id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Telefono` (IN `id` INT)  BEGIN
+SELECT emp_tel FROM empresa WHERE emp_id = id;
 END$$
 
 DELIMITER ;
@@ -460,7 +478,10 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_ape`, `usu_tel`, `usu_correo`, `usu_nac`, `usu_contra`, `fk_rol_id`) VALUES
 (6, 99092513641, 'Sergio Esteban', 'Cifuentes Arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$2d/hEWpslV7QaBe2LnivYOJzC/cJ4tA/ZsGvQ7eUgG4hpxKUaa7CC', 2),
 (7, 12121212, '121212', '121212', 1212121, '121212@12121.com', '1999-09-25', '$2y$10$N7MBceg3OhEwaImyEe1QBOtLVZoN9GPYx/94ZRyk6G931jam4CTGe', 2),
-(8, 0, '333', '333', 333333333, '1@2.com', '2018-09-06', '$2y$10$u6ufWLBHXKhIkGflfw6jleurPeTLHy.Lo8s43xsY8Qa9ReJhB0Mf6', 2);
+(8, 0, '333', '333', 333333333, '1@2.com', '2018-09-06', '$2y$10$u6ufWLBHXKhIkGflfw6jleurPeTLHy.Lo8s43xsY8Qa9ReJhB0Mf6', 2),
+(10, 123123123123, 'asddsad', '1231313213', 13123123, 'adsadsad@aadssda.com', '1999-09-25', '$2y$10$HIC.uwANqDLSullgr4DS9uTWCuGB39Y5IIpfk0NQg8FyA5BdHEgtq', 2),
+(11, 333409849131208394, 'sadadas', 'adasdasdasd', 2147483647, 'dq@ads.com', '1999-09-25', '$2y$10$H43bvkKMliSRlUwlNki6KOhLnsw1ub6cKjbRUcOuwlyNa40JLaY2C', 2),
+(12, 3123123123123213, 'sdadasdad', 'sadasdasdasd', 2147483647, '123123131@sadasd.com', '0000-00-00', '$2y$10$R0PpwnXQm9B3hzWpx2xdquV.7bkMdrGDtuoR3GirsAID3za7VGf96', 2);
 
 --
 -- Índices para tablas volcadas
@@ -629,55 +650,46 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `comentarios`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `com_pc`
 --
 ALTER TABLE `com_pc`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `com_pie`
 --
 ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT de la tabla `filtros`
 --
 ALTER TABLE `filtros`
   MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
   MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
   MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT de la tabla `tipopc`
 --
 ALTER TABLE `tipopc`
   MODIFY `tipopc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- Restricciones para tablas volcadas
 --
@@ -793,7 +805,6 @@ ALTER TABLE `pi_inv`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
