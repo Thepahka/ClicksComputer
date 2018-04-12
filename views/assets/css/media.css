@@ -6,9 +6,13 @@ update: actualizaciones fecha y lo que se actualiza
 CONTENT RYLES MEDIA CSS
 */
 @media (max-width: 800px){
-
+  body {
+    overflow-x: hidden;
+}
   /*MENU TOP*/
-
+  br{
+    display: none;
+  }
   .item{
     display: none;
   }
@@ -33,7 +37,7 @@ CONTENT RYLES MEDIA CSS
   }
  .texto{
     padding: 0px;
-    font-size: 30px;
+    font-size: 25px;
   }
   .right{
     display:none;
@@ -44,7 +48,7 @@ CONTENT RYLES MEDIA CSS
 }
   .btn-registraem{
     padding-right: 10px;
-    margin-left: -22%;
+    left: 60px;
   }
   /*registro*/
   .body-registro{
@@ -171,6 +175,157 @@ CONTENT RYLES MEDIA CSS
 input{
   display: block;
   margin: 0px 0px;
+}
+.img-fot{
+  position: relative;
+    width: 150px;
+    height: 200px;
+    left: 108px;
+    top: -150px;
+}
+.ti-con{
+  height: 150px;
+  position: relative;
+  top: 0px;
+  left: -129px;
+  background: none;
+  color: rgb(0, 0, 0);
+}
+.title-tien{
+  font-size: 24px;
+  text-align: center;
+  font-family: 'roboto',sans-serif;
+}
+.tien-parra{
+  font-size: 15px;
+  text-align: left;
+  font-family: 'roboto',sans-serif;
+  width: 330px;
+  margin: 10px 0px;
+}
+.footer-final .footer-links{
+  list-style: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 10px 0 23px;
+    margin: -10px;
+}
+.footer-final{
+  background-color: #292c2f;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font: normal 18px sans-serif;
+  padding: 30px;
+  margin-top: 72px;
+  z-index: 1000;
+  position: absolute;
+  bottom: 0px;
+  height: 146px;
+}
+/* registro usuario cliente */
+/* ventana modal de informacion */
+.body-register{
+  width: 100%;
+  background-image: none;
+  background-repeat: none;
+  background-size: none;
+  background-position: none;
+}
+.modalregis{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(34, 34, 34, 0.77);
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: flex;
+  animation: modal 1s 2.13s forwards;
+  visibility: hidden;
+  opacity: 0;
+}
+.contenido-resg {
+    margin: 8% 6%;
+    width: 320px;
+    height: 90%;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'roboto', sans-serif;
+    padding: 60px 22px;
+}
+#cerrarres + label {
+    position: fixed;
+    color: #ffffff;
+    font-size: 25px;
+    z-index: 100000;
+    background: rgb(168, 168, 168);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    top: 50px;
+    left: 280px;
+    transition: 0.3s;
+    animation: modal 1s 3s forwards;
+    visibility: hidden;
+    opacity: 0;
+}
+.mod-regis{
+  font-size: 22px;
+}
+.mod-regis-p{
+  font-size: 16px;
+}
+.body-registro {
+    background-color: rgba(128, 150, 159, 1);
+    width: 100%;
+    height: 100vh;
+    font-family: 'roboto', sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+}
+/* formulario registro */
+form[id="validate"] {
+    position: relative;
+    top: 40px;
+    left: -60px;
+    width: 350px;
+    height: 300px;
+}
+.input-registrousuario {
+    position: relative;
+    top: -18px;
+    padding: 39px -1px;
+    z-index: 1000;
+}
+.inputs-reg{
+  left: 0px;
+  padding: 0px 8px;
+  margin: 30px 0px;
+  width: 301px;
+  position: relative;
+  border: 1px solid #DBE1EB;
+  border-radius: 1px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  outline: none;
+  z-index: 1000;
+}
+.labels-reg{
+  display: flex;
+  padding: 22px 0px;
+  position: relative;
+  left: 110px;
+  top: 8px;
+  font-size: 15px;
+}
+/* inicio de sesion */
+.body-login{
+  background-image: none;
+  background-repeat: none;
+  background-size: none;
+  background-position: none;
 }
 
 }

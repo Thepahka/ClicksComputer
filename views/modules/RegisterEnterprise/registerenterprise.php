@@ -17,15 +17,15 @@
     <div class="modalregis">
       <div class="contenido-resg">
         <ul>
-          <h3>Por favor tenga en cuenta a la hora de registrar su Tienda/Empresa que:</h3>
+          <h3 class="mod-regis">Por favor tenga en cuenta a la hora de registrar su Tienda/Empresa que:</h3>
         </ul>
         <ul>
-          <p>-Debe registrar su Tienda/Empresa con un NIT valido</p>
-          <p>-Los campos NIT o ID de la empresa y telefono de la empresa solo aceptan datos númericos</p>
-          <p>-El campo Nombre de la empresa solo acepta letras</p>
-          <p>-Puede colocar una descripcion corta de la empresa y luego modificarla</p>
-          <p>-El campo correo electronico solo acepta correos validos(que tengan @texto.texto)</p>
-          <p>-El campo contraseña solo acepta minimo 8 caracteres y que contenga minimo una letra y un número</p>
+          <p class="mod-regis-p">-Debe registrar su Tienda/Empresa con un NIT valido</p>
+          <p class="mod-regis-p">-Los campos NIT o ID de la empresa y telefono de la empresa solo aceptan datos númericos</p>
+          <p class="mod-regis-p">-El campo Nombre de la empresa solo acepta letras</p>
+          <p class="mod-regis-p">-Puede colocar una descripcion corta de la empresa y luego modificarla</p>
+          <p class="mod-regis-p">-El campo correo electronico solo acepta correos validos(que tengan @texto.texto)</p>
+          <p class="mod-regis-p">-El campo contraseña solo acepta minimo 8 caracteres y que contenga minimo una letra y un número</p>
         </ul>
       </div>
     </div>
