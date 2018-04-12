@@ -12,32 +12,38 @@
         <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
         <title>gestion de perfil</title>
     </head>
+<<<<<<< HEAD
     <body class="body-dash">
       <div class="wrap-nav">
         <h1 class="nav-titulo">Gestion del perfil de <?php echo ucwords($_SESSION["user"]["nombre"]); ?></h1>
         <form class="" action="" method="post">
+=======
+    <body>
+        <p>Gestion del perfil de <?php echo ucwords($_SESSION["user"]["nombre"]); ?></p>
+        <form class="" action="ActualizarDescripcion" method="post">
+>>>>>>> 79dff82de4946e01a99f3317addb68b7a8edd5b5
         <p>Actualizar descripcion de tienda(<i>Ingrese la nueva descripcion de su tienda</i>)</p>
-        <textarea placeholder="<?php print_r(ucfirst($descripcion[0][0])); ?>"></textarea></br>
-        <input type="submit" name="" value="Actualizar descripcion de mi tienda">
+        <textarea  name="descripcion[]" placeholder="<?php print_r(ucfirst($descripcion[0][0])); ?>"></textarea></br>
+        <input type="submit"  value="Actualizar descripcion de mi tienda" onclick="jabon()">
         </form>
         <form class="" action="" method="post">
         <p>Actualizar NIT de la Empresa(<i>Ingrese su nuevo NIT</i>)</p>
-        <input type="text" placeholder="<?php print_r($nit[0][0]); ?>"></input></br>
+        <input name="NIT" type="text" placeholder="<?php print_r($nit[0][0]); ?>"></input></br>
         <input type="submit" name="" value="Actualizar mi NIT">
         </form>
-        <form class="" action="" method="post">
+        <form class="" action="ActualizarDireccion" method="post">
         <p>Actualizar Dirección de la Empresa(<i>Ingrese su nueva dirección</i>)</p>
-        <input type="text" placeholder="<?php print_r($direccion[0][0]); ?>"></input></br>
+        <input name="direccion[]" type="text" placeholder="<?php print_r($direccion[0][0]); ?>"></input></br>
         <input type="submit" name="" value="Actualizar mi dirección">
         </form>
-        <form class="" action="" method="post">
+        <form class="" action="ActualizarCorreo" method="post">
         <p>Actualizar Correo electronico de la Empresa(<i>Ingrese su nuevo correo electronico</i>)</p>
-        <input type="text" placeholder="<?php print_r($correo[0][0]); ?>"></input></br>
+        <input name="correo[]" type="text" placeholder="<?php print_r($correo[0][0]); ?>"></input></br>
         <input type="submit" name="" value="Actualizar mi correo electronico">
         </form>
-        <form class="" action="" method="post">
+        <form class="" action="ActualizarTelefono" method="post">
         <p>Actualizar Telefono de la Empresa(<i>Ingrese su nuevo Telefono</i>)</p>
-        <input type="text" placeholder="<?php print_r($telefono[0][0]); ?>"></input></br>
+        <input name="telefono[]" type="text" placeholder="<?php print_r($telefono[0][0]); ?>"></input></br>
         <input type="submit" name="" value="Actualizar mi telefono">
       </div>
       </form>
