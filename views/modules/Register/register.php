@@ -17,14 +17,14 @@
     <div class="modalregis">
       <div class="contenido-resg">
           <ul>
-            <h3>Por favor tenga en cuenta a la hora de registrarse que:</h3>
+            <h3 class="mod-regis">Por favor tenga en cuenta a la hora de registrarse que:</h3>
           </ul>
           <ul>
-            <p>-Los campos Documento de identidad y Telefono solo aceptan números</p>
-            <p>-Los campos Nombre(s) y Apellido(s) solo aceptan letras</p>
-            <p>-El campo correo electronico solo acepta correos validos (que tengan @texto.texto)</p>
-            <p>-Debe ingresar una fecha valida</p>
-            <p>-El campo contraseña solo acepta minimo 8 caracteres y que contenga minimo una letra y un número</p>
+            <p class="mod-regis-p">-Los campos Documento de identidad y Telefono solo aceptan números</p>
+            <p class="mod-regis-p">-Los campos Nombre(s) y Apellido(s) solo aceptan letras</p>
+            <p class="mod-regis-p">-El campo correo electronico solo acepta correos validos (que tengan @texto.texto)</p>
+            <p class="mod-regis-p">-Debe ingresar una fecha valida</p>
+            <p class="mod-regis-p">-El campo contraseña solo acepta minimo 8 caracteres y que contenga minimo una letra y un número</p>
           </ul>
     </div>
     </div>
