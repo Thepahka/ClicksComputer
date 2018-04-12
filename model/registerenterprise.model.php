@@ -16,7 +16,7 @@ class RegisterenterpriseModel
     }
   }
 
-  public function RegisterNewEnterprise($data)
+  public function RegisterNewEnterprise($datos)
   {
     try
     {
@@ -25,7 +25,7 @@ class RegisterenterpriseModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5], password_hash($data[6], PASSWORD_BCRYPT),1));
+      $query->execute(array($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5], password_hash($datos[6], PASSWORD_BCRYPT),1));
 
       $msn = "Se registro con exito";
     }

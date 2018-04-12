@@ -19,20 +19,28 @@
     {
       $data = $_POST["data"];
 
-      // $comprobeIdEnterprise = $data[0];
-      //
-      // $comprobeEmailEnterprise = $data[5];
-      //
-      // $result = $this->registerenterprise->ValidateEnterpriseEmail($comprobeEmailEnterprise);
-      //
-      // $result2 = $this->registerenterprise->ValidateEnterpriseId($comprobeIdEnterprise);
-      //
-      // $result3 = $this->registerenterprise->ValidateEnterpriseEmail2($comprobeEmailEnterprise);
-      //
-      // $result4 = $this->registerenterprise->ValidateEnterpriseId2($comprobeIdEnterprise);
-      //
-      // $emailvalidio = filter_var($data[5], FILTER_SANITIZE_EMAIL);
-      //
+      $complemento = $_POST["complemento"];
+
+      $comprobeIdEnterprise = $data[0];
+
+      $comprobeEmailEnterprise = $data[5];
+
+      $result = $this->registerenterprise->ValidateEnterpriseEmail($comprobeEmailEnterprise);
+
+      $result2 = $this->registerenterprise->ValidateEnterpriseId($comprobeIdEnterprise);
+
+      $result3 = $this->registerenterprise->ValidateEnterpriseEmail2($comprobeEmailEnterprise);
+
+      $result4 = $this->registerenterprise->ValidateEnterpriseId2($comprobeIdEnterprise);
+
+      $emailvalidio = filter_var($data[5], FILTER_SANITIZE_EMAIL);
+
+      $nit = $data[0]."-".$complemento;
+
+      $datos = array($nit, $data[1], $data[2], $data[3], $data[4], $data[5], $data[6]);
+
+      print_r($datos);
+
       // if($data[0] == "")
       // {
       //   echo '<script language="javascript">alert("Se debe completar el campo NIT o ID de la empresa");</script>';
@@ -114,7 +122,7 @@
       // }
       // else
       // {
-        $result = $this->registerenterprise->RegisterNewEnterprise($data);
+        $result = $this->registerenterprise->RegisterNewEnterprise($datos);
         echo '<script language="javascript">
         alert("Registrado con exito!");
         window.location.href="main";

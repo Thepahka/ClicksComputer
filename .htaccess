@@ -24,6 +24,11 @@ RewriteRule ^Registrar-Computador$ index.php?c=pc&a=ViewsSavePc
 RewriteRule ^MyDashboard$ index.php?c=shop&a=shopDashboard
 RewriteRule ^CerrarSesion$ index.php?c=shop&a=SessionOff
 RewriteRule ^GestionPerfil$ index.php?c=shop&a=Perfil
+RewriteRule ^ActualizarDesc$ index.php?c=shop&a=updateDesc
+RewriteRule ^ActualizarNit$ index.php?c=shop&a=updateNit
+RewriteRule ^ActualizarDir$ index.php?c=shop&a=updateDir
+RewriteRule ^ActualizarCor$ index.php?c=shop&a=updateCor
+RewriteRule ^ActualizarTel$ index.php?c=shop&a=updateTel
 
 #Marcas
 RewriteRule ^GestionMarcas$ index.php?c=marca&a=ViewMarca

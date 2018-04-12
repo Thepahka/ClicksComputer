@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-04-2018 a las 20:02:54
+-- Tiempo de generación: 13-04-2018 a las 00:34:18
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -24,8 +24,28 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarCorEmp` (IN `correo` VARCHAR(100), `id` INT)  BEGIN
+UPDATE empresa SET emp_correo = correo WHERE emp_id = id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarDescEmp` (IN `descr` TEXT, `id` INT)  BEGIN
+UPDATE empresa SET emp_desc = descr WHERE emp_id = id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarDirEmp` (IN `dir` VARCHAR(100), IN `id` INT)  BEGIN
+UPDATE empresa SET emp_dir = dir WHERE emp_id = id;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarMarcaEmpresa` (IN `nombre` VARCHAR(30), IN `marcaid` INT, IN `empresaid` INT)  BEGIN
 UPDATE marca SET mar_nombre = nombre WHERE mar_id = marcaid AND fk_emp_id = empresaid;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarNitEmp` (IN `nit` VARCHAR(50), `id` INT)  BEGIN
+UPDATE empresa SET emp_nit = nit WHERE emp_id = id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarTelEmp` (IN `tel` INT, `id` INT)  BEGIN
+UPDATE empresa SET emp_tel = tel WHERE emp_id = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarCategoria` (IN `categoria` VARCHAR(30))  BEGIN
@@ -120,7 +140,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarCategoriaEmpresa` (IN `nombr
 INSERT INTO filtros(fil_nom, fk_pc_id, fk_emp_id, fk_pi_cod) VALUES (nombre, NULL, emp_id, NULL);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` BIGINT, IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` VARCHAR(50), IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
 INSERT INTO empresa(emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id) VALUES (emp_nit, emp_nom, emp_dir, emp_desc, emp_tel, emp_correo, emp_contra, fk_rol_id);
 END$$
 
@@ -205,9 +225,9 @@ CREATE TABLE `com_pie` (
 
 CREATE TABLE `empresa` (
   `emp_id` int(11) NOT NULL,
-  `emp_nit` bigint(20) NOT NULL,
+  `emp_nit` varchar(50) NOT NULL,
   `emp_nom` varchar(20) NOT NULL,
-  `emp_dir` varchar(20) NOT NULL,
+  `emp_dir` varchar(100) NOT NULL,
   `emp_desc` text NOT NULL,
   `emp_tel` int(11) NOT NULL,
   `emp_correo` varchar(50) NOT NULL,
@@ -220,10 +240,11 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
-(6, 123456789, 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
-(7, 987654321, 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
-(9, 1036687877, 'bambu corp', 'cra bambu # bambu', 'empresa dedicada a todo lo que tiene que ver con bambú', 1234567, 'bambu@bambu.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
-(10, 2312312312312321, 'pacha\'s corp', 'cra jabon #jabon', 'somos una empresa de jabones', 1212121, 'jabon@jabon.com', '$2y$10$yt/gfUdACrC2tb.Js9KJTOjQYqhGu/rr9FALm8KRrgJ50l/mRg5pW', 1);
+(6, '123456789-9', 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
+(7, '987654321-9', 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
+(9, '123-0', 'bambu corp', 'calle principal bambu', 'asd', 2085072, 'bambu@bambu.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
+(10, '2312312312312321-9', 'pacha\'s corp', 'cra jabon #jabon', 'somos una empresa de jabones', 1212121, 'jabon@jabon.com', '$2y$10$yt/gfUdACrC2tb.Js9KJTOjQYqhGu/rr9FALm8KRrgJ50l/mRg5pW', 1),
+(11, '90912019212902-9', 'pacha corp inc', 'carrera pacha', 'empresa pachera', 98765432, 'pacha@pacha.com', '$2y$10$TcWKb.764eQaWVYECDmGlesRPmTYxZ9RnCgEI/dljT79PtBgkcuFW', 1);
 
 -- --------------------------------------------------------
 
@@ -266,7 +287,8 @@ CREATE TABLE `filtros` (
 --
 
 INSERT INTO `filtros` (`fil_id`, `fil_nom`, `fk_pc_id`, `fk_emp_id`, `fk_pi_cod`) VALUES
-(8, 'jabon', NULL, 9, NULL);
+(9, 'cualquier coss', NULL, 9, NULL),
+(10, 'asd', NULL, 9, NULL);
 
 -- --------------------------------------------------------
 
@@ -481,7 +503,8 @@ INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_ape`, `usu_tel`,
 (8, 0, '333', '333', 333333333, '1@2.com', '2018-09-06', '$2y$10$u6ufWLBHXKhIkGflfw6jleurPeTLHy.Lo8s43xsY8Qa9ReJhB0Mf6', 2),
 (10, 123123123123, 'asddsad', '1231313213', 13123123, 'adsadsad@aadssda.com', '1999-09-25', '$2y$10$HIC.uwANqDLSullgr4DS9uTWCuGB39Y5IIpfk0NQg8FyA5BdHEgtq', 2),
 (11, 333409849131208394, 'sadadas', 'adasdasdasd', 2147483647, 'dq@ads.com', '1999-09-25', '$2y$10$H43bvkKMliSRlUwlNki6KOhLnsw1ub6cKjbRUcOuwlyNa40JLaY2C', 2),
-(12, 3123123123123213, 'sdadasdad', 'sadasdasdasd', 2147483647, '123123131@sadasd.com', '0000-00-00', '$2y$10$R0PpwnXQm9B3hzWpx2xdquV.7bkMdrGDtuoR3GirsAID3za7VGf96', 2);
+(12, 3123123123123213, 'sdadasdad', 'sadasdasdasd', 2147483647, '123123131@sadasd.com', '0000-00-00', '$2y$10$R0PpwnXQm9B3hzWpx2xdquV.7bkMdrGDtuoR3GirsAID3za7VGf96', 2),
+(13, 990925136411999, 'sergio', 'cifuentes', 2085072, 'scifuentesarango@hotmail.com', '1999-09-25', '$2y$10$cFoZ2rPnucbk5nGZM1iCUuqTstshe6ABeDl9m18.yOLRPKOiYlt3G', 2);
 
 --
 -- Índices para tablas volcadas
@@ -664,12 +687,12 @@ ALTER TABLE `com_pie`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT de la tabla `filtros`
 --
 ALTER TABLE `filtros`
-  MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
@@ -689,7 +712,7 @@ ALTER TABLE `tipopc`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Restricciones para tablas volcadas
 --

@@ -26,7 +26,7 @@ class ShopModel
 
       $query->execute(array($_SESSION["user"]["name"]));
 
-      $result = $query->fetch(FETCH_BOTH);
+      $result = $query->fetch(PDO::FETCH_BOTH);
     }
     catch(PDOException $e)
     {
@@ -120,6 +120,86 @@ class ShopModel
       $query = $this->pdo->prepare($sql);
 
       $query->execute(array($idempresa));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
+  public function updatedesc($newdesc, $idempresa)
+  {
+    try
+    {
+      $sql = "CALL ActualizarDescEmp(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($newdesc, $idempresa));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
+  public function updatedir($newdir, $idempresa)
+  {
+    try
+    {
+      $sql = "CALL ActualizarDirEmp(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($newdir, $idempresa));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
+  public function updatecor($newcor, $idempresa)
+  {
+    try
+    {
+      $sql = "CALL ActualizarCorEmp(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($newcor, $idempresa));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
+  public function updatetel($newtel, $idempresa)
+  {
+    try
+    {
+      $sql = "CALL ActualizarTelEmp(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($newtel, $idempresa));
 
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }
