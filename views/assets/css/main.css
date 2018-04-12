@@ -769,10 +769,10 @@ textarea{
   text-transform: uppercase;
   font-weight: lighter;
   font-family: 'Oswald', sans-serif;
-  transition:all .2s ease-in-out;
+  transition:all 0.2s;
 }
 .item-dash:hover{
-  transition:all .2s ease-in-out;
+  transition:all 0.2s;
   background: rgba(228, 228, 228, 1);
   color: #000000;
 }

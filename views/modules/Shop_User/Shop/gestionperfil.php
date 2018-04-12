@@ -10,10 +10,11 @@
     <head>
         <meta charset="utf-8">
         <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
-        <title></title>
+        <title>gestion de perfil</title>
     </head>
-    <body>
-        <p>Gestion del perfil de <?php echo ucwords($_SESSION["user"]["nombre"]); ?></p>
+    <body class="body-dash">
+      <div class="wrap-nav">
+        <h1 class="nav-titulo">Gestion del perfil de <?php echo ucwords($_SESSION["user"]["nombre"]); ?></h1>
         <form class="" action="" method="post">
         <p>Actualizar descripcion de tienda(<i>Ingrese la nueva descripcion de su tienda</i>)</p>
         <textarea placeholder="<?php print_r(ucfirst($descripcion[0][0])); ?>"></textarea></br>
@@ -38,6 +39,9 @@
         <p>Actualizar Telefono de la Empresa(<i>Ingrese su nuevo Telefono</i>)</p>
         <input type="text" placeholder="<?php print_r($telefono[0][0]); ?>"></input></br>
         <input type="submit" name="" value="Actualizar mi telefono">
-        </form>
+      </div>
+      </form>
+      <?php require_once 'views/include/scope.menutopdashboard.php';
+            require_once 'views/include/scope.profileenterprise.php';?>
     </body>
 </html>
