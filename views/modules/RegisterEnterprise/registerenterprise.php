@@ -43,7 +43,7 @@
           <label class="labels-regem" for="EmpContra">Contraseña</label><br>
       </div>
         <div class="wrap-input-regem">
-          <input class="input-regem" type="text" name="data[]" style="bottom:3px;"><input type="text" name="complemento">
+          <input class="input-regem" type="text" name="data[]" style="bottom:3px; width:180px;"><input type="text" name="complemento" class="input-regem" style="width:100px; bottom:3px;">
           <input class="input-regem" type="text" name="data[]"><br>
           <input class="input-regem" type="text" name="data[]"><br>
           <textarea class="input-regem" name="data[]"></textarea><br>
