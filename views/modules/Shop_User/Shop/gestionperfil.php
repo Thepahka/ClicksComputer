@@ -18,7 +18,7 @@
         <form class="for-update" action="ActualizarDesc" method="post">
         <p class="cpc">Actualizar descripcion de tienda(<i>Ingrese la nueva descripcion de su tienda</i>)</p>
         <textarea class="in-cpcarea-perfil" name="descripcion" placeholder="<?php print_r(ucfirst($descripcion[0][0])); ?>"></textarea></br>
-        <input class="btn-aupdateperfil" type="submit" name="" value="Actualizar descripcion de mi tienda">
+        <input class="btn-aupdateperfil-area" type="submit" name="" value="Actualizar descripcion de mi tienda">
         </form>
         <form class="for-update" action="ActualizarNit" method="post">
         <p class="cpc">Actualizar NIT de la Empresa(<i>Ingrese su nuevo NIT</i>)</p>

@@ -1418,6 +1418,7 @@ input[type="file"]{
 }
 .in-cpcarea-perfil{
   position: relative;
+  bottom: 30px;
   padding: 5px 8px;
   left: 606px;
   height: 80px;
@@ -1439,7 +1440,7 @@ input[type="file"]{
   background-color: rgb(255, 255, 255);
 }
 .btn-aupdateperfil{
-  bottom: 8px;
+  bottom: 36px;
   left: 735px;
   color: rgb(0, 0, 0);
   font-size: 15px;
@@ -1451,7 +1452,20 @@ input[type="file"]{
   border: 2px solid rgb(0, 0, 0);
   position: relative;
 }
-.btn-aupdateperfil:hover{
+.btn-aupdateperfil-area{
+  bottom: 40px;
+  left: 735px;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  background: rgb(251, 251, 251);
+  padding: 5px 3px;
+  border-radius: 4px;
+  font-family: 'Oswald',sans-serif;
+  transition:all .2s ease-in-out;
+  border: 2px solid rgb(0, 0, 0);
+  position: relative;
+}
+.btn-aupdateperfil:hover,.btn-aupdateperfil-area:hover{
   transition:all .2s ease-in-out;
   cursor: pointer;
   background: rgb(0, 0, 0);
