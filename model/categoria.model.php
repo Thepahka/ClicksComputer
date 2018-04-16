@@ -78,7 +78,7 @@ class CategoriaModel
   {
     try
     {
-      $sql = "CALL ConsultarCatEmp(?)";
+      $sql = "CALL ConsultarFil(?)";
 
       $query = $this->pdo->prepare($sql);
 
@@ -97,7 +97,7 @@ class CategoriaModel
   {
     try
     {
-      $sql = "CALL ConsultaCategorias(?)";
+      $sql = "CALL CategoriasExistentes(?)";
 
       $query = $this->pdo->prepare($sql);
 
@@ -167,5 +167,6 @@ class CategoriaModel
       $msn = $e->getMessage();
     }
   }
+
 }
 ?>

@@ -46,6 +46,7 @@ RewriteRule ^ActualizarCategorias-(\w+)-(\w+)$ index.php?c=categoria&a=ViewUpdat
 RewriteRule ^EliminarCategoria-(\w+)-(\w+)$ index.php?c=categoria&a=DeleteCat&data=$1&data2=$2
 RewriteRule ^CategoriaActualizada$ index.php?c=categoria&a=UpdateCat
 
+
 #Tiendas
 RewriteRule ^Tiendas$ index.php?c=tienda&a=ViewTienda
 

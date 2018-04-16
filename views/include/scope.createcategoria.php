@@ -1,11 +1,3 @@
-<script>
-
-    $(function(){
-        $("#categoriaAdicional").on('click', function(){
-            $("#nuevocategoria input:eq(0)").clone().addClass("crear-clon").appendTo("#nuevocategoria");
-        });
-    });
-</script>
 <!-- <script>
 function letrasynumeros(e){
   key=e.keyCode || e.which;
@@ -31,17 +23,21 @@ function letrasynumeros(e){
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis categorias</h1>
   <div class="nav-btns">
-    <a class="gest-pc" id="myBtn">Registrar categoria</a>
+        <a class="gest-pc" id="myBtn">Registrar categoria</a>
     <div id="myModal" class="modal">
       <div class="modal-content">
+        <?php
+         foreach($this->Read2() as $row)
+         {
+        ?>
+    <form id="nuevocategoria" class="form-conta" action="CrearCategoria" method="post">
+            <input class="" type="checkbox" value="<?php print_r(array($row["fil_id"], $row["fil_nom"]))?>" name="data[]"> <?php echo $row["fil_nom"] ?>
+        <?php } ?>
+        <input class="btn-dash-mar" type="submit" value="Registrar categoria">
+    </form>
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
         <p class="model-textp">Registrar nueva categoria</p>
-        <p class="indicacion-res">Escribe el nombre de las categorias aqui.</p>
-        <input class="btn-dash-mar" id="categoriaAdicional" type="submit" value="agregar producto">
-        <form id="nuevocategoria" class="form-conta" action="CrearCategoria" method="post">
-          <input class="crear-fmodal" type="text" name="data[]" value="" onkeypress="return letrasynumeros(event)" onpaste="return false">
-          <input class="btn-dash-mar" type="submit" value="Registrar categoria">
-        </form>
+        <p class="indicacion-res">Selecciona las categorias que quieres añadir a tu tienda.</p>
       </div>
     </div>
 </div>
@@ -55,17 +51,16 @@ function letrasynumeros(e){
       </thead>
       <tbody class="table-grid">
         <?php
-          $item = 0;
-          foreach($this->Read() as $row) {
-            $item++
+           $item = 0;
+           foreach($this->Read() as $row) {
+             $item++
             ?>
           <tr>
-            <td><?php echo $item; ?></td>
-            <td><?php echo ucwords($row["fil_nom"]); ?></td>
+            <td><?php  echo $item; ?></td>
+            <td><?php  echo ucwords($row["fil_nom"]); ?></td>
               <td>
-                  <a class="btn-datagrid" href="ActualizarCategorias-<?php echo $row['fil_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>"><i class="fas fa-pen-square icono-accion"></i>Actualizar</a>
-                  <a class="btn-datagrid" href="EliminarCategoria-<?php echo $row['fil_id']; ?>-<?php echo $_SESSION['emp']['id']; ?>" onclick="return confirmar(this)"><i class="fas fa-trash-alt icono-accion"></i>Eliminar</a>
-
+                  <a class="btn-datagrid" href="ActualizarCategorias-<?php  echo $row['fil_id']; ?>-<?php  echo $_SESSION['emp']['id']; ?>"><i class="fas fa-pen-square icono-accion"></i>Actualizar</a>
+                  <a class="btn-datagrid" href="EliminarCategoria-<?php  echo $row['fil_id']; ?>-<?php  echo $_SESSION['emp']['id']; ?>" onclick="return confirmar(this)"><i class="fas fa-trash-alt icono-accion"></i>Eliminar</a>
                   <script type="text/javascript">
                   function confirmar()
                   {
@@ -81,7 +76,7 @@ function letrasynumeros(e){
                   </script>
               </td>
           </tr>
-        <?php } ?>
+        <?php  } ?>
       </tbody>
   </table>
   <div class="modal" id="myModal2">

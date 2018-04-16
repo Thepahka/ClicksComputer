@@ -50,48 +50,34 @@ class CategoriaController
   {
       $data = $_POST["data"];
 
-      $idempresa = $_SESSION["emp"]["id"];
+      while(true)
+       {
+         $allcategorias = current($data);
 
-      $nomcategoria = $data[0];
+         $asignarcategorias=(( $allcategorias !== false) ? $allcategorias : ", &nbsp;");
 
-      $result = $this->categoria->ConsultCategoria($nomcategoria);
+         print_r($_SESSION["categoria"]["nombre"]);
 
-      if(($data[0] == "") or array_search("",$data))
-      {
-          echo '<script language="javascript">alert("Tienes que llenar todos los campos");</script>';
-          echo "<script>history.back(1)</script>";
-      }
-      elseif($result[3] == $idempresa or array_search($result[3],$data))
-      {
-          echo '<script language="javascript">alert("Esta categoria ya esta registrada en tu tienda");</script>';
-          echo "<script>history.back(1)</script>";
-      }
-      else
-      {
-        while(true)
-        {
-          $allcategorias = current($data);
+         $allcategorias = next($data);
 
-          $asignarcategorias=(( $allcategorias !== false) ? $allcategorias : ", &nbsp;");
-
-          $this->categoria->newCategoria($allcategorias ,$idempresa);
-
-          $allcategorias = next($data);
-
-          if($allcategorias === false && $allcategorias === false)
-          {
-            break;
-          }
-        }
-        echo '<script language="javascript">alert("Categoria(s) registrada(s) con exito");</script>';
-        echo "<script>history.back(1)</script>";
-      }
+         if($allcategorias === false && $allcategorias === false)
+         {
+           break;
+         }
+       }
   }
 
   public function Read()
   {
       $empid = $_SESSION["emp"]["id"];
       $result = $this->categoria->allCategorias($empid);
+      return $result;
+  }
+
+  public function Read2()
+  {
+      $empid = $_SESSION["emp"]["id"];
+      $result = $this->categoria->Categorias($empid);
       return $result;
   }
 
@@ -120,6 +106,7 @@ class CategoriaController
     // window.location.href="GestionCategorias"
     // </script>';
    }
+
 
 
 }
