@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-04-2018 a las 00:34:18
+-- Tiempo de generación: 17-04-2018 a las 00:19:22
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -48,6 +48,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarTelEmp` (IN `tel` INT, `i
 UPDATE empresa SET emp_tel = tel WHERE emp_id = id;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CategoriasExistentes` (IN `id` INT)  BEGIN
+SELECT fil_id, fil_nom, fk_emp_id FROM filtros INNER JOIN fil_emp ON filtros.fil_id=fil_emp.fk_fil_id INNER JOIN empresa ON empresa.emp_id=fil_emp.fk_emp_id WHERE fk_emp_id NOT LIKE id;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarCategoria` (IN `categoria` VARCHAR(30))  BEGIN
 SELECT * FROM filtros WHERE categoria = fil_nom;
 END$$
@@ -78,6 +82,10 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpId2` (IN `id` BIGINT)  BEGIN
 SELECT usu_num_doc FROM usuario WHERE id = usu_num_doc;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarFil` (IN `id` INT)  BEGIN
+SELECT * FROM fil_emp INNER JOIN filtros ON filtros.fil_id=fil_emp.fk_fil_id WHERE fk_emp_id = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarId` (IN `documento` BIGINT(30))  BEGIN
@@ -278,7 +286,6 @@ CREATE TABLE `filtros` (
   `fil_id` int(11) NOT NULL,
   `fil_nom` varchar(30) NOT NULL,
   `fk_pc_id` int(11) DEFAULT NULL,
-  `fk_emp_id` int(11) DEFAULT NULL,
   `fk_pi_cod` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -286,9 +293,33 @@ CREATE TABLE `filtros` (
 -- Volcado de datos para la tabla `filtros`
 --
 
-INSERT INTO `filtros` (`fil_id`, `fil_nom`, `fk_pc_id`, `fk_emp_id`, `fk_pi_cod`) VALUES
-(9, 'cualquier coss', NULL, 9, NULL),
-(10, 'asd', NULL, 9, NULL);
+INSERT INTO `filtros` (`fil_id`, `fil_nom`, `fk_pc_id`, `fk_pi_cod`) VALUES
+(14, 'oficina', NULL, NULL),
+(15, 'oficina2', NULL, NULL),
+(16, 'oficina3', NULL, NULL),
+(17, 'oficina4', NULL, NULL),
+(18, 'oficina5', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fil_emp`
+--
+
+CREATE TABLE `fil_emp` (
+  `fk_fil_id` int(11) NOT NULL,
+  `fk_emp_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `fil_emp`
+--
+
+INSERT INTO `fil_emp` (`fk_fil_id`, `fk_emp_id`) VALUES
+(14, 6),
+(14, 9),
+(18, 6),
+(16, 9);
 
 -- --------------------------------------------------------
 
@@ -566,8 +597,14 @@ ALTER TABLE `emp_pie`
 ALTER TABLE `filtros`
   ADD PRIMARY KEY (`fil_id`),
   ADD KEY `fk_pc_id` (`fk_pc_id`),
-  ADD KEY `fk_emp_id` (`fk_emp_id`),
   ADD KEY `fk_pi_cod` (`fk_pi_cod`);
+
+--
+-- Indices de la tabla `fil_emp`
+--
+ALTER TABLE `fil_emp`
+  ADD KEY `fk_fil_id` (`fk_fil_id`),
+  ADD KEY `fk_emp_id` (`fk_emp_id`);
 
 --
 -- Indices de la tabla `galeria`
@@ -692,7 +729,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de la tabla `filtros`
 --
 ALTER TABLE `filtros`
-  MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
@@ -765,8 +802,14 @@ ALTER TABLE `emp_pie`
 --
 ALTER TABLE `filtros`
   ADD CONSTRAINT `filtros_ibfk_1` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `filtros_ibfk_2` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `filtros_ibfk_3` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `fil_emp`
+--
+ALTER TABLE `fil_emp`
+  ADD CONSTRAINT `fil_emp_ibfk_1` FOREIGN KEY (`fk_emp_id`) REFERENCES `empresa` (`emp_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `fil_emp_ibfk_2` FOREIGN KEY (`fk_fil_id`) REFERENCES `filtros` (`fil_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `gal_pc`
