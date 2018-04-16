@@ -22,7 +22,7 @@
         </form>
         <form class="for-update" action="ActualizarNit" method="post">
         <p class="cpc">Actualizar NIT de la Empresa(<i>Ingrese su nuevo NIT</i>)</p>
-        <input class="in-cpcod-uptien-nit" type="text" name="nit" placeholder="<?php print_r($nit[0][0]); ?>"></input><input class="in-cpcod-uptien-complemento" type="text" name="complemento"></br>
+        <input class="in-cpcod-uptien-nit" type="text" name="nit" placeholder="<?php print_r($nit[0][0]); ?>"> <label class="migadepan">-</label> </input><input class="in-cpcod-uptien-complemento" type="text" name="complemento"></br>
         <input class="btn-aupdateperfil" type="submit" name="" value="Actualizar mi NIT">
         </form>
         <form class="for-update" action="ActualizarDir" method="post">

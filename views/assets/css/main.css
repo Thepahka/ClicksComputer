@@ -1416,6 +1416,22 @@ input[type="file"]{
   outline: none;
   font-family: 'roboto',sans-serif;
 }
+/* migas de pan de los registros */
+.migadepan{
+  color: black;
+  position: relative;
+  top: -31px;
+  right: -619px;
+  font-size: 18px;
+}
+.migadepan2{
+  color: white;
+  position: relative;
+  top: 0px;
+  right: -20px;
+  font-size: 19px;
+}
+
 .in-cpcarea-perfil{
   position: relative;
   bottom: 30px;
