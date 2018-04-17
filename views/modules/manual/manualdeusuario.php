@@ -50,18 +50,16 @@
 
   <div class="contenedor-punto">
   <h3 class="titulo-manual-pri">2. Objetivo del manual.</h3>
-  <p class="parrafo-manual">Este manual tiene como propósito guiar al usuario a través del aplicativo que se
-  desarrolló, contextualizar de una manera breve y entendible cada uno de los
-  módulos, sub módulos y funciones para que al final de dicho manual sea capaz de
-  navegar sin complicaciones y comprender el propósito del aplicativo.</p>
+  <p class="parrafo-manual">guiar al usuario a través del aplicativo web, contextualizar de una manera breve y
+entendible cada uno de los módulos/submódulos y funciones para comprender el
+propósito de este.</p>
   </div>
 
   <div class="contenedor-punto">
   <h3 class="titulo-manual-pri">3. Descripcion.</h3>
   <p class="parrafo-manual">Nuestro principal objetivo es desarrollar un aplicativo web que asesore a las personas
   a encontrar un computador que se ajuste a sus necesidades.<br>
-  En el aplicativo habrá 2 roles, el usuario que es el que va a buscar los productos y va
-  a comentarlos y la tienda que es la que subirá los productos.</p>
+</p>
   </div>
 
   <h3 class="titulo-manual-pri">4. Requisitos.</h3>
@@ -77,13 +75,10 @@
 
   <div class="contenedor-punto">
   <h3 class="titulo-manual-pri">4.2. Requerimientos de hardware y software.</h3>
-  <p class="parrafo-manual">El software debe de funcionar muy bien en cualquier navegador, se recomienda usar
-  Google Chrome.<br>
-  Se deberá alojar en un servidor que tenga buen espacio para soportar la información
-  que se ingresara y soportar a los usuarios entrantes día a día, es importante recalcar
-  la capacidad del servidor ya que de esto depende la velocidad del aplicativo.
-  Para que el software sea fluido se deberá tener un computador de mínimo 2 GB de
-  memoria RAM.</p>
+  <p class="parrafo-manual">Se necesita un Hosting con un almacenamiento de 100GB para almacenar el aplicativo
+con su base de datos y garantizar un tránsito fluido de 150 o más usuarios.
+Además, el Host debe de tener soporte para PHP 5 o superior, y un soporte para bases
+de datos MYSQL.</p><br>
   </div>
 
   <div class="contenedor-punto">
