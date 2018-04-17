@@ -12,11 +12,12 @@ CONTENT RYLES CSS
   padding: 0px;
   margin: 0px;
 }
-body{
+.body-manual{
   background-image: url(../image/fondomanual.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
+  overflow-y: hidden;
 }
 input{
   background: #f2f2f2;
@@ -75,10 +76,9 @@ input{
 /* Manual */
 .boton-regresodem{
   position: fixed;
-  right: 10px;
-  bottom: 8px;
+  right: 2px;
+  bottom: 2px;
   width: 70px;
-  border-radius: 50%;
   background: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   font-family: 'oswald',sans-serif;
@@ -89,6 +89,7 @@ input{
   z-index: 99999;
 }
 .boton-regresodem:hover{
+  border-radius: 50%;
   cursor: pointer;
   background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
@@ -98,7 +99,7 @@ input{
 /* encabezado */
 .manual-vacio{
   width: 100%;
-  height: 640px;
+  height: 100%;
   background-color: none;
   text-align: center;
 }
@@ -109,6 +110,7 @@ input{
   font-family: 'lobster', sans-serif;
   color: white;
   font-size: 100px;
+  margin: -10px 0px;
 }
 .enca-t{
   font-family: 'lobster', sans-serif;
