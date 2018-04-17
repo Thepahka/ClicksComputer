@@ -4,10 +4,44 @@
     <meta charset="utf-8">
     <title>Manual de usuario CC</title>
     <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
+    <link rel="stylesheet" href="views\assets\css\flexslider.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="views/assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider();
+  });
+</script>
   </head>
   <body class="body-manual">
+    <div class="manual-vacio">
+      <div class="titulo-enca-conta">
+      <h2 class="enca-main-t">Bienvenido</h2>
+      <h3 class="enca-t">manual de usuario</h3>
+    </div>
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <div class="cont-sl">
+          <section class="flex-caption">hola1</section>
+        </div>
+        </li>
+        <li>
+          <div class="cont-sl">
+          <section class="flex-caption">hola2</section>
+        </div>
+        </li>
+        <li>
+          <div class="cont-sl">
+          <section class="flex-caption">hola3</section>
+        </div>
+        </li>
+      </ul>
+    </div>
+    </div>
 
-<section>
+<div class="contenedor-maestro">
+
   <div class="contenedor-punto">
   <h3 class="titulo-manual-pri">1. Indice.</h3>
   <p class="parrafo-manual">Este índice deberá estar clasificado por los módulos y submódulos que posee el
@@ -58,14 +92,10 @@
   Objetivo: este es el inicio de todo el software, el cual podrá mostrar al comienzo el
   registro e inicio de sesión.</p>
   </div>
-
-
-
-  </section>
+</div>
 
 <a href="main" class="boton-regresodem">Regresar</a>
 
-    <?php require_once '../../include/scope.menuburguermanual.php';
-          require_once '../../include/scope.header.php';?>
+    <?php require_once '../../include/scope.header.php';?>
   </body>
 </html>
