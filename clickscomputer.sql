@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-04-2018 a las 00:19:22
+-- Tiempo de generación: 17-04-2018 a las 22:56:26
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -48,8 +48,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarTelEmp` (IN `tel` INT, `i
 UPDATE empresa SET emp_tel = tel WHERE emp_id = id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `CategoriasExistentes` (IN `id` INT)  BEGIN
-SELECT fil_id, fil_nom, fk_emp_id FROM filtros INNER JOIN fil_emp ON filtros.fil_id=fil_emp.fk_fil_id INNER JOIN empresa ON empresa.emp_id=fil_emp.fk_emp_id WHERE fk_emp_id NOT LIKE id;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CategoriasExistentes` ()  BEGIN
+SELECT DISTINCT fil_id, fil_nom FROM filtros;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarCategoria` (IN `categoria` VARCHAR(30))  BEGIN
@@ -128,8 +128,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Correo` (IN `id` INT)  BEGIN
 SELECT emp_correo FROM empresa WHERE emp_id = id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteCategoriaEmpresa` (IN `categoriaid` INT, `empid` INT)  BEGIN
-DELETE FROM filtros WHERE fil_id = categoriaid AND fk_emp_id = empid;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteCategoriaEmpresa` (IN `id` INT, IN `id2` INT)  BEGIN
+DELETE FROM fil_emp WHERE fk_fil_id = id AND fk_emp_id = id2;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteMarcaEmpresa` (IN `marcaid` INT, `empid` INT)  BEGIN 
@@ -144,8 +144,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `Direccion` (IN `id` INT)  BEGIN
 SELECT emp_dir FROM empresa WHERE emp_id = id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarCategoriaEmpresa` (IN `nombre` VARCHAR(30), IN `emp_id` INT)  BEGIN
-INSERT INTO filtros(fil_nom, fk_pc_id, fk_emp_id, fk_pi_cod) VALUES (nombre, NULL, emp_id, NULL);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarCategoriaEmpresa` (IN `id` INT, IN `id2` INT)  BEGIN
+INSERT INTO fil_emp(fk_fil_id, fk_emp_id) VALUES (id, id2);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarEmpresa` (IN `emp_nit` VARCHAR(50), IN `emp_nom` VARCHAR(20), IN `emp_dir` VARCHAR(20), IN `emp_desc` TEXT, IN `emp_tel` INT, IN `emp_correo` VARCHAR(100), IN `emp_contra` VARCHAR(200), IN `fk_rol_id` INT)  BEGIN
@@ -310,16 +310,6 @@ CREATE TABLE `fil_emp` (
   `fk_fil_id` int(11) NOT NULL,
   `fk_emp_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `fil_emp`
---
-
-INSERT INTO `fil_emp` (`fk_fil_id`, `fk_emp_id`) VALUES
-(14, 6),
-(14, 9),
-(18, 6),
-(16, 9);
 
 -- --------------------------------------------------------
 
@@ -724,7 +714,7 @@ ALTER TABLE `com_pie`
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `filtros`
 --

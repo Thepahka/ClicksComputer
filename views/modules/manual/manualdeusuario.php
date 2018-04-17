@@ -41,27 +41,44 @@
     </div>
     </div>
 
+<<<<<<< HEAD
 <!-- <div class="contenedor-maestro">
   <div class="contenedor-punto">
   <h3 class="titulo-manual-pri">1. Indice.</h3>
   <p class="parrafo-manual">Este índice deberá estar clasificado por los módulos y submódulos que posee el
   aplicativo y los temas complementarios que contiene el manual.</p>
   </div>
+=======
+<div class="contenedor-maestro">
+
+  <!-- <div class="contenedor-punto">
+  <h3 class="titulo-manual-pri"> Indice.</h3>
+  <p class="parrafo-manual">Este índice deberá estar clasificado por los módulos y submódulos que posee el
+  aplicativo y los temas complementarios que contiene el manual.</p>
+  </div> -->
+
+>>>>>>> dcdd6840df379fd1558a6909d86369a2fc9197a5
   <div class="contenedor-punto">
-  <h3 class="titulo-manual-pri">2. Objetivo del manual.</h3>
+  <h3 class="titulo-manual-pri"> Objetivo del manual.</h3>
   <p class="parrafo-manual">guiar al usuario a través del aplicativo web, contextualizar de una manera breve y
 entendible cada uno de los módulos/submódulos y funciones para comprender el
 propósito de este.</p>
   </div>
   <div class="contenedor-punto">
-  <h3 class="titulo-manual-pri">3. Descripcion.</h3>
+  <h3 class="titulo-manual-pri"> Descripcion.</h3>
   <p class="parrafo-manual">Nuestro principal objetivo es desarrollar un aplicativo web que asesore a las personas
   a encontrar un computador que se ajuste a sus necesidades.<br>
 </p>
   </div>
+<<<<<<< HEAD
   <h3 class="titulo-manual-pri">4. Requisitos.</h3>
+=======
+
+  <h3 class="titulo-manual-pri"> Requisitos.</h3>
+
+>>>>>>> dcdd6840df379fd1558a6909d86369a2fc9197a5
   <div class="contenedor-punto">
-  <h3 class="titulo-manual-pri">4.1. Requisitos de conocimiento para manejar el sistema.</h3>
+  <h3 class="titulo-manual-pri"> Requisitos de conocimiento para manejar el sistema.</h3>
   <p class="parrafo-manual">Conocimiento básico del sistema Windows cualquier versión.<br>
   Conocimiento básico para manejar navegadores (Google Chrome, Microsoft Edge o
   Internet Explorer, Mozilla Firefox etc.).<br>
@@ -69,14 +86,14 @@ propósito de este.</p>
   aplicativo.</p>
   </div>
   <div class="contenedor-punto">
-  <h3 class="titulo-manual-pri">4.2. Requerimientos de hardware y software.</h3>
+  <h3 class="titulo-manual-pri"> Requerimientos de hardware y software.</h3>
   <p class="parrafo-manual">Se necesita un Hosting con un almacenamiento de 100GB para almacenar el aplicativo
-con su base de datos y garantizar un tránsito fluido de 150 o más usuarios.
+con su base de datos y garantizar un tránsito fluido de 150 o más usuarios diarios.
 Además, el Host debe de tener soporte para PHP 5 o superior, y un soporte para bases
 de datos MYSQL.</p><br>
   </div>
   <div class="contenedor-punto">
-  <h3 class="titulo-manual-pri">5. Instalacion.</h3>
+  <h3 class="titulo-manual-pri"> Instalacion.</h3>
   <p class="parrafo-manual">Modulo: página principal (primera vista al entrar a la página).<br>
   Objetivo: este es el inicio de todo el software, el cual podrá mostrar al comienzo el
   registro e inicio de sesión.</p>
