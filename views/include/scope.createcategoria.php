@@ -31,7 +31,7 @@ function letrasynumeros(e){
          {
         ?>
     <form id="nuevocategoria" class="form-conta" action="CrearCategoria" method="post">
-            <input class="" type="checkbox" value="<?php print_r(array($row["fil_id"], $row["fil_nom"]))?>" name="data[]"> <?php echo $row["fil_nom"] ?>
+            <input class="" type="checkbox" value="<?php print_r($row[0]);?>" name="data[]"> <?php echo $row["fil_nom"] ?>
         <?php } ?>
         <input class="btn-dash-mar" type="submit" value="Registrar categoria">
     </form>

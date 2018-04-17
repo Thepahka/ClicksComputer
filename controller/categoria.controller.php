@@ -50,13 +50,17 @@ class CategoriaController
   {
       $data = $_POST["data"];
 
+      $idemp = $_SESSION["emp"]["id"];
+
       while(true)
        {
          $allcategorias = current($data);
 
          $asignarcategorias=(( $allcategorias !== false) ? $allcategorias : ", &nbsp;");
 
-         print_r($_SESSION["categoria"]["nombre"]);
+         $result = $this->categoria->newCategoria($allcategorias, $idemp);
+         echo '<script language="javascript">alert("Categoria(s) registrada(s) con exito!");</script>';
+         echo "<script>window.location.href='GestionCategorias'</script>";
 
          $allcategorias = next($data);
 
@@ -77,7 +81,7 @@ class CategoriaController
   public function Read2()
   {
       $empid = $_SESSION["emp"]["id"];
-      $result = $this->categoria->Categorias($empid);
+      $result = $this->categoria->Categorias();
       return $result;
   }
 

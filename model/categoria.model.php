@@ -93,15 +93,15 @@ class CategoriaModel
     return $result;
   }
 
-  public function Categorias($empid)
+  public function Categorias()
   {
     try
     {
-      $sql = "CALL CategoriasExistentes(?)";
+      $sql = "CALL CategoriasExistentes";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($empid));
+      $query->execute(array());
 
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }
