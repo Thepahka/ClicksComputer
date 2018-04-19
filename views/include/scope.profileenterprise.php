@@ -3,9 +3,14 @@
     <img class="img-enterprise" src="views/assets/image/default.jpg" alt="enterpriseP" usemap="#fotoperfil">
   </div>
   <div class="enterprise-name">
-    <?php
-   echo (ucwords($_SESSION["user"]["nombre"]));
-  ?>
+      <?php
+      echo (ucwords($_SESSION["user"]["nombre"]));
+      ?>
+  </div>
+  <div class="enterprise-nit">
+      <?php
+      echo "NIT"." ".$_SESSION["emp"]["nit"];
+      ?>
   </div>
   <ul class="gestion">
     <a href="MyDashboard"><li class="gest"><i class="fas fa-box gest-icon"></i>Gestionar productos</li></a>

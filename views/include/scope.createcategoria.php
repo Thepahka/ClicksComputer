@@ -44,6 +44,7 @@ function letrasynumeros(e){
   <table id="categorias">
       <thead>
           <tr class="grid-item-ob">
+              <th></th>
               <th>#</th>
               <th>Nombre</th>
               <th>Acciones</th>
@@ -53,9 +54,12 @@ function letrasynumeros(e){
         <?php
            $item = 0;
            foreach($this->Read() as $row) {
-             $item++
+               $item++
             ?>
           <tr>
+            <td>
+                <input type="checkbox" name="" value="">
+            </td>
             <td><?php  echo $item; ?></td>
             <td><?php  echo ucwords($row["fil_nom"]); ?></td>
               <td>
@@ -77,7 +81,17 @@ function letrasynumeros(e){
               </td>
           </tr>
         <?php  } ?>
-      </tbody>
+    </tbody>
+    <div class="EliminarTodos1">
+        <p>Elimiar los</p>
+        <p>Marcados</p>
+    </div>
+    <div class="SubEliminarTodos">
+        <p>----></p>
+    </div>
+    <div class="EliminarTodos2">
+        <input type="submit" name="" value="Eliminar">
+    </div>
   </table>
   <div class="modal" id="myModal2">
     <div class="modal-content">

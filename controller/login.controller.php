@@ -99,6 +99,7 @@
         $_SESSION["user"]["contra"] = $pass;
         $_SESSION["user"]["nombre"] = $comprobarname;
         $_SESSION["user"]["auth"] = true;
+        $_SESSION["emp"]["nit"] = $result2["emp_nit"];
         echo '<script language="javascript">
         alert("Bienvenido '.ucwords($_SESSION["user"]["nombre"]).'");
         window.location.href="MyDashboard";
