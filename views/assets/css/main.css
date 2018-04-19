@@ -1745,34 +1745,3 @@ input[type="file"]{
 .dataTables_info{
     margin-left: 432px;
 }
-
-.EliminarTodos1{
-clear: both;
-float: left;
-padding-top: 0.755em;
-position: relative;
-bottom: -344px;
-z-index: 1;
-margin-left: 21px;
-font-size: 14px;
-}
-
-.EliminarTodos2{
-clear: both;
-float: left;
-padding-top: 0.755em;
-position: relative;
-bottom: -269px;
-z-index: 1;
-margin-left: 153px;
-}
-
-.SubEliminarTodos{
-clear: both;
-float: left;
-padding-top: 0.755em;
-position: relative;
-bottom: -304px;
-z-index: 1;
-margin-left: 103px;
-}

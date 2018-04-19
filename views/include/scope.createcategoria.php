@@ -41,6 +41,7 @@ function letrasynumeros(e){
       </div>
     </div>
 </div>
+<form class="" action="EliminarCategorias" method="post">
   <table id="categorias">
       <thead>
           <tr class="grid-item-ob">
@@ -58,7 +59,7 @@ function letrasynumeros(e){
             ?>
           <tr>
             <td>
-                <input type="checkbox" name="" value="">
+                <input type="checkbox" name="eliminarvarios[]" value="<?php echo $row['fil_id']; ?>">
             </td>
             <td><?php  echo $item; ?></td>
             <td><?php  echo ucwords($row["fil_nom"]); ?></td>
@@ -68,7 +69,7 @@ function letrasynumeros(e){
                   <script type="text/javascript">
                   function confirmar()
                   {
-                      if (confirm("Eliminar marca?")==false)
+                      if (confirm("Eliminar categoria(s)?")==false)
                       {
                           return false;
                       }
@@ -81,18 +82,10 @@ function letrasynumeros(e){
               </td>
           </tr>
         <?php  } ?>
+        <input type="submit" name="" value="Eliminar" onclick="return confirmar(this)">
     </tbody>
-    <div class="EliminarTodos1">
-        <p>Elimiar los</p>
-        <p>Marcados</p>
-    </div>
-    <div class="SubEliminarTodos">
-        <p>----></p>
-    </div>
-    <div class="EliminarTodos2">
-        <input type="submit" name="" value="Eliminar">
-    </div>
   </table>
+  </form>
   <div class="modal" id="myModal2">
     <div class="modal-content">
       <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>

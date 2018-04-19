@@ -168,5 +168,23 @@ class CategoriaModel
     }
   }
 
+  public function EliminarVarios($idemp,$eliminar)
+  {
+    try
+    {
+      $sql = "DELETE FROM fil_emp WHERE fk_emp_id = ? AND fk_fil_id IN($eliminar)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($idemp));
+
+      $msn = "Se Elimino la categoria con exito";
+    }
+    catch(PDOException $e)
+    {
+      $msn = $e->getMessage();
+    }
+  }
+
 }
 ?>

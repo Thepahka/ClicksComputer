@@ -96,6 +96,18 @@ class CategoriaController
     </script>';
   }
 
+  public function DeleteCats()
+  {
+    $datos = $_POST["eliminarvarios"];
+    $eliminar = implode(",",$datos);
+    $idemp = $_SESSION["emp"]["id"];
+    $result = $this->categoria->EliminarVarios($idemp,$eliminar);
+    echo '<script language="javascript">
+    alert("Categoria(s) eliminada(s) con exito");
+    window.location.href="GestionCategorias"
+    </script>';
+  }
+
   public function UpdateCat()
   {
 
