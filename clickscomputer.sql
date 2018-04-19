@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-04-2018 a las 22:56:26
+-- Tiempo de generación: 20-04-2018 a las 00:14:49
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -65,7 +65,7 @@ SELECT usu_correo, usu_contra, fk_rol_id FROM usuario WHERE correo = usu_correo;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail2` (IN `correo` VARCHAR(100))  BEGIN 
-SELECT emp_correo, emp_contra, fk_rol_id, emp_nom, emp_id FROM empresa WHERE correo = emp_correo;
+SELECT emp_correo, emp_contra, fk_rol_id, emp_nom, emp_id, emp_nit FROM empresa WHERE correo = emp_correo;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpEmail` (IN `correo` VARCHAR(200))  BEGIN
@@ -142,6 +142,10 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Direccion` (IN `id` INT)  BEGIN
 SELECT emp_dir FROM empresa WHERE emp_id = id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `EliminarCategorias` (IN `id` INT, IN `id2` VARCHAR(255))  BEGIN
+DELETE FROM fil_emp WHERE fk_emp_id = id AND fk_fil_id IN(id2);
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarCategoriaEmpresa` (IN `id` INT, IN `id2` INT)  BEGIN
@@ -248,7 +252,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
-(6, '123456789-9', 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
+(6, '99092513641-9', 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 2085072, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
 (7, '987654321-9', 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
 (9, '123-0', 'bambu corp', 'calle principal bambu', 'asd', 2085072, 'bambu@bambu.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
 (10, '2312312312312321-9', 'pacha\'s corp', 'cra jabon #jabon', 'somos una empresa de jabones', 1212121, 'jabon@jabon.com', '$2y$10$yt/gfUdACrC2tb.Js9KJTOjQYqhGu/rr9FALm8KRrgJ50l/mRg5pW', 1),
@@ -310,6 +314,17 @@ CREATE TABLE `fil_emp` (
   `fk_fil_id` int(11) NOT NULL,
   `fk_emp_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `fil_emp`
+--
+
+INSERT INTO `fil_emp` (`fk_fil_id`, `fk_emp_id`) VALUES
+(14, 6),
+(15, 6),
+(16, 6),
+(17, 6),
+(18, 6);
 
 -- --------------------------------------------------------
 
