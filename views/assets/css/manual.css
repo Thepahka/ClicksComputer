@@ -22,57 +22,88 @@ CONTENT RYLES CSS
 input{
   background: #f2f2f2;
 }
-/* menu hamburguesa */
-.menu-burguer{
+/* menu top y responsive */
+header{
+  width: 100%;
+}
+header nav{
+  width:  95%;
+  max-width: 1000px;
+  margin: 20px auto;
   background: rgb(0, 0, 0);
-  width: 330px;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  padding: 0px;
+  border-radius: 7px;
+  border: 2px solid rgb(112, 187, 255);
 }
-.titu-Manualusu{
+.menu_bar{
+  display: none;
+}
+header nav ul{
+  overflow: hidden;
+  list-style: none;
+}
+header nav ul li{
+  float: left;
+}
+header nav ul li a{
+  color: rgb(255, 255, 255);
+  padding: 18px;
+  text-align: none;
+  display: block;
   font-family: 'oswald', sans-serif;
-  font-size: 30px;
+  transition: 0.3s;
+}
+header nav ul li a:hover{
   color: rgb(255, 255, 255);
-  margin-bottom: 30px;
-  margin: 20px;
-  text-align: center;
-}
-.book-manual{
-  margin-right: 10px;
-}
-.punto-manual{
-  color: rgb(255, 255, 255);
-  font-size: 15px;
-  font-family: 'roboto',sans-serif;
-  margin-top: 0px;
   transition: 0.3s;
-  padding: 10px 15px;
+  background: rgb(80, 80, 80);
 }
-.punto-manual:hover{
-  color: black;
-  background: rgb(227, 227, 227);
-  cursor: pointer;
-  width: 100%;
-  transition: 0.3s;
-  border-left: 5px solid rgb(255, 0, 0);
+header nav ul li a i{
+  margin-right: 12px;
 }
-.sub-punto{
-  color: rgb(255, 255, 255);
-  font-size: 12px;
-  transition: 0.3s;
-  margin-top: 13px;
-  padding: 5px 20px;
+/* responsive menu */
+@media screen and (max-width:800px ) {
+  header nav{
+    width: 80%;
+    height: 100%;
+    left: -100%;
+    margin: 0px;
+    position: fixed;
+  }
+  header nav ul li{
+    display: block;
+    float: none;
+    border-bottom: 1px solid rgb(170, 170, 170);
+  }
+  .menu_bar{
+    display: block;
+    width: 100%;
+    background: rgb(55, 55, 55);
+  }
+  .menu_bar .bt-menu{
+    display: block;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 23px;
+    -webkit-box-sizing: border-box ;
+    -moz-box-sizing: border-box ;
+    box-sizing: border-box ;
+  }
+  .menu_bar i{
+    float: right;
+    font-size: 35px;
+  }
+
+
 }
-.sub-punto:hover{
-  color: black;
-  background: rgb(227, 227, 227);
-  cursor: pointer;
-  width: 100%;
-  transition: 0.3s;
-  border-left: 5px solid rgb(255, 0, 0);
-}
+
+
+
+
+
+
 /* Manual */
 .boton-regresodem{
   position: fixed;
@@ -116,23 +147,4 @@ input{
   font-family: 'lobster', sans-serif;
   color: white;
   font-size: 70px;
-}
-/* contenido del manual */
-.contenedor-maestro{
-  width: 100%;
-  height: auto;
-  background: rgb(255, 255, 255);
-}
-.contenedor-punto{
-  padding: 10px 10px;
-  margin: 0px 0px;
-  width: 300px;
-}
-.titulo-manual-pri{
-  font-family: 'oswald', sans-serif;
-  margin: 0px;
-}
-.parrafo-manual{
-  font-family: 'roboto',sans-serif;
-  font-size: 16px;
 }
