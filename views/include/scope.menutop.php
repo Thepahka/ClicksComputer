@@ -11,7 +11,7 @@ require_once("scope.header.php");
     </div>
     <div class="wrap--btn">
       <ul class="buttons-menu">
-        <a class="item" href="ManualDeUsuario"><i class="fas fa-book manual-libro" aria-hidden="true"></i>Manual de usuario</a>
+        <a class="item" href="views/modules/manual_de_usuario/indexmanual.html"><i class="fas fa-book manual-libro" aria-hidden="true"></i>Manual de usuario</a>
         <a class="item" href="Tiendas"><i aria-hidden="true"></i>Tiendas</a>
         <input class="item" id="mostrar-modal2" name="modal2" type="radio" />
         <label style="cursor:pointer;" for="mostrar-modal2" class="item">Productos</label style="cursor:pointer;">

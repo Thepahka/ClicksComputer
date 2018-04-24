@@ -2,6 +2,7 @@ RewriteEngine on
 
 #Landing page
 RewriteRule ^main$ index.php?c=views&a=Main
+#RewriteRule ^ManualDeUsuario$ index.php?c=views&a=ManualDeUsuario
 
 #Registro
 RewriteRule ^Registro$ index.php?c=registeruser&a=viewsRegister
