@@ -25,7 +25,7 @@ body { overflow-x: hidden !important;}
     <div data-w-id="26eb68d4-c74a-22a0-1d6a-44ab49e02fd9" class="window" style="transform: translateX(50vw) translateY(0px) translateZ(0px) scaleX(4.5) scaleY(4.5) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"></div>
     <div data-w-id="c8517810-bdd8-77b8-636f-4357cb2ed637" style="transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);" class="loading-bar"></div>
   </div>
-  <div data-w-id="1639da1c-7f06-780e-f2fe-99051ce16dd6" style="transform: translateX(0vw) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(-0.11124deg) skewX(0deg) skewY(0deg); will-change: transform;" class="the-moon-below"><i class="fas fa-book"></i></div>
+  <div data-w-id="1639da1c-7f06-780e-f2fe-99051ce16dd6" style="transform: translateX(0vw) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(-0.11124deg) skewX(0deg) skewY(0deg); will-change: transform;" class="the-moon-below"><i class="fas fa-book"></i> manual ClicksComputer </div>
   <div class="hold-content">
     <div data-w-id="993a679c-5a3a-c5c3-b34d-61ad76fb41ff" style="opacity: 1;" class="container with-line-above-astro w-container">
       <div data-collapse="medium" data-animation="default" data-duration="400" data-w-id="b44ef363-88d7-8d9d-eee5-8f5959dbbbe4" class="main-nav w-nav"><a class="main-nav__logo w-nav-brand"><img src="./logo0.png" width="170"></a>
@@ -42,13 +42,45 @@ body { overflow-x: hidden !important;}
               <div class="main-nav__icon w-icon-dropdown-toggle"></div>
               <div>Indice</div>
             </div>
-            <nav data-w-id="7f3318c5-d38c-8884-4fbf-b962293a8d04" style="-webkit-transform:translateX(0) translateY(0) translateZ(0) scaleX(0) scaleY(0) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(0) translateY(0) translateZ(0) scaleX(0) scaleY(0) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(0) translateY(0) translateZ(0) scaleX(0) scaleY(0) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(0) translateY(0) translateZ(0) scaleX(0) scaleY(0) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0)" class="main-nav__dropdown-list w-dropdown-list"><a href="https://20e902751fc94ec787939011e00c8b7f.production.codepen.plumbing/index.html?d=1524536454849#destinations" class="main-nav__dropdown-link moon-link w-dropdown-link">Descripcion</a><a class="main-nav__dropdown-link moon-link w-dropdown-link" href="#">Comenzar</a><a href="#" class="main-nav__dropdown-link jupiter-link w-dropdown-link">Principiantes</a><a href="#" class="main-nav__dropdown-link saturn-link w-dropdown-link">Registros e inicios de sesion</a>
+            <nav data-w-id="7f3318c5-d38c-8884-4fbf-b962293a8d04" style="-webkit-transform:translateX(0) translateY(0) translateZ(0) scaleX(0) scaleY(0) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(0) translateY(0) translateZ(0) scaleX(0) scaleY(0) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(0) translateY(0) translateZ(0) scaleX(0) scaleY(0) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(0) translateY(0) translateZ(0) scaleX(0) scaleY(0) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0)" class="main-nav__dropdown-list w-dropdown-list">
+              <p><a href="#desc" class="main-nav__dropdown-link moon-link w-dropdown-link">Descripcion</a></p>
+              <a class="main-nav__dropdown-link moon-link w-dropdown-link" href="#regis">registro e inicio de sesion</a>
+              <a href="#inici" class="main-nav__dropdown-link jupiter-link w-dropdown-link">INICIO DE SESIÓN</a><a href="#gesti" class="main-nav__dropdown-link saturn-link w-dropdown-link">Gestion tiendas</a>
               <div class="corner-upper-left"></div>
               <div class="corner-upper-right"></div>
               <div class="corner-bottom-right"></div>
               <div class="corner-bottom-left"></div>
             </nav>
-          </div><a href="#" class="main-nav__link w-nav-link">Objetivos</a><a href="#" class="main-nav__link w-nav-link">Nosotros</a><a href="#" class="main-nav__link w-nav-link">Mas datos</a>
+          </div>
+
+          <input type="radio" id="mostrar-modal" name="modal"/>
+          <label class="main-nav__link w-nav-link" for="mostrar-modal">Objetivos</label>
+          <input type="radio" id="cerrar-modal" name="modal"/>
+          <label for="cerrar-modal">X</label>
+          <div id="modal">
+            <h4 class="titulo-modal"> Objetivo del Manual.</h4>
+            <p>Guiar al usuario a través del aplicativo web, contextualizar de una manera breve y
+            entendible cada uno de los módulos/submódulos y funciones para comprender el
+            propósito de este.
+            Nuestro principal objetivo es desarrollar un aplicativo web donde las personas puedan
+            buscar un computador ideal que se ajuste a sus necesidades y propósitos.
+            Clicks Computer contara con un buscador de tiendas y uno de productos, además
+            con un módulo de gestión de tiendas donde se montara toda la información de sus
+            productos y donde podrán auto gestionar su información.</p>
+          </div>
+
+          <input type="radio" id="mostrar-modal3" name="modal3"/>
+          <label class="main-nav__link w-nav-link" for="mostrar-modal3">Estructura</label>
+          <input type="radio" id="cerrar-modal3" name="modal3"/>
+          <label for="cerrar-modal3">X</label>
+          <div id="modal3">
+            <h4 class="titulo-modal">Estructura del software y reglas básicas para moverse en la aplicación.</h4>
+            <p>El único ingreso al sistema es el inicio de sesión, ya que en ningún registro tenemos
+acceso directo al sistema, es decir cuando te registras no entras directamente, te
+redirige al inicio de sesión y ahí entras ingresando primero tu correo electrónico (con
+el que te registraste) y luego de eso con tu contraseña.</p>
+          </div>
+
           <div class="corner-upper-right w-hidden-main"></div>
           <div class="corner-bottom-right w-hidden-main"></div>
           <div class="corner-bottom-left w-hidden-main"></div>
@@ -65,153 +97,12 @@ body { overflow-x: hidden !important;}
         </div>
       <div class="w-nav-overlay" data-wf-ignore=""></div></div>
     </div>
-          <div class="tabs-content w-tab-content">
-            <div data-w-tab="Jupiter" class="tab-pane w-tab-pane">
-              <div class="flexed-destination-features">
-                <a href="https://20e902751fc94ec787939011e00c8b7f.production.codepen.plumbing/index.html?d=1524536454849#" data-w-id="143ee32a-0a17-6ae0-9817-a611e7773c96" class="orange-book-now w-hidden-tiny w-inline-block">
-                  <div>Book Now</div>
-                </a>
-                <a href="https://20e902751fc94ec787939011e00c8b7f.production.codepen.plumbing/index.html?d=1524536454849#" data-w-id="2da3fe3a-187b-878b-214e-0f224b2fed06" class="space-button-centered w-hidden-tiny w-inline-block">
-                  <div>All Destinations</div>
-                  <div class="corner-upper-left"></div>
-                  <div class="corner-upper-right"></div>
-                  <div class="corner-bottom-right"></div>
-                  <div class="corner-bottom-left"></div>
-                </a>
-              </div>
-            </div>
-            <div data-w-tab="Mars" class="tab-pane w-tab-pane">
-              <h3 data-w-id="79f4f099-0bbd-c669-7c34-bbbae51122ce" class="massive-heading" style="will-change: transform; transform: translateX(99.994px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);">Mars</h3>
-              <div class="destination-heading">
-                <h4>THE RED PLANET</h4>
-                <div class="destination__sub-heading">WE'RE not alone, meet our interplanetary neighbors</div>
-              </div>
-              <p class="destination__description">Our newest destination is the shortest trip SPACED offers. You will have great views of earth, perfect for taking pictures. Not only will you have a luxury experience getting to the moon, you will also be over the moon for the accommodations we have for you on earth’s natural satellite. Be sure to look into our events held on the moon, you wont want to miss the opportunity to see the next eclipse from the moons surface.</p>
-              <div class="destination__images">
-                <div data-w-id="f44a0a96-f2e1-7630-1642-9e7f4e423827" class="w-row">
-                  <div class="no-padding-col w-col w-col-6"><img src="./dinner.jpg" srcset="images/dinner-p-500.jpeg 500w, images/dinner.jpg 528w" sizes="(max-width: 479px) 100vw, (max-width: 586px) 90vw, (max-width: 767px) 528px, (max-width: 991px) 47vw, 36vw" class="image-1" style="will-change: transform; transform: translateX(0px) translateY(0.003px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"></div>
-                  <div class="w-col w-col-6"><img src="./LivingRoom.jpg" srcset="images/LivingRoom-p-500.jpeg 500w, images/LivingRoom.jpg 552w" sizes="(max-width: 479px) 100vw, (max-width: 606px) 91vw, (max-width: 767px) 552px, (max-width: 991px) 47vw, 36vw" class="image-22" style="will-change: transform; transform: translateX(0px) translateY(49.997px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"><img src="./3.jpg" class="margined-image v2" style="will-change: transform; transform: translateX(0px) translateY(64.9927px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"></div>
-                </div>
-              </div>
-              <div data-w-id="47f30c3d-137d-5198-a108-a98f662dcdcb" class="flexed-destination-features">
-                <h4 class="white-h4">Activities on Mars</h4>
-                <div class="w-row">
-                  <div class="w-col w-col-6">
-                    <div class="activity-pill"><img src="./moon-landing-tour.svg">
-                      <div class="pill-description">
-                        <div class="activity-sub-heading">Visit your country flag on Mars</div>
-                        <p class="paragraph">Our home away from home, let's makes some memories.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-col w-col-6">
-                    <div class="activity-pill"><img src="./space-bar.svg">
-                      <div class="pill-description">
-                        <div class="activity-sub-heading">Space Bar &amp; Grille</div>
-                        <p class="paragraph">Dine under the stars with views out of this world.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="w-row">
-                  <div class="w-col w-col-6">
-                    <div class="activity-pill"><img src="./galactic-arcades.svg">
-                      <div class="pill-description">
-                        <div class="activity-sub-heading">Galactic Arcades</div>
-                        <p class="paragraph">Fun for the whole family in our zero gravity arcade.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-col w-col-6">
-                    <div class="activity-pill"><img src="./rover-exepditions.svg">
-                      <div class="pill-description">
-                        <div class="activity-sub-heading">Rover Expeditions</div>
-                        <p class="paragraph">Martian underground safaris leave every 30 minutes. Bring your camera!</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a href="#" data-w-id="511f897b-3df3-d6be-7d22-84cc8153aea9" class="orange-book-now w-hidden-tiny w-inline-block">
-                  <div>Book Now</div>
-                </a>
-                <a href="#" data-w-id="3d060102-1b60-a243-1f36-74d35705c0b8" class="space-button-centered w-hidden-tiny w-inline-block">
-                  <div>All Destinations</div>
-                  <div class="corner-upper-left"></div>
-                  <div class="corner-upper-right"></div>
-                  <div class="corner-bottom-right"></div>
-                  <div class="corner-bottom-left"></div>
-                </a>
-              </div>
-            </div>
-            <div data-w-tab="Saturn" class="tab-pane w-tab-pane">
-              <h3 data-w-id="f3485706-4490-abf2-a49f-65488006aa28" class="massive-heading" style="will-change: transform; transform: translateX(99.994px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);">SATURN</h3>
-              <div class="destination-heading">
-                <h4>AHOY SATURN</h4>
-                <div class="destination__sub-heading">HAS A NICE RING TO IT</div>
-              </div>
-              <p class="destination__description">Our newest destination is the shortest trip SPACED offers. You will have great views of earth, perfect for taking pictures. Not only will you have a luxury experience getting to the moon, you will also be over the moon for the accommodations we have for you on earth’s natural satellite. Be sure to look into our events held on the moon, you wont want to miss the opportunity to see the next eclipse from the moons surface.</p>
-              <div class="destination__images">
-                <div data-w-id="87ab9c6f-ac50-e7f7-f8d0-3656f8f59f88" class="w-row">
-                  <div class="no-padding-col w-col w-col-6"><img src="./1.jpg" srcset="images/1-p-500.jpeg 500w, images/1.jpg 528w" sizes="(max-width: 479px) 100vw, (max-width: 586px) 90vw, (max-width: 767px) 528px, (max-width: 991px) 47vw, 36vw" class="image-1" style="will-change: transform; transform: translateX(0px) translateY(0.003px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"></div>
-                  <div class="w-col w-col-6"><img src="./2.jpg" srcset="images/2-p-500.jpeg 500w, images/2.jpg 552w" sizes="(max-width: 479px) 100vw, (max-width: 606px) 91vw, (max-width: 767px) 552px, (max-width: 991px) 47vw, 36vw" class="image-22" style="will-change: transform; transform: translateX(0px) translateY(49.997px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"><img src="./moon.jpg" class="margined-image v2" style="will-change: transform; transform: translateX(0px) translateY(64.9927px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"></div>
-                </div>
-              </div>
-              <div data-w-id="4c35d758-3cca-8248-7ab7-b050cb267b4c" class="flexed-destination-features">
-                <h4 class="white-h4">Activities on Saturn</h4>
-                <div class="w-row">
-                  <div class="w-col w-col-6">
-                    <div data-w-id="53d3a6af-d38d-4623-ee39-ecf0f977bb2e" class="activity-pill _1" style="will-change: transform; transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"><img src="./moon-landing-tour.svg">
-                      <div class="pill-description">
-                        <div class="activity-sub-heading">Interpretive dances on the ring</div>
-                        <p class="paragraph">Flags will be provided, come join us as we play ring around the planet.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-col w-col-6">
-                    <div data-w-id="d8489c88-da08-89e6-0af6-13e9a17d2892" class="activity-pill _2" style="will-change: transform; transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"><img src="./space-bar.svg">
-                      <div class="pill-description">
-                        <div class="activity-sub-heading">Space Bar &amp; Grille</div>
-                        <p class="paragraph">Dine under the stars with views out of this world.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="w-row">
-                  <div class="w-col w-col-6">
-                    <div data-w-id="4924e324-d86c-efcb-e065-94ceb8bc525c" class="activity-pill _3" style="will-change: transform; transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"><img src="./galactic-arcades.svg">
-                      <div class="pill-description">
-                        <div class="activity-sub-heading">Galactic Arcades</div>
-                        <p class="paragraph">Fun for the whole family in our zero gravity arcade.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-col w-col-6">
-                    <div data-w-id="025ba718-3b59-d7c6-7072-7f38bbebea1d" class="activity-pill _4" style="will-change: transform; transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);"><img src="./rover-exepditions.svg">
-                      <div class="pill-description">
-                        <div class="activity-sub-heading">Hyper speed day trips</div>
-                        <p class="paragraph">Days on Saturn only last about 10 hours, enjoy this warp speed tour.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a href="https://20e902751fc94ec787939011e00c8b7f.production.codepen.plumbing/index.html?d=1524536454849#" data-w-id="95b9e003-502e-25f4-fa88-6a14faf3ccc1" class="orange-book-now w-hidden-tiny w-inline-block">
-                  <div>Book Now</div>
-                </a>
-                <a href="https://20e902751fc94ec787939011e00c8b7f.production.codepen.plumbing/index.html?d=1524536454849#" data-w-id="d6bc1837-162d-7952-8050-1529c7e5c579" class="space-button-centered w-hidden-tiny w-inline-block">
-                  <div>All Destinations</div>
-                  <div class="corner-upper-left"></div>
-                  <div class="corner-upper-right"></div>
-                  <div class="corner-bottom-right"></div>
-                  <div class="corner-bottom-left"></div>
-                </a>
-              </div>
-            </div>
-          </div>
     <section id="ships" class="ship-section">
       <div class="container with-light-line-and-glow overflow-hidden w-container">
         <div class="orange-call-out">Introduccion al manual</div>
         <h2 class="heading-2">Bienvenido</h2>
-        <div class="destination__sub-heading">Descripcion</div>
+        <a name="desc"></a>
+        <div class="destination__sub-heading"><a id="desc">Descripcion</a></div>
         <h3 data-w-id="206d532b-42ea-0990-a7a1-b27cb5cbef49" class="massive-heading-right" style="will-change: transform; transform: translateX(0vw) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skewX(0deg) skewY(0deg);">usuario</h3>
         <p class="destination__description">Cickscomputer es un software de uso libre y con fines de ayudar a nuestros usuarios y clientes a encontrar y proveer productos de calidad y confianza, hechos para quienes lo necesitan. nuestra regla de negocios esta basada en la busqueda instantania y precisa de un producto cuyo fin es complacer al cliente el cual no tiene experiencia en elementos tecnologicos o compras de nuevos dispositivos que ellos esten necesitando.</p>
         <div class="ships-row w-row">
@@ -240,10 +131,57 @@ body { overflow-x: hidden !important;}
         <div>
           <div class="destination__images"></div>
           <div id="about" class="why-go-with-spaced">
-            <h4 class="white-h4">Registro e inicio de sesion</h4>
+            <h4 class="white-h4" id="regis">Registro e inicio de sesion</h4>
             <div class="pasos-container">
               <p class="paso-num">Para poder registrarse debemos acceder desde la Landing Page al botón registro.</p>
-              <img src="./paso.png" alt="">
+              <img src="./paso.png" alt="" class="img-paso">
+              <p class="paso-num">Esto nos llevara al formulario de registro.</p>
+              <img src="./paso2.png" alt="" class="img-paso">
+              <p class="paso-num">Debemos de tener en cuenta antes de registrarnos lo siguiente:</p>
+              <p class="paso-num">-Los campos Documento de identidad y Teléfono solo aceptan números.</p>
+              <p class="paso-num">-Los campos Nombre(s) y Apellido(s) solo aceptan letras.</p>
+              <p class="paso-num">-El campo correo electrónico solo acepta correos validos (que tengan @texto.texto).</p>
+              <p class="paso-num">-Debe ingresar una fecha valida.</p>
+              <p class="paso-num">-El campo contraseña solo acepta mínimo 8 caracteres y que contenga mínimo una letra y un
+              número.</p>
+              <p class="paso-num">Y simplemente debemos llenar el formulario y dar clic en el botón registrarse</p>
+              <h4 class="white-h4">REGISTRO TIENDAS</h4>
+              <p class="paso-num">Este registro nos servirá para que las tiendas puedan acceder al módulo de gestión y puedan
+              montar sus productos.
+              Para registrarnos como tienda solo debemos ir al formulario dando clic en el botón registrar una
+              empresa en la Landing Page.</p>
+              <img src="./paso3.png" alt="" class="img-paso">
+              <p class="paso-num">Este botón nos llevara al formulario de registro de tiendas.</p>
+              <img src="./paso4.png" alt="" class="img-paso">
+              <p class="paso-num">Para poder registrarnos debemos tener en cuenta:</p>
+              <p class="paso-num">-Debe registrar su Tienda/Empresa con un NIT valido.</p>
+              <p class="paso-num">-Los campos NIT o ID de la empresa y teléfono de la empresa solo aceptan datos numéricos.</p>
+              <p class="paso-num">-El campo Nombre de la empresa solo acepta letras.</p>
+              <p class="paso-num">-Puede colocar una descripción corta de la empresa y luego modificarla.</p>
+              <p class="paso-num">-El campo correo electrónico solo acepta correos validos (que tengan @texto.texto).</p>
+              <p class="paso-num">-El campo contraseña solo acepta mínimo 8 caracteres y que contenga mínimo una letra y un
+              número.</p>
+              <h4 class="white-h4" id="inici">INICIO DE SESIÓN</h4>
+              <p class="paso-num">Este inicio de sesión dará paso a los usuarios registrados para acceder a los distintos módulos.
+              Para poder iniciar sesión debemos dar clic en el botón acceder de la Landing Page.</p>
+              <img src="./paso5.png" alt="" class="img-paso">
+              <p class="paso-num">Esto nos llevara al primer paso del login que nos pedirá el correo electronico con el que nos
+              registramos.</p>
+              <img src="./paso6.png" alt="" class="img-paso">
+              <p class="paso-num">Despues de ingresar un correo electronico valido, ingresaremos nuestra contraseña.</p>
+              <img src="./paso7.png" alt="" class="img-paso">
+              <p class="paso-num">Y con esto ya accederemos a los modulos.</p>
+              <h4 class="white-h4" id="gesti">GESTIÓN TIENDAS.</h4>
+              <p class="paso-num">Para poder ingresar a el modulo de gestión de tiendas debemos registrarnos como tienda, Luego
+              iniciar sesión
+              Este es el modulo de gestión de tiendas, donde podremos administrar nuestros productos.</p>
+              <img src="./paso8.png" alt="" class="img-paso">
+              <p class="paso-num">Podremos gestionar la información o perfil de nuestra tienda.</p>
+              <img src="./paso9.png" alt="" class="img-paso">
+              <p class="paso-num">Y además podremos administrar las categorías y marcas que usamos o con las que
+              comercializamos en la tienda.</p>
+              <img src="./paso10.png" alt="" class="img-paso">
+              <img src="./paso11.png" alt="" class="img-paso">
             </div>
             <div class="center-this">
               <div class="flexed-row fold w-row">
@@ -308,7 +246,7 @@ body { overflow-x: hidden !important;}
       <div class="right-side-trail"></div>
       <div class="container with-line-no-padding w-container">
         <div class="centered-footer">
-          <h4 class="white-h4">Sigue con nosotros</h4>
+          <h4 class="white-h4 color-ulti">Sigue con nosotros</h4>
           <div class="flexed-row centered w-row">
             <div class="w-col w-col-3"><img src="./space-view.jpg" data-w-id="38b2819c-cddb-0776-51d9-a402ecd15096"></div>
             <div class="w-col w-col-4"><img src="./space-cave.jpg" data-w-id="d488a60a-25b9-93e7-91d3-e17a82bc7622"></div>
