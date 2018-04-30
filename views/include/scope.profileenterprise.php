@@ -1,3 +1,4 @@
+<?php //$nit = $this->Leer6(); ?>
 <div class="EnterpriseProfile">
   <div class="Enterprise-img">
     <img class="img-enterprise" src="views/assets/image/default.jpg" alt="enterpriseP" usemap="#fotoperfil">
@@ -9,7 +10,7 @@
   </div>
   <div class="enterprise-nit">
       <?php
-      echo "NIT"." ".$_SESSION["emp"]["nit"];
+      echo "NIT"." ".$nit[0][0];
       ?>
   </div>
   <ul class="gestion">

@@ -77,6 +77,12 @@ class ShopController
       $result = $this->shop->selecttel($idempresa);
       return $result;
   }
+  public function Leer6()
+  {
+      $idempresa = $_SESSION["emp"]["id"];
+      $result = $this->shop->selectnit2($idempresa);
+      return $result;
+  }
 
   public function updateDesc()
   {

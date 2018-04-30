@@ -73,6 +73,27 @@ class ShopModel
 
     return $result;
   }
+
+  public function selectnit2($idempresa)
+  {
+    try
+    {
+      $sql = "CALL NIT(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($idempresa));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
   public function selectdir($idempresa)
   {
     try
@@ -116,6 +137,26 @@ class ShopModel
     try
     {
       $sql = "CALL Telefono(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($idempresa));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
+  public function selectnom($idempresa)
+  {
+    try
+    {
+      $sql = "CALL Nombre(?)";
 
       $query = $this->pdo->prepare($sql);
 
@@ -200,6 +241,26 @@ class ShopModel
       $query = $this->pdo->prepare($sql);
 
       $query->execute(array($newtel, $idempresa));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+
+    return $result;
+  }
+
+  public function updatenit($newnit, $idempresa)
+  {
+    try
+    {
+      $sql = "CALL ActualizarNitEmp(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($newnit, $idempresa));
 
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }

@@ -1,12 +1,12 @@
-<script>
+<!-- <script>
 
     $(function(){
         $("#marcaAdicional").on('click', function(){
             $("#nuevamarca input:eq(0)").clone().addClass("crear-clon").appendTo("#nuevamarca");
         });
     });
-</script>
-<script>
+</script> -->
+<!-- <script>
 function letrasynumeros(e){
   key=e.keyCode || e.which;
 
@@ -27,7 +27,7 @@ function letrasynumeros(e){
     return false;
   }
 }
-</script>
+</script> -->
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis marcas</h1>
   <div class="nav-btns">
