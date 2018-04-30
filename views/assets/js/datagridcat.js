@@ -10,7 +10,7 @@ $(document).ready( function () {
              "info": "Página _PAGE_ de _PAGES_",
              "infoEmpty": "No hay registros aún.",
              "infoFiltered": "(filtrados de un total de _MAX_ registros)",
-             "search" : "Búsqueda",
+             "search" : "Buscar:",
              "LoadingRecords": "Cargando ...",
              "Processing": "Procesando...",
              "SearchPlaceholder": "Comience a teclear...",

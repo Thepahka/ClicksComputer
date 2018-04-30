@@ -23,20 +23,20 @@ function letrasynumeros(e){
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis categorias</h1>
   <div class="nav-btns">
-        <a class="gest-pc" id="myBtn">Registrar categoria</a>
+    <a class="gest-pc" id="myBtn">Registrar categoria</a>
     <div id="myModal" class="modal">
       <div class="modal-content">
+        <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+        <p class="model-textp">Registrar nueva categoria</p>
         <?php
          foreach($this->Read2() as $row)
          {
         ?>
-    <form id="nuevocategoria" class="form-conta" action="CrearCategoria" method="post">
-            <input class="" type="checkbox" value="<?php print_r($row[0]);?>" name="data[]"> <?php echo $row["fil_nom"] ?>
+            <input  type="checkbox" name="data[]" id="ch-bx">
+            <label for="ch-bx" class="ch-name"><?php echo $row["fil_nom"] ?></label>
         <?php } ?>
         <input class="btn-dash-mar" type="submit" value="Registrar categoria">
     </form>
-        <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
-        <p class="model-textp">Registrar nueva categoria</p>
         <p class="indicacion-res">Selecciona las categorias que quieres añadir a tu tienda.</p>
       </div>
     </div>
@@ -82,7 +82,7 @@ function letrasynumeros(e){
               </td>
           </tr>
         <?php  } ?>
-        <input type="submit" name="" value="Eliminar" onclick="return confirmar(this)">
+        <input class="btn-eliminarsc" type="submit" name="" value="Eliminar todos los seleccionados" onclick="return confirmar(this)">
     </tbody>
   </table>
   </form>
