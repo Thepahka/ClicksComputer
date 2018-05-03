@@ -1207,6 +1207,30 @@ tr[role="row"]{
   cursor: pointer;
   transition: all 0.3s ease;
 }
+input[type="checkbox"]{
+  display: none;
+}
+input[type="checkbox"] + label[for="check1"]{
+  cursor: pointer;
+}
+label[for="check1"]::before{
+  content: '';
+  background: transparent;
+  border: 4px solid rgb(32, 255, 41);
+  border-radius: 8px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+input[type="checkbox"]:checked + label[for="check1"]::before{
+  content: '✓';
+  font-size: 30px;
+  color: rgb(32, 255, 41);
+  transition: 0.5s;
+}
 /*diseño de gestiones en perfil*/
 .gestion{
   top: -20px;
@@ -1765,7 +1789,6 @@ input[type="file"]{
   cursor: pointer;
   transition: 0.7s;
 }
-
 .dataTables_info{
     margin-left: 432px;
 }

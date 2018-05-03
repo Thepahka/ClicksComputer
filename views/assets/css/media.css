@@ -323,11 +323,21 @@ form[id="validate"] {
   font-size: 15px;
 }
 /* registro de empresa */
-
-
-
-
-
+.titulo-em {
+    left: 7%;
+}
+.body-registroem{
+  top: -9px;
+}
+.wrap-labels-regem{
+  right: 40px;
+}
+.labels-regem{
+  margin-bottom: 40px;
+}
+.wrap-input-regem{
+  left: -80px;
+}
 
 
 

@@ -32,8 +32,8 @@ function letrasynumeros(e){
          foreach($this->Read2() as $row)
          {
         ?>
-            <input  type="checkbox" name="data[]" id="ch-bx">
-            <label for="ch-bx" class="ch-name"><?php echo $row["fil_nom"] ?></label>
+            <input  type="checkbox" name="data[]" id="check1">
+            <label for="check1" class="ch-name"><?php echo $row["fil_nom"] ?></label>
         <?php } ?>
         <input class="btn-dash-mar" type="submit" value="Registrar categoria">
     </form>
