@@ -1,0 +1,6 @@
+fil_id|fil_nom|fk_pc_id|fk_pi_cod
+14|oficina||
+15|oficina2||
+16|oficina3||
+17|oficina4||
+18|oficina5||

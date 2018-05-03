@@ -1,0 +1,6 @@
+emp_id|emp_nit|emp_nom|emp_dir|emp_desc|emp_tel|emp_correo|emp_contra|fk_rol_id
+6|4545-5|pccomponentes|cra 47 #47-05|empresa dedicada a vender pc's y demas electrdomesticos|213123|pccomponentes@pc.com|$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.|1
+7|987654321-9|Alienware Inc|cra 32 #09|empresa vendedora de pc's gamer de alto rendimiento|2085072|adminalien@alienware.com|$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6|1
+9|123-0|bambu corp|calle principal bambu|asd|2085072|bambu@bambu.com|$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe|1
+10|2312312312312321-9|pacha's corp|cra jabon #jabon|somos una empresa de jabones|1212121|jabon@jabon.com|$2y$10$yt/gfUdACrC2tb.Js9KJTOjQYqhGu/rr9FALm8KRrgJ50l/mRg5pW|1
+11|90912019212902-9|pacha corp inc|carrera pacha|empresa pachera|98765432|pacha@pacha.com|$2y$10$TcWKb.764eQaWVYECDmGlesRPmTYxZ9RnCgEI/dljT79PtBgkcuFW|1

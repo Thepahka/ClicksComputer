@@ -1,0 +1,8 @@
+usu_id|usu_num_doc|usu_nom|usu_ape|usu_tel|usu_correo|usu_nac|usu_contra|fk_rol_id
+6|99092513641|Sergio Esteban|Cifuentes Arango|2085072|scifuentesarango@misena.edu.co|1999-09-25|$2y$10$2d/hEWpslV7QaBe2LnivYOJzC/cJ4tA/ZsGvQ7eUgG4hpxKUaa7CC|2
+7|12121212|121212|121212|1212121|121212@12121.com|1999-09-25|$2y$10$N7MBceg3OhEwaImyEe1QBOtLVZoN9GPYx/94ZRyk6G931jam4CTGe|2
+8|0|333|333|333333333|1@2.com|2018-09-06|$2y$10$u6ufWLBHXKhIkGflfw6jleurPeTLHy.Lo8s43xsY8Qa9ReJhB0Mf6|2
+10|123123123123|asddsad|1231313213|13123123|adsadsad@aadssda.com|1999-09-25|$2y$10$HIC.uwANqDLSullgr4DS9uTWCuGB39Y5IIpfk0NQg8FyA5BdHEgtq|2
+11|333409849131208394|sadadas|adasdasdasd|2147483647|dq@ads.com|1999-09-25|$2y$10$H43bvkKMliSRlUwlNki6KOhLnsw1ub6cKjbRUcOuwlyNa40JLaY2C|2
+12|3123123123123213|sdadasdad|sadasdasdasd|2147483647|123123131@sadasd.com|0000-00-00|$2y$10$R0PpwnXQm9B3hzWpx2xdquV.7bkMdrGDtuoR3GirsAID3za7VGf96|2
+13|990925136411999|sergio|cifuentes|2085072|scifuentesarango@hotmail.com|1999-09-25|$2y$10$cFoZ2rPnucbk5nGZM1iCUuqTstshe6ABeDl9m18.yOLRPKOiYlt3G|2

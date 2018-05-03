@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-04-2018 a las 23:43:53
+-- Tiempo de generación: 04-05-2018 a las 00:26:47
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -68,6 +68,16 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail2` (IN `correo` VARCHAR(100))  BEGIN 
 SELECT emp_correo, emp_contra, fk_rol_id, emp_nom, emp_id, emp_nit FROM empresa WHERE correo = emp_correo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail3` (IN `correo` VARCHAR(100))  NO SQL
+BEGIN 
+SELECT * FROM egg WHERE correo = egg_correo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmail4` (IN `nombre` VARCHAR(100))  NO SQL
+BEGIN 
+SELECT * FROM egg WHERE nombre = egg_nom;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarEmpEmail` (IN `correo` VARCHAR(200))  BEGIN
@@ -148,6 +158,33 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `EliminarCategorias` (IN `id` INT, IN `id2` VARCHAR(255))  BEGIN
 DELETE FROM fil_emp WHERE fk_emp_id = id AND fk_fil_id IN(id2);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `EliminarTodos` ()  BEGIN
+  DELETE FROM cli_emp;
+  DELETE FROM com_pc;
+  DELETE FROM com_pie;
+  DELETE FROM emp_pc;
+  DELETE FROM emp_pie;
+  DELETE FROM fil_emp;
+  DELETE FROM gal_pc;
+  DELETE FROM gal_pie;
+  DELETE FROM pc_inv;
+  DELETE FROM pc_pie;
+  DELETE FROM pi_inv;
+  DELETE FROM tipopieza;
+  DELETE FROM tipopc;
+  DELETE FROM rol;
+  DELETE FROM egg;
+  DELETE FROM inventario;
+  DELETE FROM galeria;
+  DELETE FROM comentarios;
+  DELETE FROM piezas;
+  DELETE FROM usuario;
+  DELETE FROM pc;
+  DELETE FROM marca;
+  DELETE FROM filtros;
+  DELETE FROM empresa;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarCategoriaEmpresa` (IN `id` INT, IN `id2` INT)  BEGIN
@@ -234,6 +271,28 @@ CREATE TABLE `com_pie` (
   `fk_com_id` int(11) NOT NULL,
   `fk_usu_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `egg`
+--
+
+CREATE TABLE `egg` (
+  `egg_id` int(11) NOT NULL,
+  `egg_nom` varchar(50) NOT NULL,
+  `egg_correo` varchar(100) NOT NULL,
+  `egg_contra` text,
+  `egg_contra2` text NOT NULL,
+  `fk_rol_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `egg`
+--
+
+INSERT INTO `egg` (`egg_id`, `egg_nom`, `egg_correo`, `egg_contra`, `egg_contra2`, `fk_rol_id`) VALUES
+(1, 'clickscomputeregg', 'clicks-4743@egg.com', '$2y$10$K/moSCxiBST9IWaQrCqbi.yLJIkXMmfqrxcQVPFwLPLmTxkAZuHNO', '$2y$10$cNGGZ46T2ZqiOn7lGAqdQuQ6K7UOnJQC2CStrRt65taCVQqeRVXFO', 4444);
 
 -- --------------------------------------------------------
 
@@ -472,7 +531,8 @@ CREATE TABLE `rol` (
 
 INSERT INTO `rol` (`rol_id`, `rol_nom`) VALUES
 (1, 'Tienda'),
-(2, 'usuario');
+(2, 'usuario'),
+(4444, 'egg');
 
 -- --------------------------------------------------------
 
@@ -569,6 +629,13 @@ ALTER TABLE `com_pie`
   ADD KEY `fk_pi_cod` (`fk_pi_cod`),
   ADD KEY `fk_com_id` (`fk_com_id`),
   ADD KEY `fk_usu_id` (`fk_usu_id`);
+
+--
+-- Indices de la tabla `egg`
+--
+ALTER TABLE `egg`
+  ADD PRIMARY KEY (`egg_id`),
+  ADD KEY `fk_rol_id` (`fk_rol_id`);
 
 --
 -- Indices de la tabla `empresa`
@@ -724,6 +791,12 @@ ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `egg`
+--
+ALTER TABLE `egg`
+  MODIFY `egg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
@@ -785,6 +858,12 @@ ALTER TABLE `com_pie`
   ADD CONSTRAINT `com_pie_ibfk_1` FOREIGN KEY (`fk_com_id`) REFERENCES `comentarios` (`com_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `com_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `com_pie_ibfk_3` FOREIGN KEY (`fk_usu_id`) REFERENCES `usuario` (`usu_id`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `egg`
+--
+ALTER TABLE `egg`
+  ADD CONSTRAINT `egg_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `empresa`

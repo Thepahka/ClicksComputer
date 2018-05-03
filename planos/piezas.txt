@@ -1,0 +1,1 @@
+pi_cod|pi_nom|pi_desc|fk_tipo_id

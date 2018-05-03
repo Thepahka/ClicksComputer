@@ -1,0 +1,1 @@
+inv_id|inv_pre_uni|inv_pre_total|inv_fecha|inv_cant|inv_val_compra|inv_val_venta

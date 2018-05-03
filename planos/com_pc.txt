@@ -1,0 +1,1 @@
+fk_pc_id|fk_com_id|fk_usu_id

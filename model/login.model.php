@@ -54,6 +54,25 @@
       return $result;
     }
 
+    public function ValidateEmail3($email)
+    {
+      try
+      {
+        $sql = "CALL ConsultarEmail3(?)";
+
+        $query = $this->pdo->prepare($sql);
+
+        $query->execute(array($email));
+
+        $result = $query->fetch(PDO::FETCH_BOTH);
+      }
+      catch(PDOException $e)
+      {
+        $result = $e->getMessage();
+      }
+      return $result;
+    }
+
 
   }
 

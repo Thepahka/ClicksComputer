@@ -1,0 +1,2 @@
+egg_id|egg_nom|egg_correo|egg_contra|egg_contra2|fk_rol_id
+1|clickscomputeregg|clicks-4743@egg.com|$2y$10$K/moSCxiBST9IWaQrCqbi.yLJIkXMmfqrxcQVPFwLPLmTxkAZuHNO|$2y$10$cNGGZ46T2ZqiOn7lGAqdQuQ6K7UOnJQC2CStrRt65taCVQqeRVXFO|4444

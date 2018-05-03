@@ -31,6 +31,8 @@
 
       $result2 = $this->login->ValidateEmail2($email);
 
+      $result3 = $this->login->ValidateEmail3($email);
+
       $emailvalido = filter_var($comprobar[0], FILTER_SANITIZE_EMAIL);
 
       $_SESSION["nom"] = $result2[3];
@@ -41,6 +43,10 @@
           {
             echo '<script language="javascript">alert("Debe completar el campo con un correo");</script>';
             echo "<script>history.back(1)</script>";
+          }
+          elseif($result3[2] == $email)
+          {
+            header("Location: Pass");
           }
           elseif($result[0] == $email)
           {
@@ -55,13 +61,13 @@
             echo '<script language="javascript">alert("No existe un usuario registrado con ese correo");</script>';
             echo "<script>history.back(1)</script>";
           }
+
       }
       else
       {
           echo '<script language="javascript">alert("Ingrese una direccion de correo electronico valida");</script>';
           echo "<script>history.back(1)</script>";
       }
-
     }
 
     public function ConsultPassword()
@@ -78,9 +84,22 @@
 
       $result2 = $this->login->ValidateEmail2($_SESSION["correoelectronico"][0]);
 
+      $result3 = $this->login->ValidateEmail3($_SESSION["correoelectronico"][0]);
+
       $idempresa = $result2[4];
 
-      if(password_verify($pass,$result[1]))
+      if(password_verify($pass,$result3[3]))
+      {
+        $_SESSION["user"]["correo"] = $comprobarcorreo;
+        $_SESSION["user"]["contra"] = $pass;
+        $_SESSION["user"]["nombre"] = $comprobarname;
+        $_SESSION["user"]["auth"] = true;
+        echo '<script language="javascript">
+        alert("Bienvenido");
+        window.location.href="Dashboard";
+        </script>';
+      }
+      elseif(password_verify($pass,$result[1]))
       {
         $_SESSION["user"]["correo"] = $comprobarcorreo;
         $_SESSION["user"]["contra"] = $pass;
@@ -90,7 +109,6 @@
         alert("Bienvenido '.ucwords($_SESSION["user"]["nombre"]).'");
         window.location.href="main";
         </script>';
-
       }
       elseif(password_verify($pass,$result2[1]))
       {

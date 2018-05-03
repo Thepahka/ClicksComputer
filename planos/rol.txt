@@ -1,0 +1,4 @@
+rol_id|rol_nom
+1|Tienda
+2|usuario
+4444|egg

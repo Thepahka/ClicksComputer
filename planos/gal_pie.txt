@@ -1,0 +1,1 @@
+fk_gal_id|fk_pi_cod

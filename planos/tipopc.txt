@@ -1,0 +1,5 @@
+tipopc_id|tipopc_nom
+1|de mesa
+2|portatil
+3|todo en uno
+4|netbook               

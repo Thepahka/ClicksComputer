@@ -54,3 +54,11 @@ RewriteRule ^Tiendas$ index.php?c=tienda&a=ViewTienda
 
 #Manual de usuario
 RewriteRule ^ManualDeUsuario$ views/modules/manual/manualdeusuario.php?
+
+#Egg
+RewriteRule ^Dashboard$ index.php?c=egg&a=Dash
+RewriteRule ^adming$ index.php?c=egg&a=useradmin
+RewriteRule ^Ingreso$ index.php?c=egg&a=ConsultEmail
+RewriteRule ^ImportExport$ index.php?c=egg&a=ImportExport
+RewriteRule ^Export$ index.php?c=egg&a=export
+RewriteRule ^Import$ index.php?c=egg&a=import
