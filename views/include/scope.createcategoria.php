@@ -59,7 +59,7 @@ function letrasynumeros(e){
             ?>
           <tr>
             <td>
-                <input type="checkbox" name="eliminarvarios[]" value="<?php echo $row['fil_id']; ?>">
+                <input type="checkbox" id="check1" name="eliminarvarios[]" value="<?php echo $row['fil_id']; ?>">
             </td>
             <td><?php  echo $item; ?></td>
             <td><?php  echo ucwords($row["fil_nom"]); ?></td>
