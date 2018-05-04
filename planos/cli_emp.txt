@@ -1,3 +1,1 @@
 fk_emp_id|fk_usu_id
-9|8
-9|7

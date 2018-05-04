@@ -613,7 +613,7 @@
         $egg_contra2 = $aDatos[4];
         $fk_rol_id = $aDatos[5];
 
-        $consulta = "INSERT INTO egg (egg_id,egg_nom,egg_correo,egg_contra,egg_contra2,fk_rol_id) VALUES ($egg_id, '".egg_nom."', '".egg_correo."', '".egg_contra."', '".egg_contra2."', '".fk_rol_id."')";
+        $consulta = "INSERT INTO egg (egg_id,egg_nom,egg_correo,egg_contra,egg_contra2,fk_rol_id) VALUES ($egg_id, '".$egg_nom."', '".$egg_correo."', '".$egg_contra."', '".$egg_contra2."', '".$fk_rol_id."')";
 
         echo "</br>";
 
@@ -1119,6 +1119,8 @@
         $resultado = mysqli_query($conexion, $consulta) or die ("Algo a salido mal en la insercion");
       }
       fclose($archivo);
+
+      echo "<h1>Datos importados con exito</h1>";
 
       mysqli_close($conexion);
     }
