@@ -335,10 +335,6 @@ form[id="validate"] {
 .labels-regem{
   margin-bottom: 40px;
 }
-.wrap-input-regem{
-  left: -80px;
-}
-
 
 
 
@@ -357,5 +353,80 @@ form[id="validate"] {
   background-size: none;
   background-position: none;
 }
+.titulo-up {
+    position: relative;
+    padding: 5px;
+    left: 106px;
+    top: 90px;
+}
+.email-icon{
+  position: relative;
+  top: 120px;
+  left: 148px;
+}
+.des-co {
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+    top: 134px;
+    left: 108px;
+    font-size: 19px;
+}
+.log-email, .log-pass {
+    position: relative;
+    left: 36px;
+    top: 207px;
+    width: 300px;
+    height: 35px;
+    text-align: center;
+    transition: 0.3s;
+    outline: none;
+}
+.log-btnp, .log-btn{
+    position: relative;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    right: -114px;
+    font-size: 17px;
+    top: 220px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+.mini-foot{
+  bottom: 20px;
+  position: absolute;
+  padding: 0px 25px;
+}
+.des-con{
+  font-size: 19px;
+  top: 138px;
+  position: relative;
+  left: 130px;
+}
+/*dashboard*/
+.EnterpriseProfile{
+  display: none;
+}
+.wrap-nav{
+  position: relative;
+  top: 30px;
+  padding: 20px;
+  background-color: none;
+  width: 1125px;
+  height: 550px;
+  left: 0px;
+}
+.contenedornit{
+  display: -webkit-inline-box;
+}
+.wrap-input-regem {
+    position: relative;
+    left: -80px;
+    bottom: 460px;
+    padding: 0px 85px;
+}
+
+
 
 }
