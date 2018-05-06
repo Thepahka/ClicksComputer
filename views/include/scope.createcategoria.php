@@ -32,8 +32,9 @@ function letrasynumeros(e){
          foreach($this->Read2() as $row)
          {
         ?>
-            <input  type="checkbox" name="data[]" id="check1">
-            <label for="check1" class="ch-name"><?php echo $row["fil_nom"] ?></label>
+        <form id="nuevocategoria" class="form-conta" action="CrearCategoria" method="post">
+          <input  type="checkbox" name="data[]" id="ch-bx">
+        <label for="ch-bx" class="ch-name"><?php echo $row["fil_nom"] ?></label>
         <?php } ?>
         <input class="btn-dash-mar" type="submit" value="Registrar categoria">
     </form>
@@ -59,7 +60,7 @@ function letrasynumeros(e){
             ?>
           <tr>
             <td>
-                <input type="checkbox" id="check1" name="eliminarvarios[]" value="<?php echo $row['fil_id']; ?>">
+                <input type="checkbox" name="eliminarvarios[]" value="<?php echo $row['fil_id']; ?>">
             </td>
             <td><?php  echo $item; ?></td>
             <td><?php  echo ucwords($row["fil_nom"]); ?></td>
