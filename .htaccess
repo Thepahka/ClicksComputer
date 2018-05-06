@@ -20,6 +20,7 @@ RewriteRule ^ConsultaP$ index.php?c=login&a=ConsultPassword
 
 #Pc
 RewriteRule ^Registrar-Computador$ index.php?c=pc&a=ViewsSavePc
+RewriteRule ^Computador-Registrado$ index.php?c=pc&a=CreatePc
 
 #Shop
 RewriteRule ^MyDashboard$ index.php?c=shop&a=shopDashboard
@@ -38,6 +39,7 @@ RewriteRule ^CrearMarca$ index.php?c=marca&a=CreateMarca
 RewriteRule ^ActualizarMarcas-(\w+)-(\w+)$ index.php?c=marca&a=ViewUpdateMarca&data=$1&data2=$2
 RewriteRule ^EliminarMarca-(\w+)-(\w+)$ index.php?c=marca&a=DeleteMar&data=$1&data2=$2
 RewriteRule ^MarcaActualizada$ index.php?c=marca&a=UpdateMar
+RewriteRule ^EliminarMarcas$ index.php?c=marca&a=DeleteMars
 
 #Categorias
 RewriteRule ^GestionCategorias$ index.php?c=categoria&a=ViewCategoria

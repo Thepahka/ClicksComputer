@@ -22,6 +22,42 @@
       require_once "views/modules/Pcs/CreatePc.php";
     }
 
+    public function CreatePc()
+    {
+      $empid = $_SESSION["emp"]["id"];
+      $data = $_POST["data"];
+
+      $nombreemp = $_SESSION["user"]["nombre"];
+
+      $direccion = $_FILES["ficha"]["tmp_name"];
+      $nombre = $_FILES["ficha"]["name"];
+      $direccion2 = $_FILES["imagen"]["tmp_name"];
+      $nombre2 = $_FILES["imagen"]["name"];
+
+      move_uploaded_file($direccion, "views/modules/Shop_User/$nombreemp/computadores/$nombre");
+      move_uploaded_file($direccion2, "views/modules/Shop_User/$nombreemp/computadores/$nombre2");
+    }
+
+    public function Filtros()
+    {
+      $empid = $_SESSION["emp"]["id"];
+      $result = $this->savepc->allCategorias($empid);
+      return $result;
+    }
+
+    public function Tipos()
+    {
+      $result = $this->savepc->allTypes();
+      return $result;
+    }
+
+    public function Marcas()
+    {
+      $empid = $_SESSION["emp"]["id"];
+      $result = $this->savepc->allMarcas($empid);
+      return $result;
+    }
+
     public function ReadPcId($data)
     {
 

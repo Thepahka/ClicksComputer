@@ -123,6 +123,30 @@
       // else
       // {
         $result = $this->registerenterprise->RegisterNewEnterprise($datos);
+        $ruta = "views/modules/Shop_User/$data[1]";
+        $ruta2 = "$ruta/computadores";
+        $ruta3 = "$ruta/piezas";
+        if(!file_exists($ruta))
+        {
+          mkdir($ruta, 0777, true);
+        }
+        else
+        {
+        }
+        if(!file_exists($ruta2))
+        {
+          mkdir($ruta2, 0777, true);
+        }
+        else
+        {
+        }
+        if(!file_exists($ruta3))
+        {
+          mkdir($ruta3, 0777, true);
+        }
+        else
+        {
+        }
         echo '<script language="javascript">
         alert("Registrado con exito!");
         window.location.href="main";

@@ -50,48 +50,38 @@ class MarcaController
   {
       $data = $_POST["data"];
 
-      $idempresa = $_SESSION["emp"]["id"];
+      $idemp = $_SESSION["emp"]["id"];
 
-      $nommarca = $data[0];
+      while(true)
+       {
+         $allmarcas = current($data);
 
-      $result = $this->marca->ConsultMarca($nommarca);
+         $asignarmarcas=(( $allmarcas !== false) ? $allmarcas : ", &nbsp;");
 
-      if($data[0] == "" or array_search("",$data))
-      {
-          echo '<script language="javascript">alert("Completa el campo con el nombre de la marca que desea registrar");</script>';
-          echo "<script>history.back(1)</script>";
-      }
-      elseif($result[3] == $idempresa)
-      {
-          echo '<script language="javascript">alert("Esta marca ya esta registrada en tu tienda");</script>';
-          echo "<script>history.back(1)</script>";
-      }
-      else
-      {
-        while(true)
-        {
-          $allmarcas = current($data);
+         $result = $this->marca->newMarca($allmarcas, $idemp);
+         echo '<script language="javascript">alert("Marca(s) registrada(s) con exito!");</script>';
+         echo "<script>window.location.href='GestionMarcas'</script>";
 
-          $asignarmarcas=(( $allmarcas !== false) ? $allmarcas : ", &nbsp;");
+         $allmarcas = next($data);
 
-          $this->marca->newMarca($allmarcas ,$idempresa);
-
-          $allmarcas = next($data);
-
-          if($allmarcas === false && $allmarcas === false)
-          {
-            break;
-          }
-        }
-        echo '<script language="javascript">alert("Marca(s) registrada(s) con exito");</script>';
-        echo "<script>history.back(1)</script>";
-        }
-      }
+         if($allmarcas === false && $allmarcas === false)
+         {
+           break;
+         }
+       }
+  }
 
   public function Read()
   {
       $empid = $_SESSION["emp"]["id"];
       $result = $this->marca->allMarcas($empid);
+      return $result;
+  }
+
+  public function Read2()
+  {
+      $empid = $_SESSION["emp"]["id"];
+      $result = $this->marca->Marcas();
       return $result;
   }
 
@@ -106,36 +96,33 @@ class MarcaController
     </script>';
   }
 
-  public function UpdateMar()
+  public function DeleteMars()
   {
-    $data = $_POST["data"];
-
-    $marca = $data[2];
-
-    $result = $this->marca->ConsultMarca($marca);
-
-    $newid = $result[0];
-
-    $oldid = $data[0];
-
+    $datos = $_POST["eliminarvarios"];
+    $eliminar = implode(",",$datos);
     $idemp = $_SESSION["emp"]["id"];
-
-    $result3 = $this->marca->AllMarcas2($newid, $idemp);
-
-    if($result3[0][0] == $oldid && $result3[0][1] == $idemp)
-    {
-      echo '<script language="javascript">alert("Esta marca ya se encuentra registrada en su tienda");</script>';
-      echo "<script>history.back(1)</script>";
-    }
-    else
-    {
-      $result2 = $this->marca->Update($newid, $oldid, $idemp);
-      echo '<script language="javascript">
-      alert("Marca actualizada con exito");
-      window.location.href="GestionMarcas"
-      </script>';
-    }
+    $result = $this->marca->EliminarVarios($idemp,$eliminar);
+    echo '<script language="javascript">
+    alert("Marca(s) eliminada(s) con exito");
+    window.location.href="GestionMarcas"
+    </script>';
   }
+
+  public function UpdateCat()
+  {
+
+    // $result = $this->marca->allMarcas2($idcat, $empid);
+    // print_r($result[0][1]);
+
+
+
+    // $result2 = $this->marca->Update($newid, $oldid, $idemp);
+    // echo '<script language="javascript">
+    // alert("Marca actualizada con exito");
+    // window.location.href="GestionMarcas"
+    // </script>';
+   }
+
 
 
 }

@@ -17,7 +17,7 @@ class CategoriaModel
   }
 
 
-  public function newCategoria($nomcategoria, $idempresa)
+  public function newCategoria($allcategorias, $idemp)
   {
     try
     {
@@ -25,7 +25,7 @@ class CategoriaModel
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array(strtolower($nomcategoria), $idempresa));
+      $query->execute(array($allcategorias, $idemp));
 
       $result = $query->fetch(PDO::FETCH_BOTH);
     }

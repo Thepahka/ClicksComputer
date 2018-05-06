@@ -16,7 +16,6 @@ class MarcaModel
     }
   }
 
-
   public function newMarca($nommarca, $idempresa)
   {
     try
@@ -78,7 +77,7 @@ class MarcaModel
   {
     try
     {
-      $sql = "CALL ConsultarMarEmp(?)";
+      $sql = "CALL ConsultarMar(?)";
 
       $query = $this->pdo->prepare($sql);
 
@@ -92,15 +91,35 @@ class MarcaModel
     }
     return $result;
   }
-  public function allMarcas2($mi, $ei)
+
+  public function Marcas()
   {
     try
     {
-      $sql = "CALL ConsultarMarEmp2(?,?)";
+      $sql = "CALL MarcasExistentes";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($mi, $ei));
+      $query->execute(array());
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
+  public function allMarcas2($idcat, $empid)
+  {
+    try
+    {
+      $sql = "CALL ConsultarCatEmp2(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($idcat, $empid));
 
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }
@@ -147,5 +166,24 @@ class MarcaModel
       $msn = $e->getMessage();
     }
   }
+
+  public function EliminarVarios($idemp,$eliminar)
+  {
+    try
+    {
+      $sql = "DELETE FROM mar_emp WHERE fk_emp_id = ? AND fk_mar_id IN($eliminar)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($idemp));
+
+      $msn = "Se Elimino la marca con exito";
+    }
+    catch(PDOException $e)
+    {
+      $msn = $e->getMessage();
+    }
+  }
+
 }
 ?>

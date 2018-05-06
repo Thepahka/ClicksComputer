@@ -10,7 +10,7 @@
   </div>
   <div class="enterprise-nit">
       <?php
-      echo "NIT"." ".$nit[0][0];
+      echo "NIT"." ".$_SESSION["emp"]["nit"];
       ?>
   </div>
   <ul class="gestion">
