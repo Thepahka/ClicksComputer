@@ -24,8 +24,6 @@
         <textarea id="CreateDesc" name="data[]" class="in-cpcarea"></textarea></br>
         <label for="CreateMod" class="cpc">Modelo del computador</label>
         <input id="CreateMod" type="text" name="data[]" class="in-cpcmodel"></br>
-
-
         <label for="CreateMarca" class="cpc">Marca del computador</label>
         <select id="CreateMarca" type="text" name="data[]" class="in-cpcmarca"></br>
           <?php

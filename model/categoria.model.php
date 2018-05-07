@@ -172,10 +172,13 @@ class CategoriaModel
   {
     try
     {
+      //el sql es la consulta que me eliminara EliminarVarios
+      //a diferencia del delete normal este tiene una condicion con "IN"
+      //el "IN" nos permite eliminar varios elementos a la vez
       $sql = "DELETE FROM fil_emp WHERE fk_emp_id = ? AND fk_fil_id IN($eliminar)";
 
       $query = $this->pdo->prepare($sql);
-
+      
       $query->execute(array($idemp));
 
       $msn = "Se Elimino la categoria con exito";

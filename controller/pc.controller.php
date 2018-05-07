@@ -53,8 +53,11 @@
 
     public function Marcas()
     {
+      //empid contiene el id de la empresa logeada
       $empid = $_SESSION["emp"]["id"];
+      //el result me contiene la consulta llamada desde el modelo
       $result = $this->savepc->allMarcas($empid);
+      //el return result me trae el resultado de la consulta, ya sean los datos o el error de la consulta
       return $result;
     }
 

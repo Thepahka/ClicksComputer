@@ -8,9 +8,6 @@
   <body class="body-login">
     <div class="container" id="container">
       <i class="fas fa-circle-notch fa-spin fa-6x spiner-pre"></i>
-      <!-- <div class="preloader">
-        <p>Cargando...</p>
-      </div> -->
     </div>
   </div>
     <div class="wrap-login">

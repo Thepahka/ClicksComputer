@@ -8,9 +8,6 @@
   <body class="body-regisem">
     <div class="container" id="container">
       <i class="fas fa-circle-notch fa-spin fa-6x spiner-pre"></i>
-      <!-- <div class="preloader">
-        <p>Cargando...</p>
-      </div> -->
     </div>
     <input type="checkbox" id="cerrarres">
     <label for="cerrarres" id="btn-cerrarres">x</label>
@@ -33,6 +30,8 @@
     <div class="body-registroem">
       <h1 class="titulo-em">Registro de empresa</h1>
       <div class="wrap-labels-regem">
+        <!-- la accion del formulario llama a la funcion que esta en el controlador -->
+        <!-- el metodo post es como se van a enviar los datos para que se resivan en php -->
         <form class="wrap-formulario" action="Registrado-emp" method="post">
           <label class="labels-regem" for="EmpId">NIT o ID de la empresa</label><br>
           <label class="labels-regem" for="EmpNom">Nombre de la empresa</label><br>
@@ -44,6 +43,7 @@
       </div>
         <div class="wrap-input-regem">
           <div class="contenedornit">
+            <!-- los campos $data[] almacenan los datos que se van a insertar en la base de datos  -->
           <input class="input-regem" type="text" name="data[]" style="bottom:3px; width:180px;">
           <label class="migadepan2">-</label>
           <input type="text" name="complemento" class="input-regem" style="width:87px; bottom:3px;">
@@ -54,6 +54,7 @@
           <input class="input-regem" type="text" name="data[]"><br>
           <input class="input-regem" type="text" name="data[]"><br>
           <input class="input-regem" type="password" name="data[]"><br>
+          <!-- el boton dentro del formulario me ejecuta la accion que tiene el formulario -->
           <input  type="submit" class="boton-registroem input-regem" value="Registrarse"></input><br>
         </div>
     </form>

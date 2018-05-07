@@ -17,6 +17,7 @@
 
     public function RegisterEnterprise()
     {
+      //la variable data me contiene todos los datos que ingresamos en el formulario
       $data = $_POST["data"];
 
       $complemento = $_POST["complemento"];
@@ -122,6 +123,10 @@
       // }
       // else
       // {
+
+
+        //el result accede a la funcion del modelo donde vamos a insertar los datos que pasamos por el formulario
+        //en este caso los datos los contenemos en la variable $data o $datos y es lo que ponemos en el parentesis
         $result = $this->registerenterprise->RegisterNewEnterprise($datos);
         $ruta = "views/modules/Shop_User/$data[1]";
         $ruta2 = "$ruta/computadores";
@@ -147,6 +152,8 @@
         else
         {
         }
+        //este script me muestra un mensaje de exito cuando se registra con exito
+        //el window.location.href me redirije a una pagina cuando se registra con exito en este caso a main
         echo '<script language="javascript">
         alert("Registrado con exito!");
         window.location.href="main";

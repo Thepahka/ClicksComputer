@@ -98,9 +98,14 @@ class CategoriaController
 
   public function DeleteCats()
   {
+    //en datos recibimos los id de los que vamos a eliminar
     $datos = $_POST["eliminarvarios"];
+    //la variable $eliminar contiene todos los datoss separados por una coma por ejemplo "1,2"
     $eliminar = implode(",",$datos);
+    //$idemp es la variable que me contiene la id de la empresa logeada
     $idemp = $_SESSION["emp"]["id"];
+    //el result ejecutara la consulta con dos parametros, el primero es la id de la empresa logeada
+    //el segundo las id de todos los elementos a borrar
     $result = $this->categoria->EliminarVarios($idemp,$eliminar);
     echo '<script language="javascript">
     alert("Categoria(s) eliminada(s) con exito");

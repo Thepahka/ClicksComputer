@@ -58,18 +58,22 @@ class PcModel
   {
     try
     {
+      //contiene la consulta
       $sql = "CALL ConsultarMarEmp(?)";
-
+      //prepara la consulta
       $query = $this->pdo->prepare($sql);
-
+      //ejecuta la consulta
       $query->execute(array($empid));
-
+      //trae la consulta
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }
+    //catch captura el error en la variable $e
     catch(PDOException $e)
     {
+      //me muestra el error en $e
       $result = $e->getMessage();
     }
+    //retorna el resultado
     return $result;
   }
 

@@ -9,19 +9,6 @@
           <a class="btn-registrate" href="Registro">registrate</a>
           <a class="btn-registraem" href="Registro-Empresa">registrar una empresa</a>
   </section>
-  <!-- <section class="vertical">
-    <div class="background2">
-          <div class="fin">
-            <h1 class="foot-titulo">¿COMO ELEGIR TU COMPUTADORA IDEAL?</h1>
-            <div class="cont-pasos">
-              <p class="pasos">1. Ten en cuenta tus estudios o empleos.</p>
-              <p class="pasos">2. Debes saber cuanto dinero posees.</p>
-              <p class="pasos">3. Registrate en nuestra pagina y busca confiablemente!!!</p>
-          </div>
-          <img src="views/assets/image/landing/personas.png" class="img-mid" alt="">
-          </div>
-    </div>
-  </section> -->
   <section class="vertical">
     <div class="back-bot">
       <img src="views/assets/image/landing/tiendafoot.png" class="img-fot" alt="">

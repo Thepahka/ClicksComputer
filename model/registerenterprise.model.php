@@ -20,11 +20,12 @@ class RegisterenterpriseModel
   {
     try
     {
-
+      // el sql me contiene el procedimiento almacenado para insertar un registro en la tabla empresas
+      // dentro del parentesis colocamos el número de datos que vamos a insertar
       $sql = "CALL GuardarEmpresa(?,?,?,?,?,?,?,?)";
-
+      // este "prepare" me prepara la consulta que es el sql de arriba
       $query = $this->pdo->prepare($sql);
-
+      // el execute me ejecuta la consulta ingresando el número de datos que estamos pasando desde el formulario
       $query->execute(array($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5], password_hash($datos[6], PASSWORD_BCRYPT),1));
 
       $msn = "Se registro con exito";
