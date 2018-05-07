@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-05-2018 a las 06:13:29
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Tiempo de generación: 08-05-2018 a las 00:19:00
+-- Versión del servidor: 10.1.30-MariaDB
+-- Versión de PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,6 +36,10 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarDirEmp` (IN `dir` VARCHAR(100), IN `id` INT)  BEGIN
 UPDATE empresa SET emp_dir = dir WHERE emp_id = id;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarInfo` (IN `nit` VARCHAR(100), IN `des` VARCHAR(100), IN `dir` VARCHAR(100), IN `cor` VARCHAR(100), IN `tel` INT, IN `contra` VARCHAR(200), IN `id` INT)  BEGIN
+UPDATE empresa SET emp_nit = nit, emp_desc = des, emp_dir = dir, emp_correo = cor, emp_tel = tel, emp_contra = contra WHERE emp_id = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ActualizarMarcaEmpresa` (IN `nombre` VARCHAR(30), IN `marcaid` INT, IN `empresaid` INT)  BEGIN
@@ -141,6 +145,10 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTipo` (IN `tipo` VARCHAR(50))  BEGIN
 SELECT * FROM tipopc WHERE tipopc_nom = tipo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Contraseña` (IN `id` INT)  BEGIN
+SELECT emp_contra FROM empresa WHERE emp_id = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Correo` (IN `id` INT)  BEGIN
@@ -338,14 +346,14 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
-(6, '4545-5', 'pccomponentes', 'cra 47 #47-05', 'empresa dedicada a vender pc\'s y demas electrdomesticos', 213123, 'pccomponentes@pc.com', '$2y$10$rHicc76sKBezaPc/dvraTO51CPmdqEHA379LYLGamfBKy4AWiIwD.', 1),
-(7, '987654321-9', 'Alienware Inc', 'cra 32 #09', 'empresa vendedora de pc\'s gamer de alto rendimiento', 2085072, 'adminalien@alienware.com', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
-(9, '123-0', 'bambu corp', 'calle principal bambu', 'asd', 2085072, 'bambu@bambu.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
-(10, '2312312312312321-9', 'pacha\'s corp', 'cra jabon #jabon', 'somos una empresa de jabones', 1212121, 'jabon@jabon.com', '$2y$10$yt/gfUdACrC2tb.Js9KJTOjQYqhGu/rr9FALm8KRrgJ50l/mRg5pW', 1),
-(11, '90912019212902-9', 'pacha corp inc', 'carrera pacha', 'empresa pachera', 98765432, 'pacha@pacha.com', '$2y$10$TcWKb.764eQaWVYECDmGlesRPmTYxZ9RnCgEI/dljT79PtBgkcuFW', 1),
-(12, '12345678-9', 'pruebac', 'c', 'c', 121212, 'prueba@hotmail.com', '$2y$10$KjbrX1YBQESxiyPsgMNrveYzpZAhZs1aGfXbil/N1m6s4MO5Bg772', 1),
-(13, '1212-1', 'asd', 'adasd', 'sadasd', 1212, 'adsad@asd.com', '$2y$10$n.jpC.lcFYekNklGWb/lYOIyhuOaYZQhlE98BtTfQKoz2qV6qpDE6', 1),
-(14, '09812-0', 'prueba2', 'prueba2', 'pueba2', 12121212, 'prueba2@prueba2.com', '$2y$10$s.NmqO.ejSYJhoNhIHujS.UAtG5jA4RVLcMjJhC7G4zl/2OjxxV9e', 1);
+(6, '123123-4', 'pccomponentes', '', '', 0, 'a@a.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
+(7, '1', 'Alienware Inc', 'b', 'a', 2, 'c', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
+(9, '1', 'bambu corp', 'b', 'a', 2, 'c', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
+(10, '1', 'pacha\'s corp', 'b', 'a', 2, 'c', '$2y$10$yt/gfUdACrC2tb.Js9KJTOjQYqhGu/rr9FALm8KRrgJ50l/mRg5pW', 1),
+(11, '1', 'pacha corp inc', 'b', 'a', 2, 'c', '$2y$10$TcWKb.764eQaWVYECDmGlesRPmTYxZ9RnCgEI/dljT79PtBgkcuFW', 1),
+(12, '1', 'pruebac', 'b', 'a', 2, 'c', '$2y$10$KjbrX1YBQESxiyPsgMNrveYzpZAhZs1aGfXbil/N1m6s4MO5Bg772', 1),
+(13, '1', 'asd', 'b', 'a', 2, 'c', '$2y$10$n.jpC.lcFYekNklGWb/lYOIyhuOaYZQhlE98BtTfQKoz2qV6qpDE6', 1),
+(14, '1', 'prueba2', 'b', 'a', 2, 'c', '$2y$10$s.NmqO.ejSYJhoNhIHujS.UAtG5jA4RVLcMjJhC7G4zl/2OjxxV9e', 1);
 
 -- --------------------------------------------------------
 
@@ -439,22 +447,6 @@ CREATE TABLE `gal_pie` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inventario`
---
-
-CREATE TABLE `inventario` (
-  `inv_id` int(11) NOT NULL,
-  `inv_pre_uni` int(11) NOT NULL,
-  `inv_pre_total` int(11) NOT NULL,
-  `inv_fecha` date NOT NULL,
-  `inv_cant` int(11) NOT NULL,
-  `inv_val_compra` int(11) NOT NULL,
-  `inv_val_venta` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `marca`
 --
 
@@ -516,28 +508,6 @@ CREATE TABLE `pc` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pc_inv`
---
-
-CREATE TABLE `pc_inv` (
-  `fk_pc_id` int(11) NOT NULL,
-  `fk_inv_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pc_pie`
---
-
-CREATE TABLE `pc_pie` (
-  `fk_pc_id` int(11) NOT NULL,
-  `fk_pi_cod` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `piezas`
 --
 
@@ -546,17 +516,6 @@ CREATE TABLE `piezas` (
   `pi_nom` varchar(50) NOT NULL,
   `pi_desc` text NOT NULL,
   `fk_tipo_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pi_inv`
---
-
-CREATE TABLE `pi_inv` (
-  `fk_inv_id` int(11) NOT NULL,
-  `fk_pi_cod` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -619,28 +578,9 @@ CREATE TABLE `tipopieza` (
 
 CREATE TABLE `usuario` (
   `usu_id` int(11) NOT NULL,
-  `usu_num_doc` bigint(20) NOT NULL,
   `usu_nom` varchar(50) NOT NULL,
-  `usu_ape` varchar(50) NOT NULL,
-  `usu_tel` int(11) DEFAULT NULL,
-  `usu_correo` varchar(50) NOT NULL,
-  `usu_nac` date NOT NULL,
-  `usu_contra` varchar(200) NOT NULL,
-  `fk_rol_id` int(11) NOT NULL
+  `usu_correo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`usu_id`, `usu_num_doc`, `usu_nom`, `usu_ape`, `usu_tel`, `usu_correo`, `usu_nac`, `usu_contra`, `fk_rol_id`) VALUES
-(6, 99092513641, 'Sergio Esteban', 'Cifuentes Arango', 2085072, 'scifuentesarango@misena.edu.co', '1999-09-25', '$2y$10$2d/hEWpslV7QaBe2LnivYOJzC/cJ4tA/ZsGvQ7eUgG4hpxKUaa7CC', 2),
-(7, 12121212, '121212', '121212', 1212121, '121212@12121.com', '1999-09-25', '$2y$10$N7MBceg3OhEwaImyEe1QBOtLVZoN9GPYx/94ZRyk6G931jam4CTGe', 2),
-(8, 0, '333', '333', 333333333, '1@2.com', '2018-09-06', '$2y$10$u6ufWLBHXKhIkGflfw6jleurPeTLHy.Lo8s43xsY8Qa9ReJhB0Mf6', 2),
-(10, 123123123123, 'asddsad', '1231313213', 13123123, 'adsadsad@aadssda.com', '1999-09-25', '$2y$10$HIC.uwANqDLSullgr4DS9uTWCuGB39Y5IIpfk0NQg8FyA5BdHEgtq', 2),
-(11, 333409849131208394, 'sadadas', 'adasdasdasd', 2147483647, 'dq@ads.com', '1999-09-25', '$2y$10$H43bvkKMliSRlUwlNki6KOhLnsw1ub6cKjbRUcOuwlyNa40JLaY2C', 2),
-(12, 3123123123123213, 'sdadasdad', 'sadasdasdasd', 2147483647, '123123131@sadasd.com', '0000-00-00', '$2y$10$R0PpwnXQm9B3hzWpx2xdquV.7bkMdrGDtuoR3GirsAID3za7VGf96', 2),
-(13, 990925136411999, 'sergio', 'cifuentes', 2085072, 'scifuentesarango@hotmail.com', '1999-09-25', '$2y$10$cFoZ2rPnucbk5nGZM1iCUuqTstshe6ABeDl9m18.yOLRPKOiYlt3G', 2);
 
 --
 -- Índices para tablas volcadas
@@ -732,12 +672,6 @@ ALTER TABLE `gal_pie`
   ADD KEY `fk_pi_cod` (`fk_pi_cod`);
 
 --
--- Indices de la tabla `inventario`
---
-ALTER TABLE `inventario`
-  ADD PRIMARY KEY (`inv_id`);
-
---
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
@@ -763,32 +697,11 @@ ALTER TABLE `pc`
   ADD KEY `fk_fil_id` (`fk_fil_id`);
 
 --
--- Indices de la tabla `pc_inv`
---
-ALTER TABLE `pc_inv`
-  ADD KEY `fk_pc_id` (`fk_pc_id`),
-  ADD KEY `fk_inv_id` (`fk_inv_id`);
-
---
--- Indices de la tabla `pc_pie`
---
-ALTER TABLE `pc_pie`
-  ADD KEY `fk_pc_id` (`fk_pc_id`),
-  ADD KEY `fk_pi_cod` (`fk_pi_cod`);
-
---
 -- Indices de la tabla `piezas`
 --
 ALTER TABLE `piezas`
   ADD PRIMARY KEY (`pi_cod`),
   ADD KEY `fk_tipo_id` (`fk_tipo_id`);
-
---
--- Indices de la tabla `pi_inv`
---
-ALTER TABLE `pi_inv`
-  ADD KEY `fk_inv_id` (`fk_inv_id`),
-  ADD KEY `fk_pi_cod` (`fk_pi_cod`);
 
 --
 -- Indices de la tabla `rol`
@@ -812,8 +725,7 @@ ALTER TABLE `tipopieza`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`usu_id`),
-  ADD KEY `fk_rol_id` (`fk_rol_id`);
+  ADD PRIMARY KEY (`usu_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -824,51 +736,61 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `comentarios`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `com_pc`
 --
 ALTER TABLE `com_pc`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `com_pie`
 --
 ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `egg`
 --
 ALTER TABLE `egg`
   MODIFY `egg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT de la tabla `filtros`
 --
 ALTER TABLE `filtros`
   MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
   MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
   MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT de la tabla `tipopc`
 --
 ALTER TABLE `tipopc`
   MODIFY `tipopc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- Restricciones para tablas volcadas
 --
@@ -965,37 +887,10 @@ ALTER TABLE `pc`
   ADD CONSTRAINT `pc_ibfk_4` FOREIGN KEY (`fk_fil_id`) REFERENCES `filtros` (`fil_id`);
 
 --
--- Filtros para la tabla `pc_inv`
---
-ALTER TABLE `pc_inv`
-  ADD CONSTRAINT `pc_inv_ibfk_2` FOREIGN KEY (`fk_inv_id`) REFERENCES `inventario` (`inv_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `pc_inv_ibfk_3` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `pc_pie`
---
-ALTER TABLE `pc_pie`
-  ADD CONSTRAINT `pc_pie_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `pc_pie_ibfk_3` FOREIGN KEY (`fk_pc_id`) REFERENCES `pc` (`pc_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `piezas`
 --
 ALTER TABLE `piezas`
   ADD CONSTRAINT `piezas_ibfk_1` FOREIGN KEY (`fk_tipo_id`) REFERENCES `tipopieza` (`tipo_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `pi_inv`
---
-ALTER TABLE `pi_inv`
-  ADD CONSTRAINT `pi_inv_ibfk_1` FOREIGN KEY (`fk_inv_id`) REFERENCES `inventario` (`inv_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `pi_inv_ibfk_2` FOREIGN KEY (`fk_pi_cod`) REFERENCES `piezas` (`pi_cod`) ON DELETE NO ACTION ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`fk_rol_id`) REFERENCES `rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

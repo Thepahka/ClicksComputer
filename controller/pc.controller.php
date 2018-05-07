@@ -34,8 +34,21 @@
       $direccion2 = $_FILES["imagen"]["tmp_name"];
       $nombre2 = $_FILES["imagen"]["name"];
 
-      move_uploaded_file($direccion, "views/modules/Shop_User/$nombreemp/computadores/$nombre");
-      move_uploaded_file($direccion2, "views/modules/Shop_User/$nombreemp/computadores/$nombre2");
+      $ruta = "views/modules/Shop_User/$nombreemp/computadores";
+
+      if(!file_exists($ruta))
+      {
+        mkdir($ruta, 0777, true);
+        move_uploaded_file($direccion, "views/modules/Shop_User/$nombreemp/computadores/$nombre");
+        move_uploaded_file($direccion2, "views/modules/Shop_User/$nombreemp/computadores/$nombre2");
+      }
+      else
+      {
+        move_uploaded_file($direccion, "views/modules/Shop_User/$nombreemp/computadores/$nombre");
+        move_uploaded_file($direccion2, "views/modules/Shop_User/$nombreemp/computadores/$nombre2");
+      }
+
+
     }
 
     public function Filtros()
