@@ -24,3 +24,13 @@
 </div>
 <script type="text/javascript" src="views/assets/js/modal.js"></script>
 </div>
+
+<input type="checkbox" id="cerrarres2">
+<div class="modalregis2">
+  <div class="contenido-resg2">
+    <ul>
+      <h3 class="mod-regis">La dashboard no esta disponible para dispositivos moviles, puede actualizar sus datos aqui:</h3>
+      <a type="button" href="GestionPerfil">Gestor de perfil</a>
+    </ul>
+  </div>
+</div>

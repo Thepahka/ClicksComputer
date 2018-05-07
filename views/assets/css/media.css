@@ -480,5 +480,36 @@ a[href="sobre"]{
 .contenedornit{
   display: -webkit-inline-box;
 }
+/* dashboard */
+.dataTables_wrapper{
+  display: none;
+}
+.modalregis2{
+  display: flex;
+}
+/* gestor perfil */
+.nav-titulo{
+  font-size: 24px;
+  right: 376px;
+  position: relative;
+}
+.migadepan{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

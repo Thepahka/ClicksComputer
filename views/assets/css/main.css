@@ -395,6 +395,66 @@ div.logo--principal{
     opacity: 1;
   }
 }
+.modalregis2{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(34, 34, 34, 0.77);
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: none;
+  animation: modal 1s 2.13s forwards;
+  visibility: hidden;
+  opacity: 0;
+}
+.contenido-resg2{
+  margin: 10% 7%;
+  width: 88%;
+  height: 60%;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'roboto', sans-serif;
+  font-size: 18px;
+  padding: 60px 0px;
+}
+#cerrarres2{
+  display: none;
+}
+#cerrarres2 + label{
+  position: fixed;
+  color: #ffffff;
+  font-size: 19px;
+  z-index: 100000;
+  background: rgb(168, 168, 168);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  text-align: center;
+  right: 430px;
+  top: 170px;
+  transition: 0.3s;
+  animation: modal 1s 3s forwards;
+  visibility: hidden;
+  opacity: 0;
+}
+#cerrarres2:hover + label{
+  background: rgb(255, 23, 23);
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+/* cerrar boton cerrar */
+#cerrarres2:checked + label, #cerrarres2:checked ~ .modalregis{
+  display: none;
+}
+@keyframes modal {
+  100%{
+    visibility: visible;
+    opacity: 1;
+  }
+}
 /*contenedor de formulario de empresa*/
 .body-registroem{
   position: relative;
