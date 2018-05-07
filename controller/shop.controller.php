@@ -77,6 +77,7 @@ class ShopController
       $result = $this->shop->selecttel($idempresa);
       return $result;
   }
+
   public function Leer6()
   {
       $idempresa = $_SESSION["emp"]["id"];
@@ -84,26 +85,15 @@ class ShopController
       return $result;
   }
 
-  public function updateDesc()
+  public function Leer7()
   {
       $idempresa = $_SESSION["emp"]["id"];
-
-      $newdesc = $_POST["descripcion"];
-
-      if($newdesc == "")
-      {
-          echo '<script language="javascript">alert("Por favor ingresa una descripcion valida para actualizar");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-      else
-      {
-          $this->shop->updatedesc($newdesc, $idempresa);
-          echo '<script language="javascript">alert("La descripcion de su empresa se actualizo con exito");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
+      $result = $this->shop->seleccontra($idempresa);
+      return $result;
   }
 
-  public function updateNit()
+
+  public function updateInfo()
   {
       $idempresa = $_SESSION["emp"]["id"];
 
@@ -113,80 +103,31 @@ class ShopController
 
       $newnit = $nit."-".$complemento;
 
-      if($nit == "")
-      {
-          echo '<script language="javascript">alert("Por favor ingresa un nit valido para actualizar");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-      elseif($complemento == "")
-      {
-          echo '<script language="javascript">alert("Por favor ingresa un nit valido para actualizar");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-      else
-      {
-          $this->shop->updatenit($newnit, $idempresa);
-          echo '<script language="javascript">alert("El nit de su empresa se actualizo con exito");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-  }
-
-  public function updateDir()
-  {
-      $idempresa = $_SESSION["emp"]["id"];
+      $newdesc = $_POST["descripcion"];
 
       $newdir = $_POST["direccion"];
 
-      if($newdir == "")
-      {
-          echo '<script language="javascript">alert("Por favor ingresa una dirección valida para actualizar");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-      else
-      {
-          $this->shop->updatedir($newdir, $idempresa);
-          echo '<script language="javascript">alert("La dirección de su empresa se actualizo con exito");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-  }
-
-  public function updateCor()
-  {
-      $idempresa = $_SESSION["emp"]["id"];
-
       $newcor = $_POST["correo"];
-
-      if($newcor == "")
-      {
-          echo '<script language="javascript">alert("Por favor ingresa un correo valido para actualizar");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-      else
-      {
-          $this->shop->updatecor($newcor, $idempresa);
-          echo '<script language="javascript">alert("El correo de su empresa se actualizo con exito");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-  }
-
-  public function updateTel()
-  {
-      $idempresa = $_SESSION["emp"]["id"];
 
       $newtel = $_POST["telefono"];
 
-      if($newtel == "")
-      {
-          echo '<script language="javascript">alert("Por favor ingresa un telefono valido para actualizar");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
-      else
-      {
-          $this->shop->updatetel($newtel, $idempresa);
-          echo '<script language="javascript">alert("El telefono de su empresa se actualizo con exito");</script>';
-          echo "<script>window.location.href='GestionPerfil'</script>";
-      }
+      $result = $this->shop->selectcontra($idempresa);
+
+      $contraseña = $_POST["contraseñaactual"];
+
+      $contra = $result[0]["emp_contra"];
+
+      $newcontra = $_POST["contraseña"];
+
+      $datos = array($newnit, $newdesc, $newdir, $newcor, $newtel, $newcontra, $idempresa);
+      print_r($datos);
+      // $result2 = $this->shop->update($datos);
+      // $_SESSION["emp"]["nit"] = $newnit;
+      // echo '<script language="javascript">alert("Datos actualizados con exito");</script>';
+      // echo "<script>window.location.href='GestionPerfil'</script>";
   }
+
+
 
 }
 ?>

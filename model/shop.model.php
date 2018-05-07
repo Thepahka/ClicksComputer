@@ -171,16 +171,15 @@ class ShopModel
 
     return $result;
   }
-
-  public function updatedesc($newdesc, $idempresa)
+  public function selectcontra($idempresa)
   {
     try
     {
-      $sql = "CALL ActualizarDescEmp(?,?)";
+      $sql = "CALL Contraseña(?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($newdesc, $idempresa));
+      $query->execute(array($idempresa));
 
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }
@@ -192,75 +191,15 @@ class ShopModel
     return $result;
   }
 
-  public function updatedir($newdir, $idempresa)
+  public function update($datos)
   {
     try
     {
-      $sql = "CALL ActualizarDirEmp(?,?)";
+      $sql = "CALL ActualizarInfo(?,?,?,?,?,?,?)";
 
       $query = $this->pdo->prepare($sql);
 
-      $query->execute(array($newdir, $idempresa));
-
-      $result = $query->fetchAll(PDO::FETCH_BOTH);
-    }
-    catch(PDOException $e)
-    {
-      $result = $e->getMessage();
-    }
-
-    return $result;
-  }
-
-  public function updatecor($newcor, $idempresa)
-  {
-    try
-    {
-      $sql = "CALL ActualizarCorEmp(?,?)";
-
-      $query = $this->pdo->prepare($sql);
-
-      $query->execute(array($newcor, $idempresa));
-
-      $result = $query->fetchAll(PDO::FETCH_BOTH);
-    }
-    catch(PDOException $e)
-    {
-      $result = $e->getMessage();
-    }
-
-    return $result;
-  }
-
-  public function updatetel($newtel, $idempresa)
-  {
-    try
-    {
-      $sql = "CALL ActualizarTelEmp(?,?)";
-
-      $query = $this->pdo->prepare($sql);
-
-      $query->execute(array($newtel, $idempresa));
-
-      $result = $query->fetchAll(PDO::FETCH_BOTH);
-    }
-    catch(PDOException $e)
-    {
-      $result = $e->getMessage();
-    }
-
-    return $result;
-  }
-
-  public function updatenit($newnit, $idempresa)
-  {
-    try
-    {
-      $sql = "CALL ActualizarNitEmp(?,?)";
-
-      $query = $this->pdo->prepare($sql);
-
-      $query->execute(array($newnit, $idempresa));
+      $query->execute(array($datos));
 
       $result = $query->fetchAll(PDO::FETCH_BOTH);
     }
