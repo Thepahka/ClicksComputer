@@ -195,6 +195,10 @@ div.menu-top{
 .manual-libro{
   margin-right: 5px;
 }
+/* menu res */
+.responsive-me{
+  display: none;
+}
 /* botones tienda */
 .f-re{
   margin-top: 3px;
@@ -1242,11 +1246,21 @@ tr[role="row"]{
   color: #000000;
   font-size: 15px;
   font-family: 'roboto', sans-serif;
-  padding: 0px 60px;
+  padding: 0px 160px;
+}
+.cpc2{
+  color: #000000;
+  font-size: 15px;
+  font-family: 'roboto', sans-serif;
+  padding: 0px 0px;
+}
+select[class="in-cpctipo2"]{
+  position: relative;
+  left: 15px;
 }
 .wrap-pcnew{
   position: relative;
-  top: 2%;
+  top: 0px;
 }
 .in-cpc{
   position: relative;
@@ -1321,7 +1335,7 @@ tr[role="row"]{
   -o-border-radius: 4px;
   font-family: 'roboto',sans-serif;
 }
-.in-cpctipo{
+.in-cpctipo, .in-cpctipo2{
   position: relative;
   padding: 0px 8px;
   height: 25px;
@@ -1372,7 +1386,7 @@ tr[role="row"]{
 .in-cpcod:focus,.in-cpcname:focus,
 .in-cpcarea:focus,.in-cpcmodel:focus,
 .in-cpctipo:focus,.in-cpcmarca:focus,
-.in-cpcprecio:focus{
+.in-cpcprecio:focus, .in-cpctipo2:focus{
   border: 1px solid rgb(255, 0, 0);
   transition: 0.3s;
   background-color: rgb(255, 255, 255);
@@ -1767,4 +1781,11 @@ input[type="file"]{
 }
 .dataTables_info{
     margin-left: 432px;
+}
+/* selectores */
+.selector-cont{
+  position: relative;
+  left: 0px;
+}
+.selector-da{
 }

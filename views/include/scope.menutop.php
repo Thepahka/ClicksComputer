@@ -5,11 +5,13 @@ require_once("scope.header.php");
 </div>
   <div class="menu-top">
     <div class="cc">
+      <div class="menu_bar">
       <i class="fas fa-bars icon-r"></i>
+    </div>
       <a class="cc-letra">clickscomputer</a>
       <img class="logo" src="views/assets/image/logo.png">
     </div>
-    <div class="wrap--btn">
+    <div class="wrap-btn">
       <ul class="buttons-menu">
         <a class="item" href="views/modules/manual_de_usuario/indexmanual.html"><i class="fas fa-book manual-libro" aria-hidden="true"></i>Manual de usuario</a>
         <a class="item" href="Tiendas"><i aria-hidden="true"></i>Tiendas</a>
@@ -32,5 +34,14 @@ require_once("scope.header.php");
         <a class="item" href="Email"><i class="fa fa-user-plus f-re" aria-hidden="true"></i>acceder</a>
       </ul>
     </div>
-    <?php require_once 'views/include/scope.header.php';?>
 </div>
+
+<nav>
+<div class="responsive-me">
+  <p>dasdasdsadas</p>
+</div>
+</nav>
+
+<script type="text/javascript" src="views/assets/js/menures.js"></script>
+
+<?php require_once 'views/include/scope.header.php';?>

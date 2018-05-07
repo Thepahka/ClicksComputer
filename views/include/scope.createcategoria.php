@@ -28,16 +28,18 @@ function letrasynumeros(e){
       <div class="modal-content">
         <span class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
         <p class="model-textp">Registrar nueva categoria</p>
+        <div class="selector-cont">
         <?php
          foreach($this->Read2() as $row)
          {
         ?>
-        <form id="nuevocategoria" class="form-conta" action="CrearCategoria" method="post">
-          <input  type="checkbox" name="data[]" id="ch-bx" value="<?php echo $row["fil_id"]; ?>">
-        <label for="ch-bx" class="ch-name"><?php echo $row["fil_nom"] ?></label>
+        <form id="nuevocategoria" class="selector-da" action="CrearCategoria" method="post">
+          <input  type="checkbox" class="selector-da" name="data[]" id="ch-bx" value="<?php echo $row["fil_id"]; ?>">
+        <label class="ch-name"><?php echo $row["fil_nom"] ?></label>
         <?php } ?>
         <input class="btn-dash-mar" type="submit" value="Registrar categoria">
     </form>
+  </div>
         <p class="indicacion-res">Selecciona las categorias que quieres añadir a tu tienda.</p>
       </div>
     </div>

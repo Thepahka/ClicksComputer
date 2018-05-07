@@ -16,6 +16,18 @@ CONTENT RYLES MEDIA CSS
   .item{
     display: none;
   }
+
+.responsive-me{
+  display: block;
+  margin: 53px 0px;
+  width: 210px;
+  height: 100%;
+  left: -50%;
+  background: red;
+  position: absolute;
+  z-index: 1000000;
+}
+
   /*landing*/
   .menu-top .logo{
     display: none;
@@ -323,29 +335,67 @@ form[id="validate"] {
   font-size: 15px;
 }
 /* registro de empresa */
+.body-regisem{
+  background-color: rgba(128, 150, 159, 1);
+  background-image: none;
+}
 .titulo-em {
-    left: 7%;
+  left: 7%;
 }
 .body-registroem{
   top: -9px;
+  height: 100%;
 }
 .wrap-labels-regem{
   right: 40px;
 }
 .labels-regem{
   margin-bottom: 40px;
+  font-size: 18px;
 }
-
-
-
-
-
-
-
-
-
-
-
+.wrap-input-regem {
+    position: relative;
+    left: -80px;
+    bottom: 460px;
+    padding: 0px 85px;
+}
+.input-regem {
+    margin: 23px 10px;
+}
+.migadepan2{
+  display: none;
+}
+.inicio-sesionregis{
+  height: 100%;
+}
+label[for="EmpNom"]{
+  position: relative;
+  top: 3px;
+}
+label[for="EmpDir"]{
+  position: relative;
+  top: -8px;
+}
+label[for="EmpTel"]{
+  position: relative;
+  top: 34px;
+}
+label[for="EmpCorreo"]{
+  position: relative;
+  top: 20px;
+}
+label[for="EmpContra"]{
+  position: relative;
+  top: 0px;
+}
+.boton-registroem{
+  position: relative;
+  top: -7px;
+  left: 40px;
+  margin: 0px;
+  font-size: 18px;
+  width: 270px;
+}
 /* inicio de sesion */
 .body-login{
   background-image: none;
@@ -405,6 +455,16 @@ form[id="validate"] {
   left: 130px;
 }
 /*dashboard*/
+a[href="sobre"]{
+  display: none;
+}
+.item-dash {
+    position: relative;
+    right: 15%;
+    font-size: 15px;
+    top: 20px;
+    padding: 0px;
+}
 .EnterpriseProfile{
   display: none;
 }
@@ -420,13 +480,5 @@ form[id="validate"] {
 .contenedornit{
   display: -webkit-inline-box;
 }
-.wrap-input-regem {
-    position: relative;
-    left: -80px;
-    bottom: 460px;
-    padding: 0px 85px;
-}
-
-
 
 }

@@ -25,14 +25,14 @@
         <label for="CreateMod" class="cpc">Modelo del computador</label>
         <input id="CreateMod" type="text" name="data[]" class="in-cpcmodel"></br>
         <label for="CreateMarca" class="cpc">Marca del computador</label>
-        <select id="CreateMarca" type="text" name="data[]" class="in-cpcmarca"></br>
+        <select id="CreateMarca" type="text" name="data[]" class="in-cpcmarca">
           <?php
           foreach($Marcas as $row3)
           {
           ?>
-          <option value="<?php echo $row3["mar_id"] ?>"><?php echo $row3["mar_nombre"]; ?></option>
+          <option value="<?php echo $row3["mar_id"] ?>"><?php echo $row3["mar_nombre"]; ?></option><br>
         <?php } ?>
-      </select>
+      </select><br>
 
         <label for="CreateTip" class="cpc">Tipo de computador</label>
         <select id="CreateTip" name="data[]" class="in-cpctipo"></br>
@@ -42,17 +42,16 @@
           ?>
           <option value="<?php echo $row2["tipopc_id"]; ?>"><?php echo $row2["tipopc_nom"]; ?></option></br>
         <?php } ?>
-        </select>
-
+      </select><br>
         <label for="CreateTip" class="cpc">Categoria del computador</label>
-        <select id="CreateTip" name="data[]" class="in-cpctipo"></br>
+        <select id="CreateTip" name="data[]" class="in-cpctipo2">
           <?php
           foreach($filtros as $row)
           {
             ?>
           <option value="<?php echo $row["fil_id"]; ?>"><?php echo $row["fil_nom"] ?></option>
         <?php } ?>
-        </select>
+      </select><br>
         <label for="CreateFicha" class="pdf cpc">Ficha tecnica del computador</label>
         <input id="CreateFicha" type="file" name="ficha" class="custom-file-input input-filep2"></br>
         <label for="CreatePrecio" class="cpc">Precio del computador</label>
