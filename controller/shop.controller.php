@@ -119,12 +119,29 @@ class ShopController
 
       $newcontra = $_POST["contraseña"];
 
-      $datos = array($newnit, $newdesc, $newdir, $newcor, $newtel, $newcontra, $idempresa);
-      print_r($datos);
-      // $result2 = $this->shop->update($datos);
-      // $_SESSION["emp"]["nit"] = $newnit;
-      // echo '<script language="javascript">alert("Datos actualizados con exito");</script>';
-      // echo "<script>window.location.href='GestionPerfil'</script>";
+      if(empty($nit) and !empty($complemento))
+      {
+        echo '<script language="javascript">alert("Complete los dos campos para actualizar el nit");</script>';
+        echo "<script>history.back(1)</script>";
+      }
+      elseif(!empty($nit) and empty($complemento))
+      {
+        echo '<script language="javascript">alert("Complete los dos campos para actualizar el nit");</script>';
+        echo "<script>history.back(1)</script>";
+      }
+      elseif(empty($nit) and empty($complemento))
+      {
+        echo '<script language="javascript">alert("Complete los dos campos para actualizar el nit");</script>';
+        echo "<script>history.back(1)</script>";
+      }
+      else
+      {
+        $this->shop->updatenit($newnit, $idempresa);
+        $_SESSION["emp"]["nit"] = $newnit;
+        echo '<script language="javascript">alert("Nit actualizado con exito");</script>';
+        echo "<script>window.location.href='GestionPerfil'</script>";
+      }
+
   }
 
 
