@@ -1,0 +1,29 @@
+DELIMITER $$
+CREATE PROCEDURE EliminarTodos()
+BEGIN
+  DELETE FROM cli_emp;
+  DELETE FROM com_pc;
+  DELETE FROM com_pie;
+  DELETE FROM emp_pc;
+  DELETE FROM emp_pie;
+  DELETE FROM fil_emp;
+  DELETE FROM gal_pc;
+  DELETE FROM gal_pie;
+  DELETE FROM pc_inv;
+  DELETE FROM pc_pie;
+  DELETE FROM pi_inv;
+  DELETE FROM tipopc;
+  DELETE FROM tipopieza;
+  DELETE FROM empresa;
+  DELETE FROM filtros;
+  DELETE FROM marca;
+  DELETE FROM pc;
+  DELETE FROM usuario;
+  DELETE FROM piezas;
+  DELETE FROM comentarios;
+  DELETE FROM galeria;
+  DELETE FROM inventario;
+  DELETE FROM egg;
+  DELETE FROM rol;
+END $$
+DELIMITER ;

@@ -1,4 +1,7 @@
-<?php ?>
+<?php
+$result = $this->ReadPc($_GET["data"]);
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,12 +13,27 @@
     <?php
     require_once 'views/include/scope.menutiendaspc.php';
     ?>
-    <!-- <div class="producto-ti-lado">
-      <div class="pro-ti-co-la">
-        <div class="atri-con" id="resultado">
-        </div>
-      </div>
-    </div> -->
+
+    <?php
+    foreach($result as $row)
+    {
+      $empnom = $row["emp_nom"];
+      $imagen = $row["pc_img"];
+      $pdf = $row["ficha_tecnica"];
+      $ruta = "views/modules/Shop_User/$empnom/computadores/$imagen";
+      $ruta2 = "views/modules/Shop_User/$empnom/computadores/$pdf";
+     ?>
+     <div class="producto-ti-lado">
+           <div class="pro-ti-co-la">
+             <img class="img-prod" src="<?php echo $ruta ?>">
+             <div class="atri-con">
+             <p class="atribu-pro"><?php echo $row["pc_nom"]; ?></p>
+             <p class="atribu-pro"><?php echo number_format($row["pc_precio"]); ?></p>
+             <p class="atribu-pro"><?php echo $row["mar_nombre"]; ?></p>
+             </div>
+           </div>
+         </div>
+  <?php } ?>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script type="Javascript" src="views/assets/js/ajax.js"></script>
   </body>

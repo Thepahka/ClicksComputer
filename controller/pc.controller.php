@@ -38,20 +38,20 @@
 
       $ruta = "views/modules/Shop_User/$nombreemp/computadores";
 
-      print_r($datos);
-      if(!file_exists($ruta))
+      if(file_exists($ruta))
       {
-        mkdir($ruta, 0777, true);
         move_uploaded_file($direccion, "views/modules/Shop_User/$nombreemp/computadores/$nombre");
         move_uploaded_file($direccion2, "views/modules/Shop_User/$nombreemp/computadores/$nombre2");
         $this->savepc->RegisterPc($datos);
       }
       else
       {
+        mkdir($ruta, 0777, true);
         move_uploaded_file($direccion, "views/modules/Shop_User/$nombreemp/computadores/$nombre");
         move_uploaded_file($direccion2, "views/modules/Shop_User/$nombreemp/computadores/$nombre2");
         $this->savepc->RegisterPc($datos);
       }
+
 
 
     }

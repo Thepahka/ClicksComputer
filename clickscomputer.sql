@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2018 a las 21:46:30
+-- Tiempo de generación: 08-05-2018 a las 23:05:42
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -508,7 +508,9 @@ CREATE TABLE `pc` (
 
 INSERT INTO `pc` (`pc_id`, `pc_cod`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_mar_id`, `fk_tipopc_id`, `fk_fil_id`, `ficha_tecnica`, `pc_precio`, `pc_img`, `fk_emp_id`) VALUES
 (11, 1355155, 'pc ', 'pc de uso frecuente', 'x553m3', 2, 3, 16, 'ejemplo.pdf', 1500000, 'ejemplo.jpg', 6),
-(12, 987654321, 'pc master reis', 'pal maincra', 'tt45x3', 1, 1, 15, 'iso.pdf', 35000000, 'prueba2.jpg', 6);
+(12, 987654321, 'pc master reis', 'pal maincra', 'tt45x3', 1, 1, 15, 'iso.pdf', 35000000, 'prueba2.jpg', 6),
+(18, 121, 'pc master reis 2', 'pc master reis 3', 'xxxxxxx', 1, 1, 14, 'eliminar.txt', 13000000, 'master reis 2.jpg', 6),
+(19, 121212, 'pc pug', 'pici para juegar al pugbgb', '1212bb', 2, 3, 14, 'simple past video questions.docx', 3500000, 'pug.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -782,7 +784,7 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
-  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `tipopc`
