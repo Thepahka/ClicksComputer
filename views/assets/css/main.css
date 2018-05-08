@@ -1767,6 +1767,12 @@ input[type="file"]{
 .body-tienda{
   background-color: rgb(245, 245, 245);
 }
+.container-products{
+  width: 90%;
+  height: auto;
+  margin-left: 9%;
+  margin-top: 5%;
+}
 .contenedor-tien-lado{
   padding-top: 28px;
   text-align: center;
@@ -1803,12 +1809,11 @@ input[type="file"]{
   color: rgb(255, 255, 255);
   border-left: 5px solid rgb(255, 255, 255);
 }
+
 .producto-ti-lado{
   background: none;
-  width: 200px;
-  margin: 0px 260px;
-  position: relative;
   top: 75px;
+  float: right;
 }
 .pro-ti-co-la{
   background-color: rgb(255, 255, 255);

@@ -23,6 +23,7 @@ $result = $this->ReadPc($_GET["data"]);
       $ruta = "views/modules/Shop_User/$empnom/computadores/$imagen";
       $ruta2 = "views/modules/Shop_User/$empnom/computadores/$pdf";
      ?>
+     <section class="container-products">
      <div class="producto-ti-lado">
            <div class="pro-ti-co-la">
              <img class="img-prod" src="<?php echo $ruta ?>">
@@ -33,6 +34,7 @@ $result = $this->ReadPc($_GET["data"]);
              </div>
            </div>
          </div>
+       </section>
   <?php } ?>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script type="Javascript" src="views/assets/js/ajax.js"></script>
