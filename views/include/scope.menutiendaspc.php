@@ -1,3 +1,4 @@
+<?php $result = $this->ReadPc($_GET["data"]);?>
 <div class="contenedor-tien-lado">
   <div class="busc-cont">
     <i class="fas fa-search lupa-busqued"></i>

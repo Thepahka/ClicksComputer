@@ -15,6 +15,11 @@ class TiendaController
     require_once "views/modules/tienda/tiendas.php";
   }
 
+  public function ReadPcs()
+  {
+    require_once "views/modules/tienda/tiendaspc.php";
+  }
+
   public function Read()
   {
     $result = $this->tienda->Tiendas();
@@ -25,15 +30,22 @@ class TiendaController
   {
     $empid = $_GET["data"];
     $result = $this->tienda->PcTiendas($empid);
-    $tienda = $result[0][14];
-    $pdf = $result[0][8];
-    $img = $result[0][10];
-    $pc = $result[0][2];
 
-    $ruta = "views/modules/Shop_User/$tienda/computadores/$img";
-    $ruta2 = "views/modules/Shop_User/$tienda/computadores/$pdf";
+    foreach($result as $row)
+    {
+      $empnom = $row["emp_nom"];
+      $imagen = $row["pc_img"];
+      $pdf = $row["ficha_tecnica"];
 
-    echo "<img src=".$ruta."></img>";
+      $ruta = "views/modules/Shop_User/$empnom/computadores/$imagen";
+      $ruta2 = "views/modules/Shop_User/$empnom/computadores/$pdf";
+    echo "<div class='atri-con' id='Resultadospcs'>";
+      echo "<p>".$row["pc_nom"]."</p>";
+      echo "<img width='100px' height='300px' src=".$ruta."></img>";
+      echo "<p>".$row['pc_precio']."</p>";
+      echo "<p>".$row['mar_nombre']."</p>";
+    echo "</div>";
+    }
 
   }
 
