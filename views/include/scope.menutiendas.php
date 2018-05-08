@@ -10,7 +10,9 @@
   $item++
   ?>
   <ul>
-  <li class="tienda-dis"><?php echo $row[2]; ?></li>
+    <form class="" action="Tiendas-<?php echo $row[0]; ?> ">
+      <input type="submit" class="tienda-dis" value="<?php echo $row[2]; ?>">
+    </form>
   </ul>
 <?php } ?>
 </div>

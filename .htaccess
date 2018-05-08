@@ -53,6 +53,7 @@ RewriteRule ^EliminarCategorias$ index.php?c=categoria&a=DeleteCats
 
 #Tiendas
 RewriteRule ^Tiendas$ index.php?c=tienda&a=ViewTienda
+RewriteRule ^Tiendas-(\w+)$ index.php?c=tienda&a=ReadPc&data=$1
 
 #Manual de usuario
 RewriteRule ^ManualDeUsuario$ views/modules/manual/manualdeusuario.php?

@@ -35,6 +35,25 @@ class TiendaModel
     return $result;
   }
 
+  public function PcTiendas($empid)
+  {
+    try
+    {
+      $sql = "CALL ConsultPc(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($empid));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
 }
 
 

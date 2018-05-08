@@ -35,6 +35,25 @@ class PcModel
     return $result;
   }
 
+  public function RegisterPc($datos)
+  {
+    try
+    {
+      $sql = "CALL Guardarpc(?,?,?,?,?,?,?,?,?,?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute($datos);
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
   public function allTypes()
   {
     try

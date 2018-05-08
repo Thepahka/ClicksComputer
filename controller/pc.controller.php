@@ -25,27 +25,32 @@
     public function CreatePc()
     {
       $empid = $_SESSION["emp"]["id"];
-      $data = $_POST["data"];
-
       $nombreemp = $_SESSION["user"]["nombre"];
+
+      $data = $_POST["data"];
 
       $direccion = $_FILES["ficha"]["tmp_name"];
       $nombre = $_FILES["ficha"]["name"];
       $direccion2 = $_FILES["imagen"]["tmp_name"];
       $nombre2 = $_FILES["imagen"]["name"];
 
+      $datos = array($data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $nombre, $data[7], $nombre2, $empid);
+
       $ruta = "views/modules/Shop_User/$nombreemp/computadores";
 
+      print_r($datos);
       if(!file_exists($ruta))
       {
         mkdir($ruta, 0777, true);
         move_uploaded_file($direccion, "views/modules/Shop_User/$nombreemp/computadores/$nombre");
         move_uploaded_file($direccion2, "views/modules/Shop_User/$nombreemp/computadores/$nombre2");
+        $this->savepc->RegisterPc($datos);
       }
       else
       {
         move_uploaded_file($direccion, "views/modules/Shop_User/$nombreemp/computadores/$nombre");
         move_uploaded_file($direccion2, "views/modules/Shop_User/$nombreemp/computadores/$nombre2");
+        $this->savepc->RegisterPc($datos);
       }
 
 
