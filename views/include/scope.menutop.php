@@ -5,9 +5,6 @@ require_once("scope.header.php");
 </div>
   <div class="menu-top">
     <div class="cc">
-      <div class="menu_bar">
-      <i class="fas fa-bars icon-r"></i>
-    </div>
       <a class="cc-letra">clickscomputer</a>
       <img class="logo" src="views/assets/image/logo.png">
     </div>
@@ -36,12 +33,24 @@ require_once("scope.header.php");
     </div>
 </div>
 
-<nav>
 <div class="responsive-me">
-  <p>dasdasdsadas</p>
-</div>
-</nav>
+<header>
+  <div class="menu_bar">
+    <a href="#" class="bt-menu"><i class="fas fa-bars icon-r"></i></a>
+  </div>
 
+  <nav>
+    <ul>
+      <li><a class="">Productos</a></li>
+      <li><a class="" href="Tiendas"><i aria-hidden="true"></i>Tiendas</a></li>
+      <li><a class="" href="Email"><i class="fa fa-user-plus f-re" aria-hidden="true"></i>acceder</a></li>
+      <li><a class="" href="views/modules/manual_de_usuario/indexmanual.html"><i class="fas fa-book manual-libro" aria-hidden="true"></i>Manual de usuario</a></li>
+    </ul>
+  </nav>
+</header>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest,js"></script>
 <script type="text/javascript" src="views/assets/js/menures.js"></script>
 
 <?php require_once 'views/include/scope.header.php';?>

@@ -16,16 +16,32 @@ CONTENT RYLES MEDIA CSS
   .item{
     display: none;
   }
-
 .responsive-me{
   display: block;
-  margin: 53px 0px;
-  width: 210px;
-  height: 100%;
-  left: -50%;
-  background: red;
   position: absolute;
   z-index: 1000000;
+}
+header nav{
+  width: 80%;
+  height: 100%;
+  margin: 1px 0px;
+  position: fixed;
+  background: rgb(42, 42, 42);
+  padding-top: 30px;
+}
+header nav ul li{
+  display: block;
+  float: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin: 35px 15px;
+  font-size: 21px;
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+}
+.menu_bar{
+  display: block;
+  color: rgb(255, 255, 255);
+  width: 100%;
 }
 
   /*landing*/
