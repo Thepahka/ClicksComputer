@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2018 a las 00:19:00
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Tiempo de generación: 08-05-2018 a las 04:52:07
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -145,6 +145,10 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarTipo` (IN `tipo` VARCHAR(50))  BEGIN
 SELECT * FROM tipopc WHERE tipopc_nom = tipo;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultPc` (IN `id` INT)  BEGIN
+SELECT * FROM pc INNER JOIN empresa ON empresa.emp_id=pc.fk_emp_id WHERE emp_id = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Contraseña` (IN `id` INT)  BEGIN
@@ -346,14 +350,9 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`emp_id`, `emp_nit`, `emp_nom`, `emp_dir`, `emp_desc`, `emp_tel`, `emp_correo`, `emp_contra`, `fk_rol_id`) VALUES
-(6, '123123-4', 'pccomponentes', '', '', 0, 'a@a.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
+(6, '123123-4', 'pccomponentes', '', '', 0, 'pccomponentes@pc.com', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
 (7, '1', 'Alienware Inc', 'b', 'a', 2, 'c', '$2y$10$ITUa25KH0eebR2z6UmYeueK9caUQI7MyoM/L2myJyUmIXGBy/8Gp6', 1),
-(9, '1', 'bambu corp', 'b', 'a', 2, 'c', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1),
-(10, '1', 'pacha\'s corp', 'b', 'a', 2, 'c', '$2y$10$yt/gfUdACrC2tb.Js9KJTOjQYqhGu/rr9FALm8KRrgJ50l/mRg5pW', 1),
-(11, '1', 'pacha corp inc', 'b', 'a', 2, 'c', '$2y$10$TcWKb.764eQaWVYECDmGlesRPmTYxZ9RnCgEI/dljT79PtBgkcuFW', 1),
-(12, '1', 'pruebac', 'b', 'a', 2, 'c', '$2y$10$KjbrX1YBQESxiyPsgMNrveYzpZAhZs1aGfXbil/N1m6s4MO5Bg772', 1),
-(13, '1', 'asd', 'b', 'a', 2, 'c', '$2y$10$n.jpC.lcFYekNklGWb/lYOIyhuOaYZQhlE98BtTfQKoz2qV6qpDE6', 1),
-(14, '1', 'prueba2', 'b', 'a', 2, 'c', '$2y$10$s.NmqO.ejSYJhoNhIHujS.UAtG5jA4RVLcMjJhC7G4zl/2OjxxV9e', 1);
+(9, '1', 'bambu corp', 'b', 'a', 2, 'c', '$2y$10$DiiS3mnIGre7E.ZLmOR/sebdiwwSumhNGOHQFmbdYdUCh8ouqeORe', 1);
 
 -- --------------------------------------------------------
 
@@ -500,10 +499,17 @@ CREATE TABLE `pc` (
   `fk_tipopc_id` int(11) NOT NULL,
   `fk_fil_id` int(11) NOT NULL,
   `ficha_tecnica` varchar(50) NOT NULL,
-  `pc_precio` bigint(20) NOT NULL,
+  `pc_precio` double NOT NULL,
   `pc_img` text NOT NULL,
   `fk_emp_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `pc`
+--
+
+INSERT INTO `pc` (`pc_id`, `pc_cod`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_mar_id`, `fk_tipopc_id`, `fk_fil_id`, `ficha_tecnica`, `pc_precio`, `pc_img`, `fk_emp_id`) VALUES
+(11, 1355155, 'pc ', 'pc de uso frecuente', 'x553m3', 2, 3, 16, 'ejemplo.pdf', 1500000, 'ejemplo.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -736,61 +742,51 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `comentarios`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `com_pc`
 --
 ALTER TABLE `com_pc`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `com_pie`
 --
 ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `egg`
 --
 ALTER TABLE `egg`
   MODIFY `egg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
 -- AUTO_INCREMENT de la tabla `filtros`
 --
 ALTER TABLE `filtros`
   MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
   MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
-  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `tipopc`
 --
 ALTER TABLE `tipopc`
   MODIFY `tipopc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- Restricciones para tablas volcadas
 --
