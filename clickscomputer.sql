@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2018 a las 04:52:07
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Tiempo de generación: 08-05-2018 a las 21:46:30
+-- Versión del servidor: 10.1.30-MariaDB
+-- Versión de PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -148,7 +148,7 @@ SELECT * FROM tipopc WHERE tipopc_nom = tipo;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultPc` (IN `id` INT)  BEGIN
-SELECT * FROM pc INNER JOIN empresa ON empresa.emp_id=pc.fk_emp_id WHERE emp_id = id;
+SELECT * FROM pc INNER JOIN empresa ON empresa.emp_id=pc.fk_emp_id INNER JOIN marca ON marca.mar_id=pc.fk_mar_id INNER JOIN tipopc ON tipopc.tipopc_id=pc.fk_tipopc_id INNER JOIN filtros ON filtros.fil_id=pc.fk_fil_id WHERE emp_id = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Contraseña` (IN `id` INT)  BEGIN
@@ -406,9 +406,7 @@ CREATE TABLE `fil_emp` (
 
 INSERT INTO `fil_emp` (`fk_fil_id`, `fk_emp_id`) VALUES
 (14, 6),
-(15, 6),
-(16, 6),
-(17, 6);
+(14, 6);
 
 -- --------------------------------------------------------
 
@@ -509,7 +507,8 @@ CREATE TABLE `pc` (
 --
 
 INSERT INTO `pc` (`pc_id`, `pc_cod`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_mar_id`, `fk_tipopc_id`, `fk_fil_id`, `ficha_tecnica`, `pc_precio`, `pc_img`, `fk_emp_id`) VALUES
-(11, 1355155, 'pc ', 'pc de uso frecuente', 'x553m3', 2, 3, 16, 'ejemplo.pdf', 1500000, 'ejemplo.jpg', 6);
+(11, 1355155, 'pc ', 'pc de uso frecuente', 'x553m3', 2, 3, 16, 'ejemplo.pdf', 1500000, 'ejemplo.jpg', 6),
+(12, 987654321, 'pc master reis', 'pal maincra', 'tt45x3', 1, 1, 15, 'iso.pdf', 35000000, 'prueba2.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -742,51 +741,61 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `comentarios`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `com_pc`
 --
 ALTER TABLE `com_pc`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `com_pie`
 --
 ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `egg`
 --
 ALTER TABLE `egg`
   MODIFY `egg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT de la tabla `filtros`
 --
 ALTER TABLE `filtros`
   MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
   MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
-  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT de la tabla `tipopc`
 --
 ALTER TABLE `tipopc`
   MODIFY `tipopc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- Restricciones para tablas volcadas
 --
