@@ -28,9 +28,11 @@ $result = $this->ReadPc($_GET["data"]);
            <div class="pro-ti-co-la">
              <img class="img-prod" src="<?php echo $ruta ?>">
              <div class="atri-con">
+            <a href="Detalles-<?php echo $row["emp_id"];  ?>-<?php echo $row["pc_id"]; ?>">
              <p class="atribu-pro"><?php echo $row["pc_nom"]; ?></p>
              <p class="atribu-pro"><?php echo number_format($row["pc_precio"]); ?></p>
              <p class="atribu-pro"><?php echo $row["mar_nombre"]; ?></p>
+           </a>
              </div>
            </div>
          </div>

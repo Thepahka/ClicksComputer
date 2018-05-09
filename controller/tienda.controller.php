@@ -19,6 +19,10 @@ class TiendaController
   {
     require_once "views/modules/tienda/tiendaspc.php";
   }
+  public function ReadDetailsPcs()
+  {
+    require_once "views/modules/Pcs/Detalles.php";
+  }
 
   public function Read()
   {
@@ -31,23 +35,14 @@ class TiendaController
     $empid = $_GET["data"];
     $result = $this->tienda->PcTiendas($empid);
     return $result;
-    // foreach($result as $row)
-    // {
-    //   $empnom = $row["emp_nom"];
-    //   $imagen = $row["pc_img"];
-    //   $pdf = $row["ficha_tecnica"];
+  }
 
-
-      // $ruta = "views/modules/Shop_User/$empnom/computadores/$imagen";
-      // $ruta2 = "views/modules/Shop_User/$empnom/computadores/$pdf";
-    // echo "<div class='atri-con' id='Resultadospcs'>";
-    //   echo "<p>".$row["pc_nom"]."</p>";
-    //   echo "<img width='100px' height='300px' src=".$ruta."></img>";
-    //   echo "<p>".$row['pc_precio']."</p>";
-    //   echo "<p>".$row['mar_nombre']."</p>";
-    // echo "</div>";
-    // }
-
+  public function ReadDetailPc()
+  {
+    $empid = $_GET["data"];
+    $pcid = $_GET["data2"];
+    $result = $this->tienda->DetallePc($empid, $pcid);
+    return $result;
   }
 
 }
