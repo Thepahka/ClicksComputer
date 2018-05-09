@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2018 a las 03:41:51
+-- Tiempo de generación: 09-05-2018 a las 04:50:48
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -460,7 +460,31 @@ CREATE TABLE `marca` (
 
 INSERT INTO `marca` (`mar_id`, `mar_nombre`, `fk_pc_id`, `fk_pi_cod`) VALUES
 (1, 'lenovo', NULL, NULL),
-(2, 'msi', NULL, NULL);
+(2, 'msi', NULL, NULL),
+(4, 'everex', NULL, NULL),
+(5, 'simpletch', NULL, NULL),
+(6, 'apple', NULL, NULL),
+(7, 'hp', NULL, NULL),
+(8, 'samsung', NULL, NULL),
+(9, 'dell', NULL, NULL),
+(10, 'acer', NULL, NULL),
+(11, 'toshiba', NULL, NULL),
+(12, 'lenovo', NULL, NULL),
+(13, 'asus', NULL, NULL),
+(14, 'vaio', NULL, NULL),
+(15, 'sony', NULL, NULL),
+(16, 'lg', NULL, NULL),
+(17, 'alienware', NULL, NULL),
+(18, 'compaq', NULL, NULL),
+(19, 'panasonic', NULL, NULL),
+(20, 'ibm', NULL, NULL),
+(21, 'lanix', NULL, NULL),
+(22, 'olivetti', NULL, NULL),
+(23, 'gateway', NULL, NULL),
+(24, 'systemax', NULL, NULL),
+(25, 'fujitsu', NULL, NULL),
+(26, 'microsoft', NULL, NULL),
+(27, 'averatec', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -772,7 +796,7 @@ ALTER TABLE `filtros`
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --

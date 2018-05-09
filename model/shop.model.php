@@ -292,6 +292,25 @@ class ShopModel
     return $result;
   }
 
+  public function Pcs($empid)
+  {
+    try
+    {
+      $sql = "CALL ConsultPc(?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($empid));
+
+      $result = $query->fetchAll(PDO::FETCH_BOTH);
+    }
+    catch(PDOException $e)
+    {
+      $result = $e->getMessage();
+    }
+    return $result;
+  }
+
 }
 
 ?>

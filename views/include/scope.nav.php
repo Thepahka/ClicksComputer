@@ -1,3 +1,4 @@
+<?php  $pc = $this->ReadPc();?>
 <i id="cosa-no-c" class="fas fa-comment-dots"></i>
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis productos</h1>
@@ -12,8 +13,24 @@
               <th>Tipo</th>
               <th>precio</th>
               <th>marca</th>
-              <th>Acciones</th>
+              <!-- <th>Acciones</th> -->
           </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach($pc as $row)
+        {
+        ?>
+        <tr>
+          <td><?php echo $row["pc_nom"]; ?></td>
+          <td><?php echo $row["pc_mod"]; ?></td>
+          <td><?php echo $row["tipopc_nom"]; ?></td>
+          <td><?php echo $row["pc_precio"]; ?></td>
+          <td><?php echo $row["mar_nombre"]; ?></td>
+          <!-- <td></td> -->
+        </tr>
+      <?php } ?>
+      </tbody>
   </table>
 <div id="myModal" class="modal">
   <div class="modal-content-crearpro">

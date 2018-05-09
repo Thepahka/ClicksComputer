@@ -144,6 +144,12 @@ class ShopController
 
   }
 
+  public function ReadPc()
+  {
+    $empid = $_SESSION["emp"]["id"];
+    $result = $this->shop->Pcs($empid);
+    return $result;
+  }
 
 
 }
