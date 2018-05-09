@@ -6,15 +6,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="views/assets/image/logo.png">
   </head>
   <body class="body-tienda">
+    <div class="tex-tie-ayu">
+      <p><i class="fas fa-arrow-alt-circle-left"></i>Porfavor seleccione una tienda.</p>
+    </div>
     <?php
     require_once 'views/include/scope.menutiendas.php';
     ?>
-    <div class="producto-ti-lado">
-      <div class="pro-ti-co-la">
-        <div class="atri-con" id="resultado">
-        </div>
-      </div>
-    </div>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script type="Javascript" src="views/assets/js/ajax.js"></script>
   </body>

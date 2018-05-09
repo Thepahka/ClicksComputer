@@ -825,6 +825,9 @@ textarea{
 .body-dash{
   background-color: rgb(244, 244, 244);
 }
+#cosa-no-c{
+  display: none;
+}
 .item-dash{
   position: relative;
   right: 0%;
@@ -1528,7 +1531,7 @@ input[type="file"]{
   color: black;
   position: relative;
   top: -31px;
-  right: -619px;
+  right: -623px;
   font-size: 18px;
 }
 .migadepan2{
@@ -1547,7 +1550,7 @@ input[type="file"]{
   height: 80px;
   font-size: 13px;
   margin: 10px 11px;
-  width: 460px;
+  width: 400px;
   border: 1px solid #000000;
   background-color: rgb(233, 233, 233);
   outline: none;
@@ -1809,11 +1812,19 @@ input[type="file"]{
   color: rgb(255, 255, 255);
   border-left: 5px solid rgb(255, 255, 255);
 }
-
 .producto-ti-lado{
   background: none;
   top: 75px;
   float: right;
+}
+.tex-tie-ayu {
+  position: relative;
+  top: 300px;
+  left: 340px;
+  font-size: 58px;
+  color: rgb(0, 0, 0);
+  width: 1000px;
+  opacity: 0.6;
 }
 .pro-ti-co-la{
   background-color: rgb(255, 255, 255);
@@ -1853,4 +1864,46 @@ input[type="file"]{
   left: 0px;
 }
 .selector-da{
+}
+/* detalles del pc */
+.det-pc-co{
+  position: relative;
+  left: 350px;
+  top: 60px;
+}
+.det-im-pc{
+  width: 400px;
+  height: 300px;
+}
+.nom-pc-de{
+  font-size: 30px;
+  font-family: 'Oswald',sans-serif;
+}
+.detalles-con-det{
+  background: rgb(214, 214, 214);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  width: 470px;
+  height: 400px;
+  margin-right: 460px;
+  position: relative;
+  float: right;
+  padding: 10px 15px;
+}
+.detalle-pa{
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  margin: 15px 10px;
+  font-family: 'roboto', sans-serif;
+}
+.ficha-de{
+  background: rgb(255, 255, 255);
+  display: block;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 6px 10px;
+  transition: 0.5s;
+}
+.ficha-de:hover{
+  background: rgb(94, 255, 221);
+  transition: 0.5s;
 }

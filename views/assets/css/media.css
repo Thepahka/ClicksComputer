@@ -497,6 +497,30 @@ a[href="sobre"]{
   display: -webkit-inline-box;
 }
 /* dashboard */
+.nav-titulo{
+  display: none;
+}
+.bt-dash-res{
+  font-size: 25px;
+  font-family: 'roboto', sans-serif;
+  display: block;
+  padding: 6px 0px;
+  width: 200px;
+  margin-left: 53px;
+  margin-top: 50px;
+  height: 50px;
+  background: rgb(142, 210, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  border: 2px solid rgb(0, 0, 0);
+}
+#cosa-no-c {
+  display: block;
+  color: rgb(0, 0, 0);
+  font-size: 290px;
+  margin: 170px 40px;
+  opacity: 0.6;
+}
 .dataTables_wrapper{
   display: none;
 }
@@ -504,6 +528,9 @@ a[href="sobre"]{
   display: flex;
 }
 /* gestor perfil */
+#gest-res-p{
+  display: block;
+}
 .nav-titulo{
   font-size: 24px;
   right: 376px;
@@ -512,7 +539,52 @@ a[href="sobre"]{
 .migadepan{
   display: none;
 }
-
-
+.wrap-nav i{
+  display: none;
+}
+.cpc2 {
+    padding: 0px 38px;
+}
+.in-cpcod-uptien-nit {
+    padding: 0px 8px;
+    position: relative;
+    height: 25px;
+    left: 20px;
+    bottom: 0px;
+    margin: 0px 0px;
+}
+.in-cpcod-uptien-complemento {
+    padding: 0px 8px;
+    position: relative;
+    height: 25px;
+    left: 228px;
+    bottom: 35px;
+    margin: 10px 0px;
+    width: 50px;
+}
+.in-cpcarea-perfil {
+    position: relative;
+    bottom: 0px;
+    padding: 5px 8px;
+    left: 10px;
+    height: 80px;
+    margin: 0px 11px;
+    width: 290px;
+}
+.in-cpcod-uptien {
+    padding: 0px 8px;
+    position: relative;
+    height: 25px;
+    left: 22px;
+    bottom: 17px;
+    margin: 16px 0px;
+    width: 291px;
+}
+.btn-aupdateperfil {
+    bottom: 8px;
+    left: 68px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
 
 }

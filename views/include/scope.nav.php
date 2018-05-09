@@ -1,3 +1,4 @@
+<i id="cosa-no-c" class="fas fa-comment-dots"></i>
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis productos</h1>
   <div class="nav-btns">
@@ -30,7 +31,7 @@
   <div class="contenido-resg2">
     <ul>
       <h3 class="mod-regis">La dashboard no esta disponible para dispositivos moviles, puede actualizar sus datos aqui:</h3>
-      <a type="button" href="GestionPerfil">Gestor de perfil</a>
+      <a class="bt-dash-res" href="GestionPerfil">Gestor de perfil</a>
     </ul>
   </div>
 </div>
