@@ -42,11 +42,12 @@ function letrasynumeros(e){
         {
         ?>
         <form id="nuevamarca" class="form-conta" action="CrearMarca" method="post">
-          <input  type="checkbox" name="data[]" id="ch-bx" value="<?php echo $row2["mar_id"]; ?>">
-        <label for="ch-bx" class="ch-name"><?php echo $row2["mar_nombre"] ?></label>
+          <div class="check-marca-c">
+          <input  type="checkbox" name="data[]" id="" value="<?php echo $row2["mar_id"]; ?>">
+          <label for="" class=""><?php echo $row2["mar_nombre"] ?></label>
+      </div>
         <?php } ?>
           <input class="btn-dash-mar" type="submit" value="Registrar marca">
-        </form>
         <p class="indicacion-res">Selecciona las marcas que quieres añadir a tu tienda.</p>
       </div>
     </div>

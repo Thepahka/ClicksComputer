@@ -34,8 +34,10 @@ function letrasynumeros(e){
          {
         ?>
         <form id="nuevocategoria" class="selector-da" action="CrearCategoria" method="post">
+          <div class="check-marca-c">
           <input  type="checkbox" class="selector-da" name="data[]" id="ch-bx" value="<?php echo $row["fil_id"]; ?>">
         <label class="ch-name"><?php echo $row["fil_nom"] ?></label>
+      </div>
         <?php } ?>
         <input class="btn-dash-mar" type="submit" value="Registrar categoria">
     </form>
