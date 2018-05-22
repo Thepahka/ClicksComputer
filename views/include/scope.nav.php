@@ -1,4 +1,8 @@
-<?php  $pc = $this->ReadPc();?>
+<?php
+$pc = $this->ReadPc();
+
+$empid =$_SESSION["emp"]["id"];
+?>
 <i id="cosa-no-c" class="fas fa-comment-dots"></i>
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis productos</h1>
@@ -13,7 +17,7 @@
               <th>Tipo</th>
               <th>precio</th>
               <th>marca</th>
-              <!-- <th>Acciones</th> -->
+              <th>Acciones</th>
           </tr>
       </thead>
       <tbody>
@@ -27,7 +31,22 @@
           <td><?php echo $row["tipopc_nom"]; ?></td>
           <td><?php echo $row["pc_precio"]; ?></td>
           <td><?php echo $row["mar_nombre"]; ?></td>
-          <!-- <td></td> -->
+          <td>
+            <a class="btn-datagrid" href="EliminarPc-<?php echo $row["pc_id"]; ?>-<?php echo $empid; ?>" onclick="return confirmar(this)">Eliminar<i class="fas fa-trash-alt icono-accion"></i></a>
+            <script type="text/javascript">
+            function confirmar()
+            {
+                if (confirm("Eliminar pc?")==false)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            </script>
+          </td>
         </tr>
       <?php } ?>
       </tbody>

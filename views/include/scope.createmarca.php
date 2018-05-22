@@ -1,33 +1,3 @@
-<!-- <script>
-
-    $(function(){
-        $("#marcaAdicional").on('click', function(){
-            $("#nuevamarca input:eq(0)").clone().addClass("crear-clon").appendTo("#nuevamarca");
-        });
-    });
-</script> -->
-<!-- <script>
-function letrasynumeros(e){
-  key=e.keyCode || e.which;
-
-  teclado=String.fromCharCode(key).toLowerCase();
-
-  letras="abcdefghijklmnopqrstuvwxyz";
-
-  especiales="8-37-38-46-164";
-
-  teclado_especial=false;
-
-  for(var i in especiales){
-    if(key==especiales[i]){
-      teclado_especial=true;break;
-    }
-  }
-  if(letras.indexOf(teclado)==-1 && !teclado_especial){
-    return false;
-  }
-}
-</script> -->
 <div class="wrap-nav">
   <h1 class="nav-titulo">Mis marcas</h1>
   <div class="nav-btns">
@@ -48,6 +18,7 @@ function letrasynumeros(e){
       </div>
         <?php } ?>
           <input class="btn-dash-mar" type="submit" value="Registrar marca">
+        </form>
         <p class="indicacion-res">Selecciona las marcas que quieres añadir a tu tienda.</p>
       </div>
     </div>

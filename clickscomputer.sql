@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2018 a las 04:50:48
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Tiempo de generación: 23-05-2018 a las 00:16:33
+-- Versión del servidor: 10.1.30-MariaDB
+-- Versión de PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -170,6 +170,11 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteMarcaEmpresa` (IN `id` INT, IN `id2` INT)  BEGIN
 DELETE FROM mar_emp WHERE fk_mar_id = id AND fk_emp_id = id2;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeletePcEmpresa` (IN `id` INT, IN `id2` INT)  NO SQL
+BEGIN
+DELETE FROM pc WHERE pc_id = id AND fk_emp_id = id2;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Descripcion` (IN `id` INT)  BEGIN
@@ -406,7 +411,7 @@ CREATE TABLE `fil_emp` (
 
 INSERT INTO `fil_emp` (`fk_fil_id`, `fk_emp_id`) VALUES
 (14, 6),
-(14, 6);
+(15, 6);
 
 -- --------------------------------------------------------
 
@@ -502,8 +507,11 @@ CREATE TABLE `mar_emp` (
 --
 
 INSERT INTO `mar_emp` (`fk_mar_id`, `fk_emp_id`) VALUES
-(1, 6),
-(2, 6);
+(2, 6),
+(4, 6),
+(8, 6),
+(14, 6),
+(19, 6);
 
 -- --------------------------------------------------------
 
@@ -525,16 +533,6 @@ CREATE TABLE `pc` (
   `pc_img` text NOT NULL,
   `fk_emp_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `pc`
---
-
-INSERT INTO `pc` (`pc_id`, `pc_cod`, `pc_nom`, `pc_desc`, `pc_mod`, `fk_mar_id`, `fk_tipopc_id`, `fk_fil_id`, `ficha_tecnica`, `pc_precio`, `pc_img`, `fk_emp_id`) VALUES
-(11, 1355155, 'pc ', 'pc de uso frecuente', 'x553m3', 2, 3, 16, 'ejemplo.pdf', 1500000, 'ejemplo.jpg', 6),
-(12, 987654321, 'pc master reis', 'pal maincra', 'tt45x3', 1, 1, 15, 'iso.pdf', 35000000, 'prueba2.jpg', 6),
-(18, 121, 'pc master reis 2', 'pc master reis 3', 'xxxxxxx', 1, 1, 14, 'eliminar.txt', 13000000, 'master reis 2.jpg', 6),
-(19, 121212, 'pc pug', 'pici para juegar al pugbgb', '1212bb', 2, 3, 14, 'ejemplo3.pdf', 3500000, 'pug.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -767,51 +765,61 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `comentarios`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `com_pc`
 --
 ALTER TABLE `com_pc`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `com_pie`
 --
 ALTER TABLE `com_pie`
   MODIFY `fk_com_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `egg`
 --
 ALTER TABLE `egg`
   MODIFY `egg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
   MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT de la tabla `filtros`
 --
 ALTER TABLE `filtros`
   MODIFY `fil_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
   MODIFY `mar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
 -- AUTO_INCREMENT de la tabla `pc`
 --
 ALTER TABLE `pc`
-  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `pc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT de la tabla `tipopc`
 --
 ALTER TABLE `tipopc`
   MODIFY `tipopc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- Restricciones para tablas volcadas
 --

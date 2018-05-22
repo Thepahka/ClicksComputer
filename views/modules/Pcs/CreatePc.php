@@ -30,7 +30,7 @@
           foreach($Marcas as $row3)
           {
           ?>
-          <option value="<?php echo $row3["mar_id"] ?>"><?php echo $row3["mar_nombre"]; ?></option><br>
+          <option value="<?php echo $row3["mar_id"] ?>"><?php echo ucwords($row3["mar_nombre"]); ?></option><br>
         <?php } ?>
       </select><br>
 
@@ -40,7 +40,7 @@
             foreach($Tipos as $row2)
             {
           ?>
-          <option value="<?php echo $row2["tipopc_id"]; ?>"><?php echo $row2["tipopc_nom"]; ?></option></br>
+          <option value="<?php echo $row2["tipopc_id"]; ?>"><?php echo ucwords($row2["tipopc_nom"]); ?></option></br>
         <?php } ?>
       </select><br>
         <label for="CreateTip" class="cpc">Categoria del computador</label>
@@ -49,7 +49,7 @@
           foreach($filtros as $row)
           {
             ?>
-          <option value="<?php echo $row["fil_id"]; ?>"><?php echo $row["fil_nom"] ?></option>
+          <option value="<?php echo $row["fil_id"]; ?>"><?php echo ucwords($row["fil_nom"]); ?></option>
         <?php } ?>
       </select><br>
         <label for="CreateFicha" class="pdf cpc">Ficha tecnica del computador</label>

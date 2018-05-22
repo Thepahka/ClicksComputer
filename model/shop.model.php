@@ -311,6 +311,25 @@ class ShopModel
     return $result;
   }
 
+  public function Delete($data, $data2)
+  {
+    try
+    {
+      $sql = "CALL DeletePcEmpresa(?,?)";
+
+      $query = $this->pdo->prepare($sql);
+
+      $query->execute(array($data, $data2));
+
+      $msn = "Se elimino la categoria con exito";
+    }
+    catch(PDOException $e)
+    {
+      $msn = $e->getMessage();
+    }
+    return $msn;
+  }
+
 }
 
 ?>

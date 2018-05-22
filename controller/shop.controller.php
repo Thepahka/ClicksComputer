@@ -151,6 +151,17 @@ class ShopController
     return $result;
   }
 
+  public function DeletePc()
+  {
+    $data = $_GET["data"];
+    $data2 = $_GET["data2"];
+    $result = $this->shop->Delete($data, $data2);
+    echo '<script language="javascript">
+    alert("Pc eliminado con exito");
+    window.location.href="MyDashboard"
+    </script>';
+  }
+
 
 }
 ?>
