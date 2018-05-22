@@ -24,12 +24,12 @@ $resultados = $this->ReadDetailPc($_GET["data"], $_GET["data2"]);
     <p class="detalle-pa">Modelo: <?php echo $row["pc_mod"]; ?></p>
     <p class="detalle-pa">Marca: <?php echo $row["mar_nombre"]; ?></p>
     <p class="detalle-pa">Categoria: <?php echo $row["fil_nom"] ?></p>
-    <a class="detalle-pa ficha-de" target="_blank" href="<?php echo $ruta2; ?>">ficha tecnica</a>
     <p class="detalle-pa">Descripcion: <?php echo $row["pc_desc"]; ?></p>
     <p class="detalle-pa"><?php number_format($row["pc_precio"]); ?></p>
-    <p class="detalle-pa">Tienda: <?php echo $row["emp_nom"]; ?></p>
   <?php } ?>
 </div>
+<p class="detalle-nam">Tienda: <?php echo $row["emp_nom"]; ?></p>
+<a class="detalle-pa ficha-de" target="_blank" href="<?php echo $ruta2; ?>">ficha tecnica</a>
 </div>
   </body>
   <?php require_once 'views/include/scope.header.php';

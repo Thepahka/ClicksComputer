@@ -29,7 +29,7 @@
     				<a href="#"><i class="fab fa-twitter-square f-tw" aria-hidden="true"></i></a>
     				<a href="#"><i class="fab fa-instagram f-ins" aria-hidden="true"></i></a>
     			</p>
-    			<p class="footer-cname">clickscomputer &copy; 2017 - <?php echo date("Y"); ?></p>
+    			<p class="footer-cname">Clickscomputer &copy; 2017 - <?php echo date("Y"); ?></p>
     		</footer>
     </section>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
