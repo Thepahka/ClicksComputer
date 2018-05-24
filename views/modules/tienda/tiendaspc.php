@@ -1,6 +1,5 @@
 <?php
 $result = $this->ReadPc($_GET["data"]);
-
 ?>
 <!DOCTYPE html>
 <html>
