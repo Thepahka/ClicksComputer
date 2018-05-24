@@ -586,5 +586,41 @@ a[href="sobre"]{
     color: rgb(0, 0, 0);
     font-size: 25px;
 }
+/* tienda */
+.contenedor-tien-lado{
+  display: none;
+}
+.container-products {
+    width: 90%;
+    height: auto;
+    margin-left: 0;
+    margin-top: 16%;
+}
+.pro-ti-co-la{
+  margin: 10px 10px;
+}
+.detalles-con-det {
+    width: 340px;
+    height: auto;
+    margin-right: 364px;
+    position: relative;
+    float: right;
+    padding: 9px 15px;
+    position: relative;
+    top: 88px;
+}
+.det-im-pc {
+    width: 400px;
+    height: 300px;
+    right: 307px;
+    position: relative;
+}
+.det-im-pc {
+    width: 283px;
+    height: 345px;
+    right: 306px;
+    position: relative;
+    border: 1px solid rgb(78, 78, 78);
+}
 
 }

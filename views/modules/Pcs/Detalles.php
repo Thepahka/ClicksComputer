@@ -19,7 +19,10 @@ $resultados = $this->ReadDetailPc($_GET["data"], $_GET["data2"]);
       $ruta2 = "views/modules/Shop_User/$empnom/computadores/$pdf";
       ?>
     <p class="nom-pc-de"><?php echo $row["pc_nom"]; ?></p>
-    <img class="det-im-pc" src="<?php echo $ruta; ?>" alt="">
+    <div class="contenedordelosdetallesop">
+    <div class="det-im-pc">
+    <img class="det-im-img" src="<?php echo $ruta; ?>" alt="">
+  </div>
     <div class="detalles-con-det">
     <p class="detalle-pa">Modelo: <?php echo $row["pc_mod"]; ?></p>
     <p class="detalle-pa">Marca: <?php echo $row["mar_nombre"]; ?></p>
@@ -27,6 +30,7 @@ $resultados = $this->ReadDetailPc($_GET["data"], $_GET["data2"]);
     <p class="detalle-pa">Descripcion: <?php echo $row["pc_desc"]; ?></p>
     <p class="detalle-pa"><?php number_format($row["pc_precio"]); ?></p>
   <?php } ?>
+</div>
 </div>
 <p class="detalle-nam">Tienda: <?php echo $row["emp_nom"]; ?></p>
 <a class="detalle-pa ficha-de" target="_blank" href="<?php echo $ruta2; ?>">ficha tecnica</a>

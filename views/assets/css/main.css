@@ -1885,24 +1885,33 @@ input[type="file"]{
   top: 80px;
 }
 .det-im-pc{
-  width: 400px;
-  height: 300px;
+  border: 1px solid rgb(78, 78, 78);
+  width: 290px;
+  padding: 20px 10px;
+}
+.contenedordelosdetallesop{
+  height: 50vh;
 }
 .nom-pc-de{
   font-size: 35px;
   font-family: 'Oswald',sans-serif;
   text-align: center;
 }
-.detalles-con-det{
-  background: rgb(235, 235, 235);
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 5px;
-  width: 470px;
-  height: auto;
-  margin-right: 460px;
-  position: relative;
-  float: right;
-  padding: 9px 15px;
+.detalles-con-det {
+    background: rgb(235, 235, 235);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    width: 620px;
+    height: auto;
+    position: fixed;
+    margin-bottom:  -45px;
+    margin-left: 350px;
+    float: right;
+    bottom: 288px;
+}
+.det-im-img{
+  width: 100%;
+  padding-top: 5%;
 }
 .detalle-pa{
   color: rgb(0, 0, 0);
